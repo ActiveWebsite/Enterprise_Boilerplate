@@ -1,0 +1,38 @@
+<h1>Contact {if $contactee_type == 'realtor'}Me{else}Us{/if}</h1>
+<p>Fill out the form below and {if $contactee_type == 'realtor'}I{else}we{/if} will get back to you quickly.</p>
+<form action="/forms/" class="validate-form">
+	<div class="row-fluid">
+		<div class="span6">
+			<label class="bold" for="input01">First Name <span class="red">*</span></label>
+			<input class="span12 required" id="input01" type="text" name="first_name" placeholder="First Name">
+		</div>
+		<div class="span6">
+			<label class="bold" for="input02">Last Name <span class="red">*</span></label>
+			<input class="span12 required" id="input02" type="text" name="last_name" placeholder="Last Name">
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
+			<label class="bold" for="input03">Phone</label>
+			<input class="span12" type="text" id="input03" name="phone" placeholder="Phone">
+		</div>
+		<div class="span6">
+			<label class="bold" for="input04">Cell Phone</label>
+			<input class="span12" type="text" id="input04" name="cell_phone" placeholder="Cell Phone">
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
+			<label class="bold" for="input05">Email Address <span class="red">*</span></label>
+			<input class="span12 required email" id="input05" type="text" name="email_confirm" placeholder="Email Address">
+			<input type="text" value="" name="email" style="display: none;">
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span12">
+			<label class="bold" for="input06">Message<span class="red">*</span></label>
+			<textarea name="message" rows="8" cols="30" class="span12 required" id="input06" placeholder="Enter Message"></textarea>
+		</div>
+	</div>
+	<input type="submit" class="btn" value="Send" title="Send">
+</form>

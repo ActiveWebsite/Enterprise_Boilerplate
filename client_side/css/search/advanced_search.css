@@ -1,0 +1,123 @@
+/* form base */
+.advancedSearchForm {
+	position: relative;
+}
+.advancedSearchForm .bumpCheckbox,
+.advancedSearchForm .bumpRadio {
+	margin-top:30px;
+}
+.advancedSearchForm .combo-box input {
+	float: left;
+	width:45%;
+}
+.advancedSearchForm .combo-box select {
+	float: left;
+	width:45%;
+}
+.advancedSearchForm .combo-box .range-spacer {
+	float:left;
+	width:10%;
+	line-height: 30px;
+	text-align: center;
+}
+.advancedSearchForm .form-Seperator {
+	border-top: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+.advancedSearchForm .form-Seperator span {
+	background: #fff;
+	padding:5px 10px;
+	float: left;
+	margin-left: 44%;
+	margin-top: -15px;
+}
+
+/* counter */
+.advancedSearchForm .formCounter {
+	position: absolute;
+	top:0;
+	right:0;
+	text-align: center;
+	background: #efefef;
+	padding: 5px;
+	border:1px solid #ccc;
+	margin-top:250px !important; /* change this to fix the top position */
+}
+.advancedSearchForm .formCounter .formCounterCountValue {
+	display: block;
+	font-size:20px;
+	font-weight: bold;
+	margin: 5px 0;
+}
+.advancedSearchForm .formCounter .formCounterText {
+	display: block;
+	font-size:12px;
+	font-weight: bold;
+	margin:5px 0;
+}
+.advancedSearchForm .formCounter .formCounterSubmit {
+
+}
+
+
+/* fancy Select 2 */
+.advancedSearchForm ul.msw2-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.advancedSearchForm ul.msw2-list li {
+	background-color:#efefef;
+	border:1px solid #666;
+	margin:0 0 2px 0;
+	padding:0.25em 0.5em;
+}
+.advancedSearchForm ul.msw2-list li:before, .advancedSearchForm ul.msw2-list li:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.advancedSearchForm ul.msw2-list li:after {
+	clear: both;
+}
+.advancedSearchForm ul.msw2-list li:before, .advancedSearchForm ul.msw2-list li:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.advancedSearchForm ul.msw2-list li.msw2-list-placeholder {
+	display: none;
+}
+.advancedSearchForm ul.msw2-list li i {
+	float: right;
+	cursor: pointer;
+}
+/* end fancy Select 2 */
+
+
+/* open house */
+#open-house-block .span3 {
+	width:17%;
+}
+
+
+
+/* search adjustments for different devices */
+@media (max-width: 767px) {
+	#AdvancedSearchForm .formCounter{
+		position:fixed !important;
+		bottom:35px !important;
+		right:0 !important;
+		top: auto !important;
+		margin:0 !important;
+	}
+	#AdvancedSearchForm .formCounter span{
+		display:inline-block;
+		margin:0 10px 0;
+		padding:0;
+		font-size:14px;
+	}
+	#open-house-block .span3 {
+		width: 100%;
+	}
+}

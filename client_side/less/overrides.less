@@ -1,0 +1,116 @@
+// OVERRIDE BOOJSTRAP PROPERTIES IN HERE
+// --------------------------------------------------
+
+
+// SPAN5-HALF GRID SETUP
+// --------------------------------------------------
+.row-fluid .span5-half {
+	width: 44.44%;
+}
+
+
+// clearfix for thumbnails
+ul.thumbnails li.first-in-row {
+	clear:left;
+}
+
+
+// FIX FOR IE THUMBNAIL LISTS
+// --------------------------------------------------
+body.browser_lt_ie_9 ul.thumbnails {
+	margin-left: -26px;
+	width: 104.56%;
+	li.span4 {
+		width: 275px; 
+		margin: 0 0 30px 26px;
+	}
+	li.span6 {
+		width: 422px; 
+		margin: 0 0 30px 26px;
+	}
+}
+
+
+// less than 1200 grid & landscape tablets
+// --------------------------------------------------
+@media (max-width: 1199px) {
+	.container {
+		width: auto;
+		padding-left: 2.6%;
+		padding-right: 2.6%;
+	}
+	body {
+		padding: 0;
+		margin: 0;
+		&:before {
+			content: "Less than 1200 grid & landscape tablets";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 300000;
+			color: black;
+			background: white;
+			padding: 4px;
+			.border-radius(0 0 5px 0);
+			.box-shadow(0 0 10px 2px #000);
+		}
+	}
+}
+
+
+// Tablets & small desktops only
+// --------------------------------------------------
+@media (max-width: 979px) {
+	.container {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	body {
+		padding: 0;
+		margin: 0;
+		&:before {
+			content: "Tablets and small desktops only";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 300000;
+			color: black;
+			background: white;
+			padding: 4px;
+			.border-radius(0 0 5px 0);
+			.box-shadow(0 0 10px 2px #000);
+		}
+	}
+	.row-fluid .span5-half {
+		width: 43.990%;
+	}
+}
+
+
+// Phones only
+// --------------------------------------------------
+@media (max-width: 767px) {
+	.container {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	body {
+		padding: 0;
+		margin: 0;
+		&:before {
+			content: "Phones only";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 300000;
+			color: black;
+			background: white;
+			padding: 4px;
+			.border-radius(0 0 5px 0);
+			.box-shadow(0 0 10px 2px #000);
+		}
+	}
+	.row-fluid .span5-half {
+		width: 100%;
+	}
+}

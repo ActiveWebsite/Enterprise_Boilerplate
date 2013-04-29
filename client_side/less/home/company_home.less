@@ -1,0 +1,41 @@
+#home-page-gallery-quick-search{
+	position: relative;
+}
+
+#home-page-gallery {
+	position: relative;
+	height:400px;
+	width:100%;
+	figure {
+		height: 400px;
+		width: 100% !important;
+		margin: 0;
+		padding: 0;
+		figcaption {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background: rgba(85, 85, 85, 0.5);
+			padding: 0.5em 0;
+			p {
+				margin: 0;
+				padding: 0 .5em;
+				color: @white;
+				font-size: 16px;
+				font-weight: bold;
+				text-align: right;
+			}			
+		}
+	}
+}
+
+#home-page-quick-search {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	background: rgba(255, 255, 255, 0.5);
+	border: 1px solid @gray;
+	padding: 0.5em;
+	z-index: 100;
+}

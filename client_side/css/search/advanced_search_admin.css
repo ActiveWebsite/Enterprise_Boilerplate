@@ -1,0 +1,72 @@
+.advancedSearch input[type="submit"],
+.advancedSearch input[type="button"]{
+    padding:4px 10px;
+}
+
+/* =========================================================
+   POLYGON/RADIUS MAP
+   ========================================================= */
+.advancedSearch #radius-polygon-widget {
+    margin:20px 0;
+}   
+.advancedSearch #radius-polygon-widget input[type="submit"],
+.advancedSearch #radius-polygon-widget input[type="button"]{
+    padding:4px 10px;
+}
+.advancedSearch #radius-polygon-widget-left-column,
+.advancedSearch #radius-polygon-widget-right-column{
+    width:100%;
+}
+.advancedSearch #radius-polygon-widget-map{
+    width:100%;
+    height:250px;
+    border:1px solid #ccc;
+    margin-bottom: 20px;
+}
+.advancedSearch #radius-polygon-widget-tabs ul.tab_triggers{
+    border-bottom:1px solid #ccc;
+    height:19px;
+    padding: 0;
+    margin: 0 0 18px 0
+}
+.advancedSearch #radius-polygon-widget-tabs ul.tab_triggers li{
+    float:left;
+    margin:0 5px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.advancedSearch #radius-polygon-widget-tabs ul.tab_triggers li a{
+    border:1px solid #ccc;
+    padding: 5px 20px;
+    background: #efefef;
+    color: #000;
+}
+.advancedSearch #radius-polygon-widget-tabs ul.tab_triggers li.active_tab a{
+    background: #fff;
+    border-bottom-color: #fff;
+}
+.advancedSearch #radius-polygon-widget-tabs h3{
+    font-size: 14px;
+    font-weight: bold;
+}
+.advancedSearch #radius-polygon-widget-tabs h4{
+    font-size: 12px;
+    font-weight: bold;
+}
+.advancedSearch #radius-polygon-widget-tabs ol{
+    margin:10px 0 10px 20px;
+    padding:0;
+    list-style:disc;
+}
+.advancedSearch #radius-polygon-widget-tabs ol li{
+    padding-bottom:5px;
+    line-height: 14px;
+}
+.advancedSearch #radius-polygon-widget-tabs input[type="text"]{
+    width:50%;
+    margin-top:3px;
+}
+.advancedSearch #radius-polygon-widget-tabs select {
+   width:50%;
+   margin-top:3px;
+}

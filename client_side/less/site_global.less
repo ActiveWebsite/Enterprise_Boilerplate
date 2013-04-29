@@ -1,0 +1,134 @@
+// GLOBAL PROPERTIES IN HERE
+// --------------------------------------------------
+
+
+// MAIN NAV STYLE
+// --------------------------------------------------
+#main-navigation {
+	padding: 0;
+	margin: 0;
+	.navbar-inner {
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: none;
+		filter: none;
+		min-height: 28px;
+		.box-shadow(0 0 0 0 @black);
+		.border-radius(0);
+	}
+	.nav {
+		margin: 0;
+		float: none;
+	}
+	.nav > li > a {
+		color: @black;
+		padding: 15px 30px;
+		text-shadow: none;
+		background-color: @white;
+	}
+	.nav > li.active > a,
+	.nav > li > a.active,
+	.nav > li > a:hover,
+	.nav > li > a:focus {
+		background-color: @grayLight;
+		filter: none;
+	}
+	.dropdown-menu {
+		margin: 0;
+		padding: 0;
+		background-color: @white;
+		.border-radius(3px);
+		filter: none;
+	}
+	.dropdown-menu li > a {
+		color: @black;
+		background-color: @grayLight;
+		&:hover {
+			background-color: @black;
+			color: @white;
+		}
+	}
+	.dropdown-menu:before, 
+	.dropdown-menu:after {
+		border: none !important;
+	}
+}
+
+
+// GLOBAL TO-SPACER STYLE
+// --------------------------------------------------
+.span1 .to-spacer {
+	display: block;
+	padding-top: 6px;
+	text-align: center;
+}
+
+
+// GLOBAL CHECKBOXES LINEHIGHT FIX
+// --------------------------------------------------
+form .checkbox,
+form .radio {
+	line-height: 21px;
+}
+
+
+// CMS PAGE STYLES
+// --------------------------------------------------
+.cmspage {
+
+}
+
+
+// ACCOUNT COMPONENT STYLES
+// --------------------------------------------------
+.web-user-account-component {
+
+}
+
+
+// STANDARD PROPERTY
+// --------------------------------------------------
+.standard-property {
+	.prop-photo {
+		margin: 0 0 10px 0;
+		position: relative;
+		.open-house-banner {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 5px;
+			background: @white;
+			color: @black;
+		}
+	}
+	h3 {
+		margin: 0 0 10px 0;
+	}
+	p {
+		margin: 0;
+	}
+	.prop-cta {
+		margin-top: 10px;
+	}
+}
+
+
+// QUICK SEARCH STYLES
+// --------------------------------------------------
+.quick-search-component {
+	form {
+		margin: 0;
+		input[type="text"],
+		select {
+			margin-bottom: 0;
+		}
+		label {
+			margin: 0;
+		}
+	}
+}
+.quick-search-component-content {
+	
+}
