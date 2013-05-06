@@ -7,11 +7,13 @@
 {/render_layout_arguments}
 
 {$PAGE_MENU}
+
 <div id="web-user-account-header">
     <h1>Favorites</h1>
     <p>The following is a list of your current Favorites.  You can add or delete properties in each Favorites category at any time.  You can also send each Favorites collection or individual Favorite properties via email.</p>
     <p>Click on the Favorites Category name to view its properties.  Click on Email to send the category to an email address.</p>
 </div>
+
 <table class="table table-striped" id="account-favorites">
     <tbody>
     {foreach from=$categories item=category key=index}
@@ -24,7 +26,7 @@
                     </a>
                     <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp; ({$property_list.$category_name|@count} Properties)</span>
                     <div class="btn-group pull-right">
-                        <a class="btn fancybox fancy-height-550 fancy-width-500 iframe" href="/popup/{$ACTION_URLS.contact}/send_properties_and_searches_form/c{$category->category_id}/subject/3"><i class="icon-envelope"></i> Email</a>
+                        <a class="btn fancybox" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="500" href="/popup/{$ACTION_URLS.contact}/send_properties_and_searches_form/c{$category->category_id}/subject/3"><i class="icon-envelope"></i> Email</a>
                         <a href="#" id="FavCatEditDescToggle_{$category->category_id}Toggle" data-target="#FavCatForm_{$category->category_id}" data-description="#FavCatDesc_{$category->category_id}Content" data-account-action="open_category_description" class="btn">{if $category->description}Edit{else}Add{/if} Description</a>
                         <a class="btn btn-warning" href="{$ACTION_URLS.local_root}/deleteCategory/{$category->category_id}" data-account-action="confirm_delete" data-confirm-text="Are you sure you want to delete this category ({$category->name|escape:javascript})?"><i class="icon-remove"></i> Delete</a>
                     </div>
@@ -63,27 +65,26 @@
                                             {$property->city}, {$property->state} {$property->information.zip_code->value}
                                         </h4>
                                         <ul class="unstyled">
-                                            <li>{$property->information.bedrooms_total->value} Bed</li>
-                                            <li>{$property->information.bathrooms_total->value} Bath</li>
-                                            <li>{$property->information.list_price->value}</li>
-                                            <li>{$property->information.square_feet_total->value} Square Feet</li>
+                                            {if $property->information.bedrooms_total->value}<li>{$property->information.bedrooms_total->value|clean_bed_bath} Bed</li>{/if}
+                                            {if $property->information.bathrooms_total->value}<li>{$property->information.bathrooms_total->value|clean_bed_bath} Bath</li>{/if}
+                                            {if $property->information.list_price->value}<li>{$property->information.list_price->value}</li>{/if}
+                                            {if $property->information.square_feet_total->value}<li>{$property->information.square_feet_total->value|number_format} Square Feet</li>{/if}
                                         </ul>
                                         <a href="{$ACTION_URLS.property_details}{$property->company_property_id}" target="_blank" class="btn">More info</a>
                                     </div>
                                     <div class="span4">
                                         <div style="display: none;">
-                                            <a id="Showing_{$property->company_property_id}" data-height="700" data-width="550" target="_blank" href="/popup/forms/display/schedule_showing/?prop={$property->company_property_id}{if $pref_realtor && $pref_realtor.id}&amp;realtor_id={$pref_realtor.id}{/if}">Schedule A Showing</a>
+                                            <a id="Showing_{$property->company_property_id}" data-fancybox-type="iframe" data-fancybox-height="640" data-fancybox-width="555" target="_blank" href="/popup/forms/display/schedule_showing/?prop={$property->company_property_id}{if $pref_realtor && $pref_realtor.id}&amp;realtor_id={$pref_realtor.id}{/if}">Schedule A Showing</a>
                                             {if $pref_realtor}
-                                                <a id="RequestInfo_{$property->company_property_id}" data-height="700" data-width="550" target="_blank" href="/popup/forms/display/request_info/?prop={$property->company_property_id}{if $pref_realtor && $pref_realtor.id}&amp;realtor_id={$pref_realtor.id}{/if}">Request Additional Info on This Property</a>
+                                                <a id="RequestInfo_{$property->company_property_id}" data-fancybox-type="iframe" data-fancybox-height="640" data-fancybox-width="555" target="_blank" href="/popup/forms/display/request_info/?prop={$property->company_property_id}{if $pref_realtor && $pref_realtor.id}&amp;realtor_id={$pref_realtor.id}{/if}">Request Additional Info on This Property</a>
                                             {else}
-                                                <a id="RequestInfo_{$property->company_property_id}" data-height="700" data-width="550" target="_blank" href="/popup/forms/display/request_info/?prop={$property->company_property_id}{if $pref_realtor && $pref_realtor.id}&amp;realtor_id={$pref_realtor.id}{/if}">Request Additional Info on This Property</a>
+                                                <a id="RequestInfo_{$property->company_property_id}" data-fancybox-type="iframe" data-fancybox-height="640" data-fancybox-width="555" target="_blank" href="/popup/forms/display/request_info/?prop={$property->company_property_id}{if $pref_realtor && $pref_realtor.id}&amp;realtor_id={$pref_realtor.id}{/if}">Request Additional Info on This Property</a>
                                             {/if}
-                                            <a id="SendToFriend_{$property->company_property_id}" data-height="600" data-width="550" href="/popup/{$ACTION_URLS.contact}/send_properties_and_searches_form/p{$property->company_property_id}/subject/3">Send Property to a Friend</a>
-                                            <a id="ChangeCategory_{$property->company_property_id}" data-height="300" data-width="550" href="/popup/{$ACTION_URLS.local_root}/transfer_favorite_form/{$property->company_property_id}/{$category->category_id}">Change Property Category</a>
+                                            <a id="SendToFriend_{$property->company_property_id}"  data-fancybox-type="iframe" data-fancybox-height="600" data-fancybox-width="550" href="/popup/{$ACTION_URLS.contact}/send_properties_and_searches_form/p{$property->company_property_id}/subject/3">Send Property to a Friend</a>
+                                            <a id="ChangeCategory_{$property->company_property_id}" data-fancybox-type="iframe" data-fancybox-height="250" data-fancybox-width="500" href="/popup/{$ACTION_URLS.local_root}/transfer_favorite_form/{$property->company_property_id}/{$category->category_id}">Change Property Category</a>
                                         </div>
                                         <form method="post" action="">
-                                            <select class="span12" data-account-action="openCTA" data-name="{$property->getStreetAddress()|replace:'"':''}" data-property="{$property->company_property_id}">
-                                                {* ' *}
+                                            <select class="span12" data-account-action="openCTA" data-name="{$property->getStreetAddress()|clean_address}" data-property="{$property->company_property_id}">
                                                 <option>I want to...</option>
                                                 <option value="RequestInfo">Request Additional Information</option>
                                                 <option value="Showing">Request a Showing</option>
@@ -110,7 +111,7 @@
                     {else}
                         <hr>
                         <p>You do not have any properties in this favorites collection.<p>
-                        <p><a href="{$ACTION_URLS.search}?no_favs=1/" class="btn">Search properties to begin adding favorites</a></p>
+                        <p><a href="{$ACTION_URLS.search}?no_favs=1" class="btn">Search properties to begin adding favorites</a></p>
                     {/if}
                 </div>
             </td>

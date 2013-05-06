@@ -103,7 +103,7 @@
                     None
                 {/if}
                 <span class="help-inline">
-                    <a href="{$ACTION_URLS.local_root}/change_pref_realtor_form" class="btn iframe fancybox fancy-width-400 fancy-height-300">Change Preferred Agent</a>
+                    <a href="{$ACTION_URLS.local_root}/change_pref_realtor_form" class="btn fancybox" data-fancybox-type="iframe" data-fancybox-width="400" data-fancybox-height="300">Change Preferred Agent</a>
                 </span>
             </div>
         </div>

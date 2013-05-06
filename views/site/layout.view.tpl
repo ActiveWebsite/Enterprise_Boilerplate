@@ -152,6 +152,7 @@
         </div>
       {/if}
     </div>
+    {include file="$view_path/footers/company_footer.inc.tpl"}
     <footer id="sticky-footer">
       <div class="container">
         footer

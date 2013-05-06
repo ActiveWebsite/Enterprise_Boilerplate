@@ -18,11 +18,11 @@
                     {if $property.bathrooms_total > 0} | {$property.bathrooms_total|clean_bed_bath} Bath{if $property.bathrooms_total > 1}s{/if}{/if}
                 </p>
                 <div class="prop-cta clearfix">
-                    <a href="/property/property_details_quick_view/{$property.company_property_id}" class="fancybox fancy-width-920 fancy-height-500 iframe btn btn-mini" rel="resultsPage">
+                    <a href="/property/property_details_quick_view/{$property.company_property_id}" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-mini">
                         Quick View
                     </a>
-                    <a href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property.company_property_id}" data-property-id="{$property.company_property_id}" class="addFavoriteLink" target="_blank" rel="nofollow" title="{if $is_fav}Remove from{else}Add to{/if} Favorites">
-                        {if $is_fav}Remove from{else}Add to{/if} Favorites
+                    <a href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property.company_property_id}" data-property-id="{$property.company_property_id}" class="addFavorite" target="_blank" rel="nofollow" title="Add to Favorites">
+                        Add to Favorites
                     </a>
                     <a href="#{$property.company_property_id}" data-property-id="{$property.company_property_id}" class="property-bin-add" title="Add to Bin">
                         Add to Bin
@@ -41,10 +41,12 @@
         jQuery(document).ready(function($) {
             // load carousel 
             $('#my-property-carousel-1').jcarousel();
-            // get any new fancyboxes
-            initFancyboxElements();
             // find any property bin items
             $('#property-bin-container').propertyBin('resampleBin');
+            // persiste any favorite links
+            if (typeof _checkForFavorites === 'function') {
+                _checkForFavorites($('#my-property-carousel-1 a.addFavorite'));
+            }            
         });
     </script>
     {/literal}

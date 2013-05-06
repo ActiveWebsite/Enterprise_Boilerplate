@@ -1,16 +1,43 @@
 function _lazyLoadComponent(_elementID, _string) {
 	var _componentContainer = jQuery('#' + _elementID);
 	if (_componentContainer.length > 0 && !_componentContainer.hasClass('renderSuccess') && _string !== '') {
-		_componentContainer.html('<img style="margin:15px;" class="lazyComponentLoadWheel" alt="loading..." src="/images/ajax-loader.gif" />');
+		_componentContainer.html('<img style="margin:15px;" class="lazyComponentLoadWheel" alt="loading..." src="/images/ajax-loader.gif">');
 		jQuery.ajax({
 			type: 'POST',
 			url: '/render_component/' + _string,
-			success: function (data, textStatus) {
+			success: function (data) {
 				_componentContainer.html(data).addClass('renderSuccess');
 			},
-			error: function (data) {
-				_componentContainer.html('<p class="lazyComponentErrorMessage">Error retrieving search component. Please try again in a moment.</p>');
+			error: function () {
+				_componentContainer.html('<p class="lazyComponentErrorMessage">Error retrieving component.</p>');
 			}
+		});
+	}
+}
+
+// pass in the elements you want to check against to see if they are favorites.
+// the element must have the data-property-id attribute.
+function _checkForFavorites(elements) {
+	if (elements && elements.length) {
+		jQuery.getJSON('/account/getUsersFavoriteProperties', function(data) {
+			var favs = data.favorites || [];
+			elements.each(function() {
+				var fb = jQuery(this);
+				var id = fb.data('propertyId') + "";
+				if (jQuery.inArray(id, favs) > -1) {
+					if (fb.hasClass('addFavoriteLinkText')) {
+						fb.addClass('removeFavorite').text('Remove from Favorites').attr('title', 'Remove From Favorites');
+					} else {
+						fb.addClass('removeFavorite').attr('title', 'Remove From Favorites');
+					}
+				} else {
+					if (fb.hasClass('addFavoriteLinkText')) {
+						fb.removeClass('removeFavorite').text('Add to Favorites').attr('title', 'Add to Favorites');
+					} else {
+						fb.removeClass('removeFavorite').attr('title', 'Add to Favorites');
+					}
+				}
+			});
 		});
 	}
 }
@@ -19,21 +46,15 @@ var App = jQuery(document);
 
 // document ready
 jQuery(document).ready(function ($) {
-
-	/**
-	 * Account login via ajax
-	 * any link with the attribute data-action="account-login" will hit this
-	 * @all pages
+	/** 
+	 * account login
 	 */
 	if ($.fn.fancybox) {
 		App.on('click', 'a[data-action="account-login"]', function (e) {
 			e.preventDefault();
 			$.fancybox($('#account-login-lightbox').html(), {
-				'autoDimensions': true,
-				// 'width': 400,
-				// 'height': 330,
-				'onComplete': function () {
-					$("#fancybox-content form").on('submit', function (event) {
+				'afterShow': function () {
+					$(".fancybox-inner  form").on('submit', function (event) {
 						event.preventDefault();
 						var f = $(this);
 						$.ajax({
@@ -41,19 +62,48 @@ jQuery(document).ready(function ($) {
 							dataType: 'json',
 							url: f.attr('action'),
 							data: f.serialize(),
-							success: function (data, textStatus) {
+							success: function (data) {
 								if (data.status_code > 0) {
 									location.reload(true);
 								} else {
-									$('#fancybox-content .alert').show();
+									$('.fancybox-inner .alert').show();
 								}
 							},
 							error: function () {
-								$('#fancybox-content .alert').show();
+								$('.fancybox-inner .alert').show();
 							}
 						})
 					})
 				}
+			});
+		});
+	}
+
+	/** 
+	 * all fancybox links on entire site now and in the future
+	 */
+	if ($.fn.fancybox) {
+		App.on('click.fancybox-link', 'a.fancybox', function(e) {
+			e.preventDefault();
+			var el = $(this);
+			var el_data = el.data();
+			fancyBoxBuilder(el.attr('href'), el_data);
+		});
+	}
+
+	/**
+	 * init all favorite property add/remove links now and in the future
+	 */
+	if ($.fn.fancybox) {
+		App.on('click','a.addFavorite', function (e) {
+			e.preventDefault();
+			var el = $(this);
+			var el_data = el.data();
+			el_data.type = 'iframe';
+			el_data.fancyboxWidth = 425;
+			el_data.fancyboxHeight = 425;
+			fancyBoxBuilder(el.attr("href"), el_data, '', null, function() {
+				_checkForFavorites(el);
 			});
 		});
 	}
@@ -66,15 +116,16 @@ jQuery(document).ready(function ($) {
 	if ($.fn.fancybox) {
 		App.on('click', 'a[data-action="account-register"]', function (e) {
 			e.preventDefault();
-			$.fancybox({
-				type: 'ajax',
-				href: '/account/signup/',
-				'autoDimensions': false,
-				'width': 700,
-				'height': 650,
-				'titleShow': false,
-				'onComplete': function () {
-					$('#fancybox-content form').validate({
+			fancyBoxBuilder('/account/signup/', 
+				{
+					fancyboxType: 'ajax',
+					fancyboxWidth: 780,
+					fancyboxHeight: 'auto',
+					fancyboxPadding: 0
+				}, 
+				'', 
+				function() {
+					$('.fancybox-inner form').validate({
 						submitHandler: function (form) {	
 							var el = $(form);
 							var data = el.serialize();
@@ -83,20 +134,20 @@ jQuery(document).ready(function ($) {
 								url: el.attr('action'),
 								method: 'POST',
 								data: data,
-								success: function (data, txtStatus) {
-									$('#popUpRegisterWrap').html(data);					
+								success: function (data) {
+									$('#account-register-wrapper').html(data);					
 								},
-								beforeSend: function (jqXHR, settings) {
-									$('#popUpRegisterWrap').html('<div style="width:100%;text-align:center;margin-top:45%;"><img src="/images/system/loading.gif" alt="Processing..." /></div>');
+								beforeSend: function () {
+									$('#account-register-wrapper').html('<div style="width:100%;text-align:center;margin-top:45%;"><img src="/images/system/loading.gif" alt="Processing..."></div>');
 								}
 							});
 						}
 					});
 				},
-				'onClosed': function () {
-					$('#popUpRegisterWrap').undelegate('form', 'submit');
+				function() {
+					$('#account-register-wrapper').undelegate('form', 'submit');
 				}
-			});
+			);
 		});
 	}
 
@@ -108,9 +159,7 @@ jQuery(document).ready(function ($) {
 	if ($.fn.fancybox) {
 		App.on('click', 'a[data-action="account-nav"]', function (e) {
 			e.preventDefault();
-			$.fancybox($('#account-nav-lightbox').html(), {
-				'autoDimensions': true
-			});
+			$.fancybox($('#account-nav-lightbox').html());
 		});
 	}
 	
@@ -154,36 +203,4 @@ jQuery(document).ready(function ($) {
 			placement: 'right'
 		});
 	}
-	
-	/**
-	 * init all favorite property add/remove links now and in the future
-	 */
-	if ($.fn.fancybox) {
-		App.on('click.fancy-box-favorite', 'a.addFavoriteLink', function (e) {
-			e.preventDefault();
-			var fb = $(this);
-			$.fancybox({
-				'href': fb.attr("href"),
-				'type': 'iframe',
-				'width': fb.data('width') || 350,
-				'height': fb.data('height') || 375,
-				'titleShow': 'false',
-				'onCleanup': function () {
-					if (fb.hasClass('addFavoriteLink')) {
-						if (fb.hasClass('removeFavoriteLink')) {
-							fb.removeClass('removeFavoriteLink').text('Add to Favorites').attr('title', 'Add to Favorites');
-						} else {
-							fb.addClass('removeFavoriteLink').text('Remove from Favorites').attr('title', 'Remove From Favorites');
-						}
-					} else {
-						if (fb.hasClass('removeFavoriteLinkText')) {
-							fb.removeClass('removeFavoriteLinkText').text('Add to Favorites').attr('title', 'Add to Favorites');
-						} else {
-							fb.addClass('removeFavoriteLinkText').text('Remove from Favorites').attr('title', 'Remove From Favorites');
-						}
-					}
-				}
-			});
-		});
-	}		
 });

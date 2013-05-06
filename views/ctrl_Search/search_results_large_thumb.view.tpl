@@ -33,7 +33,7 @@
 		
 		{include file="$view_path/results_header.tpl"}
 		
-		<ul class="unstyled row-fluid thumbnails">
+		
 			{if count($properties) > 0}
 			    {foreach item=property from=$properties key=index}
 			    	<li class="span4 standard-property{if $index%3==0} first-in-row{/if}">
@@ -58,7 +58,7 @@
 							{if $property->bathrooms_total > 0} | {$property->bathrooms_total|clean_bed_bath} Bath{if $property->bathrooms_total > 1}s{/if}{/if}
 			    		</p>
 			    		<div class="prop-cta clearfix">
-							<a href="/property/property_details_quick_view/{$property->company_property_id}" class="fancybox fancy-width-920 fancy-height-500 iframe btn btn-mini" rel="resultsPage">
+							<a href="/property/property_details_quick_view/{$property->company_property_id}" class="quickview-fancybox btn btn-mini" title="Quick View" data-fancybox-group="results-page" rel="nofollow">
 								Quick View
 							</a>
 							{* determine if this property is a favorite *}
@@ -67,7 +67,7 @@
 							{else}
 								{assign var=is_fav value=false}
 							{/if}
-							<a href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property->company_property_id}" data-property-id="{$property->company_property_id}" class="addFavoriteLink" target="_blank" rel="nofollow" title="{if $is_fav}Remove from{else}Add to{/if} Favorites">
+							<a href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property->company_property_id}" data-property-id="{$property->company_property_id}" class="addFavorite addFavoriteButton{if $is_fav} removeFavorite{/if}" target="_blank" rel="nofollow" title="{if $is_fav}Remove from{else}Add to{/if} Favorites">
 								{if $is_fav}Remove from{else}Add to{/if} Favorites
 							</a>
 							<a href="#{$property->company_property_id}" data-property-id="{$property->company_property_id}" class="property-bin-add" title="Add to Bin">
@@ -93,6 +93,15 @@
 			jQuery(document).ready(function($) {
 				var search = new ClientSearch('refineSearchFormElement', false, false, false);
 				search.initRefineSearch();
+				// instantiate fancybox here by itself so we can use the fancybox group for the next/prev buttons.
+				$('a.quickview-fancybox').fancybox({
+					title: '',
+					autoSize: false,
+					width: 800,
+					height: 400,
+					type: 'iframe',
+					wrapCSS: 'fancybox-quickview-nav-wrap'
+				});		
 			});
 		</script>
 	{/literal}

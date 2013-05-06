@@ -18,7 +18,7 @@ abstract class ctrl_Content extends BASE_ctrl_Content {
 			$jquery_libs[] = "/js/jqueryui/components/core.min.js";
 			$jquery_libs[] = "/js/jqueryui/components/position.min.js";
 			$jquery_libs[] = "/js/validation/jquery.validate.min.js";
-			$jquery_libs[] = "/js/fancy_box/jquery.fancybox-1.3.4.pack.js";
+			$jquery_libs[] = "/js/fancy_box/jquery.fancybox-2.1.4.pack.js";
 			$jquery_libs[] = "/js/lib/jquery.hoverIntent.minified.js";
 			$jquery_libs[] = "/js/menus/jquery.boojstrapDropdownNavigation.min.js";
 			$jquery_libs[] = "/js/lib/jquery.openid.js";

@@ -1,5 +1,5 @@
 <div class="row-fluid">
-	<div class="span3">
+	<form method="post" action="{$ACTION_URLS.search}" class="span3 margin-bottom-0">
 		<label>Sort By:</label>
 		<select class="SearchSortFields span12">
 			<option value="list_price"{if $last_order_by eq "list_price"} selected="selected"{/if}>Price (Low to High)</option>
@@ -13,8 +13,8 @@
 				<option value="geodistance"{if $last_order_by eq "geodistance"} selected="selected"{/if}>Distance</option>
 			{/if}
 		</select>
-     </div>
-	<div class="span3">
+    </form>
+	<form method="post" action="{$ACTION_URLS.search}" class="span3 margin-bottom-0">
 		<label class="bold">Per Page:</label>
 		<select class="PageCountNumber span12">
 			 <option value="12"{if $page_manager_obj->get_count() eq 12} selected="selected"{/if}>12</option>
@@ -22,7 +22,7 @@
 			 <option value="36"{if $page_manager_obj->get_count() eq 36} selected="selected"{/if}>36</option>
 			 <option value="48"{if $page_manager_obj->get_count() eq 48} selected="selected"{/if}>48</option>
 		</select>        
-	</div>
+	</form>
 	<div class="span3">
 		{if $is_account_user}
 			<a href="{$ACTION_URLS.search}save_last_search/2" rel="nofollow" target="action_iframe" title="Save Search">Save this Search</a>
