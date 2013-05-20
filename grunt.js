@@ -1,4 +1,5 @@
 /*global module:false*/
+/* documentation: http://boojlabs.activewebsite.com/documentation/view/72 */
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -35,11 +36,12 @@ module.exports = function(grunt) {
         options: {
           yuicompress: true
         },
+        /* add/remove style sheets in the files section below */
         files: {
           'client_side/css/company_styles.min.css': ['client_side/less/styles.less']
-          ,'client_side/css/agent_rebrand_styles.min.css': ['client_side/less/realtor/agent_rebrand_styles.less']
+          // ,'client_side/css/agent_rebrand_styles.min.css': ['client_side/less/realtor/agent_rebrand_styles.less']
           // ,'client_side/css/office_rebrand_styles.min.css': ['client_side/less/office/office_rebrand_styles.less']
-          ,'client_side/css/ipw_styles.min.css': ['client_side/less/ipw/ipw_styles.less']
+          // ,'client_side/css/ipw_styles.min.css': ['client_side/less/ipw/ipw_styles.less']
         }
       }
     },
@@ -88,11 +90,3 @@ module.exports = function(grunt) {
   grunt.registerTask('default', 'lint less min');
   grunt.loadTasks('../../node_modules/grunt-contrib/node_modules/grunt-contrib-less/tasks')
 };
-/*
-for a sublime build script on PC...
-{
-  "cmd": ["grunt.cmd"], // ["grunt.cmd less"]
-  "working_dir": "${project_path}",
-  "shell": true
-}
-*/

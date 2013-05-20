@@ -11,21 +11,27 @@
 @import "../variables.less";
 
 
+// IPW VARIABLES OVERRIDE
+// --------------------------------------------------
+@import "ipw_variables.less";
+
+
 // RESPONSIVE
 // --------------------------------------------------
 @import "/system/client_side/less/boojstrap/boojstrap_responsive.less";
 
 
-// GET IPW VARIABLES OVERRIDE
-// --------------------------------------------------
-@import "ipw_variables.less";
-
-
-// COMPONENT BASE STYLES
+// COMPONENT BASE STYLES * NO CSS FILES! *
 // --------------------------------------------------
 @import "/system/client_side/less/boojstrap/lib/qtip2/qtip.less";
-@import "/system/client_side/less/boojstrap/lib/fancy_box/fancybox-1.3.4.less";
+@import "/system/client_side/less/boojstrap/lib/fancy_box/fancybox-2.1.4.less";
+
+
+// IPW STYLE
+// --------------------------------------------------
+@import "ipw_layout.less";
 
 
 // DO OTHER IMPORTS HERE
 // --------------------------------------------------
+@import "ipw_layout.less";

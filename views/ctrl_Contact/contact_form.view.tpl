@@ -27,11 +27,15 @@
 			<input class="span12 required email" id="input05" type="text" name="email_confirm" placeholder="Email Address">
 			<input type="text" value="" name="email" style="display: none;">
 		</div>
+		<div class="span6">
+			<label class="bold" for="input06">Confirm Email Address <span class="red">*</span></label>
+			<input class="span12 required email" id="input06" data-rule-equalTo="#input05" data-msg-equalTo="Email addresses do not match." type="text" name="email_verify" placeholder="Confirm Email Address">
+		</div>
 	</div>
 	<div class="row-fluid">
 		<div class="span12">
-			<label class="bold" for="input06">Message<span class="red">*</span></label>
-			<textarea name="message" rows="8" cols="30" class="span12 required" id="input06" placeholder="Enter Message"></textarea>
+			<label class="bold" for="input07">Message<span class="red">*</span></label>
+			<textarea name="message" rows="8" cols="30" class="span12 required" id="input07" placeholder="Enter Message"></textarea>
 		</div>
 	</div>
 	<input type="submit" class="btn" value="Send" title="Send">
