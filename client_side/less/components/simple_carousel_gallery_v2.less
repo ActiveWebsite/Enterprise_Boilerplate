@@ -1,0 +1,357 @@
+/* ============================================================
+   Simple Carousel Gallery Version 2.0
+   ============================================================ */
+/* ============================================================
+   Default Mode
+   ============================================================ */
+.gallery-widget {
+	.gallery-widget-main-photo-wrapper {
+		text-align: center;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		.gallery-widget-main-photo {
+			text-align: center;
+			width: 100%;
+			min-height: 10px;
+			img {
+				cursor: pointer;
+				-ms-interpolation-mode: bicubic;
+			}
+		}
+		.gallery-widget-caption {
+			background:url(/images/system/fullscreen-gallery/black-70.png) repeat 0 0 transparent;
+			height: 30px;
+			color: #fff;
+			text-align: right;
+			font-size: 12px;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			line-height: 28px;
+			.gallery-widget-caption-padding {
+				padding: 0 10px;
+			}
+			a {
+				color: #fff;
+			}
+		}
+		.gallery-widget-loading-image {
+			background: #1C1C1C;
+			.opacity(90);
+			position: absolute;
+			top: 48%;
+			left: 48%;
+			padding: 4px;
+			margin: 4px;
+			.border-radius(5px);
+		}
+	}
+	.gallery-widget-navigation {
+		text-align: center;
+		margin: 10px 0;
+		.gallery-widget-next {
+			float: right;
+		}
+		.gallery-widget-prev {
+			float: left;
+		}
+	}
+	.gallery-widget-carousel {
+		overflow: hidden;
+		li {
+			float: left;
+		}
+	}
+	.jcarousel-container-horizontal {
+	    padding: 0 25px;
+	    .box-sizing(border-box);
+	}
+	.jcarousel-list {
+		position: absolute;
+	}
+	.jcarousel-clip-horizontal {
+		overflow: hidden;
+		height: 90px;
+	}
+	.jcarousel-item-horizontal {
+		margin-right: 8px;
+		.size(90px, 130px);
+		.box-sizing(border-box);
+	}
+	.jcarousel-item-placeholder {
+	    background: #fff;
+	    color: #000;
+	}
+	.jcarousel-clip-horizontal img {
+		width: 100%;
+		height: 100%;
+	}
+	.gallery-widget-current-image {
+		border: 2px solid #000;
+	}
+	.gallery-widget-current-image img {
+		cursor: default;
+	}
+	.jcarousel-next-horizontal,
+	.jcarousel-next-horizontal:hover,
+	.jcarousel-next-horizontal:active,
+	.jcarousel-next-horizontal:focus {
+		position: absolute;
+		top: 30%;
+		right: 0;
+		.square(0);
+		cursor: pointer;
+		border-top: 20px solid transparent;
+		border-bottom: 20px solid transparent; 
+		border-left:14px solid #000;
+	}
+	.jcarousel-next-disabled-horizontal,
+	.jcarousel-next-disabled-horizontal:hover,
+	.jcarousel-next-disabled-horizontal:focus,
+	.jcarousel-next-disabled-horizontal:active {
+		cursor: default;
+		border-left-color: #ccc;
+	}
+	.jcarousel-prev-horizontal,
+	.jcarousel-prev-horizontal:hover,
+	.jcarousel-prev-horizontal:focus,
+	.jcarousel-prev-horizontal:active {
+		position: absolute;
+		top: 30%;
+		left: 0;
+		.square(0);
+		cursor: pointer;
+		border-top: 20px solid transparent;
+		border-bottom: 20px solid transparent; 
+		border-right:14px solid #000;
+	}
+	.jcarousel-prev-disabled-horizontal,
+	.jcarousel-prev-disabled-horizontal:hover,
+	.jcarousel-prev-disabled-horizontal:focus,
+	.jcarousel-prev-disabled-horizontal:active {
+		cursor: default;
+		border-right-color: #ccc;
+	}
+	.gallery-widget-expand-thumbs {
+		border-top: 2px solid #ccc;
+		margin-top: 15px;
+		padding-top: 13px;
+	}
+	.gallery-widget-expand-thumbs a {
+		font-size: 14px;
+	}
+	.gallery-widget-expand-thumbs a.gallery-widget-carousel-thumbs-expanded {
+
+	}
+	.gallery-widget-carousel-expanded .jcarousel-container-horizontal {
+		.jcarousel-prev,
+		.jcarousel-next {
+			display: none !important;
+		}
+		.jcarousel-clip {
+			height: auto;
+			width: auto;
+		}
+		.jcarousel-list {
+			width: auto !important;
+			height: auto !important;
+			position: static !important;
+			margin-left: -13px !important;
+			li {
+				margin: 0 0 16px 16px !important;
+			}
+		}
+	}
+}
+/* ============================================================
+   Full Screen Mode
+   ============================================================ */
+.simpleCarouselGalleryFullScreen {
+	background-color: #1C1C1C;
+	left: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	z-index: 80000;
+	.gallery-widget-loading-image {
+		background-color: #1C1C1C;
+		position: absolute;
+		top: 48%;
+		left: 48%;
+		padding: 4px;
+		margin: 4px;
+		.opacity(90);
+		.border-radius(5px);
+	}
+	.gallery-widget-main-photo {
+		margin: 0;
+	}
+	.gallery-widget-fullscreen-bottom {
+		height: 88px;
+		position: absolute;
+		bottom:0;
+		right: 0;
+		left: 0;
+		background: transparent url(/images/system/fullscreen-gallery/black-70.png) repeat;
+	}
+	.gallery-widget-caption {
+		background:transparent url(/images/system/fullscreen-gallery/black-70.png) repeat;
+		top: -20px;
+		left: 0;
+		width: 100%;
+		font-size: 12px;
+		line-height: 19px;
+		height: 20px;
+		color: #fff;
+		position: absolute;
+		text-align: center;
+		.gallery-widget-caption-padding {
+			padding: 0 10px;
+		}
+		a {
+			color:#fff;
+		}
+	}
+	.gallery-widget-fullscreen-close-control {
+		display: block;
+		width: 22px;
+		height: 22px;
+		cursor: pointer;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		background: url(/images/system/fullscreen-gallery/close.png) no-repeat 0px 0px transparent;
+	}
+	.gallery-widget-fullscreen-previous {
+		position: absolute;
+		display: block;
+		.square(44px);
+		cursor: pointer;
+		left: 8px;
+		top: 45%;
+		background: url(/images/system/fullscreen-gallery/prev.png) no-repeat center center transparent;
+	}
+	.gallery-widget-fullscreen-next {
+		position: absolute;
+		display: block;
+		.square(44px);
+		cursor: pointer;
+		right: 8px;
+		top: 45%;
+		background: url(/images/system/fullscreen-gallery/next.png) no-repeat center center transparent;
+	}
+	.gallery-widget-fullscreen-carousel {
+		float: left;
+		display: block;
+		height: 88px;
+		margin-top: 7px;
+	}
+	.gallery-widget-fullscreen-controls {
+		width: 115px;
+		display: block;
+		float: right;
+		height: 88px;
+		.gallery-widget-play-pause-control {
+			background: url(/images/system/fullscreen-gallery/play-pause-toggle2.png) no-repeat 0px 0px transparent;
+			width: 44px;
+			display: block;
+			height: 14px;
+			float: left;
+			margin-left: 16px;
+			margin-top: 39px;
+			overflow: hidden;
+			cursor: pointer;
+		}
+		.gallery-widget-play-pause-control-play {
+			background-position: 0 -14px;
+		}
+		.gallery-widget-open-close-control {
+			background: url(/images/system/fullscreen-gallery/full-screen-toggle.png) no-repeat 0px 0px transparent;
+			width: 20px;
+			display: block;
+			height: 15px;
+			float: left;
+			margin-top: 39px;
+			margin-left: 20px;
+			overflow: hidden;
+			cursor: pointer;
+		}
+		.gallery-widget-open-close-control-close {
+			background-position: 0 -15px;
+		}
+	}
+	.jcarousel-container-horizontal {
+		padding: 0 18px;
+		.box-sizing(border-box);
+	}
+	.jcarousel-list {
+		position: absolute;
+	}
+	.jcarousel-clip-horizontal {
+		height: 80px;
+		overflow: hidden;
+		width: 100%;
+	}
+	.jcarousel-item-horizontal {
+		margin-right: 4px;
+		.size(80px, 100px);
+		cursor:pointer;
+		.box-sizing(border-box);
+	}
+	.jcarousel-item-placeholder {
+		background: #fff;
+		color: #000;
+	}
+	.jcarousel-item-horizontal img {
+		width: 100%;
+		height: 100%;
+	}
+	.gallery-widget-current-image {
+		border:1px solid #fff;
+		img {
+			cursor:default;
+		}
+	}
+	.jcarousel-next-horizontal,
+	.jcarousel-next-horizontal:hover,
+	.jcarousel-next-horizontal:focus,
+	.jcarousel-next-horizontal:active {
+		position: absolute;
+		top: 37%;
+		right: 0;
+		.square(0);
+		border-top: 14px solid transparent;
+		border-bottom: 14px solid transparent; 
+		border-left:12px solid #fff;
+		cursor: pointer;
+	}
+	.jcarousel-next-disabled-horizontal,
+	.jcarousel-next-disabled-horizontal:hover,
+	.jcarousel-next-disabled-horizontal:focus,
+	.jcarousel-next-disabled-horizontal:active {
+		cursor: default;
+		border-left-color: #333;
+	}
+	.jcarousel-prev-horizontal,
+	.jcarousel-prev-horizontal:hover, 
+	.jcarousel-prev-horizontal:focus,
+	.jcarousel-prev-horizontal:active {
+		position: absolute;
+		top: 37%;
+		left: 0;
+		.square(0);
+		border-top: 14px solid transparent;
+		border-bottom: 14px solid transparent; 
+		border-right:12px solid #fff;
+		cursor: pointer;
+	}
+	.jcarousel-prev-disabled-horizontal,
+	.jcarousel-prev-disabled-horizontal:hover,
+	.jcarousel-prev-disabled-horizontal:focus,
+	.jcarousel-prev-disabled-horizontal:active {
+		cursor: default;
+		border-right-color: #333;
+	}
+}

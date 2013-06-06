@@ -2,9 +2,46 @@
 // --------------------------------------------------
 
 
+// Header Styles
+// --------------------------------------------------
+h1 {
+
+}
+h1.page-heading {
+	margin: 0 0 30px 0;
+}
+h2 {
+
+}
+h3 {
+
+}
+h4 {
+
+}
+h5 {
+
+}
+
+// LAYOUT HEADER STYLE
+// --------------------------------------------------
+#site-header {
+	margin-bottom: 20px;
+	.acccount-user-block {
+		float: right;
+		text-align: right;
+	}
+	.navbar .brand {
+		margin: 0 30px 0 0;
+		padding: 0;
+	}
+}
+
+
 // MAIN NAV STYLE
 // --------------------------------------------------
 #main-navigation {
+	clear: both;
 	padding: 0;
 	margin: 0;
 	.navbar-inner {
@@ -25,29 +62,30 @@
 		color: @black;
 		padding: 15px 30px;
 		text-shadow: none;
-		background-color: @white;
+		background: @white;
 	}
 	.nav > li.active > a,
 	.nav > li > a.active,
 	.nav > li > a:hover,
 	.nav > li > a:focus {
-		background-color: @grayLight;
+		.box-shadow(0 0 0 0 @black);
+		background: @grayLight;
 		filter: none;
 	}
 	.dropdown-menu {
 		margin: 0;
 		padding: 0;
-		background-color: @white;
+		background: @white;
 		.border-radius(3px);
 		filter: none;
 	}
 	.dropdown-menu li > a {
 		color: @black;
-		background-color: @grayLight;
-		&:hover {
-			background-color: @black;
-			color: @white;
-		}
+		background: @grayLight;
+	}
+	.dropdown-menu li > a:hover {
+		background: @black;
+		color: @white;
 	}
 	.dropdown-menu:before, 
 	.dropdown-menu:after {
@@ -56,26 +94,29 @@
 }
 
 
-// Header Styles
+// LAYOUT FOOTER STYLE
 // --------------------------------------------------
-h1 {
+#site-footer {
+	margin-top: 30px;
+	padding-bottom: 70px;
+}
 
-}
-h1.page-heading {
 
+// LAYOUT STICKY FOOTER STYLE
+// --------------------------------------------------
+#sticky-footer {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	.sticky-footer-inner {
+		.border-radius(5px 5px 0 0);
+		background: @grayLighter;
+		padding: 10px;
+		.box-shadow(0 0 7px 2px rgba(0,0,0,0.5));
+	}
 }
-h2 {
 
-}
-h3 {
-
-}
-h4 {
-
-}
-h5 {
-	
-}
 
 // GLOBAL TO-SPACER STYLE
 // --------------------------------------------------
@@ -106,7 +147,18 @@ form .radio {
 .web-user-account-component {
 
 }
+.web-user-account-component-content {
+	margin-top: 30px;
+}
 
+// QUICK SEARCH STYLES
+// --------------------------------------------------
+.quick-search-component {
+
+}
+.quick-search-component-content {
+	margin-top: 30px;
+}
 
 // STANDARD PROPERTY
 // --------------------------------------------------
@@ -126,6 +178,8 @@ form .radio {
 	}
 	h3 {
 		margin: 0 0 10px 0;
+		font-size: 14px;
+		font-weight: bold;
 	}
 	p {
 		margin: 0;
@@ -135,15 +189,21 @@ form .radio {
 	}
 }
 
-
-// QUICK SEARCH STYLES
-// --------------------------------------------------
-.quick-search-component {
-
+// view all block for search components
+.search-component-view-all {
+	text-align: center;
+	border-top: 1px solid @grayLighter;
+	a {
+		display: inline-block;
+		font-weight: bold;
+		vertical-align: top;
+		background: @white;
+		padding: 10px;
+		margin-top: -20px;
+	}
 }
-.quick-search-component-content {
-	
-}
+
+
 
 
 // JCAROUSEL
@@ -172,44 +232,56 @@ form .radio {
 	margin-right: 10px;
 	width: 200px;
 	height: 200px;
+	.box-sizing(border-box);
 }
 .jcarousel-next-horizontal,
 .jcarousel-next-horizontal:hover,
 .jcarousel-next-horizontal:active,
 .jcarousel-next-horizontal:focus {
 	position: absolute;
-	top: 40px;
+	top: 30%;
 	right: 0;
-	width: 14px;
-	height: 14px;
+	.square(0);
 	cursor: pointer;
-	background: transparent url('/images/carousel-arrow.png') no-repeat -14px 0;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent; 
+	border-left:14px solid #000;
 }
 .jcarousel-next-disabled-horizontal,
 .jcarousel-next-disabled-horizontal:hover,
 .jcarousel-next-disabled-horizontal:focus,
 .jcarousel-next-disabled-horizontal:active {
 	cursor: default;
-	background-position: -14px 0;
-	.opacity(80);
+	border-left-color: #ccc;
 }
 .jcarousel-prev-horizontal,
 .jcarousel-prev-horizontal:hover,
 .jcarousel-prev-horizontal:focus,
 .jcarousel-prev-horizontal:active {
 	position: absolute;
-	top: 40px;
+	top: 30%;
 	left: 0;
-	width: 15px;
-	height: 15px;
+	.square(0);
 	cursor: pointer;
-    background: transparent url('/images/carousel-arrow.png') no-repeat 0 0;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent; 
+	border-right:14px solid #000; 
 }
 .jcarousel-prev-disabled-horizontal,
 .jcarousel-prev-disabled-horizontal:hover,
 .jcarousel-prev-disabled-horizontal:focus,
 .jcarousel-prev-disabled-horizontal:active {
 	cursor: default;
-	background-position: 0 0;
-	.opacity(80);
+	border-right-color: #ccc;
+}
+
+// skin for the carousel that contains standard properties.
+.jcarousel-skin-standard-property {
+	.jcarousel-clip-horizontal {
+		height: 290px;
+	}
+	.jcarousel-item-horizontal {
+		width: 200px;
+		height: 290px;
+	}
 }

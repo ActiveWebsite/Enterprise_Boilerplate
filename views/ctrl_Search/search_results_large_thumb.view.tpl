@@ -29,17 +29,19 @@
 		{include file="$view_path/search_results_narrower.inc.tpl"}
 	</div>
 	<div class="span9">
-		<h1>{$page_manager_obj->get_total_count()|number_format} Search Results</h1>
+		<h1 class="page-heading">{$page_manager_obj->get_total_count()|number_format} Search Results</h1>
 		
 		{include file="$view_path/results_header.tpl"}
 		
+		<hr>
 		
+		<ul class="unstyled row-fluid thumbnails margin-bottom-0">
 			{if count($properties) > 0}
 			    {foreach item=property from=$properties key=index}
 			    	<li class="span4 standard-property{if $index%3==0} first-in-row{/if}">
 						<div class="prop-photo">
-							<a href="/property/{$property->company_property_id}{if $property->address_display_bit}/{$property->getfullStreetAddress()|clean_address}{/if}" title="View property{if $property->address_display_bit} at {$property->getfullStreetAddress()|clean_address}{/if}">
-								<img src="{$properties_pics[$index]->getUrl()}/crop/270,180/" title="Photo of {if $property->address_display_bit}{$property->getfullStreetAddress()|clean_address}{/if}">
+							<a href="/property/{$property->company_property_id}{if $property->address_display_bit}/{$property->getfullStreetAddress()|clean_for_url}{/if}" title="View property{if $property->address_display_bit} at {$property->getfullStreetAddress()|clean_for_attribute}{/if}">
+								<img src="{$properties_pics[$index]->getUrl()}/crop/275,180/" title="Photo of {if $property->address_display_bit}{$property->getfullStreetAddress()|clean_for_attribute}{/if}">
 							</a>
 							{if $property->open_houses}
 								<div class="open-house-banner">
@@ -48,7 +50,7 @@
 							{/if}
 						</div>
 			    		<h3>
-			    			<a href="/property/{$property->company_property_id}{if $property->address_display_bit}/{$property->getfullStreetAddress()|clean_address}{/if}" title="View property{if $property->address_display_bit} at {$property->getfullStreetAddress()|clean_address}{/if}">
+			    			<a href="/property/{$property->company_property_id}{if $property->address_display_bit}/{$property->getfullStreetAddress()|clean_for_url}{/if}" title="View property{if $property->address_display_bit} at {$property->getfullStreetAddress()|clean_for_attribute}{/if}">
 			    				{if $property->address_display_bit}{$property->getfullStreetAddress()}{else}Property Details{/if}
 			    			</a>
 			    		</h3>
@@ -81,18 +83,21 @@
 			{/if}
 		</ul>
 
+		<hr class="margin-top-0">
+
 		{include file="$view_path/results_footer.tpl"}
 		
 	</div>
 </div>
 <footerargs>
 	<iframe name="action_iframe" style="display:none;" width="0" height="0"></iframe>
-	<script src="/js/buildlist.js?scripts=/js/search/jquery.Search.js,/js/search/jquery.fancySelect2.min.js,/js/min/search_app.min.js"></script>
+	<script src="/js/buildlist.js?scripts=/js/search/jquery.Search.js,/js/search/jquery.fancySelect2.min.js,/js/min/search_app.min.js,/js/jqueryui/components/autocomplete.min.js"></script>
 	{literal}
 		<script>
 			jQuery(document).ready(function($) {
 				var search = new ClientSearch('refineSearchFormElement', false, false, false);
 				search.initRefineSearch();
+				
 				// instantiate fancybox here by itself so we can use the fancybox group for the next/prev buttons.
 				$('a.quickview-fancybox').fancybox({
 					title: '',

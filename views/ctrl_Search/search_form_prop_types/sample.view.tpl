@@ -296,7 +296,7 @@
 						<li class="span3">
 							<label class="radio" title="Show Open Houses for this weekend">
 								<input{if ($search_narrowers.from == $open_house_dates.weekend_check) || ($dict_from == $open_house_dates.weekend_check)} checked="checked"{/if} title="Show Open Houses for this weekend" name="from" type="radio" value="{$open_house_dates.sat_time|date_format:'%Y-%m-%d'}|{$open_house_dates.sun_time|date_format:'%Y-%m-%d'}">
-								Both Day
+								Both Days
 							</label>
 						</li>
 					{else}

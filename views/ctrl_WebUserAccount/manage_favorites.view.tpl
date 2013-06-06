@@ -84,7 +84,7 @@
                                             <a id="ChangeCategory_{$property->company_property_id}" data-fancybox-type="iframe" data-fancybox-height="250" data-fancybox-width="500" href="/popup/{$ACTION_URLS.local_root}/transfer_favorite_form/{$property->company_property_id}/{$category->category_id}">Change Property Category</a>
                                         </div>
                                         <form method="post" action="">
-                                            <select class="span12" data-account-action="openCTA" data-name="{$property->getStreetAddress()|clean_address}" data-property="{$property->company_property_id}">
+                                            <select class="span12" data-account-action="openCTA" data-name="{$property->getStreetAddress()|clean_for_attribute}" data-property="{$property->company_property_id}">
                                                 <option>I want to...</option>
                                                 <option value="RequestInfo">Request Additional Information</option>
                                                 <option value="Showing">Request a Showing</option>

@@ -120,8 +120,7 @@ jQuery(document).ready(function ($) {
 				{
 					fancyboxType: 'ajax',
 					fancyboxWidth: 780,
-					fancyboxHeight: 'auto',
-					fancyboxPadding: 0
+					fancyboxHeight: 'auto'
 				}, 
 				'', 
 				function() {

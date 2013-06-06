@@ -22,7 +22,7 @@
 		</div>
 	</div>
 	<div id="footerCopyright">
-		<p>&copy;{$smarty.now|date_format:"%Y"} NPDodge. All rights reserved.</p>
+		<p>&copy;{$smarty.now|date_format:"%Y"} &lt;COMPANY NAME&gt;. All rights reserved.</p>
 	</div>
 	{$PAGE_FOOTER}
 </body>

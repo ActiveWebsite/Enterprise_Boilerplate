@@ -221,6 +221,8 @@
     
     {* load actions *}
     <script src="/js/min/actions.min.js"></script>
+
+    {render_dropin dropin="PropertyBin"}
   
     {$PAGE_FOOTER}
 

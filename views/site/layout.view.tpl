@@ -73,7 +73,6 @@
           </div>
         </div>
       </div>
-      <hr>
     </header>
     <div class="container">
       {if $USE_FULL_LAYOUT_FLAG || $isHomePage || ($controller_obj instanceof ctrl_Property) || ($controller_obj && $controller_obj instanceof ctrl_Search && !$search_form_flag && $smarty.request.view != search_form)}
@@ -151,11 +150,13 @@
           </div>
         </div>
       {/if}
-    </div>
-    {include file="$view_path/footers/company_footer.inc.tpl"}
+      {include file="$view_path/footers/company_footer.inc.tpl"}
+    </div>    
     <footer id="sticky-footer">
       <div class="container">
-        footer
+        <div class="sticky-footer-inner">
+          Sticky Footer
+        </div>
       </div>
     </footer>
     {if !$current_account_user}
@@ -222,7 +223,9 @@
     
     {* load actions *}
     <script src="/js/min/actions.min.js"></script>
-  
+    
+    {render_dropin dropin="PropertyBin"}
+
     {$PAGE_FOOTER}
 
     {$GA_CODE->getCode($SITE_OWNER)}

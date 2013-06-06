@@ -28,7 +28,9 @@
 <script>
 jQuery(document).ready(function($) {
 	if ($.fn.validate) {
-		$('form.validate-form').validate();
+		$('form.validate-form').each(function () {
+			$(this).validate();
+		});
 	}
 });
 </script>

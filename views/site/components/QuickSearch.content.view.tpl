@@ -1,12 +1,12 @@
-<form action="{$ACTION_URLS.search}url_search/" class="quick-search-component quick-search-component-content">
+<form action="{$ACTION_URLS.search}url_search/" class="quick-search-component quick-search-component-content margin-0">
 	<h3>Quick Search</h3>
 	<fieldset class="clearfix">
-		<div class="row-fluid margin-bottom-15">
+		<div class="row-fluid margin-bottom-10">
 			<div class="span12">
 				<input class="span12" id="qs_field_01" type="text" value="" placeholder="Address, Zip Code or MLS#" name="AddressAndLoc">
 			</div>
 		</div>
-		<div class="row-fluid margin-bottom-15">
+		<div class="row-fluid margin-bottom-10">
 			<div class="span12">
 				<label for="qs_field_02">Property Type</label>
 				<select class="span12" id="qs_field_02" title="Select Property Type" name="Property_Type">
@@ -18,7 +18,7 @@
 				</select>   
 			</div>
 		</div>
-		<div class="row-fluid margin-bottom-15">
+		<div class="row-fluid margin-bottom-10">
 			<div class="span5-half">
 				<label for="qss-field-03">Price Range</label>
 				<select id="qss-field-03" class="span12" name="Min_Price">
@@ -44,7 +44,7 @@
 				</select>
 			</div>
 		</div>
-		<div class="row-fluid margin-bottom-15">
+		<div class="row-fluid margin-bottom-5">
 			<div class="span6">
 				<label for="qs_field_04">Beds</label>
 				<select id="qs_field_04" class="span12" title="Select Bedrooms" name="Bedrooms">

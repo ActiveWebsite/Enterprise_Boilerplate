@@ -1,0 +1,83 @@
+// POI MAP
+// --------------------------------------------------
+#poi-map-element {
+	.poi-map-div {
+		height: 384px;
+		width: 100%;
+	}
+	.poi_search {
+		form {
+			margin: 0;
+			input {
+				margin-bottom: 0;
+			}
+		}
+		margin-top: 10px;
+		p {
+			margin: 0 2.5% 0 0;
+			padding: 0;
+			float: left;
+			width: 31.6666%;
+			input {
+				width: 80%;
+			}
+		}
+		p.last-child {
+			margin-right: 0;
+			button {
+				margin-top: 20px;
+			}
+		}
+		label {
+			font-weight: bold;
+			display: block;
+		}
+	}
+	.poi-results-wrapper {
+		h2 {
+			margin: 0;
+		}
+		.poi-results {
+			margin-top: 10px;
+			p {
+				.muted();
+			}
+		}
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			max-height: 200px;
+			overflow-y: auto;
+		}
+		li.poi-item {
+			border-bottom: 1px solid @grayLighter;
+			padding: 5px;
+			span {
+				display: inline-block;
+				width: 30px;
+			}
+			&:hover {
+				background-color: @grayLighter;
+			}
+		}
+	}
+	.placeInfoBubble {
+		width: 250px;
+		span {
+			display: block;
+		}
+		.placeName {
+			font-weight: bold;
+		}
+		.placeAddress {
+
+		}
+		.placePhone {
+
+		}
+		.placeInfoUrl {
+
+		}
+	}
+}

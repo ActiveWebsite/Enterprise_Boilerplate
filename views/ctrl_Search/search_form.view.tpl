@@ -76,9 +76,9 @@
 				</div>
 				<div class="span2">
 					{if $save_button}
-						<input type="submit" title="Search" value="Save">
+						<input type="submit" title="Search" value="Save" class="btn btn-block">
 					{else}
-						<input type="submit" class="btn" value="Search" title="Search">							
+						<input type="submit" class="btn btn-block" value="Search" title="Search">							
 					{/if}
 				</div>
 			</fieldset>

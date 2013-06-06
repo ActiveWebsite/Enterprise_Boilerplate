@@ -1,15 +1,18 @@
+{assign var=view_id value=$smarty.now}
 {if $properties}
-    <ul class="unstyled" id="my-property-carousel-1">
+    <ul class="unstyled jcarousel-skin-standard-property" id="my-property-carousel-{$view_id}">
         {foreach from=$properties item=property key=index}
             <li class="standard-property">
-                <div class="prop-photo">
-                    <a href="/property/{$property.company_property_id}{if $property.address_display_bit}/{$property.fullStreetAddress|clean_address}{/if}" title="View property{if $property.address_display_bit} at {$property.fullStreetAddress|clean_address}{/if}">
-                        <img src="{$property.first_pic->getUrl()}/crop/270,180/" title="Photo of {if $property.address_display_bit}{$property.fullStreetAddress|clean_address}{/if}">
-                    </a>
-                </div>
+                {if $property.first_pic instanceof PropertyPicture}
+                    <div class="prop-photo">
+                        <a href="/property/{$property.company_property_id}/{$property.fullStreetAddress|clean_for_url}" title="View property at {$property.fullStreetAddress|clean_for_attribute}">
+                            <img src="{$property.first_pic->getUrl()}/crop/270,180/" title="Photo of {$property.fullStreetAddress|clean_for_attribute}">
+                        </a>
+                    </div>
+                {/if}
                 <h3>
-                    <a href="/property/{$property.company_property_id}{if $property.address_display_bit}/{$property.fullStreetAddress|clean_address}{/if}" title="View property{if $property.address_display_bit} at {$property.fullStreetAddress|clean_address}{/if}">
-                        {if $property.address_display_bit}{$property.fullStreetAddress}{else}Property Details{/if}
+                    <a href="/property/{$property.company_property_id}/{$property.fullStreetAddress|clean_for_url}" title="View property at {$property.fullStreetAddress|clean_for_attribute}">
+                        {$property.fullStreetAddress}
                     </a>
                 </h3>
                 <p>
@@ -40,12 +43,12 @@
     <script>
         jQuery(document).ready(function($) {
             // load carousel 
-            $('#my-property-carousel-1').jcarousel();
+            $('#my-property-carousel-{/literal}{$view_id}{literal}').jcarousel();
             // find any property bin items
             $('#property-bin-container').propertyBin('resampleBin');
             // persiste any favorite links
             if (typeof _checkForFavorites === 'function') {
-                _checkForFavorites($('#my-property-carousel-1 a.addFavorite'));
+                _checkForFavorites($('#my-property-carousel-{/literal}{$view_id}{literal} a.addFavorite'));
             }            
         });
     </script>
