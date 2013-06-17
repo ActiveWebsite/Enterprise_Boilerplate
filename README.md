@@ -19,13 +19,16 @@ Step 2: Company Configuration
 -----------------------------
 
 You need to set several configs for the company. Below is the query to get the company's current configs:
-  select * from enterprise.company_config where company_id=<commpany id>;
+
+	select * from enterprise.company_config where company_id=<commpany id>;
 
 * company_id = <commpany id>, config_type_id = 19, config_type_value = (blank value) (this removes all the old sidebar component rendering)
 * company_id = <commpany id>, config_type_id = 32, config_type_value = (blank value) (this removes all the old sidebar component rendering for rebrands)
 
 You need to set several configs for the company address info. Below is the query to get the company's current address info:
+	
 	select * from company_address_info where user_id=<commpany id>;
+	
 * user_id = <commpany id>, address_info_type_id = 6, subtype = Lat_Long, value = POINT(long lat), hidden = 0
 * user_id = <commpany id>, address_info_type_id = 6, subtype = Zoom, value = 11, hidden = 0
 
