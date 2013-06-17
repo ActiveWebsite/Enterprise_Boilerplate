@@ -1,7 +1,7 @@
 This is the boiler plate for setting up an enterprise site.
 ===========================================================
 
-*See R&D for questions and help.
+*See R&D for questions and help.*
 
 Step 1: Configuring the Clients app.conf.php files
 --------------------------------------------------
@@ -41,7 +41,7 @@ You can get the current menu for your client with this query
 
 If you do not have a menu, You can build out a new one using the basic menu below.
 
-*Make sure you replace the <commpany id> ind the sql below with the correct company id for your app.
+*Make sure you replace the <commpany id> ind the sql below with the correct company id for your app.*
 
 	insert into `menu_item` (`name`, `uri`, `img_src`, `order_id`, `parent_id`, `action`, `owner_id`, `default_child_id`, `blurb`, `blurb_img_src`, `cms_page_id`, `rich_content_id`, `rich_content_owner`, `rich_content_owner_type`, `cms_owner_flag`, `hide_flag`, `inherited_from`, `inherited_source`, `receive_updates`, `has_children`, `height`, `can_be_inherited`, `can_be_altered`, `title_tag`, `meta_keywords`, `meta_description`, `seo_prepend`, `version_number`) values('Search','/search/',NULL,'1',NULL,'/ctrl_Search/','<commpany id>',NULL,'',NULL,NULL,NULL,'0',NULL,'0','0','0',NULL,'0','2','1','1','0','Search','','','0','0');
 	insert into `menu_item` (`name`, `uri`, `img_src`, `order_id`, `parent_id`, `action`, `owner_id`, `default_child_id`, `blurb`, `blurb_img_src`, `cms_page_id`, `rich_content_id`, `rich_content_owner`, `rich_content_owner_type`, `cms_owner_flag`, `hide_flag`, `inherited_from`, `inherited_source`, `receive_updates`, `has_children`, `height`, `can_be_inherited`, `can_be_altered`, `title_tag`, `meta_keywords`, `meta_description`, `seo_prepend`, `version_number`) values('Contact','/contact/',NULL,'2',NULL,'/ctrl_Contact/','<commpany id>',NULL,'',NULL,NULL,NULL,'0',NULL,'0','0','0',NULL,'0','1','1','1','0','Contact','','','0','0');
