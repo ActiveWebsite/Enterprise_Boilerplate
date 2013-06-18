@@ -9,7 +9,7 @@ Adding Layouts to the Database
 
 Find current layouts:
 
-	select * from enterprise.rebrand_layout where company_id=``<company_id>``;
+	select * from enterprise.rebrand_layout where company_id=\`<company_id>\`;
 
 Find current sub layouts (home pages):
 	
