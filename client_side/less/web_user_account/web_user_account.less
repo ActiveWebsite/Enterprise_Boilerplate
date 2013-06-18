@@ -36,9 +36,11 @@ form.webUserAccountFormXXLARGE{
 
 /* Popup Forms */
 .popupBody {
-    padding: 20px; 
+    padding: 0; 
     h1 {
-        margin-bottom:20px;
+        line-height: normal;
+        margin: 0 0 20px 0;
+        font-style: 20px;
     }
     .popupPhone {
         display:inline-block;
@@ -50,6 +52,18 @@ form.webUserAccountFormXXLARGE{
         padding-top:15px;
         .popupFooterLogo {
             max-width: none;
+        }
+    }
+    // fix for grid in lighboxes
+    .row-fluid {
+        div.span6 {
+            display: block;
+            float: left;
+            width: 48.717948717948715%;
+            margin-left: 2.564102564102564%;
+        }
+        div.span6:first-child {
+            margin-left: 0;
         }
     }
 }

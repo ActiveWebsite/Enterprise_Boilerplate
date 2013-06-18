@@ -35,7 +35,7 @@
 		
 		<hr>
 		
-		<ul class="unstyled row-fluid thumbnails margin-bottom-0">
+		<ul class="row-fluid thumbnails margin-bottom-0">
 			{if count($properties) > 0}
 			    {foreach item=property from=$properties key=index}
 			    	<li class="span4 standard-property{if $index%3==0} first-in-row{/if}">
@@ -72,7 +72,7 @@
 							<a href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property->company_property_id}" data-property-id="{$property->company_property_id}" class="addFavorite addFavoriteButton{if $is_fav} removeFavorite{/if}" target="_blank" rel="nofollow" title="{if $is_fav}Remove from{else}Add to{/if} Favorites">
 								{if $is_fav}Remove from{else}Add to{/if} Favorites
 							</a>
-							<a href="#{$property->company_property_id}" data-property-id="{$property->company_property_id}" class="property-bin-add" title="Add to Bin">
+							<a href="#{$property->company_property_id}" data-property-id="{$property->company_property_id}" class="property-bin-add property-bin-button" title="Add to Bin">
 								Add to Bin
 							</a>
 						</div>

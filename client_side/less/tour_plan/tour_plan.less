@@ -1,0 +1,123 @@
+#tour_map_div {
+	width: 100%;
+	height: 500px;
+}
+#tour_map_start_form {
+	label {
+		margin-bottom: 2px;
+	}
+}
+#currentTourPropertyWrapper {
+	ul li {
+		border-bottom: 1px solid @grayLighter;
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+	}
+	ul li:last-child {
+		border-bottom-color: transparent;
+	}
+	p {
+		margin: 0;
+	}
+}
+#tourRightColumn {
+	.printButtonTrigger, 
+	.tour-email-button,
+	.getDirectionsButton {
+		.btn();
+		margin-top: 0;
+	}
+}
+#printViewHeader {
+	display: none;
+}
+#tour_map_directions {
+	margin-top: 20px;
+	.tourLeg {
+		page-break-inside: avoid;
+	}
+	.tourLegStart {
+		border-bottom: 2px solid @grayLighter;
+		padding: 5px 0;
+		.printButtonTrigger {
+
+		}
+		.tourLegIcon {
+			float: left;
+			margin-right: 10px;
+		}
+		.tourLegAddress {
+			float: left;
+			margin-top: 6px;
+		}
+	}
+	.tourLegSteps {
+		border-bottom: 1px solid @grayLighter;
+		display: table;
+		width: 100%;
+		padding: 5px 0;
+		.tourLegStepNumber {
+			display: table-cell;
+			width: 5%;
+		}
+		.tourLegStepsDirections {
+			display: table-cell;
+			width: 80%;
+		}
+		.tourLegStepsDistance {
+			display: table-cell;
+			width: 15%;
+			text-align: right;
+		}
+	}
+	.tourLegSummary {
+		padding: 5px 0;
+		text-align: right;
+		margin-bottom: 15px;
+		border-bottom: 1px solid @grayLighter;
+	}
+	.tourLegEnd {
+		border-bottom: 2px solid @grayLighter;
+		padding: 5px 0;
+		width: 100%;
+		.tourLegIcon {
+			float: left;
+			margin-right: 10px;
+		}
+		.tourLegAddress {
+			img {
+				float: right;
+			}
+		}
+		.dirAddressMeta {
+			float: left;
+		}
+		.dirAddress {
+			display: block;
+			font-weight: bold;
+		}
+		.dirCityState {
+			display: block;
+		}
+		.dirMeta {
+			display: block;
+		}
+	}
+	.tourLastLegText {
+		font-weight: bold;
+		font-size: 14px;
+		display: block;
+	}
+	.googleCopyRight {
+		font-style: italic;
+	}
+}
+
+@media print {
+	#tourRightColumn {
+		.printButtonTrigger, 
+		.tour-email-button {
+			display: none;
+		}
+	}
+}

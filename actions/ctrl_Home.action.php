@@ -7,9 +7,12 @@ class ctrl_Home extends BASE_ctrl_Home {
 	 */
 	protected function __default()
 	{
+		loadModel('search/Search');
 		$args = func_get_args();
 		$this->elements['PAGE_SIDEBARS']['default'] = null;
-		$tpl_args = array();
+		$tpl_args = array(
+			'property_count' => Search::TotalPropertyCount(),
+		);
 		$renderer = $this->getSmarty();
 		if ( self::$isMobile ) {
 			$this->layout = getView('site', 'mobile', 'tpl');

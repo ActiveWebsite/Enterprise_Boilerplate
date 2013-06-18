@@ -2,7 +2,7 @@
 // --------------------------------------------------
 
 
-// Header Styles
+// HEADER STYLES
 // --------------------------------------------------
 h1 {
 
@@ -137,7 +137,7 @@ form .radio {
 
 // CMS PAGE STYLES
 // --------------------------------------------------
-.cmspage {
+.cms-page {
 
 }
 
@@ -148,17 +148,93 @@ form .radio {
 
 }
 .web-user-account-component-content {
-	margin-top: 30px;
+	margin-bottom: 30px;
 }
+
+
+// SIDEBAR NAVIGATION STYLE
+// --------------------------------------------------
+#sidebar-main-nav-list {
+	margin-bottom: 30px;
+	h2 {
+		margin: 0;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+	ul li {
+		margin: 0;
+	}
+	ul li a {
+		padding: 3px 10px;
+		margin: 0;
+		text-shadow: none;
+		display: block;
+	}
+	ul li a:hover {
+		background: @grayLighter;
+		color: @black;
+		text-decoration: none;
+	}
+	ul li a.sub_active_link {
+		background: @grayLighter;
+	}
+	ul li ul li a {
+		padding: 3px 10px 3px 20px;
+	}
+	ul li ul li ul li a {
+		padding: 3px 10px 3px 30px;
+	}
+}
+
 
 // QUICK SEARCH STYLES
 // --------------------------------------------------
 .quick-search-component {
-
+	.box-sizing(border-box);
+	position: relative;
+	.nav-tabs {
+		margin-bottom: 10px;
+	}
 }
 .quick-search-component-content {
-	margin-top: 30px;
+	margin-bottom: 30px;
 }
+.quick-search-extra-close {
+	margin-top: -17px;
+	margin-right: -14px;
+}
+.quick-search-extra-section {
+	position: absolute;
+	.box-sizing(border-box);
+	h4 {
+		margin: 0;
+	}
+	input {
+		margin-bottom: 0;
+	}
+}
+.quick-search-extra-content-section {
+	padding: 20px;
+	border: 1px solid @grayLighter;
+	.box-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+	background: @white;
+	top: 38px;
+	right: -280px;
+	width: 265px;
+}
+// move more options on small screens
+@media (max-width: 767px) {
+	.quick-search-extra-content-section {
+		width: 100%;
+		top: 20%;
+		right: 0;
+		left: 0;
+	}
+}
+
 
 // STANDARD PROPERTY
 // --------------------------------------------------
@@ -189,7 +265,9 @@ form .radio {
 	}
 }
 
+
 // view all block for search components
+// --------------------------------------------------
 .search-component-view-all {
 	text-align: center;
 	border-top: 1px solid @grayLighter;
@@ -204,6 +282,34 @@ form .radio {
 }
 
 
+// ADD TO FAVORITE BUTTON
+// --------------------------------------------------
+.addFavoriteButton {
+	.hide-text();
+	display: inline-block;
+	vertical-align: bottom;
+	background: url(/images/sprite-icons.png) 0 0 transparent;
+	.square(16px);
+	padding: 1px 0;
+}
+.addFavoriteButton.removeFavorite {
+	background-position: -40px 0;
+}
+
+
+// ADD TO PROPERTY BIN BUTTON
+// --------------------------------------------------
+.property-bin-button {
+	.hide-text();
+	display: inline-block;
+	vertical-align: bottom;
+	background: url(/images/sprite-icons.png) -80px 0 transparent;
+	.square(16px);
+	padding: 1px 0;
+}
+.property-bin-button.property-bin-remove {
+	background-position: -120px 0;
+}
 
 
 // JCAROUSEL

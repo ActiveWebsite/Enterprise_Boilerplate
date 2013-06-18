@@ -7,5 +7,5 @@
 		<li>Enjoy faster searching with saved searches</li>
 		<li>Login using Google or Facebook accounts</li>
 	</ul>
-	<a href="{$ACTION_URLS.account}signup" data-action="account-register" class="btn btn-primary btn-block">Create Account</a>
+	<a href="{$ACTION_URLS.account}signup" data-action="account-register" class="btn btn-block">Create Account</a>
 </div>

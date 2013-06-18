@@ -24,10 +24,10 @@
                     <a href="/property/property_details_quick_view/{$property.company_property_id}" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-mini">
                         Quick View
                     </a>
-                    <a href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property.company_property_id}" data-property-id="{$property.company_property_id}" class="addFavorite" target="_blank" rel="nofollow" title="Add to Favorites">
+                    <a href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property.company_property_id}" data-property-id="{$property.company_property_id}" class="addFavorite addFavoriteButton" target="_blank" rel="nofollow" title="Add to Favorites">
                         Add to Favorites
                     </a>
-                    <a href="#{$property.company_property_id}" data-property-id="{$property.company_property_id}" class="property-bin-add" title="Add to Bin">
+                    <a href="#{$property.company_property_id}" data-property-id="{$property.company_property_id}" class="property-bin-add property-bin-button" title="Add to Bin">
                         Add to Bin
                     </a>
                 </div>
@@ -36,7 +36,7 @@
     </ul>
     {if $search_url}
         <div class="search-component-view-all">
-            <a href="{$search_url}" title="View All">View All</a>
+            <a href="{$ACTION_URLS.search}{$search_url}" title="View All">View All</a>
         </div>
     {/if}
     {literal}

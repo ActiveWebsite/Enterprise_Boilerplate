@@ -22,7 +22,7 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="/css/company_styles.min.css">
+    <link rel="stylesheet" href="/css/company_styles.min.css?v={$smarty.now}">
 
     {$JQUERY_HEADER}
     
@@ -31,7 +31,7 @@
   <body class="{$browser_info.browser_css_class}">
     <header id="site-header">
       <div class="container">
-        <div class="acccount-user-block">
+        <div class="acccount-user-block hidden-print">
           {if $current_account_user && $current_account_user.name}
             Welcome, {render_component component="Dropin_CurrentUserName"} <a href="{$ACTION_URLS.account}" data-action="account-nav">My Account</a>
           {else}
@@ -104,8 +104,7 @@
         </div>
       {else}
         <div class="row-fluid">
-          <div class="span3 site-sidebar">
-            <h2>Sidebar</h2>
+          <div class="span3 site-sidebar hidden-print">
             {$PAGE_COMPONENTS.CMSMenu_Component}
             {render_component component="QuickSearch"}
             {render_component component="Account"}
@@ -143,7 +142,7 @@
               </div>
             {/if}
             {if $controller_obj && $controller_obj instanceOf ctrl_Home}
-              <div class="cmspage">{$PAGE_YIELD}</div>
+              <div class="cms-page">{$PAGE_YIELD}</div>
             {else}
               {$PAGE_YIELD}
             {/if}
@@ -152,10 +151,10 @@
       {/if}
       {include file="$view_path/footers/company_footer.inc.tpl"}
     </div>    
-    <footer id="sticky-footer">
+    <footer id="sticky-footer" class="hidden-print">
       <div class="container">
-        <div class="sticky-footer-inner">
-          Sticky Footer
+        <div class="sticky-footer-inner clearfix">
+          <a href="#" class="property-bin-toggle pull-right">Property Bin <span class="property-bin-count"></span></a>
         </div>
       </div>
     </footer>
@@ -224,7 +223,7 @@
     {* load actions *}
     <script src="/js/min/actions.min.js"></script>
     
-    {render_dropin dropin="PropertyBin"}
+    {render_dropin dropin="PropertyBin" bootstrap=true propsInRow=3 addBootstrapDropdown=true}
 
     {$PAGE_FOOTER}
 

@@ -1,0 +1,39 @@
+// SITE SEARCH STYLES
+// --------------------------------------------------
+#site-search-page {
+	.site-search-current-terms {
+		background: none;
+		padding: 0;
+
+		.site-search-remove-facet a {
+			color: @red;
+		}
+	}
+	.site-search-showing {
+		margin: 0;
+		padding-top: 5px;
+	}
+	.site-search-item {
+		.site-search-item-top {
+			margin-bottom: 10px;
+		}
+		.site-search-score {
+			float: right;
+			.badge();
+			.badge-info();
+		}
+		.site-search-item-title {
+			font-size: 16px;
+		}
+		p {
+			margin: 0;
+		}
+		p.site-search-text {
+			margin-bottom: 10px;
+		}
+		.site-search-facet-highlight {
+			.label();
+			.label-warning();
+		}
+	}
+}

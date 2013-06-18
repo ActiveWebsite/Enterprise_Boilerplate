@@ -52,45 +52,41 @@
 			{/if}
 			<fieldset>
 		        <div class="row-fluid">
-		            <div class="span6">
+		            <div class="control-group span6">
 						<label for="contact_form_firstname">First Name <span class="red">*</span></label>
 						<input type="text" id="contact_form_firstname" name="first_name" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}" class="required span12">
 					</div>
-		            <div class="span6">
+		            <div class="control-group span6">
 						<label for="contact_form_lastname">Last Name <span class="red">*</span></label>
 						<input type="text" id="contact_form_lastname" name="last_name" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}" class="required span12">
 					</div>
 				</div>
 		        <div class="row-fluid">
-		            <div class="span6">
+		            <div class="control-group span6">
 						<label for="contact_form_email">Email<span class="red">*</span></label>
 						<input type="email" name="email_confirm" id="contact_form_email" placeholder="Enter Email Address" class="required email span12" value="{if $contactor ne false}{$contactor->email}{/if}">
 						<input type="text" style="display:none;" value="" name="email">
 					</div>
-		            <div class="span6">
+		            <div class="control-group span6">
 						<label for="contact_form_phone">Phone</label>
 						<input name="phone" value="" type="text" placeholder="Enter Phone" class="span12" id="contact_form_phone">
 					</div>
 				</div>
 		        <div class="row-fluid">
-		            <div class="span12">
+		            <div class="control-group span12">
 						<label for="contact_form_message">Message<span class="red">*</span></label>
-						<textarea name="message" rows="3" placeholder="Message" class="required span12" id="contact_form_message"></textarea>
+						<textarea name="message" rows="3" cols="25" placeholder="Message" class="required span12" id="contact_form_message"></textarea>
 					</div>
 				</div>
-		        <div class="row-fluid">
-		            <div class="span12">
-						{if $smarty.request.return}
-							<input name="returnToRef" value="{$smarty.request.return}" type="hidden">
-						{else}
-							<input name="returnToRef" value="/popup{$ACTION_URLS.contact}" type="hidden">
-						{/if}
-						{if isset($smarty.request.send_to) && !empty($smarty.request.send_to)}
-							<input name="send_to" value="{$smarty.request.send_to}" type="hidden">
-						{/if}				
-						<input type="submit" title="Send" value="Send" class="btn btn-primary upper pull-left margin-top-10">
-					</div>
-				</div>
+				{if $smarty.request.return}
+					<input name="returnToRef" value="{$smarty.request.return}" type="hidden">
+				{else}
+					<input name="returnToRef" value="/popup{$ACTION_URLS.contact}" type="hidden">
+				{/if}
+				{if isset($smarty.request.send_to) && !empty($smarty.request.send_to)}
+					<input name="send_to" value="{$smarty.request.send_to}" type="hidden">
+				{/if}				
+				<input type="submit" title="Send" value="Send" class="btn margin-top-10">
 			</fieldset>
 		</form>
 		{if $return_info.lifestyleSearch == "true"}

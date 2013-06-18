@@ -1,6 +1,6 @@
 <div class="row-fluid">
 	<form method="post" action="{$ACTION_URLS.search}" class="span3 margin-bottom-0">
-		<label>Sort By:</label>
+		<label class="bold margin-bottom-0">Sort By:</label>
 		<select class="SearchSortFields span12 margin-0">
 			<option value="list_price"{if $last_order_by eq "list_price"} selected="selected"{/if}>Price (Low to High)</option>
 			<option value="list_price/descending"{if $last_order_by eq "list_price/descending"} selected="selected"{/if}>Price (High to Low)</option>
@@ -14,23 +14,30 @@
 			{/if}
 		</select>
     </form>
-	<form method="post" action="{$ACTION_URLS.search}" class="span2 margin-bottom-0">
-		<label class="bold">Per Page:</label>
-		<select class="PageCountNumber span12 margin-0">
-			 <option value="12"{if $page_manager_obj->get_count() eq 12} selected="selected"{/if}>12</option>
-			 <option value="24"{if $page_manager_obj->get_count() eq 24} selected="selected"{/if}>24</option>
-			 <option value="36"{if $page_manager_obj->get_count() eq 36} selected="selected"{/if}>36</option>
-			 <option value="48"{if $page_manager_obj->get_count() eq 48} selected="selected"{/if}>48</option>
-		</select>        
-	</form>
-	<div class="span3">
-		{if $is_account_user}
-			<a href="{$ACTION_URLS.search}save_last_search/2" rel="nofollow" target="action_iframe" title="Save Search">Save this Search</a>
-		{else}
-			<a href="{$ACTION_URLS.account}" data-action="account-login" title="Login To Save Search">Save this Search</a>
-		{/if}
+    <div class="span5">
+	    <div class="row-fluid">
+			<form method="post" action="{$ACTION_URLS.search}" class="span3 margin-bottom-0">
+				<label class="bold margin-bottom-0">Per Page:</label>
+				<select class="PageCountNumber span12 margin-0">
+					 <option value="12"{if $page_manager_obj->get_count() eq 12} selected="selected"{/if}>12</option>
+					 <option value="24"{if $page_manager_obj->get_count() eq 24} selected="selected"{/if}>24</option>
+					 <option value="36"{if $page_manager_obj->get_count() eq 36} selected="selected"{/if}>36</option>
+					 <option value="48"{if $page_manager_obj->get_count() eq 48} selected="selected"{/if}>48</option>
+				</select>        
+			</form>
+			<div class="span9 padding-left-10">
+				<label>&nbsp;</label>
+				<a href="#" class="property-bin-toggle pull-right">Property Bin <span class="property-bin-count"></span></a>
+				{if $is_account_user}
+					<a href="{$ACTION_URLS.search}save_last_search/2" rel="nofollow" target="action_iframe" title="Save Search">Save this Search</a>
+				{else}
+					<a href="{$ACTION_URLS.account}" data-action="account-login" title="Login To Save Search">Save this Search</a>
+				{/if}
+			</div>
+		</div>
 	</div>
 	<div class="span4 search-results-paging">
+		<label>&nbsp;</label>
 		{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1)) ne false}
 			<a href="{$page_manager_obj->get_first_page_url()}" title="First Page" class="search-results-paging-first">First</a>
 		{/if}

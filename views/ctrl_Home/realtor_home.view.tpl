@@ -1,16 +1,7 @@
-<div id="home-page-gallery-quick-search">
-	<div class="row-fluid">
-		<div class="span12 hidden-phone">
-			{render_dropin dropin="SlideShowNav" fallback=true}
-		</div>
-	</div>
-	<div class="row-fluid">
-		<div class="span3" id="home-page-quick-search">
-			{render_component component="QuickSearch"}
-		</div>
-	</div>
+<div class="relative">
+	{render_dropin dropin="SlideShowNav" fallback=true}
+	{render_component component="QuickSearch"}
 </div>
-<hr>
 <div class="row-fluid">
 	<div class="span9" id="home-page-tabs">
 		<ul class="nav nav-tabs">
@@ -120,7 +111,7 @@
 
 <footerargs>
 {* load the scripts that you need that are not already on the page *}
-<script src="/js/buildlist.js?scripts=/js/tabs/jquery.jtabs.min.js,/js/galleries/jquery.cycle.js"></script>
+<script src="/js/buildlist.js?scripts=/js/galleries/jquery.cycle2.min.js,/js/carousels/jquery.jcarousel.min.js"></script>
 {literal}
 <script>
 jQuery(document).ready(function($) {
@@ -139,12 +130,6 @@ jQuery(document).ready(function($) {
 			}
 		}
 	});
-	// homepage slideshow
-	$('#home-page-gallery').cycle({
-		pause: 1,
-		pager: '#home-page-gallery-pager'
-	});
-
 });
 </script>
 {/literal}

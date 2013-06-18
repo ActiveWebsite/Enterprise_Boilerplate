@@ -10,26 +10,28 @@
 	<h1 class="page-heading">{$development.name}</h1>
 	<div class="row-fluid">
 		<div class="span9 margin-bottom-30">
-			<div class="gallery-widget" id="development-gallery">
-				<div class="gallery-widget-main-photo-wrapper">
-					{foreach from=$development.pics item=photo key=index}
-						{if $index == 0}
-							<img src="{$photo.url}/maxwidth/647" alt="Main Photo">
-						{/if}
-					{/foreach}
+			{if $development.pics}
+				<div class="gallery-widget" id="development-gallery">
+					<div class="gallery-widget-main-photo-wrapper">
+						{foreach from=$development.pics item=photo key=index}
+							{if $index == 0}
+								<img src="{$photo.url}/maxwidth/647" alt="Main Photo">
+							{/if}
+						{/foreach}
+					</div>
+					<div class="gallery-widget-navigation clearfix">
+						<a href="#" class="gallery-widget-next" title="Next">Next &gt;</a>
+						<a href="#" class="gallery-widget-prev" title="Previous">&lt; Prev</a>
+					</div>
+					<ul class="gallery-widget-carousel">
+						{foreach from=$development.pics item=photo key=index}
+							<li>
+								<img src="{$photo.url}/crop/130,90" alt="Development Thumbnail">
+							</li>
+						{/foreach}
+					</ul>
 				</div>
-				<div class="gallery-widget-navigation clearfix">
-					<a href="#" class="gallery-widget-next" title="Next">Next &gt;</a>
-					<a href="#" class="gallery-widget-prev" title="Previous">&lt; Prev</a>
-				</div>
-				<ul class="gallery-widget-carousel">
-					{foreach from=$development.pics item=photo key=index}
-						<li>
-							<img src="{$photo.url}/crop/130,90" alt="Development Thumbnail">
-						</li>
-					{/foreach}
-				</ul>
-			</div>
+			{/if}
 		</div>
 		<div class="span3">
 			<address>
@@ -66,7 +68,7 @@
 	</div>
 </div>
 <footerargs>
-<script src="/js/buildlist.js?scripts=/js/tabs/jquery.jtabs.min.js,/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js"></script>
+<script src="/js/buildlist.js?scripts=/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js"></script>
 {literal}
 <script>
 	jQuery(document).ready(function($){

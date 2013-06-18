@@ -1,4 +1,4 @@
-// OVERRIDE BOOJSTRAP PROPERTIES IN HERE
+// OVERRIDE BOOJSTRAP PROPERTIES AND COMPONENTS IN HERE
 // --------------------------------------------------
 
 
@@ -9,28 +9,22 @@
 }
 
 
-// clearfix for thumbnails
-ul.thumbnails li.first-in-row {
-	clear:left;
-}
+// THUMBNAILS BOTTOM MARGIN
+// --------------------------------------------------
 ul.thumbnails > li {
 	margin-bottom: 30px;
 }
 
 
-// FIX FOR IE THUMBNAIL LISTS
+// OVERRIDE FOR PROPERTY BIN COMPONENT GOES HERE
 // --------------------------------------------------
-body.browser_lt_ie_9 ul.thumbnails {
-	margin-left: -26px;
-	width: 104.56%;
-	li.span4 {
-		width: 275px; 
-		margin: 0 0 30px 26px;
-	}
-	li.span6 {
-		width: 422px; 
-		margin: 0 0 30px 26px;
-	}
+
+
+
+// OVERRIDE FOR DRIVING TOUR (TOUR PLAN) GOES HERE
+// --------------------------------------------------
+#property-bin-default-open-button {
+	display: none;
 }
 
 
@@ -45,18 +39,18 @@ body.browser_lt_ie_9 ul.thumbnails {
 	body {
 		padding: 0;
 		margin: 0;
-		&:before {
-			content: "Less than 1200 grid & landscape tablets";
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 300000;
-			color: black;
-			background: white;
-			padding: 4px;
-			.border-radius(0 0 5px 0);
-			.box-shadow(0 0 10px 2px #000);
-		}
+	}
+	body.dev-environment:before {
+		content: "@media max-width: 1199px (only visible on dev)";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 300000;
+		color: black;
+		background: white;
+		padding: 4px;
+		.border-radius(0 0 5px 0);
+		.box-shadow(0 0 10px 2px #000);
 	}
 }
 
@@ -71,18 +65,18 @@ body.browser_lt_ie_9 ul.thumbnails {
 	body {
 		padding: 0;
 		margin: 0;
-		&:before {
-			content: "Tablets and small desktops only";
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 300000;
-			color: black;
-			background: white;
-			padding: 4px;
-			.border-radius(0 0 5px 0);
-			.box-shadow(0 0 10px 2px #000);
-		}
+	}
+	body.dev-environment:before {
+		content: "@media max-width: 979px (only visible on dev)";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 300000;
+		color: black;
+		background: white;
+		padding: 4px;
+		.border-radius(0 0 5px 0);
+		.box-shadow(0 0 10px 2px #000);
 	}
 	.row-fluid .span5-half {
 		width: 43.990%;
@@ -100,18 +94,18 @@ body.browser_lt_ie_9 ul.thumbnails {
 	body {
 		padding: 0;
 		margin: 0;
-		&:before {
-			content: "Phones only";
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 300000;
-			color: black;
-			background: white;
-			padding: 4px;
-			.border-radius(0 0 5px 0);
-			.box-shadow(0 0 10px 2px #000);
-		}
+	}
+	body.dev-environment:before {
+		content: "@media max-width: 767px (only visible on dev)";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 300000;
+		color: black;
+		background: white;
+		padding: 4px;
+		.border-radius(0 0 5px 0);
+		.box-shadow(0 0 10px 2px #000);
 	}
 	.row-fluid .span5-half {
 		width: 100%;

@@ -14,19 +14,19 @@
 		{/if}
 	</div>
 	<hr>
-	<ul class="unstyled row-fluid thumbnails">
+	<ul class="row-fluid thumbnails">
 		{foreach from=$items item=sub_menu_item key=index name=sub_menu_loop}
 			<li class="span6 landing-page-item{if $index%2==0} first-in-row{/if}">
 				{assign var=blurb_img value=$sub_menu_item->get_blurb_thumb()}
 				<div class="row-fluid">
 					<div class="span4">
-						<a href="{$sub_menu_item->uri}" title="{$sub_menu_item->name|replace:'& ':'&amp; '|replace:'"':''}">
-							<img src="{if $blurb_img}{$blurb_img->getUrl()}/quality/100/crop/130,130{else}/images/pic-landing-page-default.jpg{/if}" alt="{$sub_menu_item->name|replace:'& ':'&amp; '|replace:'"':''}">
+						<a href="{$sub_menu_item->uri}" title="{$sub_menu_item->name|clean_for_attribute}">
+							<img src="{if $blurb_img}{$blurb_img->getUrl()}/quality/100/crop/130,130{else}/images/pic-landing-page-default.jpg{/if}" alt="{$sub_menu_item->name|clean_for_attribute}">
 						</a>
 					</div>
 					<div class="span8">
 						<h3>
-							<a href="{$sub_menu_item->uri}" title="{$sub_menu_item->name|replace:'& ':'&amp; '|replace:'"':''}">{$sub_menu_item->name|replace:'& ':'&amp; '}</a>
+							<a href="{$sub_menu_item->uri}" title="{$sub_menu_item->name|clean_for_attribute}">{$sub_menu_item->name|replace:'& ':'&amp; '}</a>
 						</h3>
 						<p>
 							{$sub_menu_item->blurb|replace:'& ':'&amp; '|strip_tags|truncate:225:'...':true}

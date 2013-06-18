@@ -222,7 +222,7 @@
     {* load actions *}
     <script src="/js/min/actions.min.js"></script>
 
-    {render_dropin dropin="PropertyBin"}
+    {render_dropin dropin="PropertyBin" bootstrap=true propsInRow=3 addBootstrapDropdown=true}
   
     {$PAGE_FOOTER}
 

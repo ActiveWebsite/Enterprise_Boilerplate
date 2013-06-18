@@ -1,5 +1,5 @@
 {if $properties}
-    <ul class="unstyled row-fluid thumbnails">
+    <ul class="row-fluid thumbnails">
         {foreach from=$properties item=property key=index}
             <li class="span4 standard-property{if $index%3==0} first-in-row{/if}">
                 {if $property.first_pic instanceof PropertyPicture}

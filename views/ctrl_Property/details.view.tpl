@@ -8,7 +8,7 @@
 			<meta property="og:image" content="{$first_pic->getUrl()}" alt="{$fullStreetAddress|clean_for_attribute}">
 		{/if}
 		{if $remarks}
-			<meta property="og:description" content="{$remarks|strip_tags|truncate:200|clean_for_attribute}">
+			<meta property="og:description" content="{$remarks|strip_tags|clean_for_attribute}">
 		{/if}
 	</head>
 
@@ -113,7 +113,7 @@
 								{foreach from=$photos item=photo key=index}
 									<li><img src="{$photo}/crop/130,90" alt="Thumbnail {$index} of {$fullStreetAddress|clean_for_attribute}"></li>
 								{/foreach}
-							 </ul>
+							</ul>
 						</div>
 					</div>
 					{if $latitude && $latitude != '' && $latitude != 0 && $longitude && $longitude != '' && $longitude != 0 && $zip_code && $zip_code != '' && $zip_code != 0}
@@ -258,7 +258,7 @@
 	</div>
 	<footerargs>
 		<script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"></script>
-		<script src="/js/buildlist.js?scripts=/js/jqueryui/components/button.min.js,/js/jqueryui/components/autocomplete.min.js,/js/tabs/jquery.jtabs.min.js,/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js,/js/map_search/jquery.poi-map.js"></script>
+		<script src="/js/buildlist.js?scripts=/js/jqueryui/components/button.min.js,/js/jqueryui/components/autocomplete.min.js,/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js,/js/map_search/jquery.poi-map.js"></script>
 		<script>
 		{literal}
 		var simpleCarouselGalleryObj = null;
@@ -289,8 +289,7 @@
 									zip: {/literal}{if $zip_code}{$zip_code}{else}0{/if}{literal},
 									property_title: '{/literal}{$streetAddress|escape:javascript}{literal}',
 									bootstrapMode: true,
-									markerShadow: true,
-									buttonText: 'Search'
+									markerShadow: true
 								}).data('poiMap');
 							} else {
 								if (map_poi_object && map_poi_object.hasOwnProperty("resize")) {

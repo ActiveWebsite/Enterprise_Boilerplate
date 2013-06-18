@@ -50,37 +50,33 @@
 			<input type="hidden" value="request_info" name="form_type">
 	      
 	        <div class="row-fluid">
-	            <div class="span12">
-	                <label class="control-label">First Name<span class="red">*</span></label>
-	                <input type="text" name="first_name" class="span12 required" placeholder="First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}">
+	            <div class="control-group span6">
+	                <label>First Name<span class="red">*</span></label>
+	                <input type="text" name="first_name" class="span12 required" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}">
+	            </div>
+	            <div class="control-group span6">
+	                <label>Last Name<span class="red">*</span></label>
+	                <input type="text" name="last_name" class="span12 required" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}">
 	            </div>
 	        </div>
 	        <div class="row-fluid">
-	            <div class="span12">
-	                <label class="control-label">Last Name<span class="red">*</span></label>
-	                <input type="text" name="last_name" class="span12 required" placeholder="Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}">
-	            </div>
-	        </div>
-	        <div class="row-fluid">
-	            <div class="span12">
-	                <label class="control-label">Email<span class="red">*</span></label>
-	                <input type="text" name="email_confirm" class="span12 required" placeholder="Email Address" value="{if $user ne false}{$user->email}{/if}">
+	            <div class="control-group span6">
+	                <label>Email<span class="red">*</span></label>
+	                <input type="text" name="email_confirm" class="span12 required email" placeholder="Enter Email Address" value="{if $user ne false}{$user->email}{/if}">
 	                <input type="text" name="email" style="display: none;" value="">
 	            </div>
-	        </div>
-	        <div class="row-fluid">
-	            <div class="span12">
-	                <label class="control-label">Phone</label>
-	                <input type="text" name="phone" class="span12" placeholder="Phone Number" value="">
+	            <div class="control-group span6">
+	                <label>Phone</label>
+	                <input type="text" name="phone" class="span12" placeholder="Enter Phone Number" value="">
 	            </div>
 	        </div>
 	        <div class="row-fluid">
-	            <div class="span12">
-	                <label class="control-label">Message<span class="red">*</span></label>
-	                <textarea rows="3" name="message" class="span12" placeholder="Message"></textarea>
+	           <div class="control-group span12">
+	                <label>Message<span class="red">*</span></label>
+	                <textarea rows="5" cols="25" name="message" class="span12" placeholder="Enter Message"></textarea>
 	            </div>
 	        </div>
-	        <input type="submit" class="btn btn-primary margin-top-10" value="Send">
+	        <input type="submit" class="btn margin-top-10" value="Send">
     	</form>
     {/if}
 	<div class="row-fluid popupFooter">

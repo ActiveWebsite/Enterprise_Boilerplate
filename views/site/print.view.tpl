@@ -11,6 +11,15 @@
     <![endif]-->
     <link rel="stylesheet" href="/css/company_styles.min.css">
 	{$PAGE_HEADER}
+	{literal}
+	<style>
+		body {
+			background: #fff;
+			padding: 15px;
+			margin: 0;
+		}
+	</style>
+	{/literal}
 </head>
 <body onload="window.print();" class="{$browser_info.browser_css_class}">
 	<div id="Wrapper">

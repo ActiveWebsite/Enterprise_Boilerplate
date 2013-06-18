@@ -2,7 +2,7 @@
 	<h1 class="page-heading">Developments</h1>
 	<div id="developments-list-page-results-map"></div>
 	<hr>
-	<ul class="thumbnails row-fluid">
+	<ul class="row-fluid thumbnails">
 		{foreach from=$developments item=development name=devList key=index}
 			<li class="span12">
 				<div class="row-fluid">

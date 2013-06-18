@@ -1,14 +1,6 @@
-<div id="home-page-gallery-quick-search">
-	<div class="row-fluid">
-		<div class="span12 hidden-phone">
-			{render_dropin dropin="SlideShowNav"}
-		</div>
-	</div>
-	<div class="row-fluid">
-		<div class="span3" id="home-page-quick-search">
-			{render_component component="QuickSearch"}
-		</div>
-	</div>
+<div class="relative">
+	{render_dropin dropin="SlideShowNav"}
+	{render_component component="QuickSearch"}
 </div>
 <div class="row-fluid margin-top-30">
 	<div class="span9" id="home-page-tabs">
@@ -32,8 +24,8 @@
 <div class="row-fluid margin-top-30">
 	<div class="span3">
 		<div class="homepage-well">
-			<h3>Section</h3>
-			<p>You Can put something in the block</p>
+			<h3>Featured Communities</h3>
+			{render_component component="FeaturedCommunity" count=4}
 		</div>
 	</div>
 	<div class="span3">
@@ -57,7 +49,7 @@
 </div>
 <footerargs>
 {* load the scripts that you need that are not already on the page *}
-<script src="/js/buildlist.js?scripts=/js/tabs/jquery.jtabs.min.js,/js/galleries/jquery.cycle.js,/js/carousels/jquery.jcarousel.min.js"></script>
+<script src="/js/buildlist.js?scripts=/js/galleries/jquery.cycle2.min.js,/js/carousels/jquery.jcarousel.min.js"></script>
 {literal}
 <script>
 jQuery(document).ready(function($) {
@@ -80,11 +72,6 @@ jQuery(document).ready(function($) {
 			}
 			//]]>
 		}
-	});
-	// homepage slideshow
-	$('#home-page-gallery').cycle({
-		pause: 1,
-		pager: '#home-page-gallery-pager'
 	});
 });
 </script>

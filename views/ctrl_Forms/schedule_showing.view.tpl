@@ -69,36 +69,32 @@
 			<input type="hidden" value="schedule_showings" name="form_type">
 
 	        <div class="row-fluid">
-	            <div class="span12">
+	            <div class="control-group span6">
 	                <label>First Name<span class="red">*</span></label>
-	                <input type="text" name="first_name" class="span12 required" placeholder="First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}">
+	                <input type="text" name="first_name" class="span12 required" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}">
 	            </div>
-	        </div>
-	        <div class="row-fluid">
-	            <div class="span12">
+	            <div class="control-group span6">
 	                <label>Last Name<span class="red">*</span></label>
-	                <input type="text" name="last_name" class="span12 required" placeholder="Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}">
+	                <input type="text" name="last_name" class="span12 required" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}">
 	            </div>
 	        </div>
 	        <div class="row-fluid">
-	            <div class="span12">
+	            <div class="control-group span6">
 	                <label>Email<span class="red">*</span></label>
-	                <input type="text" name="email_confirm" class="span12 required" placeholder="Email Addresss" value="{if $user ne false}{$user->email}{/if}">
+	                <input type="text" name="email_confirm" class="span12 required email" placeholder="Enter Email Addresss" value="{if $user ne false}{$user->email}{/if}">
 	                <input type="text" name="email" style="display: none;" value="">
 	            </div>
-	        </div>
-	        <div class="row-fluid">
-	            <div class="span12">
+	            <div class="control-group span6">
 	                <label>Phone<span class="red">*</span></label>
-	                <input type="text" name="phone" class="span12 required" placeholder="Phone Number" value="">
+	                <input type="text" name="phone" class="span12 required" placeholder="Enter Phone Number" value="">
 	            </div>
 	        </div>
 	        <div class="row-fluid">
-	            <div class="span6">
+	            <div class="control-group span6">
 	                <label>Date</label>
 	                <input id="date" class="Calendar required span12" type="text" name="date" value="">
 	            </div>
-	            <div class="span6">
+	            <div class="control-group span6">
 	                <label>Time</label>
 	                <select class="valid span12" name="time">
 	                    <option value="any">Any</option>
@@ -110,12 +106,12 @@
 	            </div>
 	        </div>
 	        <div class="row-fluid">
-	            <div class="span12">
+	            <div class="control-group span12">
 	                <label>Message<span class="red">*</span></label>
-	                <textarea name="message" rows="3" class="span12" placeholder="Message"></textarea>
+	                <textarea name="message" cols="15" rows="3" class="span12" placeholder="Enter Message"></textarea>
 	            </div>
 	        </div>
-	        <input type="submit" class="btn btn-primary" value="Send">
+	        <input type="submit" class="btn" value="Send">
 	    </form>
 	{/if}
 	<div class="row-fluid popupFooter">

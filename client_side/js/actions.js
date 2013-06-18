@@ -102,9 +102,45 @@ jQuery(document).ready(function ($) {
 			el_data.type = 'iframe';
 			el_data.fancyboxWidth = 425;
 			el_data.fancyboxHeight = 425;
-			fancyBoxBuilder(el.attr("href"), el_data, '', null, function() {
-				_checkForFavorites(el);
+			fancyBoxBuilder(el.attr("href"), el_data, '', null, function() {				
+				_checkForFavorites($('a.addFavorite[data-property-id="' + el_data.propertyId + '"]'));
 			});
+		});
+	}
+
+	/**
+	 * Quick search more options hidden block toggle (remove if we don't have them)
+	 * @all pages
+	 */
+	App.on('click', 'a[data-action="toggle-quicksearch"]', function (e) {
+		e.preventDefault();
+		var el = $(this);
+		var el_data = el.data();
+		var tgt = $(el_data.target);
+		if (!tgt.is(':visible')) {
+			el.html(el_data.hideTemplate);
+		} else {
+			el.html(el_data.showTemplate);
+		}
+		tgt.toggle();
+	});
+
+	/**
+	 * Quick search more options hidden block close (remove if we don't have them)
+	 * @all pages
+	 */
+	App.on('click', 'a[data-action="close-quicksearch"]', function (e) {
+		e.preventDefault();
+		$('a[data-action="toggle-quicksearch"]:first').trigger('click');
+	});
+
+	/**
+	 * Quick search tabs (remove if we don't have them)
+	 * @all pages
+	 */
+	if ($.fn.jtabs) {
+		$('#quick-search-tabs').jtabs({
+			bootstrapMode: true
 		});
 	}
 

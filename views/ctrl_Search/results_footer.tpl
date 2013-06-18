@@ -1,5 +1,15 @@
 <div class="row-fluid">
-	<div class="span4 offset8 search-results-paging">
+	<div class="span2">
+		{if $is_account_user}
+			<a href="{$ACTION_URLS.search}save_last_search/2" rel="nofollow" target="action_iframe" title="Save Search">Save this Search</a>
+		{else}
+			<a href="{$ACTION_URLS.account}" data-action="account-login" title="Login To Save Search">Save this Search</a>
+		{/if}
+	</div>
+	<div class="span2">
+		<a href="#" class="property-bin-toggle">Property Bin <span class="property-bin-count"></span></a>
+	</div>
+	<div class="span8 search-results-paging">
 		{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1)) ne false}
 			<a href="{$page_manager_obj->get_first_page_url()}" title="First Page" class="search-results-paging-first">First</a>
 		{/if}

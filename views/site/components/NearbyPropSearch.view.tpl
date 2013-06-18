@@ -1,6 +1,6 @@
 {assign var=view_id value=$smarty.now}
 {if $properties}
-    <ul class="unstyled row-fluid thumbnails" id="my-property-{$view_id}">
+    <ul class="row-fluid thumbnails" id="my-property-{$view_id}">
         {foreach from=$properties item=property key=index}
             <li class="span4 standard-property{if $index%3==0} first-in-row{/if}">
                 {if $property.first_pic instanceof PropertyPicture}
@@ -24,10 +24,10 @@
                     <a href="/property/property_details_quick_view/{$property.company_property_id}" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-mini">
                         Quick View
                     </a>
-                    <a href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property.company_property_id}" data-property-id="{$property.company_property_id}" class="addFavorite" target="_blank" rel="nofollow" title="Add to Favorites">
+                    <a href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property.company_property_id}" data-property-id="{$property.company_property_id}" class="addFavorite addFavoriteButton" target="_blank" rel="nofollow" title="Add to Favorites">
                         Add to Favorites
                     </a>
-                    <a href="#{$property.company_property_id}" data-property-id="{$property.company_property_id}" class="property-bin-add" title="Add to Bin">
+                    <a href="#{$property.company_property_id}" data-property-id="{$property.company_property_id}" class="property-bin-add property-bin-button" title="Add to Bin">
                         Add to Bin
                     </a>
                 </div>

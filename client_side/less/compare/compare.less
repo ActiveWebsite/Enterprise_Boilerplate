@@ -1,0 +1,72 @@
+// PROPERTY COMPARISON VIEW STYLES
+// --------------------------------------------------
+#property-compare-table-wrapper {
+	margin-left: 1.282051282051282%;
+	.compareTable {
+		width: 100%;
+		max-width: none;
+		td {
+			padding: 5px 0;
+			border-bottom: 1px solid @grayLighter;
+			vertical-align: top;
+		}
+		.compare-cell-width {
+			width: 217px;
+			min-height: 20px;
+		}
+		.compare-top-row{
+			height: 275px;
+		}
+		.compare-request-row {
+			height: 155px;
+		}
+	}
+	.compare-labels {
+		.compareTable {
+			.compare-cell-width {
+				width: 100%;
+			}
+		}
+	}
+	.compare-properties {
+		margin-left: 0;
+		overflow-x: auto;
+		.compareTable {
+			width: auto;
+			td {
+				padding-right: 30px;
+			}
+		}
+	}
+	.no-compare-properites-message {
+		.alert();
+		.alert-error();
+	}
+	.compare-listing-agent {
+		h4 {
+			margin: 0 0 5px 0;
+			a {
+				color: @black;
+			}
+		}
+		ul {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+// PROPERTY COMPARISON PRINT VIEW STYLES
+// --------------------------------------------------
+.compare-print-group {
+	border-collapse:collapse;
+	border-spacing:0;
+	margin-bottom: 30px;
+	td {
+		vertical-align: top;
+		padding: 5px 10px 5px 0;
+	}
+	td.labelCol {
+		font-weight: bold;
+	}
+}
