@@ -149,13 +149,13 @@
 				<ul class="unstyled">
 					{if !$date_sold}
 	                    <li>
-	                    	<a href="/popup/forms/display/request_info/?prop={$company_property_id}&amp;realtor_id={$realtor.id}" title="Request More Info" class="fancybox" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="765">Request More Info</a>
+	                    	<a href="/popup/forms/display/request_info/?prop={$company_property_id}&amp;realtor_id={$realtor.id}" target="_blank" rel="nofollow" title="Request More Info" class="fancybox" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="560">Request More Info</a>
 	                    </li>
 	                    <li class="margin-top-10">
-	                    	<a href="/popup/forms/display/schedule_showing/?prop={$company_property_id}&amp;realtor_id={$realtor.id}" title="Request a Showing" class="fancybox" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="815">Request a Showing</a>
+	                    	<a href="/popup/forms/display/schedule_showing/?prop={$company_property_id}&amp;realtor_id={$realtor.id}" target="_blank" rel="nofollow" title="Request a Showing" class="fancybox" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="570">Request a Showing</a>
 	                    </li>
 						<li class="margin-top-10">
-							<a href="/popup/account/addRemoveFavoritePropertyManager/{$company_property_id}" class="addFavorite addFavoriteLinkText{if $is_favorite} removeFavorite{/if}" target="_blank" rel="nofollow" data-property-id="{$company_property_id}" title="{if $is_favorite}Remove from{else}Add to{/if} Favorites">{if $is_favorite}Remove From{else}Add to{/if} Favorites</a>
+							<a href="/popup/account/addRemoveFavoritePropertyManager/{$company_property_id}" target="_blank" rel="nofollow" title="{if $is_favorite}Remove from{else}Add to{/if} Favorites" class="addFavorite addFavoriteLinkText{if $is_favorite} removeFavorite{/if}" data-property-id="{$company_property_id}">{if $is_favorite}Remove From{else}Add to{/if} Favorites</a>
 						</li>
 						<li class="margin-top-10">
 							<a href="#{$company_property_id}" class="property-bin-add"> Add to Property Cart</a>
@@ -182,7 +182,7 @@
 									</form>
 								</div>
 							{else}
-								<a data-action="account-register" href="{$ACTION_URLS.account}signup/">Signup</a> or <a data-action="account-login" href="{$ACTION_URLS.account}login/">Login</a> to add notes to this property.
+								<a href="{$ACTION_URLS.account}signup/" title="Signup" data-action="account-register">Signup</a> or <a href="{$ACTION_URLS.account}login/" title="Login" data-action="account-login">Login</a> to add notes to this property.
 							{/if}
 						</li>
 					{/if}
@@ -219,7 +219,7 @@
 							</p>
 							{if $realtor.rebrand_code}
 								<p>
-									<a href="/popup/forms/display/request_info/?prop={$company_property_id}&amp;realtor_id={$realtor.id}" title="Request More Info" class="btn fancybox">Email {if $realtor.entity_type|lower == 'team'}Us{else}Me{/if}</a>
+									<a href="/popup/forms/display/request_info/?prop={$company_property_id}&amp;realtor_id={$realtor.id}" title="Request More Info" rel="nofollow" target="_blank" class="btn fancybox" data-fancybox-width="550" data-fancybox-height="560">Email {if $realtor.entity_type|lower == 'team'}Us{else}Me{/if}</a>
 								</p>
 							{/if}
 						</div>

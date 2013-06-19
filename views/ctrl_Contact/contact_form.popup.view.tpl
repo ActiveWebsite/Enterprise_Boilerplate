@@ -32,7 +32,7 @@
 		{/if}
 	{/if}
 	{if !$formSendAccepted}
-		<form action="/forms/" class="validate-form" novalidate="novalidate" id="contact_form" method="post" {if $browser_info.browser == 'CHROME'}autocomplete="off"{/if}>
+		<form action="/forms/" class="validate-form" method="post" autocomplete="off">
 			<input type="hidden" name="form_type" value="contact">
 			{if $realtor}
 				<input type="hidden" name="entity_id" value="{$realtor.id}">
@@ -52,28 +52,28 @@
 			{/if}
 			<fieldset>
 		        <div class="row-fluid">
-		            <div class="control-group span6">
+		            <div class="span6 margin-bottom-15">
 						<label for="contact_form_firstname">First Name <span class="red">*</span></label>
 						<input type="text" id="contact_form_firstname" name="first_name" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}" class="required span12">
 					</div>
-		            <div class="control-group span6">
+		            <div class="span6 margin-bottom-15">
 						<label for="contact_form_lastname">Last Name <span class="red">*</span></label>
 						<input type="text" id="contact_form_lastname" name="last_name" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}" class="required span12">
 					</div>
 				</div>
 		        <div class="row-fluid">
-		            <div class="control-group span6">
+		            <div class="span6 margin-bottom-15">
 						<label for="contact_form_email">Email<span class="red">*</span></label>
 						<input type="email" name="email_confirm" id="contact_form_email" placeholder="Enter Email Address" class="required email span12" value="{if $contactor ne false}{$contactor->email}{/if}">
 						<input type="text" style="display:none;" value="" name="email">
 					</div>
-		            <div class="control-group span6">
+		            <div class="span6 margin-bottom-15">
 						<label for="contact_form_phone">Phone</label>
 						<input name="phone" value="" type="text" placeholder="Enter Phone" class="span12" id="contact_form_phone">
 					</div>
 				</div>
 		        <div class="row-fluid">
-		            <div class="control-group span12">
+		            <div class="span12 margin-bottom-15">
 						<label for="contact_form_message">Message<span class="red">*</span></label>
 						<textarea name="message" rows="3" cols="25" placeholder="Message" class="required span12" id="contact_form_message"></textarea>
 					</div>
@@ -86,44 +86,42 @@
 				{if isset($smarty.request.send_to) && !empty($smarty.request.send_to)}
 					<input name="send_to" value="{$smarty.request.send_to}" type="hidden">
 				{/if}				
-				<input type="submit" title="Send" value="Send" class="btn margin-top-10">
+				<input type="submit" title="Send" value="Send" class="btn">
 			</fieldset>
 		</form>
-		{if $return_info.lifestyleSearch == "true"}
-			{* Lifestyle search feedback footer disabled *}
-		{else}
-			<div class="row-fluid popupFooter">
-				<div class="span10">
-					{if $realtor && $realtor.id && $realtor.pic_url}
-						{if $realtor.pic_url}
-							<img class="pull-left margin-right-10" src="{$realtor.pic_url}/maxwidth/70" alt="">
-						{else}
-							<img class="pull-left margin-right-10" src="/images/person_avatar.gif" width="70" alt="">
+		<hr>
+		<div class="popupFooter clearfix">
+			{if $realtor && $realtor.id && $realtor.pic_url}
+				{if $realtor.pic_url}
+					<img src="{$realtor.pic_url}/maxwidth/70" class="pull-left margin-right-10" alt="">
+				{else}
+					<img src="/images/person_avatar.gif" class="pull-left margin-right-10" alt="">
+				{/if}
+				<div class="pull-left">
+					<h2>{$realtor.name}</h2>
+					<ul class="unstyled">
+						{if $realtor.parent->name}
+							<li><em>{$realtor.parent->name}</em></li>
 						{/if}
-						<div class="pull-left">
-							<h2>{$realtor.name}</h2>
-							{if $realtor.parent->name}
-								<span class="block">{$realtor.parent->name} Office</span>
-							{/if}
-		                    {if $realtor.address.Office_Phone.value}
-								<span class="block"><span class="popupPhone">Office</span> <strong>{$realtor.address.Office_Phone.value}</strong></span>
-							{elseif $realtor.address.Direct_Phone.value}
-								<span class="block"><span class="popupPhone">Direct</span> <strong>{$realtor.address.Direct_Phone.value}</strong></span>
-		                    {/if}
-							{if $realtor.address.Cell_Phone.value}
-								<span class="block"><span class="popupPhone">Mobile</span> <strong>{$realtor.address.Cell_Phone.value}</strong></span>
-							{/if}
-						</div>
-					{else}
-						<h2>Company Name</h2>
-						<span class="block">Phone numbers</span>
-					{/if}
+						{if $realtor.address.Office_Phone.value}
+							<li><strong>Office:</strong> {$realtor.address.Office_Phone.value}</li>
+						{elseif $realtor.address.Direct_Phone.value}
+							<li><strong>Direct:</strong> {$realtor.address.Direct_Phone.value}</li>
+						{/if}
+						{if $realtor.address.Cell_Phone.value}
+							<li><strong>Mobile:</strong> {$realtor.address.Cell_Phone.value}</li>
+						{/if}
+					</ul>
 				</div>
-				<div class="span2">
-					{* you can add in image to the bottom right here *}
-					{* <img src="/images/some_logo_here" alt="" class="pull-right popupFooterLogo"> *}
+			{else}
+				<div class="pull-left">
+					<h2>Company Name</h2>
+					<ul class="unstyled">
+						<li><strong>Phone:</strong> 555-555-5555</li>
+					</ul>
 				</div>
-			</div>
-		{/if}
+			{/if}
+			<img src="/images/popup-logo.jpg" class="pull-right" alt="">
+		</div>
 	{/if}
 </div>

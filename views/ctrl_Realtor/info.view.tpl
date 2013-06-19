@@ -27,7 +27,7 @@
 					<li class="margin-bottom-5"><strong>Fax</strong> {$realtor.parent_dict.address.Fax_Phone.value}</li>
 				{/if}
 				<li>
-					<a href="/popup{$ACTION_URLS.contact}realtor/{$realtor.rebrand_code}" target="_blank" data-fancybox-type="iframe" data-fancybox-width="520" data-fancybox-height="600" rel="nofollow" class="btn fancybox">Send Me An Email</a>
+					<a href="/popup{$ACTION_URLS.contact}realtor/{$realtor.rebrand_code}" target="_blank" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="460" rel="nofollow" class="btn fancybox">Send Me An Email</a>
 				</li>
 			</ul>
 		</div>

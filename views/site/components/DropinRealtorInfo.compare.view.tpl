@@ -1,13 +1,13 @@
 <div class="compare-listing-agent">
 	<h4>
 		{if $current_account_user.realtor && $current_account_user.realtor.entity_type|lower == 'realtor'}
-			<a href="{$ACTION_URLS.realtor}info/{$current_account_user.realtor.rebrand_code}">{$current_account_user.realtor.name}</a>
+			<a href="{$ACTION_URLS.realtor}info/{$current_account_user.realtor.rebrand_code}" target="_blank">{$current_account_user.realtor.name}</a>
 		{elseif $current_account_user.realtor && $current_account_user.realtor.entity_type|lower == 'team'}
-			<a href="{$ACTION_URLS.realtor}team/{$current_account_user.realtor.rebrand_code}">{$current_account_user.realtor.name}</a>
+			<a href="{$ACTION_URLS.realtor}team/{$current_account_user.realtor.rebrand_code}" target="_blank">{$current_account_user.realtor.name}</a>
 		{elseif $realtor.entity_type|lower == 'realtor'}
-			<a href="{$ACTION_URLS.realtor}info/{$realtor.rebrand_code}">{$realtor.name}</a>
+			<a href="{$ACTION_URLS.realtor}info/{$realtor.rebrand_code}" target="_blank">{$realtor.name}</a>
 		{elseif $realtor.entity_type|lower == 'team'}
-			<a href="{$ACTION_URLS.realtor}team/{$realtor.rebrand_code}">{$realtor.name}</a>
+			<a href="{$ACTION_URLS.realtor}team/{$realtor.rebrand_code}" target="_blank">{$realtor.name}</a>
 		{else}
 			{$current_company.name}
 		{/if}
@@ -69,20 +69,20 @@
 	<ul class="unstyled margin-top-5">
 		<li>
 			{if $current_account_user.realtor}
-				<a title="Request More Information" rel="nofollow" target="_blank" class="fancybox" href="/popup/forms/display/request_info/?prop={$prop}&amp;realtor_id={$current_account_user.realtor.id}">Request More Information</a>
+				<a title="Request More Information" rel="nofollow" target="_blank" class="fancybox" href="/popup/forms/display/request_info/?prop={$prop}&amp;realtor_id={$current_account_user.realtor.id}" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="560">Request More Information</a>
 			{elseif $realtor && $realtor.id}
-				<a title="Request More Information" rel="nofollow" target="_blank" class="fancybox" href="/popup/forms/display/request_info/?prop={$prop}&amp;realtor_id={$realtor.id}">Request More Information</a>
+				<a title="Request More Information" rel="nofollow" target="_blank" class="fancybox" href="/popup/forms/display/request_info/?prop={$prop}&amp;realtor_id={$realtor.id}" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="560">Request More Information</a>
 			{else}
-				<a title="Request More Information" rel="nofollow" target="_blank" class="fancybox" href="/popup/forms/display/request_info/?prop={$prop}">Request More Information</a>
+				<a title="Request More Information" rel="nofollow" target="_blank" class="fancybox" href="/popup/forms/display/request_info/?prop={$prop}" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="560">Request More Information</a>
 			{/if}
 		</li>
 		<li>
 			{if $current_account_user.realtor}
-				<a title="Request A Showing" rel="nofollow" target="_blank" class="fancybox" href="/popup/forms/display/schedule_showing/?prop={$prop}&amp;realtor_id={$current_account_user.realtor.id}">Request A Showing</a>
+				<a title="Request A Showing" rel="nofollow" target="_blank" class="fancybox" href="/popup/forms/display/schedule_showing/?prop={$prop}&amp;realtor_id={$current_account_user.realtor.id}" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="570">Request A Showing</a>
 			{elseif $realtor && $realtor.id}
-				<a title="Request A Showing" rel="nofollow" target="_blank" class="fancybox" href="/popup/forms/display/schedule_showing/?prop={$prop}&amp;realtor_id={$realtor.id}">Request A Showing</a>
+				<a title="Request A Showing" rel="nofollow" target="_blank" class="fancybox" href="/popup/forms/display/schedule_showing/?prop={$prop}&amp;realtor_id={$realtor.id}" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="570">Request A Showing</a>
 			{else}
-				<a title="Request A Showing" rel="nofollow" target="_blank" class="fancybox" href="/popup/forms/display/schedule_showing/?prop={$prop}">Request A Showing</a>
+				<a title="Request A Showing" rel="nofollow" target="_blank" class="fancybox" href="/popup/forms/display/schedule_showing/?prop={$prop}" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="570">Request A Showing</a>
 			{/if}
 		</li>
 	</ul>

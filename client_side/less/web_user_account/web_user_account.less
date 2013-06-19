@@ -36,22 +36,39 @@ form.webUserAccountFormXXLARGE{
 
 /* Popup Forms */
 .popupBody {
-    padding: 0; 
+    padding: 0;
+    form {
+        margin: 0;
+        input, select, textarea {
+            margin-bottom: 0;
+        }
+        label {
+            margin-bottom: 2px;
+        }
+    }
     h1 {
         line-height: normal;
         margin: 0 0 20px 0;
         font-style: 20px;
     }
-    .popupPhone {
-        display:inline-block;
-        width:50px;
-        color:@gray;
+    .popup-related-property {
+        h4 {
+            margin: 0 0 3px 0;
+            font-style: 14px;
+            font-weight: bold;
+            line-height: normal;
+        }
+        font-style: 12px;
+        line-height: normal;
+        margin-bottom: 10px;
     }
     .popupFooter {
-        border-top:1px solid @gray;
-        padding-top:15px;
-        .popupFooterLogo {
-            max-width: none;
+        h2 {
+            margin: 0 0 5px 0;
+            line-height: normal;
+        }
+        ul {
+            margin: 0;
         }
     }
     // fix for grid in lighboxes

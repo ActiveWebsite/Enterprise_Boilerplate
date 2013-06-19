@@ -1,5 +1,4 @@
-Site Search
-===========
+#Site Search
 
 Make sure you have the `ctrl_SiteSearch.action.php` file in your app's `actions` folder
 
