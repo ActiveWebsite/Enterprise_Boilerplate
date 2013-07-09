@@ -1,11 +1,11 @@
 <head>
-    <script src="/js/jqueryui/components/datepicker.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.22/themes/base/jquery-ui.css">
+	<script src="/js/jqueryui/components/datepicker.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.22/themes/base/jquery-ui.css">
 	{literal}
 	<script>
-	    jQuery(document).ready(function($){
-	        $('.Calendar').datepicker();
-	    });
+		jQuery(document).ready(function($){
+			$('.Calendar').datepicker();
+		});
 	</script>
 	{/literal}    
 </head>
@@ -16,12 +16,11 @@
 {/if}
 
 {assign var=formSendAccepted value=false}
-
 <div class="popupBody">
-    <h1>Request A Showing</h1>
+	<h1>Request A Showing</h1>
 	{if $messages->isMsgs() === true}
 		{if $messages->isErrors() === true}
-			 <div class="alert alert-error alert-block">
+			 <div class="alert alert-danger alert-block">
 				<strong>Error:</strong><br>
 				{$messages->getErrors(true)}
 			</div>
@@ -41,7 +40,7 @@
 		{/if}
 	{/if}
 	{if !$formSendAccepted}
-	    <form action="/forms/" class="validate-form" method="post" autocomplete="off">
+		<form action="/forms/" class="validate-form" method="post" autocomplete="off">
 			{if $property}
 				<div class="popup-related-property">
 					<h4>
@@ -71,63 +70,61 @@
 
 			<input type="hidden" value="schedule_showings" name="form_type">
 
-	        <div class="row-fluid">
-	            <div class="span6 margin-bottom-15">
-	                <label>First Name<span class="red">*</span></label>
-	                <input type="text" name="first_name" class="span12 required" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}">
-	            </div>
-	            <div class="span6 margin-bottom-15">
-	                <label>Last Name<span class="red">*</span></label>
-	                <input type="text" name="last_name" class="span12 required" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}">
-	            </div>
-	        </div>
-	        <div class="row-fluid">
-	            <div class="span6 margin-bottom-15">
-	                <label>Email<span class="red">*</span></label>
-	                <input type="email" name="email_confirm" class="span12 required email" placeholder="Enter Email Addresss" value="{if $user ne false}{$user->email}{/if}">
-	                <input type="text" name="email" style="display: none;" value="">
-	            </div>
-	            <div class="span6 margin-bottom-15">
-	                <label>Phone<span class="red">*</span></label>
-	                <input type="text" name="phone" class="span12 required" placeholder="Enter Phone Number" value="">
-	            </div>
-	        </div>
-	        <div class="row-fluid">
-	            <div class="span6 margin-bottom-15">
-	                <label>Date</label>
-	                <input id="date" class="Calendar required span12" type="text" name="date" placeholder="Choose Date" value="">
-	            </div>
-	            <div class="span6 margin-bottom-15">
-	                <label>Time</label>
-	                <select class="valid span12" name="time">
-	                    <option value="any">Any</option>
-	                    <option value="morning">Morning</option>
-	                    <option value="lunch">Lunch</option>
-	                    <option value="afternoon">Afternoon</option>
-	                    <option value="evening">Evening</option>
-	                </select>
-	            </div>
-	        </div>
-	        <div class="row-fluid">
-	            <div class="span12 margin-bottom-15">
-	                <label>Message<span class="red">*</span></label>
-	                <textarea name="message" cols="15" rows="3" class="span12" placeholder="Enter Message"></textarea>
-	            </div>
-	        </div>
-	        <input type="submit" class="btn" value="Send">
-	    </form>
+			<div class="row">
+				<div class="col-sm-6 col-lg-6 margin-bottom-15">
+					<label>First Name<span class="red">*</span></label>
+					<input type="text" name="first_name" class="required" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}">
+				</div>
+				<div class="col-sm-6 col-lg-6 margin-bottom-15">
+					<label>Last Name<span class="red">*</span></label>
+					<input type="text" name="last_name" class="required" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 col-lg-6 margin-bottom-15">
+					<label>Email<span class="red">*</span></label>
+					<input type="email" name="email_confirm" class="required email" placeholder="Enter Email Addresss" value="{if $user ne false}{$user->email}{/if}">
+					<input type="text" name="email" style="display: none;" value="">
+				</div>
+				<div class="col-sm-6 col-lg-6 margin-bottom-15">
+					<label>Phone<span class="red">*</span></label>
+					<input type="text" name="phone" class="required" placeholder="Enter Phone Number" value="">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 col-lg-6 margin-bottom-15">
+					<label>Date</label>
+					<input id="date" class="Calendar required" type="text" name="date" placeholder="Choose Date" value="">
+				</div>
+				<div class="col-sm-6 col-lg-6 margin-bottom-15">
+					<label>Time</label>
+					<select class="valid" name="time">
+						<option value="any">Any</option>
+						<option value="morning">Morning</option>
+						<option value="lunch">Lunch</option>
+						<option value="afternoon">Afternoon</option>
+						<option value="evening">Evening</option>
+					</select>
+				</div>
+			</div>
+			<div class="margin-bottom-15">
+				<label>Message<span class="red">*</span></label>
+				<textarea name="message" cols="15" rows="3" placeholder="Enter Message"></textarea>
+			</div>
+			<input type="submit" class="btn btn-primary" value="Send">
+		</form>
 	{/if}
 	<hr>
 	<div class="popupFooter clearfix">
 		{if $realtor && $realtor.id && $realtor.pic_url}
 			{if $realtor.pic_url}
-				<img src="{$realtor.pic_url}/maxwidth/70" class="pull-left margin-right-10" alt="">
+				<img src="{$realtor.pic_url}/maxwidth/70" class="pull-left margin-right-10 img-responsive" alt="">
 			{else}
-				<img src="/images/person_avatar.gif" class="pull-left margin-right-10" alt="">
+				<img src="/images/person_avatar.gif" class="pull-left margin-right-10 img-responsive" alt="">
 			{/if}
 			<div class="pull-left">
 				<h2>{$realtor.name}</h2>
-				<ul class="unstyled">
+				<ul class="list-unstyled">
 					{if $realtor.parent->name}
 						<li><em>{$realtor.parent->name}</em></li>
 					{/if}
@@ -144,11 +141,11 @@
 		{else}
 			<div class="pull-left">
 				<h2>Company Name</h2>
-				<ul class="unstyled">
+				<ul class="list-unstyled">
 					<li><strong>Phone:</strong> 555-555-5555</li>
 				</ul>
 			</div>
 		{/if}
-		<img src="/images/popup-logo.jpg" class="pull-right" alt="">
+		<img src="/images/popup-logo.jpg" class="pull-right img-responsive" alt="">
 	</div>
 </div>

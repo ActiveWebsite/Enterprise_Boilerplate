@@ -16,28 +16,28 @@
 		{* if you are not using this section, be sure to remove the javascript at the bottom of the page. *}
 		<div id="details-search-results" style="display:none;" class="clearfix"></div>
 		<div id="details-search-results-button">
-			<a href="#" class="btn"><i class="icon-plus"></i> Search Results</a>
+			<a href="#" class="btn btn-default"><i class="icon icon-plus"></i> Search Results</a>
 		</div>
 	{/if}
 
-	<div class="row-fluid">
-		<div class="span9">
+	<div class="row">
+		<div class="col-sm-9 col-lg-9">
 			<ul class="breadcrumb">
-				<li><a href="/" title="Home">Home</a> <span class="divider">&gt;</span></li>
-				<li><a href="{$ACTION_URLS.search}" title="Search">Search</a> <span class="divider">&gt;</span></li>
+				<li><a href="/" title="Home">Home</a></li>
+				<li><a href="{$ACTION_URLS.search}" title="Search">Search</a></li>
 				{if $last_search_url}
-					<li><a href="{$ACTION_URLS.search}{$last_search_url}" title="Search Results">Search Results</a> <span class="divider">&gt;</span></li>
+					<li><a href="{$ACTION_URLS.search}{$last_search_url}" title="Search Results">Search Results</a></li>
 				{/if}
 				<li class="active">{$fullStreetAddress}</li>
 			</ul>
 		</div>
-		<div class="span3">
+		<div class="col-sm-3 col-lg-3">
 			{render_dropin dropin="AddThis" services="print,email,facebook,twitter,google_plusone,pinterest" print_link="/property/print_view/`$company_property_id`"}
 		</div>
 	</div>
 
-	<div class="row-fluid" id="property-details-page">
-		<div class="span9 details-content-column">
+	<div class="row" id="property-details-page">
+		<div class="col-sm-9 col-lg-9 details-content-column margin-bottom-30">
 			<h1 class="page-heading">{$fullStreetAddress}</h1>
 			
 			{if $open_houses}
@@ -60,7 +60,7 @@
 				<div class="hidden">
 					<div id="details-full-open-house-list">
 						<h4>Open House Dates</h4>
-						<ul class="unstyled">
+						<ul class="list-unstyled">
 							{foreach from=$open_houses item=thisOpenHouse key=index}
 								{if $thisOpenHouse.start_datetime > 1 && $thisOpenHouse.start_datetime|date_format:'%Y-%m-%d' >= $smarty.now|date_format:'%Y-%m-%d'}
 									<li><strong>Open House:</strong> {$thisOpenHouse.start_datetime|date_format:"%A, %B %e"}, {$thisOpenHouse.start_datetime|date_format:"%l:%M%P"} - {$thisOpenHouse.end_datetime|date_format:"%l:%M%P"}</li>
@@ -86,13 +86,13 @@
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane clearfix active" id="details-tab">
-						<div class="row-fluid">
-							<div class="span7">
+						<div class="row">
+							<div class="col-lg-7">
 								{$remarks}
 							</div>
-							<div class="span5">
+							<div class="col-lg-5">
 								{if $photos.0}
-									<img src="{$photos.0}crop/349,349" alt="Photo of {$fullStreetAddress|clean_for_attribute}">
+									<img class="img-responsive" src="{$photos.0}crop/349,349" alt="Photo of {$fullStreetAddress|clean_for_attribute}">
 								{/if}
 							</div>
 						</div>
@@ -133,7 +133,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="span3 details-sidebar-column">
+		<div class="col-sm-3 col-lg-3 details-sidebar-column">
 			{if $next_property_link || $prev_property_link}
 				<div class="clearfix margin-bottom-30">
 					{if $prev_property_link}
@@ -146,7 +146,7 @@
 			{/if}
 
 			<div class="clearfix margin-bottom-30">
-				<ul class="unstyled">
+				<ul class="list-unstyled">
 					{if !$date_sold}
 	                    <li>
 	                    	<a href="/popup/forms/display/request_info/?prop={$company_property_id}&amp;realtor_id={$realtor.id}" target="_blank" rel="nofollow" title="Request More Info" class="fancybox" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="560">Request More Info</a>
@@ -174,10 +174,10 @@
 									{if !$enterprise_account_note}
 										<a href="#" class="addPropertyNoteLink" title="Add a private note for this property">Add a private note for this property</a>
 									{/if}
-									<form style="display:none;" class="propertyAddNoteForm row-fluid" action="{$ACTION_URLS.account}savePropertyNote/{$company_property_id}">
-										<fieldset class="span12">
-											<textarea name="note" class="span12" rows="5" cols="40" placeholder="Enter your private note about this property">{if $enterprise_account_note}{$enterprise_account_note}{/if}</textarea>
-											<button type="submit" class="btn btn-block">Save</button>
+									<form style="display:none;" class="propertyAddNoteForm" action="{$ACTION_URLS.account}savePropertyNote/{$company_property_id}">
+										<fieldset>
+											<textarea class="margin-bottom-10" name="note" rows="5" cols="40" placeholder="Enter your private note about this property">{if $enterprise_account_note}{$enterprise_account_note}{/if}</textarea>
+											<button type="submit" class="btn btn-primary btn-block">Save</button>
 										</fieldset>
 									</form>
 								</div>
@@ -198,15 +198,15 @@
 							<a href="{$ACTION_URLS.realtor}{if $realtor.entity_type == 'realtor'}info{else}team{/if}/{$realtor.rebrand_code}" title="View {$realtor.name|clean_for_attribute}'s Bio">{$realtor.name}</a>
 						{/if}
 					</h3>
-					<div class="row-fluid">
-						<div class="span5">
+					<div class="row">
+						<div class="col-sm-5 col-lg-5">
 							{if $realtor.entity_type == 'company'}
-								<img src="{if $realtor.first_pic.url}{$realtor.first_pic.url}/crop/108,108{else}/images/agent-placeholder.jpg{/if}" alt="{$realtor.name}'s Photo">
+								<img class="img-responsive" src="{if $realtor.first_pic.url}{$realtor.first_pic.url}/crop/108,108{else}/images/agent-placeholder.jpg{/if}" alt="{$realtor.name}'s Photo">
 							{else}
-								<a href="{$ACTION_URLS.realtor}{if $realtor.entity_type == 'realtor'}info{else}team{/if}/{$realtor.rebrand_code}" title="View {$realtor.name|clean_for_attribute}'s Bio"><img src="{if $realtor.first_pic.url}{$realtor.first_pic.url}/crop/108,108{else}/images/agent-placeholder.jpg{/if}" alt="{$realtor.name}'s Photo"></a>
+								<a href="{$ACTION_URLS.realtor}{if $realtor.entity_type == 'realtor'}info{else}team{/if}/{$realtor.rebrand_code}" title="View {$realtor.name|clean_for_attribute}'s Bio"><img class="img-responsive" src="{if $realtor.first_pic.url}{$realtor.first_pic.url}/crop/108,108{else}/images/agent-placeholder.jpg{/if}" alt="{$realtor.name}'s Photo"></a>
 							{/if}
 						</div>
-						<div class="span7">
+						<div class="col-sm-7 col-lg-7">
 							<h4>Contact {if $realtor.entity_type == "realtor"}Me{else}Us{/if} For More Info</h4>
 							<p>
 								{if $realtor.address.Direct_Phone.value}
@@ -219,7 +219,7 @@
 							</p>
 							{if $realtor.rebrand_code}
 								<p>
-									<a href="/popup/forms/display/request_info/?prop={$company_property_id}&amp;realtor_id={$realtor.id}" title="Request More Info" rel="nofollow" target="_blank" class="btn fancybox" data-fancybox-width="550" data-fancybox-height="560">Email {if $realtor.entity_type|lower == 'team'}Us{else}Me{/if}</a>
+									<a href="/popup/forms/display/request_info/?prop={$company_property_id}&amp;realtor_id={$realtor.id}" title="Request More Info" rel="nofollow" target="_blank" class="btn btn-default fancybox" data-fancybox-width="550" data-fancybox-height="560">Email {if $realtor.entity_type|lower == 'team'}Us{else}Me{/if}</a>
 								</p>
 							{/if}
 						</div>
@@ -231,11 +231,11 @@
 				{* if not using the recent properties section be sure to remove the code from the ctrl_property addAdditionalArgs method *}
 				<div class="margin-bottom-30">
 					<h3 class="no-margin">Recently Viewed</h3>
-					<ul class="unstyled">
+					<ul class="list-unstyled">
 						{foreach from=$recent_properties item=recent_property key=index name=recentLoop}
 							<li class="margin-top-10">
 								<a href="{$recent_property.details_link}/" title="{$recent_property.streetAddress|clean_for_attribute}">
-									<img src="{$recent_property.first_pic->getUrl()}/crop/270,130/" alt="Photo of {$recent_property.streetAddress|clean_for_attribute}">
+									<img class="img-responsive" src="{$recent_property.first_pic->getUrl()}/crop/270,130/" alt="Photo of {$recent_property.streetAddress|clean_for_attribute}">
 								</a>
 								<p>
 									<strong>{$recent_property.streetAddress}</strong>
@@ -248,7 +248,7 @@
 										{if $recent_property.sqft_total_combined > 0}{$recent_property.sqft_total_combined} SqFt{/if}
 									</span>
 								</p>
-								<a href="/property/property_details_quick_view/{$recent_property.company_property_id}" title="Quick View" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-mini">Quick View</a>
+								<a href="/property/property_details_quick_view/{$recent_property.company_property_id}" title="Quick View" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-quickview">Quick View</a>
 							</li>
 						{/foreach}
 					</ul>
@@ -258,7 +258,8 @@
 	</div>
 	<footerargs>
 		<script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"></script>
-		<script src="/js/buildlist.js?scripts=/js/jqueryui/components/button.min.js,/js/jqueryui/components/autocomplete.min.js,/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js,/js/map_search/jquery.poi-map.js"></script>
+		<script src="/js/map_search/jquery.poi-map.js?v={$smarty.now}"></script>
+		<script src="/js/buildlist.js?scripts=/js/jqueryui/components/button.min.js,/js/jqueryui/components/autocomplete.min.js,/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js"></script>
 		<script>
 		{literal}
 		var simpleCarouselGalleryObj = null;
@@ -289,6 +290,8 @@
 									zip: {/literal}{if $zip_code}{$zip_code}{else}0{/if}{literal},
 									property_title: '{/literal}{$streetAddress|escape:javascript}{literal}',
 									bootstrapMode: true,
+									bootstrapVersion: 3,
+									grid: [5,5,2],
 									markerShadow: true
 								}).data('poiMap');
 							} else {
@@ -344,10 +347,10 @@
 				var el = $(this);
 				if (el.hasClass('active')) {
 					el.removeClass('active');
-					el.html('<i class="icon-plus"></i> Search Results');
+					el.html('<i class="icon icon-plus"></i> Search Results');
 				} else {
 					el.addClass('active');
-					el.html('<i class="icon-minus"></i> Search Results');
+					el.html('<i class="icon icon-minus"></i> Search Results');
 				}
 				_lazyLoadComponent('details-search-results','SearchResults/?company_property_id={/literal}{$company_property_id}{literal}');
 				$('#details-search-results').slideToggle('fast');

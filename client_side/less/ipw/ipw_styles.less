@@ -1,37 +1,35 @@
 // IPW LESS FILE
 // --------------------------------------------------
 
-// SYSTEM LEVEL BOOJSTRAP
+
+// Bootstrap Includes (determines what parts of the twitter bootstrap you want to use in the project)
 // --------------------------------------------------
-@import "/system/client_side/less/boojstrap/boojstrap.less";
+@import "../bootstrap_includes.less";
 
 
-// COMPANY VARIABLES
+// Boojstrap Includes (Enterprise level additions to the twitter bootstrap)
 // --------------------------------------------------
-@import "../variables.less";
+@import "/system/client_side/less/boojstrap/boojstrap_3.less";
 
 
-// IPW VARIABLES OVERRIDE
+// COMPONENT LESS FILES
+// --------------------------------------------------
+
+
+// CLIENT SPECIFIC HELPER LESS FILES
+// --------------------------------------------------
+@import "../helpers.less";
+
+
+// IPW VARIABLES
 // --------------------------------------------------
 @import "ipw_variables.less";
 
 
-// RESPONSIVE
-// --------------------------------------------------
-@import "/system/client_side/less/boojstrap/boojstrap_responsive.less";
-
-
-// COMPONENT BASE STYLES * NO CSS FILES! *
-// --------------------------------------------------
-@import "/system/client_side/less/boojstrap/lib/qtip2/qtip.less";
-@import "/system/client_side/less/boojstrap/lib/fancy_box/fancybox-2.1.4.less";
-
-
-// IPW STYLE
+// IPW LAYOUT LESS FILE
 // --------------------------------------------------
 @import "ipw_layout.less";
 
 
-// DO OTHER IMPORTS HERE
+// DO OTHER IPW IMPORTS HERE
 // --------------------------------------------------
-@import "ipw_layout.less";

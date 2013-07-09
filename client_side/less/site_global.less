@@ -4,24 +4,10 @@
 
 // HEADER STYLES
 // --------------------------------------------------
-h1 {
-
-}
 h1.page-heading {
 	margin: 0 0 30px 0;
 }
-h2 {
 
-}
-h3 {
-
-}
-h4 {
-
-}
-h5 {
-
-}
 
 // LAYOUT HEADER STYLE
 // --------------------------------------------------
@@ -31,67 +17,14 @@ h5 {
 		float: right;
 		text-align: right;
 	}
-	.navbar .brand {
-		margin: 0 30px 0 0;
+	.navbar {
+		clear: both;
 		padding: 0;
+		margin: 0;
 	}
 }
 
 
-// MAIN NAV STYLE
-// --------------------------------------------------
-#main-navigation {
-	clear: both;
-	padding: 0;
-	margin: 0;
-	.navbar-inner {
-		margin: 0;
-		padding: 0;
-		border: none;
-		background: none;
-		filter: none;
-		min-height: 28px;
-		.box-shadow(0 0 0 0 @black);
-		.border-radius(0);
-	}
-	.nav {
-		margin: 0;
-		float: none;
-	}
-	.nav > li > a {
-		color: @black;
-		padding: 15px 30px;
-		text-shadow: none;
-		background: @white;
-	}
-	.nav > li.active > a,
-	.nav > li > a.active,
-	.nav > li > a:hover,
-	.nav > li > a:focus {
-		.box-shadow(0 0 0 0 @black);
-		background: @grayLight;
-		filter: none;
-	}
-	.dropdown-menu {
-		margin: 0;
-		padding: 0;
-		background: @white;
-		.border-radius(3px);
-		filter: none;
-	}
-	.dropdown-menu li > a {
-		color: @black;
-		background: @grayLight;
-	}
-	.dropdown-menu li > a:hover {
-		background: @black;
-		color: @white;
-	}
-	.dropdown-menu:before, 
-	.dropdown-menu:after {
-		border: none !important;
-	}
-}
 
 
 // LAYOUT FOOTER STYLE
@@ -111,34 +44,40 @@ h5 {
 	bottom: 0;
 	.sticky-footer-inner {
 		.border-radius(5px 5px 0 0);
-		background: @grayLighter;
+		background: @gray-lighter;
 		padding: 10px;
 		.box-shadow(0 0 7px 2px rgba(0,0,0,0.5));
 	}
 }
 
 
-// GLOBAL TO-SPACER STYLE
+// GLOBAL TO SPACER (FOR RANGE INPUTS MIN to MAX) 
 // --------------------------------------------------
-.span1 .to-spacer {
-	display: block;
-	padding-top: 6px;
-	text-align: center;
+.to-spacer-gutter {
+	padding-left: (@grid-gutter-width / 2);
+	padding-right: (@grid-gutter-width / 2);
+	line-height: normal;
 }
-
-
-// GLOBAL CHECKBOXES LINEHIGHT FIX
-// --------------------------------------------------
-form .checkbox,
-form .radio {
-	line-height: 21px;
+@media (min-width: @screen-tablet) {
+	.to-spacer-gutter {
+		float: left;
+		padding-left: 0;
+		padding-right: 0;
+		width: @grid-gutter-width;
+		margin-left: -(@grid-gutter-width / 2);
+		margin-right: -(@grid-gutter-width / 2);
+		text-align: center;
+		line-height: @input-height-base;
+	}
 }
 
 
 // CMS PAGE STYLES
 // --------------------------------------------------
 .cms-page {
-
+	img {
+		max-width: 100%;
+	}
 }
 
 
@@ -174,12 +113,12 @@ form .radio {
 		display: block;
 	}
 	ul li a:hover {
-		background: @grayLighter;
-		color: @black;
+		background: @gray-lighter;
+		color: #000;
 		text-decoration: none;
 	}
 	ul li a.sub_active_link {
-		background: @grayLighter;
+		background: @gray-lighter;
 	}
 	ul li ul li a {
 		padding: 3px 10px 3px 20px;
@@ -195,8 +134,8 @@ form .radio {
 .quick-search-component {
 	.box-sizing(border-box);
 	position: relative;
-	.nav-tabs {
-		margin-bottom: 10px;
+	label {
+		margin-bottom: 0;
 	}
 }
 .quick-search-component-content {
@@ -209,6 +148,7 @@ form .radio {
 .quick-search-extra-section {
 	position: absolute;
 	.box-sizing(border-box);
+	z-index: 200;
 	h4 {
 		margin: 0;
 	}
@@ -216,23 +156,34 @@ form .radio {
 		margin-bottom: 0;
 	}
 }
+.quick-search-extra-section input[type="text"] {
+	margin-bottom: 10px;
+}
 .quick-search-extra-content-section {
 	padding: 20px;
-	border: 1px solid @grayLighter;
+	border: 1px solid @gray-lighter;
 	.box-shadow(0 0 10px rgba(0, 0, 0, 0.8));
-	background: @white;
-	top: 38px;
-	right: -280px;
-	width: 265px;
+	background: #fff;
+	width: 100%;
+	top: 20%;
+	right: 0;
+	left: 0;
 }
-// move more options on small screens
-@media (max-width: 767px) {
+@media (min-width: @screen-tablet) {
 	.quick-search-extra-content-section {
-		width: 100%;
-		top: 20%;
-		right: 0;
-		left: 0;
+		top: 38px;
+		right: -280px;
+		width: 265px;
+		left: auto;
 	}
+	.quick-search-extra-content-section input[type="text"] {
+		width: 65%;
+		margin-bottom: 0;
+	}
+	.quick-search-extra-content-section .btn {
+		width: 33%;
+	}
+
 }
 
 
@@ -248,8 +199,8 @@ form .radio {
 			left: 0;
 			right: 0;
 			padding: 5px;
-			background: @white;
-			color: @black;
+			background: #fff;
+			color: #000;
 		}
 	}
 	h3 {
@@ -263,6 +214,9 @@ form .radio {
 	.prop-cta {
 		margin-top: 10px;
 	}
+	img {
+		max-width: 100%;
+	}
 }
 
 
@@ -270,12 +224,12 @@ form .radio {
 // --------------------------------------------------
 .search-component-view-all {
 	text-align: center;
-	border-top: 1px solid @grayLighter;
+	border-top: 1px solid @gray-lighter;
 	a {
 		display: inline-block;
 		font-weight: bold;
 		vertical-align: top;
-		background: @white;
+		background: #fff;
 		padding: 10px;
 		margin-top: -20px;
 	}
@@ -312,6 +266,15 @@ form .radio {
 }
 
 
+// QUICK VIEW BUTTON
+// --------------------------------------------------
+.btn-quickview {
+	.btn-info();
+	.btn-small();
+	padding: 2px 5px;
+}
+
+
 // JCAROUSEL
 // --------------------------------------------------
 .jcarousel-list ul {
@@ -324,8 +287,8 @@ form .radio {
 }
 .jcarousel-container-horizontal {
 	width: 100%;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 34px;
+	padding-right: 34px;
 	.box-sizing(border-box);
 }
 .jcarousel-clip-horizontal {
@@ -339,6 +302,9 @@ form .radio {
 	width: 200px;
 	height: 200px;
 	.box-sizing(border-box);
+	img {
+		max-width: 100%;
+	}
 }
 .jcarousel-next-horizontal,
 .jcarousel-next-horizontal:hover,
@@ -349,9 +315,9 @@ form .radio {
 	right: 0;
 	.square(0);
 	cursor: pointer;
-	border-top: 20px solid transparent;
-	border-bottom: 20px solid transparent; 
-	border-left:14px solid #000;
+	border-top: 40px solid transparent;
+	border-bottom: 40px solid transparent; 
+	border-left:24px solid #000;
 }
 .jcarousel-next-disabled-horizontal,
 .jcarousel-next-disabled-horizontal:hover,
@@ -369,9 +335,9 @@ form .radio {
 	left: 0;
 	.square(0);
 	cursor: pointer;
-	border-top: 20px solid transparent;
-	border-bottom: 20px solid transparent; 
-	border-right:14px solid #000; 
+	border-top: 40px solid transparent;
+	border-bottom: 40px solid transparent; 
+	border-right:24px solid #000; 
 }
 .jcarousel-prev-disabled-horizontal,
 .jcarousel-prev-disabled-horizontal:hover,
@@ -384,10 +350,22 @@ form .radio {
 // skin for the carousel that contains standard properties.
 .jcarousel-skin-standard-property {
 	.jcarousel-clip-horizontal {
-		height: 290px;
+		height: 265px;
 	}
 	.jcarousel-item-horizontal {
-		width: 200px;
-		height: 290px;
+		width: 193px;
+		height: 265px;
+	}
+}
+
+
+// SITE TABS
+// ---------------------------------------------
+.nav-tabs {
+	margin-bottom: 10px;
+}
+.tabClass {
+	.nav-tabs {
+		margin-bottom: 15px;
 	}
 }

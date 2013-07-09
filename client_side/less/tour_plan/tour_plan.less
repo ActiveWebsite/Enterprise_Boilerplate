@@ -9,7 +9,7 @@
 }
 #currentTourPropertyWrapper {
 	ul li {
-		border-bottom: 1px solid @grayLighter;
+		border-bottom: 1px solid @gray-lighter;
 		margin-bottom: 10px;
 		padding-bottom: 10px;
 	}
@@ -19,12 +19,19 @@
 	p {
 		margin: 0;
 	}
+	.removeFromTourLink {
+		position: absolute;
+		top: -9px;
+		right: 0;
+	}
 }
 #tourRightColumn {
 	.printButtonTrigger, 
 	.tour-email-button,
 	.getDirectionsButton {
 		.btn();
+		.btn-default();
+
 		margin-top: 0;
 	}
 }
@@ -37,7 +44,7 @@
 		page-break-inside: avoid;
 	}
 	.tourLegStart {
-		border-bottom: 2px solid @grayLighter;
+		border-bottom: 2px solid @gray-lighter;
 		padding: 5px 0;
 		.printButtonTrigger {
 
@@ -52,7 +59,7 @@
 		}
 	}
 	.tourLegSteps {
-		border-bottom: 1px solid @grayLighter;
+		border-bottom: 1px solid @gray-lighter;
 		display: table;
 		width: 100%;
 		padding: 5px 0;
@@ -74,10 +81,10 @@
 		padding: 5px 0;
 		text-align: right;
 		margin-bottom: 15px;
-		border-bottom: 1px solid @grayLighter;
+		border-bottom: 1px solid @gray-lighter;
 	}
 	.tourLegEnd {
-		border-bottom: 2px solid @grayLighter;
+		border-bottom: 2px solid @gray-lighter;
 		padding: 5px 0;
 		width: 100%;
 		.tourLegIcon {

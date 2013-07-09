@@ -1,42 +1,42 @@
-// SYSTEM LEVEL BOOJSTRAP
+// Bootstrap Includes (determines what parts of the twitter bootstrap you want to use in the project)
 // --------------------------------------------------
-@import "/system/client_side/less/boojstrap/boojstrap.less";
+@import "bootstrap_includes.less";
 
 
-// CLIENT OVERRIDE FOR VARIABLES
+// Boojstrap Includes (Enterprise level additions to the twitter bootstrap)
+// --------------------------------------------------
+@import "/system/client_side/less/boojstrap/boojstrap_3.less";
+
+
+// CLIENT OVERRIDE FOR VARIABLES (where you overrided the twitter bootstrap variables to suite your project)
 // --------------------------------------------------
 @import "variables.less";
 
 
-// RESPONSIVE
+// COMPONENT LESS FILES
 // --------------------------------------------------
-@import "/system/client_side/less/boojstrap/boojstrap_responsive.less";
-
-
-// COMPONENT BASE STYLES * NO CSS FILES! *
-// --------------------------------------------------
-@import "/system/client_side/less/boojstrap/lib/qtip2/qtip.less";
+@import "/system/client_side/less/boojstrap/lib/qtip2/qtip.2.0.1.less";
 @import "/system/client_side/less/boojstrap/lib/fancy_box/fancybox-2.1.4.less";
 @import "/system/client_side/less/boojstrap/lib/property_bin/property_bin.less";
 @import "components/simple_carousel_gallery_v2.less";
 @import "components/poi_map.less";
 
-// CLIENT SPECIFIC OVERIDES OF THE BASE BOOJSTRAP STYLES
+// CLIENT SPECIFIC OVERIDES OF THE BASE BOOJSTRAP LESS FILES
 // --------------------------------------------------
 @import "overrides.less";
 
 
-// CLIENT SPECIFIC HELPER STYLESsize
+// CLIENT SPECIFIC HELPER LESS FILES
 // --------------------------------------------------
 @import "helpers.less";
 
 
-// CLIENT SPECIFIC GLOBAL STYLES
+// CLIENT SPECIFIC GLOBAL LESS FILES
 // --------------------------------------------------
 @import "site_global.less";
 
 
-// PAGE SPECIFIC STYLE IMPORTS
+// PAGE SPECIFIC LESS FILE IMPORTS
 // --------------------------------------------------
 @import "web_user_account/web_user_account.less";
 @import "tour_plan/tour_plan.less";

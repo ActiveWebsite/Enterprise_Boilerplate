@@ -23,6 +23,7 @@
 .advancedSearchForm .form-Seperator {
 	border-top: 1px solid #ccc;
 	margin-bottom: 20px;
+	margin-top: 20px;
 }
 .advancedSearchForm .form-Seperator span {
 	background: #fff;
@@ -96,7 +97,7 @@
 
 
 /* open house */
-#open-house-block .span3 {
+#open-house-block .col-3 {
 	width:17%;
 }
 
@@ -117,7 +118,7 @@
 		padding:0;
 		font-size:14px;
 	}
-	#open-house-block .span3 {
+	#open-house-block .col-3 {
 		width: 100%;
 	}
 }

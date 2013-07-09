@@ -3,15 +3,15 @@
 	<div id="office-results-map"></div>
 	<hr>
 	{if $entities}
-		<ul class="row-fluid thumbnails">
+		<ul class="row">
 			{foreach from=$entities item=office name=office_loop key=index}
-				<li class="span6{if $index%2==0} first-in-row{/if}">
+				<li class="col-sm-6 col-lg-6{if $index%2==0} first-in-row{/if} margin-bottom-30">
 					<h2><span data-action="open-result-map-bubble" data-id="{$office.id}">{$smarty.foreach.office_loop.iteration}</span> {$office.name}</h2>
 					<address>
 						{$office.address.Street_Address.value}<br>
 						{$office.address.City.value}{if $office.address.City.value && ($office.address.State.value || $office.address.Zip.value)},{/if} {$office.address.State.value} {$office.address.Zip.value}
 					</address>
-					<ul class="unstyled">
+					<ul class="list-unstyled">
 						{if $office.address.Direct_Phone.value}
 							<li>Phone {$office.address.Direct_Phone.value}</li>
 						{elseif $office.address.Office_Phone.value}
@@ -34,13 +34,13 @@
 <script type="text/template" id="office-map-bubble-template">
 	<div class="office-map-bubble">
 		<h3>{{title}}</h3>
-		{{#first_pic}}<img src="{{first_pic}}/crop/140,125" alt="">{{/first_pic}}
+		{{#first_pic}}<img src="{{first_pic}}/crop/140,125" alt="Office Photo" class="img-responsive">{{/first_pic}}
 		<div class="office-bubble-info">
 			<address>
 				{{address}}<br>
 				{{city}}, {{state}} {{zip}}
 			</address>
-			<ul class="unstyled">
+			<ul class="list-unstyled">
 				{{#direct_phone}}<li><span>Phone</span> <strong>{{direct_phone}}</strong></li>{{/direct_phone}}
 				{{#office_phone}}<li><span>Phone</span> <strong>{{office_phone}}</strong></li>{{/office_phone}}
 				{{#fax_phone}}<li><span>Phone</span> <strong>{{fax_phone}}</strong></li>{{/fax_phone}}

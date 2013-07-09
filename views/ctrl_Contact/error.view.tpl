@@ -11,7 +11,7 @@
 	</h1>
 	{if $messages->isMsgs() === true}
 		{if $messages->isErrors() === true}
-			 <div class="alert alert-error alert-block">
+			 <div class="alert alert-danger alert-block">
 				<strong>Error:</strong><br>
 				{$messages->getErrors(true)}
 			</div>

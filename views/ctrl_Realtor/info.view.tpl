@@ -1,19 +1,19 @@
 {render_layout_arguments var="render_page_breadcrumbs"}
 	<ul class="breadcrumb">
-		<li><a href="/" title="Home">Home</a> <span class="divider">&gt;</span></li>  
-		<li><a href="/{$controller_alias}/" title="{$CURRENT_CMS_PAGE_LABEL}">{if $CURRENT_CMS_PAGE_LABEL}{$CURRENT_CMS_PAGE_LABEL}{else}{$controller_obj->cms_page->name}{/if}</a> <span class="divider">&gt;</span></li>
+		<li><a href="/" title="Home">Home</a></li>  
+		<li><a href="/{$controller_alias}/" title="{$CURRENT_CMS_PAGE_LABEL}">{if $CURRENT_CMS_PAGE_LABEL}{$CURRENT_CMS_PAGE_LABEL}{else}{$controller_obj->cms_page->name}{/if}</a></li>
 		<li>{$realtor.name}</li>
 	</ul>
 {/render_layout_arguments}
 
 <div id="realtor-bio-page">
 	<h1 class="page-heading">{$realtor.name}</h1>
-	<div class="row-fluid">
-		<div class="span4">
-			<img src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
+	<div class="row">
+		<div class="col-sm-4 col-lg-4 margin-bottom-20">
+			<img class="img-responsive" src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
 		</div>
-		<div class="span4">
-			<ul class="unstyled">
+		<div class="col-sm-4 col-lg-4 margin-bottom-20">
+			<ul class="list-unstyled">
 				{if $realtor.address.Direct_Phone.value}
 					<li class="margin-bottom-5"><strong>Direct</strong> {$realtor.address.Direct_Phone.value}</li>
 				{/if}
@@ -27,11 +27,11 @@
 					<li class="margin-bottom-5"><strong>Fax</strong> {$realtor.parent_dict.address.Fax_Phone.value}</li>
 				{/if}
 				<li>
-					<a href="/popup{$ACTION_URLS.contact}realtor/{$realtor.rebrand_code}" target="_blank" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="460" rel="nofollow" class="btn fancybox">Send Me An Email</a>
+					<a href="/popup{$ACTION_URLS.contact}realtor/{$realtor.rebrand_code}" target="_blank" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="460" rel="nofollow" class="btn btn-default fancybox">Send Me An Email</a>
 				</li>
 			</ul>
 		</div>
-		<div class="span4">
+		<div class="col-sm-4 col-lg-4 margin-bottom-20">
 			{if $realtor.parent_dict}
 				<h4 class="no-margin"><a href="{$ACTION_URLS.office}{$realtor.parent_dict.rebrand}">{$realtor.parent_dict.name}</a></h4>
 				<address>
@@ -40,7 +40,7 @@
 				</address>
 				<hr>
 			{/if}
-			<ul class="unstyled">
+			<ul class="list-unstyled">
 				{if ($realtor.website_url || $realtor.rebrand_domain) && !$SITE_OWNER instanceof Realtor}
 					<li class="margin-bottom-5">
 						<a href="{if $realtor.website_url}{$realtor.website_url}{else}{$realtor.rebrand_domain}{/if}" title="Visit My Website" target="_blank">Visit My Website</a>
@@ -56,7 +56,7 @@
 				{/if}
 			</ul>
 			{if $realtor.social_networks}
-				<ul class="unstyled inline">
+				<ul class="list-inline">
 					{foreach from=$realtor.social_networks key=index item=social}
 						<li>
 							<a href="{$social->get_url()}" title="Visit my {$social->get_name()} page" target="_blank"><img src="{$social->get_image_url()}" alt="{$social->get_name()}"></a>
@@ -66,9 +66,9 @@
 			{/if}
 		</div>
 	</div>
-	<hr>
+	<hr class="margin-top-0">
 	<div id="agent-bio-tabs" class="tabClass">
-		<ul class="nav nav-tabs unstyled tab_triggers">
+		<ul class="nav nav-tabs list-unstyled tab_triggers">
 			<li class="active"><a href="#about">About</a></li>
 			{if $properties}
 				<li><a href="#listings">Listings</a></li>
@@ -83,17 +83,17 @@
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane active" id="about">
-				<div class="row-fluid">
-					<div class="span8">
+				<div class="row">
+					<div class="col-sm-8 col-lg-8">
 						<h2>About {$realtor.name}</h2>
 						<div class="cms-page">
 							{$realtor.biography}
 						</div>
 					</div>
-					<div class="span4">
+					<div class="col-sm-4 col-lg-4">
 						{if $realtor.realtor_info.Designations}
 							<h3>Designations</h3>
-							<ul class="unstyled">
+							<ul class="list-unstyled">
 								<li>{$realtor.realtor_info.Designations|replace:',':'</li><li>'}</li>
 							</ul>
 						{/if}
@@ -102,7 +102,7 @@
 						{/if}
 						{if $realtor.realtor_info.Spoken_Languages}
 							<h3>Languages</h3>
-							<ul class="unstyled">
+							<ul class="list-unstyled">
 								<li>{$realtor.realtor_info.Spoken_Languages|replace:',':'</li><li>'}</li>
 							</ul>
 						{/if}
@@ -111,10 +111,10 @@
 			</div>
 			{if $properties}
 				<div class="tab-pane" id="listings">
-					<ul class="row-fluid thumbnails">
+					<ul class="row">
 						{foreach from=$properties item=property key=index name=listingsLoop}
 							{if $index < 6}
-								<li class="standard-property span4{if $index%3==0} first-in-row{/if}">
+								<li class="standard-property col-sm-4 col-lg-4{if $index%3==0} first-in-row{/if}  margin-bottom-30">
 									{if $property->information.photo->value}
 										<div class="prop-photo">
 											<a href="/property/{$property->company_property_id}/{$property->getFullStreetAddress()|clean_for_url}" title="View property at $property->getFullStreetAddress()|clean_for_attribute}">
@@ -133,7 +133,7 @@
 										{if $property->information.bathrooms_total->value > 0} | {$property->information.bathrooms_total->value|clean_bed_bath} Bath{if $property->information.bathrooms_total->value > 1}s{/if}{/if}
 									</p>
 									<div class="prop-cta clearfix">
-										<a href="/property/property_details_quick_view/{$property->company_property_id}" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-mini">
+										<a href="/property/property_details_quick_view/{$property->company_property_id}" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-quickview">
 											Quick View
 										</a>
 										<a href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property->company_property_id}" data-property-id="{$property->company_property_id}" class="addFavorite addFavoriteButton" target="_blank" rel="nofollow" title="Add to Favorites">
@@ -156,10 +156,10 @@
 			{/if}
 			{if $sold_properties}
 				<div class="tab-pane" id="soldListings">
-					<ul class="row-fluid thumbnails">
+					<ul class="row">
 						{foreach from=$sold_properties item=property key=index name=soldListingsLoop}
 							{if $index < 6}
-								<li class="standard-property span4{if $index%3==0} first-in-row{/if}">
+								<li class="standard-property col-sm-4 col-lg-4{if $index%3==0} first-in-row{/if}  margin-bottom-30">
 									{if $property->information.photo->value}
 										<div class="prop-photo">
 											<img src="{$property->information.photo->value}/crop/275,180" title="Photo of {$property->getFullStreetAddress()|clean_for_attribute}">
@@ -174,7 +174,7 @@
 										{if $property->information.bathrooms_total->value > 0} | {$property->information.bathrooms_total->value|clean_bed_bath} Bath{if $property->information.bathrooms_total->value > 1}s{/if}{/if}
 									</p>
 									<div class="prop-cta clearfix">
-										<a href="/property/property_details_quick_view/{$property->company_property_id}" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-mini">
+										<a href="/property/property_details_quick_view/{$property->company_property_id}" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-quickview">
 											Quick View
 										</a>
 									</div>
@@ -208,42 +208,42 @@
 			<div class="tab-pane" id="multimedia">
 				{if $realtor.links || $realtor.social_networks || $realtor.website_url || $realtor.realtor_info.Blog_URL}
 					<h3>Links</h3>
-					<ul class="row-fluid thumbnails no-margin">
+					<ul class="row">
 						{foreach from=$realtor.links item=link key=index name=linksLoop}
-							<li class="span4"><a href="{$link->website_url}" target="_blank">{$link->label}</a></li>
+							<li class="col-sm-4 col-lg-4 margin-bottom-30"><a href="{$link->website_url}" target="_blank">{$link->label}</a></li>
 						{/foreach}
 						{if ($realtor.website_url || $realtor.rebrand_domain) && !$SITE_OWNER instanceof Realtor}
-							<li class="span4"><a href="{if $realtor.website_url}{$realtor.website_url}{else}{$realtor.rebrand_domain}{/if}" target="_blank" title="Visit My Website">My Website</a></li>
+							<li class="col-sm-4 col-lg-4 margin-bottom-30"><a href="{if $realtor.website_url}{$realtor.website_url}{else}{$realtor.rebrand_domain}{/if}" target="_blank" title="Visit My Website">My Website</a></li>
 						{/if}
 						{if $realtor.realtor_info.Blog_URL}
-							<li class="span4"><a href="{$realtor.realtor_info.Blog_URL}" target="_blank" title="Read My Blog">My Blog</a></li>
+							<li class="col-sm-4 col-lg-4 margin-bottom-30"><a href="{$realtor.realtor_info.Blog_URL}" target="_blank" title="Read My Blog">My Blog</a></li>
 						{/if}
 						{foreach from=$realtor.social_networks key=index item=social name="socialLoop"}
-							<li class="span4"><a href="{$social->get_url()}" title="Visit our {$social->get_name()} page" target="_blank">{$social->get_name()}</a></li>
+							<li class="col-sm-4 col-lg-4 margin-bottom-30"><a href="{$social->get_url()}" title="Visit our {$social->get_name()} page" target="_blank">{$social->get_name()}</a></li>
 						{/foreach}
 					</ul>
 					<hr class="margin-top-0">
 				{/if}
 					<h3>Documents</h3>
-					<ul class="row-fluid thumbnails no-margin">
-						<li class="span4">
+					<ul class="row">
+						<li class="col-sm-4 col-lg-4 margin-bottom-30">
 							<a href="{$ACTION_URLS.realtor}info/{$realtor.rebrand_code}?view=print" title="Agent Bio Printer Friendly Information Sheet" target="_blank" rel="nofollow">Printer Friendly Information Sheet</a>
 						</li>
 						{foreach from=$realtor.files item=file key=index name=documentsLoop}
-							<li class="span4"><a href="{$file.url}" target="_blank">{$file.name}</a></li>
+							<li class="col-sm-4 col-lg-4 margin-bottom-30"><a href="{$file.url}" target="_blank">{$file.name}</a></li>
 						{/foreach}
 					</ul>
 				{if $realtor.videos}
 					<hr class="margin-top-0">
 					<h3>Videos</h3>
-					<ul class="row-fluid thumbnails no-margin">
+					<ul class="row">
 						{foreach from=$realtor.videos item=videos}
 							{if $videos.branded == 1}
-								<li class="span4">
+								<li class="col-sm-4 col-lg-4 margin-bottom-30">
 									<a href="{$videos.video_url|htmlentities}" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="415" class="fancybox" rel="nofollow" title="Play Video" target="_blank">{$videos.name}</a>
 								</li>
 							{else}
-								<li class="span4">
+								<li class="col-sm-4 col-lg-4 margin-bottom-30">
 									<a target="_blank" rel="nofollow" href="{$videos.video_url|htmlentities}" title="Play Video">{$videos.name}</a>
 								</li>
 							{/if}

@@ -1,6 +1,6 @@
 {assign var=view_id value=$smarty.now}
 {if $properties}
-    <ul class="unstyled jcarousel-skin-standard-property" id="my-property-carousel-{$view_id}">
+    <ul class="list-unstyled jcarousel-skin-standard-property" id="my-property-carousel-{$view_id}">
         {foreach from=$properties item=property key=index}
             <li class="standard-property">
                 {if $property.first_pic instanceof PropertyPicture}
@@ -21,7 +21,7 @@
                     {if $property.bathrooms_total > 0} | {$property.bathrooms_total|clean_bed_bath} Bath{if $property.bathrooms_total > 1}s{/if}{/if}
                 </p>
                 <div class="prop-cta clearfix">
-                    <a href="/property/property_details_quick_view/{$property.company_property_id}" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-mini">
+                    <a href="/property/property_details_quick_view/{$property.company_property_id}" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-quickview">
                         Quick View
                     </a>
                     <a href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property.company_property_id}" data-property-id="{$property.company_property_id}" class="addFavorite addFavoriteButton" target="_blank" rel="nofollow" title="Add to Favorites">

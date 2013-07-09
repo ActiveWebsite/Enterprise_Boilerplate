@@ -8,32 +8,30 @@
     	</ol>
     {/if}
 	<form id="submitForm" class="validate-form" action="{$ACTION_URLS.local_root}/send_email_tour" method="post">
-        <div class="row-fluid">
-            <div class="control-group span6">
-                <label class="control-label">To Name:<span class="red">*</span></label>
-                <input type="text" class="span12 required" placeholder="Enter To Name" name="toName">
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 margin-bottom-10">
+                <label>To Name:<span class="red">*</span></label>
+                <input type="text" class="required" placeholder="Enter To Name" name="toName">
             </div>
-            <div class="control-group span6">
+            <div class="col-sm-6 col-lg-6 margin-bottom-10">
                 <label class="control-label">To Email:<span class="red">*</span></label>
-				<input type="text" class="span12 required email" placeholder="Enter To Email" name="toEmail">
+				<input type="text" class="required email" placeholder="Enter To Email" name="toEmail">
             </div>
         </div>
-        <div class="row-fluid">
-            <div class="control-group span2">
-                <label class="control-label">From Name:<span class="red">*</span></label>
-				<input type="text" class="span12 required" placeholder="Enter From Name" name="fromName" value="">
+        <div class="row">
+            <div class="col-sm-2 col-lg-2 margin-bottom-10">
+                <label>From Name:<span class="red">*</span></label>
+				<input type="text" class="required" placeholder="Enter From Name" name="fromName" value="">
             </div>
-            <div class="control-group span2">
-                <label class="control-label">From Email:<span class="red">*</span></label>
-				<input type="text" class="span12 required email" placeholder="Enter From Email" name="fromEmail" value="">
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="control-group span12">
-                <label class="control-label">Message<span class="red">*</span></label>
-                <textarea name="message" rows="6" cols="25" class="span12" placeholder="Enter Message"></textarea>
-                <input type="submit" class="btn margin-top-10" value="Send">
+            <div class="col-sm-2 col-lg-2 margin-bottom-10">
+                <label>From Email:<span class="red">*</span></label>
+				<input type="text" class="required email" placeholder="Enter From Email" name="fromEmail" value="">
             </div>
         </div>
+        <div class="margin-bottom-10">
+            <label>Message<span class="red">*</span></label>
+            <textarea name="message" rows="6" cols="25" placeholder="Enter Message"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary margin-top-10" value="Send">
 	</form>
 </div>

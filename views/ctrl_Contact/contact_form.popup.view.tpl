@@ -12,7 +12,7 @@
 	{/if}
 	{if $messages->isMsgs() === true}
 		{if $messages->isErrors() === true}
-			 <div class="alert alert-error alert-block">
+			 <div class="alert alert-danger alert-block">
 				<strong>Error:</strong><br>
 				{$messages->getErrors(true)}
 			</div>
@@ -51,32 +51,30 @@
 				<input type="hidden" value="Contact Us" name="lc_custom_form_name">
 			{/if}
 			<fieldset>
-		        <div class="row-fluid">
-		            <div class="span6 margin-bottom-15">
+		        <div class="row">
+		            <div class="col-sm-6 col-lg-6 margin-bottom-15">
 						<label for="contact_form_firstname">First Name <span class="red">*</span></label>
-						<input type="text" id="contact_form_firstname" name="first_name" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}" class="required span12">
+						<input type="text" id="contact_form_firstname" name="first_name" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}" class="required">
 					</div>
-		            <div class="span6 margin-bottom-15">
+		            <div class="col-sm-6 col-lg-6 margin-bottom-15">
 						<label for="contact_form_lastname">Last Name <span class="red">*</span></label>
-						<input type="text" id="contact_form_lastname" name="last_name" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}" class="required span12">
+						<input type="text" id="contact_form_lastname" name="last_name" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}" class="required">
 					</div>
 				</div>
-		        <div class="row-fluid">
-		            <div class="span6 margin-bottom-15">
+		        <div class="row">
+		            <div class="col-sm-6 col-lg-6 margin-bottom-15">
 						<label for="contact_form_email">Email<span class="red">*</span></label>
-						<input type="email" name="email_confirm" id="contact_form_email" placeholder="Enter Email Address" class="required email span12" value="{if $contactor ne false}{$contactor->email}{/if}">
+						<input type="email" name="email_confirm" id="contact_form_email" placeholder="Enter Email Address" class="required email" value="{if $contactor ne false}{$contactor->email}{/if}">
 						<input type="text" style="display:none;" value="" name="email">
 					</div>
-		            <div class="span6 margin-bottom-15">
+		            <div class="col-sm-6 col-lg-6 margin-bottom-15">
 						<label for="contact_form_phone">Phone</label>
-						<input name="phone" value="" type="text" placeholder="Enter Phone" class="span12" id="contact_form_phone">
+						<input name="phone" value="" type="text" placeholder="Enter Phone" id="contact_form_phone">
 					</div>
 				</div>
-		        <div class="row-fluid">
-		            <div class="span12 margin-bottom-15">
-						<label for="contact_form_message">Message<span class="red">*</span></label>
-						<textarea name="message" rows="3" cols="25" placeholder="Message" class="required span12" id="contact_form_message"></textarea>
-					</div>
+		        <div class="margin-bottom-15">
+					<label for="contact_form_message">Message<span class="red">*</span></label>
+					<textarea name="message" rows="3" cols="25" placeholder="Message" class="required" id="contact_form_message"></textarea>
 				</div>
 				{if $smarty.request.return}
 					<input name="returnToRef" value="{$smarty.request.return}" type="hidden">
@@ -86,20 +84,20 @@
 				{if isset($smarty.request.send_to) && !empty($smarty.request.send_to)}
 					<input name="send_to" value="{$smarty.request.send_to}" type="hidden">
 				{/if}				
-				<input type="submit" title="Send" value="Send" class="btn">
+				<input type="submit" title="Send" value="Send" class="btn btn-primary">
 			</fieldset>
 		</form>
 		<hr>
 		<div class="popupFooter clearfix">
 			{if $realtor && $realtor.id && $realtor.pic_url}
 				{if $realtor.pic_url}
-					<img src="{$realtor.pic_url}/maxwidth/70" class="pull-left margin-right-10" alt="">
+					<img src="{$realtor.pic_url}/maxwidth/70" class="pull-left margin-right-10 img-responsive" alt="">
 				{else}
-					<img src="/images/person_avatar.gif" class="pull-left margin-right-10" alt="">
+					<img src="/images/person_avatar.gif" class="pull-left margin-right-10 img-responsive" alt="">
 				{/if}
 				<div class="pull-left">
 					<h2>{$realtor.name}</h2>
-					<ul class="unstyled">
+					<ul class="list-unstyled">
 						{if $realtor.parent->name}
 							<li><em>{$realtor.parent->name}</em></li>
 						{/if}
@@ -116,12 +114,12 @@
 			{else}
 				<div class="pull-left">
 					<h2>Company Name</h2>
-					<ul class="unstyled">
+					<ul class="list-unstyled">
 						<li><strong>Phone:</strong> 555-555-5555</li>
 					</ul>
 				</div>
 			{/if}
-			<img src="/images/popup-logo.jpg" class="pull-right" alt="">
+			<img src="/images/popup-logo.jpg" class="pull-right img-responsive" alt="">
 		</div>
 	{/if}
 </div>

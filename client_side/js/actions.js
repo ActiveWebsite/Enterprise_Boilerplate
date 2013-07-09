@@ -203,7 +203,9 @@ jQuery(document).ready(function ($) {
 	 * @all pages
 	 */
 	if ($.fn.boojstrapDropdownNavigation) {
-		$('#boojstrap-menu').boojstrapDropdownNavigation();
+		$('#boojstrap-menu').boojstrapDropdownNavigation({
+			classOnLi: true
+		});
 	}
 
 	/**

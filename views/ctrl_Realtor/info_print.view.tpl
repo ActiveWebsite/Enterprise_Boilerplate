@@ -1,10 +1,10 @@
 <div id="realtor-bio-page">
 	<h1 class="page-heading">{$realtor.name}</h1>
 	
-	<img src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
+	<img class="img-responsive" src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
 
 	<hr>
-	<ul class="unstyled">
+	<ul class="list-unstyled">
 		{if $realtor.address.Direct_Phone.value}
 			<li class="margin-bottom-5"><strong>Direct</strong> {$realtor.address.Direct_Phone.value}</li>
 		{/if}
@@ -37,7 +37,7 @@
 	{if $realtor.realtor_info.Designations}
 		<hr>
 		<h2>Designations</h2>
-		<ul class="unstyled">
+		<ul class="list-unstyled">
 			<li>{$realtor.realtor_info.Designations|replace:',':'</li><li>'}</li>
 		</ul>
 	{/if}
@@ -45,7 +45,7 @@
 	{if $realtor.realtor_info.Spoken_Languages}
 		<hr>
 		<h2>Languages</h2>
-		<ul class="unstyled">
+		<ul class="list-unstyled">
 			<li>{$realtor.realtor_info.Spoken_Languages|replace:',':'</li><li>'}</li>
 		</ul>
 	{/if}

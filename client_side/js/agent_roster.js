@@ -99,9 +99,9 @@ jQuery(document).ready(function ($) {
 				style: {
 					classes: 'ui-tooltip-agent-bubble',
 					tip: {
-						height:30,
-						width:20,
-						border: 1,
+						height:15,
+						width:15,
+						border: true,
 						corner: true
 					}					
 				},

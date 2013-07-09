@@ -32,7 +32,7 @@ ClientSearch.prototype = {
 
 		// add counter comment out if not needed @documentation http://boojlabs.activewebsite.com/documentation/view/51
 		this.counter = this.form.formCounter({
-			counterButton: this.save_form ? '<input type="submit" title="Save" value="Save">' : '<input type="submit" title="Search" value="Search" class="btn">',
+			counterButton: this.save_form ? '<input type="submit" title="Save" value="Save" class="btn btn-primary">' : '<input type="submit" title="Search" value="Search" class="btn btn-primary">',
 			counterText: 'listings found',
 			searchDelay: 1,
 			slide_counter: true,

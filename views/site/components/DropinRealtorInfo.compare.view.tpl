@@ -12,20 +12,20 @@
 			{$current_company.name}
 		{/if}
 	</h4>
-	<div class="row-fluid">
-		<div class="span4">
+	<div class="row">
+		<div class="col-sm-4 col-lg-4">
 			{if $current_account_user.realtor.pic instanceof EntityPicture}
-				<img src="{$current_account_user.realtor.pic->getURL()}/crop/81,97/" alt="{$realtor.name}">
+				<img src="{$current_account_user.realtor.pic->getURL()}/crop/81,97/" alt="{$realtor.name}" class="img-responsive">
 			{elseif $realtor.pic instanceof EntityPicture}
-				<img src="{$realtor.pic->getURL()}/crop/81,97/" alt="{$realtor.name}">
+				<img src="{$realtor.pic->getURL()}/crop/81,97/" alt="{$realtor.name}" class="img-responsive">
 			{elseif $current_company.thumb_pic.url}
-				<img src="{$current_company.thumb_pic.url}" alt="No Photo">
+				<img src="{$current_company.thumb_pic.url}" alt="No Photo" class="img-responsive">
 			{else}
-				<img src="/images/agent-placeholder.jpg" alt="No Photo">
+				<img src="/images/agent-placeholder.jpg" alt="No Photo" class="img-responsive">
 			{/if}
 		</div>
-		<div class="span8">
-			<ul class="unstyled">
+		<div class="col-sm-8 col-lg-8">
+			<ul class="list-unstyled">
 				{if $current_account_user.realtor}
 					{if $current_account_user.realtor.address.Direct_Phone.value}
 						<li><strong>Direct:</strong> {$current_account_user.realtor.address.Direct_Phone.value}</li>
@@ -66,7 +66,7 @@
 			</ul>
 		</div>
 	</div>
-	<ul class="unstyled margin-top-5">
+	<ul class="list-unstyled margin-top-5">
 		<li>
 			{if $current_account_user.realtor}
 				<a title="Request More Information" rel="nofollow" target="_blank" class="fancybox" href="/popup/forms/display/request_info/?prop={$prop}&amp;realtor_id={$current_account_user.realtor.id}" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="560">Request More Information</a>

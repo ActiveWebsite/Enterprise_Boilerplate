@@ -2,112 +2,69 @@
 // --------------------------------------------------
 
 
-// SPAN5-HALF GRID SETUP
+// MAKE FANCYBOX STOP SUCKING
 // --------------------------------------------------
-.row-fluid .span5-half {
-	width: 44.44%;
-}
-
-
-// THUMBNAILS BOTTOM MARGIN
-// --------------------------------------------------
-ul.thumbnails > li {
-	margin-bottom: 30px;
+.fancybox-inner {
+	overflow-x: hidden !important;
+    h1 {
+        line-height: normal;
+        margin: 0 0 20px 0;
+        font-size: 20px;
+    }
 }
 
 
 // OVERRIDE FOR PROPERTY BIN COMPONENT GOES HERE
 // --------------------------------------------------
+#property-bin-top-toolbar,
+#property-bin-bottom-toolbar {
+	.btn {
+		.btn-default();
+	}
+}
 
 
-
-// OVERRIDE FOR DRIVING TOUR (TOUR PLAN) GOES HERE
+// OVERRIDE FOR PROPERTY BIN GOES HERE
 // --------------------------------------------------
 #property-bin-default-open-button {
 	display: none;
 }
 
 
-// less than 1200 grid & landscape tablets
+// BOOTSTRAP 3 IS MOBILE FIRST SO STYLE ADJUSTMENTS FOR DIFFERENT SCREEN SIZES SHOULD BE DONE INSIDE THE APPROPRIATE MEDIA QUERY
+.dev-environment #media-query-holder:before {
+	content: "Mobile";
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 300000;
+	color: black;
+	background: white;
+	.opacity(60);
+	font-size:8px;
+	.border-radius(5px 0 0 0);
+}
+
+// tablets and up
 // --------------------------------------------------
-@media (max-width: 1199px) {
-	.container {
-		width: auto;
-		padding-left: 2.6%;
-		padding-right: 2.6%;
-	}
-	body {
-		padding: 0;
-		margin: 0;
-	}
-	body.dev-environment:before {
-		content: "@media max-width: 1199px (only visible on dev)";
-		position: fixed;
-		bottom: 0;
-		right: 0;
-		z-index: 300000;
-		color: black;
-		background: white;
-		.opacity(60);
-		font-size:8px;
-		.border-radius(5px 0 0 0);
+@media (min-width: @screen-tablet) {
+	.dev-environment #media-query-holder:before {
+		content: "Tablet @media (min-width: @screen-tablet) {}";
 	}
 }
 
-
-// Tablets & small desktops only
+// small desktops and up
 // --------------------------------------------------
-@media (max-width: 979px) {
-	.container {
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-	body {
-		padding: 0;
-		margin: 0;
-	}
-	body.dev-environment:before {
-		content: "@media max-width: 979px (only visible on dev)";
-		position: fixed;
-		bottom: 0;
-		right: 0;
-		z-index: 300000;
-		color: black;
-		background: white;
-		.opacity(60);
-		font-size:8px;
-		.border-radius(5px 0 0 0);
-	}
-	.row-fluid .span5-half {
-		width: 43.990%;
+@media (min-width: @screen-desktop) {
+	.dev-environment #media-query-holder:before {
+		content: "Desktop @media (min-width: @screen-desktop) {}";
 	}
 }
 
-
-// Phones only
+// large desktops and up
 // --------------------------------------------------
-@media (max-width: 767px) {
-	.container {
-		padding-left: 5px;
-		padding-right: 5px;
-	}
-	body {
-		padding: 0;
-		margin: 0;
-	}
-	body.dev-environment:before {
-		content: "@media max-width: 767px (only visible on dev)";
-		position: fixed;
-		bottom: 0;
-		right: 0;
-		z-index: 300000;
-		color: black;
-		background: white;
-		.opacity(60);
-		font-size:8px;
-		.border-radius(5px 0 0 0);
-	}
-	.row-fluid .span5-half {
-		width: 100%;
+@media (min-width: @container-large-desktop) {
+	.dev-environment #media-query-holder:before {
+		content: "Large Desktop @media (min-width: @container-large-desktop) {}";
 	}
 }

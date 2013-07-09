@@ -8,7 +8,7 @@
 	position: relative;
 	.slide {
 		width: 100%;
-		min-height: 455px;
+		min-height: 125px;
 	}
 	.caption {
 		position: absolute;
@@ -22,14 +22,18 @@
 			margin: 0;
 			padding: 0;
 			line-height: normal;
-			font-size: 18px;
+			font-size: 12px;
 			font-weight: bold;
+			color: #fff;
+		}
+		h3 a {
+			color: #fff;
 		}
 		p {
 			margin: 0;
 			padding:0.5em 0 0 0;
-			color: @white;
-			font-size: 16px;
+			color: #fff;
+			font-size: 11px;
 			font-weight: bold;
 		}			
 	}
@@ -41,59 +45,67 @@
 		z-index: 500;
 		text-align: right;
 		span {
-			font-size: 50px;
+			border-radius: 8px;
 			cursor: pointer;
+			margin-left: 5px;
 			.square(16px);
-			color: @black;
+			background-color: #000;
 			display: inline-block;
+			font: 0/0 a;
+			vertical-align: top;
+     		color: transparent;
 			&.cycle-pager-active {
-				color: @red;
+				background-color: @brand-danger;
 			}
 		}
 	}
 }
-// change min height of gallery on smaller screens
-@media (max-width: 1199px) {
-	#home-page-gallery .slide {
-		min-height: 200px;
+// increase font sizes in gallery as screens get larger
+@media (min-width: @container-tablet) {
+	#home-page-gallery .caption h3 {
+		font-size: 18px;
 	}
+	#home-page-gallery .caption p {
+		font-size: 16px;
+	}
+
 }
 
 
 // QUICK SEARCH
 // --------------------------------------------------
 .quick-search-component-home {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-	background-color: @white;
-	#translucent > .background(@white, 0.5);
+	background-color: #fff;
+	#translucent > .background(#fff, 0.5);
 	border: 1px solid @gray;
 	padding: 20px;
-	z-index: 550;
+	margin-top: 30px;
 }
 .quick-search-extra-home-section {
-	background-color: @white;
-	#translucent > .background(@white, 0.5);
-	right: -285px;
-	top: -21px;
-	width: 265px;
+	background-color: #fff;
 	padding: 20px;
 	border: 1px solid @gray;
+	width: 100%;
+	top: 25%;
+	.box-shadow(0 0 10px rgba(0, 0, 0, 0.8));
 }
-// change position of quick search and more options on smaller screens
-@media (max-width: 1199px) {
+.quick-search-extra-home-section input[type="text"] {
+	margin-bottom: 10px;
+}
+// move quick search as screen gets big
+@media (min-width: @container-large-desktop) {
 	.quick-search-component-home {
-		position: static;
-		margin-top: 30px;
+		position: absolute;
+		z-index: 550;
+		margin: 20px 0 0 20px;
+		top: 0;
 	}
 	.quick-search-extra-home-section {
-		width: 100%;
-		top: 20%;
-		background: @white;
-		right: 0;
-		left: 0;
-		.box-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+		#translucent > .background(#fff, 0.5);
+		right: -285px;
+		width: 265px;
+		top: -21px;
+		.box-shadow(none);
 	}
 }
 
@@ -102,7 +114,7 @@
 // --------------------------------------------------
 .homepage-well {
 	.border-radius(5px);
-	border: 1px solid @grayLighter;
+	border: 1px solid @gray-lighter;
 	padding: 20px;
 	h3 {
 		margin: 0;
@@ -121,11 +133,11 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
-			background-color: @white;
-			#translucent > .background(@white, 0.5);
+			background-color: #fff;
+			#translucent > .background(#fff, 0.5);
 			padding: 5px;
 			a {
-				color: @black;
+				color: #000;
 			}
 		}
 	}

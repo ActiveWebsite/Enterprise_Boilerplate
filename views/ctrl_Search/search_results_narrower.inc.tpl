@@ -74,5 +74,5 @@
 		<input type="hidden" name="orderby" value="{$last_order_by}">
 	{/if}
 
-	<input type="submit" value="Update Results" title="Update Results" class="btn">
+	<input type="submit" value="Update Results" title="Update Results" class="btn btn-primary btn-block">
 </form>

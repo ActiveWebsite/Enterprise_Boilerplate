@@ -24,21 +24,35 @@
     {* DEFAULT TO RESIDENTIAL *}
     {assign var=PT value=145}
 {/if}
-<div class="row-fluid">
-	<div class="span3">
+<div class="row">
+	<div class="col-sm-3 col-lg-3">
 		{include file="$view_path/search_results_narrower.inc.tpl"}
 	</div>
-	<div class="span9">
-		<h1 class="page-heading">{$page_manager_obj->get_total_count()|number_format} Search Results</h1>
+	<div class="col-sm-9 col-lg-9">
+		<div class="row">
+			<div class="col-sm-6 col-lg-6">
+				<h1 class="page-heading">{$page_manager_obj->get_total_count()|number_format} Search Results</h1>
+			</div>
+			<div class="col-sm-3 col-lg-3">
+				<a href="#" class="property-bin-toggle pull-right">Property Bin <span class="property-bin-count"></span></a>
+			</div>
+			<div class="col-sm-3 col-lg-3">
+				{if $is_account_user}
+					<a href="{$ACTION_URLS.search}save_last_search/2" rel="nofollow" target="action_iframe" title="Save Search">Save Search</a>
+				{else}
+					<a href="{$ACTION_URLS.account}" data-action="account-login" title="Login To Save Search">Save Search</a>
+				{/if}
+			</div>
+		</div>
 		
 		{include file="$view_path/results_header.tpl"}
 		
 		<hr>
 		
-		<ul class="row-fluid thumbnails margin-bottom-0">
+		<ul class="row">
 			{if count($properties) > 0}
 			    {foreach item=property from=$properties key=index}
-			    	<li class="span4 standard-property{if $index%3==0} first-in-row{/if}">
+			    	<li class="col-sm-4 col-lg-4 standard-property{if $index%3==0} first-in-row{/if} margin-bottom-30">
 						<div class="prop-photo">
 							<a href="/property/{$property->company_property_id}{if $property->address_display_bit}/{$property->getfullStreetAddress()|clean_for_url}{/if}" title="View property{if $property->address_display_bit} at {$property->getfullStreetAddress()|clean_for_attribute}{/if}">
 								<img src="{$properties_pics[$index]->getUrl()}/crop/275,180/" title="Photo of {if $property->address_display_bit}{$property->getfullStreetAddress()|clean_for_attribute}{/if}">
@@ -60,7 +74,7 @@
 							{if $property->bathrooms_total > 0} | {$property->bathrooms_total|clean_bed_bath} Bath{if $property->bathrooms_total > 1}s{/if}{/if}
 			    		</p>
 			    		<div class="prop-cta clearfix">
-							<a href="/property/property_details_quick_view/{$property->company_property_id}" class="quickview-fancybox btn btn-mini" title="Quick View" data-fancybox-group="results-page" rel="nofollow">
+							<a href="/property/property_details_quick_view/{$property->company_property_id}" class="quickview-fancybox btn btn-quickview" title="Quick View" data-fancybox-group="results-page" rel="nofollow">
 								Quick View
 							</a>
 							{* determine if this property is a favorite *}
@@ -79,7 +93,7 @@
 			    	</li>
 				{/foreach}
 			{else}
-				<li class="span12 first-in-row">No Properties Found</li>
+				<li class="col-sm-12 col-lg-12 first-in-row">No Properties Found</li>
 			{/if}
 		</ul>
 

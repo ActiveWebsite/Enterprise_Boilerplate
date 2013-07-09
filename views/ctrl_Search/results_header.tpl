@@ -1,7 +1,7 @@
-<div class="row-fluid">
-	<form method="post" action="{$ACTION_URLS.search}" class="span3 margin-bottom-0">
+<div class="row">
+	<form method="post" action="{$ACTION_URLS.search}" class="col-sm-3 col-lg-3 margin-bottom-0">
 		<label class="bold margin-bottom-0">Sort By:</label>
-		<select class="SearchSortFields span12 margin-0">
+		<select class="SearchSortFields margin-0">
 			<option value="list_price"{if $last_order_by eq "list_price"} selected="selected"{/if}>Price (Low to High)</option>
 			<option value="list_price/descending"{if $last_order_by eq "list_price/descending"} selected="selected"{/if}>Price (High to Low)</option>
 			<option value="date_entered/descending"{if $last_order_by eq "date_entered/descending"} selected="selected"{/if}>Listing Date (Newest)</option>
@@ -14,42 +14,42 @@
 			{/if}
 		</select>
     </form>
-    <div class="span5">
-	    <div class="row-fluid">
-			<form method="post" action="{$ACTION_URLS.search}" class="span3 margin-bottom-0">
-				<label class="bold margin-bottom-0">Per Page:</label>
-				<select class="PageCountNumber span12 margin-0">
-					 <option value="12"{if $page_manager_obj->get_count() eq 12} selected="selected"{/if}>12</option>
-					 <option value="24"{if $page_manager_obj->get_count() eq 24} selected="selected"{/if}>24</option>
-					 <option value="36"{if $page_manager_obj->get_count() eq 36} selected="selected"{/if}>36</option>
-					 <option value="48"{if $page_manager_obj->get_count() eq 48} selected="selected"{/if}>48</option>
-				</select>        
-			</form>
-			<div class="span9 padding-left-10">
-				<label>&nbsp;</label>
-				<a href="#" class="property-bin-toggle pull-right">Property Bin <span class="property-bin-count"></span></a>
-				{if $is_account_user}
-					<a href="{$ACTION_URLS.search}save_last_search/2" rel="nofollow" target="action_iframe" title="Save Search">Save this Search</a>
-				{else}
-					<a href="{$ACTION_URLS.account}" data-action="account-login" title="Login To Save Search">Save this Search</a>
-				{/if}
-			</div>
-		</div>
-	</div>
-	<div class="span4 search-results-paging">
-		<label>&nbsp;</label>
-		{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1)) ne false}
-			<a href="{$page_manager_obj->get_first_page_url()}" title="First Page" class="search-results-paging-first">First</a>
-		{/if}
-		{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1)) ne false}
-			<a href="{$page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1))}" class="search-results-paging-previous" title="Previous Page">Previous</a>
-		{/if}
-		{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1)) ne false }<a href="{$page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1))}" title="Page {$page_manager_obj->get_current_page_num(-1)}">{$page_manager_obj->get_current_page_num(-1)}</a> | {/if}<span class="search-results-paging-current">{$page_manager_obj->get_current_page_num()}</span>{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(1)) ne false } | <a href="{$page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(1))}" title="Page {$page_manager_obj->get_current_page_num(1)}">{$page_manager_obj->get_current_page_num(1)}</a>{/if}{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1)) eq false && $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(2)) ne false} | <a href="{$page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(2))}" title="Page {$page_manager_obj->get_current_page_num(2)}">{$page_manager_obj->get_current_page_num(2)}</a>{/if} of <a href="{$page_manager_obj->get_last_page_url()}" title="Last Page">{$page_manager_obj->get_total_pages()}</a>
-		{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(1)) ne false}
-			<a href="{$page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(1))}" class="search-results-paging-next" title="Next Page">Next</a>
-		{/if}
-		{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(3)) ne false}
-			<a href="{$page_manager_obj->get_last_page_url()}" title="Last Page" class="search-results-paging-last">Last</a>
-		{/if}
+    <form method="post" action="{$ACTION_URLS.search}" class="col-sm-2 col-lg-2 margin-bottom-0">
+		<label class="bold margin-bottom-0">Per Page:</label>
+		<select class="PageCountNumber margin-0">
+			 <option value="12"{if $page_manager_obj->get_count() eq 12} selected="selected"{/if}>12</option>
+			 <option value="24"{if $page_manager_obj->get_count() eq 24} selected="selected"{/if}>24</option>
+			 <option value="36"{if $page_manager_obj->get_count() eq 36} selected="selected"{/if}>36</option>
+			 <option value="48"{if $page_manager_obj->get_count() eq 48} selected="selected"{/if}>48</option>
+		</select>        
+	</form>
+	<div class="col-sm-7 col-lg-7">
+		<label class="block">&nbsp;</label>
+		<ul class="pagination no-margin pull-right">
+			{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1)) ne false}
+				<li><a href="{$page_manager_obj->get_first_page_url()}">First</a></li>
+			{/if}
+			{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1)) ne false}
+				<li><a href="{$page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1))}">Prev</a></li>
+			{/if}
+			{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1)) ne false}
+				<li><a href="{$page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1))}">{$page_manager_obj->get_current_page_num(-1)}</a></li>
+			{/if}
+			<li class="disabled"><span>{$page_manager_obj->get_current_page_num()}</span></li>
+			{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(1)) ne false }
+				<li><a href="{$page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(1))}">{$page_manager_obj->get_current_page_num(1)}</a></li>
+			{/if}
+			{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1)) eq false && $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(2)) ne false}
+				<li><a href="{$page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(2))}">{$page_manager_obj->get_current_page_num(2)}</a></li>
+			{/if}
+			<li class="disabled"><span>...</span></li>
+			<li><a href="{$page_manager_obj->get_last_page_url()}">{$page_manager_obj->get_total_pages()}</a></li>
+			{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(1)) ne false}
+				<li><a href="{$page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(1))}">Next</a></li>
+			{/if}
+			{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(3)) ne false}
+				<li><a href="{$page_manager_obj->get_last_page_url()}">Last</a></li>
+			{/if}
+		</ul>
 	</div>
 </div>

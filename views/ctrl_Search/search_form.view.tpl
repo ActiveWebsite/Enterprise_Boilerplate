@@ -52,7 +52,7 @@
 		{/if}
 		<link rel="stylesheet" href="/css/search/advanced_search.css">
 		{* if using bootstrap add a build list with all the libraries you will need *}
-		<script src="/js/buildlist.js?scripts=/js/search/jquery.formCounter.min.js,/js/jqueryui/components/autocomplete.min.js"></script>
+		<script src="/js/buildlist.js?scripts=/js/libs/jquery_ui/components/core.1.10.3.min.js,/js/libs/jquery_ui/components/menu.1.10.3.min.js,/js/libs/jquery_ui/components/autocomplete.1.10.3.min.js,/js/search/jquery.formCounter.min.js"></script>
 		<script src="/js/min/search_app.min.js"></script>
 	{/if}
 	{literal}
@@ -70,19 +70,20 @@
 	<h1>Advanced Search</h1>
 	{if !$save_button}
 		<form action="{$ACTION_URLS.search}url_search" method="post">
-			<fieldset class="row-fluid">
-				<div class="span10">
-					<input type="text" class="span12" placeholder="Enter Address">
+			<fieldset class="row">
+				<div class="col-sm-10 col-lg-10">
+					<input type="text" placeholder="Enter Address">
 				</div>
-				<div class="span2">
+				<div class="col-sm-2 col-lg-2">
 					{if $save_button}
-						<input type="submit" title="Search" value="Save" class="btn btn-block">
+						<input type="submit" title="Search" value="Save" class="btn btn-default btn-block">
 					{else}
-						<input type="submit" class="btn btn-block" value="Search" title="Search">							
+						<input type="submit" class="btn btn-primary btn-block" value="Search" title="Search">							
 					{/if}
 				</div>
 			</fieldset>
 		</form>
+
 		<div class="form-Seperator clearfix">
 			<span>OR</span>
 		</div>
@@ -112,75 +113,83 @@
 		<form id="AdvancedSearchForm" action="{$ACTION_URLS.search}url_search" method="post">
 	{/if}
 		<div class="main-property-type-list clearfix">
-			<div class="row-fluid">
-				<ul class="unstyled">
-					<li class="span2">
-						<label class="radio">
+			<ul class="row">
+				<li class="col-sm-2 col-lg-2">
+					<div class="radio bold">
+						<label>
 							<input type="radio" data-action="change-property-type" value="1" data-template="sample" checked="checked" name="Property_Type"{if $PT == 145} checked="checked"{/if}>
 							Sample
 						</label>
-					</li>					
-					<li class="span2">
-						<label class="radio">
+					</div>
+				</li>					
+				<li class="col-sm-2 col-lg-2">
+					<div class="radio bold">
+						<label>
 							<input type="radio" data-action="change-property-type" value="145" data-template="residential" checked="checked" name="Property_Type"{if $PT == 145} checked="checked"{/if}>
 							Residential
 						</label>
-					</li>
-					<li class="span2">
-						<label class="radio">
+					</div>
+				</li>					
+				<li class="col-sm-2 col-lg-2">
+					<div class="radio bold">
+						<label>
 							<input type="radio" data-action="change-property-type" value="146" data-template="land_lot" name="Property_Type"{if $PT == 146} checked="checked"{/if}>
 							Land and Lots
 						</label>
-					</li>
-					<li class="span2">
-						<label class="radio">
+					</div>
+				</li>					
+				<li class="col-sm-2 col-lg-2">
+					<div class="radio bold">
+						<label>
 							<input type="radio" data-action="change-property-type" data-template="farm" value="147" name="Property_Type"{if $PT == 147} checked="checked"{/if}>
 							Farms
 						</label>
-					</li>
-					<li class="span2">
-						<label class="radio">
+					</div>
+				</li>					
+				<li class="col-sm-2 col-lg-2">
+					<div class="radio bold">
+						<label>
 							<input type="radio" data-action="change-property-type" data-template="multi_family" value="148" name="Property_Type"{if $PT == 148} checked="checked"{/if}>
 							Multifamily
 						</label>
-					</li>
-					<li class="span2">
-						<label class="radio">
+					</div>
+				</li>					
+				<li class="col-sm-2 col-lg-2">
+					<div class="radio bold">
+						<label>
 							<input type="radio" data-action="change-property-type" data-template="commercial" value="149" name="Property_Type"{if $PT == 149} checked="checked"{/if}>
 							Commercial
 						</label>
-					</li>
-				</ul>
-			</div>
+					</div>
+				</li>					
+			</ul>
 		</div>
 		<hr>
-		<div id="advanced-search-width-wrapper" class="row-fluid">
-			<div class="span9">
-				<div class="row-fluid">
-					<div id="dynamic-wrapper" class="span12">
-						<div id="dynamic-content">
-							{*
-								LOAD THE CORRECT PROPERTY TYPE HERE BASED ON THE $PT. 
-								YOU WILLUPDATE THE PATHS TO THE FILE INCLUDES AND THE ID'S FOR YOUR CLIENT
-								THIS IS JUST AN EXAMPLE
-							*}
-							{*
-							{if $PT == 145}
-								{include file="$view_path/search_form_prop_types/residential.view.tpl"}
-							{elseif $PT == 146}
-								{include file="$view_path/search_form_prop_types/land_lot.view.tpl"}
-							{elseif $PT == 147}
-								{include file="$view_path/search_form_prop_types/farm.view.tpl"}
-							{elseif $PT == 148}
-								{include file="$view_path/search_form_prop_types/multi_family.view.tpl"}
-							{elseif $PT == 149}
-								{include file="$view_path/search_form_prop_types/commercial.view.tpl"}
-							{else}
-								{include file="$view_path/search_form_prop_types/residential.view.tpl"}
-							{/if}
-							*}
-							{include file="$view_path/search_form_prop_types/sample.view.tpl"}
-						</div>
+		<div id="advanced-search-width-wrapper" class="row">
+			<div class="col-sm-9 col-lg-9">
+				<div id="dynamic-wrapper">
+					<div id="dynamic-content">
+						{*
+							LOAD THE CORRECT PROPERTY TYPE HERE BASED ON THE $PT. 
+							YOU WILLUPDATE THE PATHS TO THE FILE INCLUDES AND THE ID'S FOR YOUR CLIENT
+							THIS IS JUST AN EXAMPLE
+						*}
+						{*
+						{if $PT == 145}
+							{include file="$view_path/search_form_prop_types/residential.view.tpl"}
+						{elseif $PT == 146}
+							{include file="$view_path/search_form_prop_types/land_lot.view.tpl"}
+						{elseif $PT == 147}
+							{include file="$view_path/search_form_prop_types/farm.view.tpl"}
+						{elseif $PT == 148}
+							{include file="$view_path/search_form_prop_types/multi_family.view.tpl"}
+						{elseif $PT == 149}
+							{include file="$view_path/search_form_prop_types/commercial.view.tpl"}
+						{else}
+							{include file="$view_path/search_form_prop_types/residential.view.tpl"}
+						{/if}
+						*}
+						{include file="$view_path/search_form_prop_types/sample.view.tpl"}
 					</div>
 				</div>
 				{* 
@@ -188,32 +197,24 @@
 				*}			
 				{* embed google map *}
 				{if $for_cma || $for_auto_cma || $save_button}
-					<div class="row-fluid">
-						<div class="span12">
-							{render_component component="SearchFormMap" search_dict=$search_dict distance_form=$distance_form search_config=$search_config}
-						</div>
-					</div>
+					{render_component component="SearchFormMap" search_dict=$search_dict distance_form=$distance_form search_config=$search_config}
 				{/if}
 				{* for the lcd component *}
 				{if $lcd_views}
-					<div class="row-fluid">
-						<div class="span6">
-							<div class="control-group">
-								<label class="control-label" for="as_lcd">LCD Screen Views</label>
-								<div class="controls">
-									<select id="as_lcd" class="span12" title="Select LCD Template" name="LcdViews">
-										{foreach from=$lcd_views item=lcd name=lcdLoop}
-											<option value="{$lcd.id}"{if $smarty.foreach.lcdLoop.first} selected="selected"{/if}>{$lcd.name}</option>
-										{/foreach}
-									</select>
-									<input type="hidden" name="view" value="showroomflash">
-								</div>
-							</div>
+					<div class="row">
+						<div class="col-sm-6 col-lg-6 margin-bottom-15">
+							<label for="as_lcd">LCD Screen Views</label>
+							<select id="as_lcd" title="Select LCD Template" name="LcdViews">
+								{foreach from=$lcd_views item=lcd name=lcdLoop}
+									<option value="{$lcd.id}"{if $smarty.foreach.lcdLoop.first} selected="selected"{/if}>{$lcd.name}</option>
+								{/foreach}
+							</select>
+							<input type="hidden" name="view" value="showroomflash">
 						</div>
 					</div>
 				{/if}
 			</div>
-			<div class="span3" id="form-counter-holder"></div>
+			<div class="col-sm-3 col-lg-3" id="form-counter-holder"></div>
 		</div>
 	</form>
 </div>

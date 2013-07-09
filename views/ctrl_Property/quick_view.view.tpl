@@ -5,7 +5,7 @@
     {if $browser_info && $browser_info.browser == 'IE'}<meta http-equiv="X-UA-Compatible" content="IE=edge">{/if}
     <title>QuickView</title>
     <link rel="stylesheet" href="/css/company_styles.min.css">
-    <script src="/libs/booj-strap/lib/jquery.min.js"></script>
+    <script src="/js/libs/jquery/jquery.js"></script>
     <script>jQuery.noConflict();</script>
     {literal}
     <style>
@@ -20,8 +20,8 @@
 </head>
 <body>
 <div id="quick-view-wrapper">
-    <div class="row-fluid">
-        <div class="span7">
+    <div class="row">
+        <div class="col-sm-7 col-lg-7">
             {if $photos}
                 <div class="gallery-widget" id="quick-view-gallery">
                     <div class="gallery-widget-main-photo-wrapper margin-bottom-30">
@@ -39,7 +39,7 @@
                 </div>
             {/if}
         </div>
-        <div class="span5">
+        <div class="col-sm-5 col-lg-5">
             <h1>{$fullStreetAddress}</h1>
             <table class="quickview-data-table margin-bottom-30">
                 <tbody>
@@ -68,7 +68,7 @@
                 </tbody>
             </table>
             <div class="margin-bottom-30">
-                <a class="btn" target="_parent" href="/property/{$company_property_id}/{$fullStreetAddress|clean_for_url}" title="View property at {$fullStreetAddress|clean_for_attribute}">Full Property Details &amp; Photos</a>
+                <a class="btn btn-default" target="_parent" href="/property/{$company_property_id}/{$fullStreetAddress|clean_for_url}" title="View property at {$fullStreetAddress|clean_for_attribute}">Full Property Details &amp; Photos</a>
             </div>            
             {if $remarks}
                 <p>{$remarks|strip_tags|truncate:300}</p>

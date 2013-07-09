@@ -1,11 +1,11 @@
 <div class="relative">
-	{render_dropin dropin="SlideShowNav" fallback=true}
+	{render_dropin dropin="SlideShowNav" fallback="true"}
 	{render_component component="QuickSearch"}
 </div>
-<div class="row-fluid">
-	<div class="span9" id="home-page-tabs">
+<div class="row margin-top-30 tabClass">
+	<div class="col-lg-9" id="home-page-tabs">
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="#tab_1">Tab 1</a></li>
+			<li class="active"><a href="#tab-1">Tab 1</a></li>
 			{if $SITE_OWNER instanceof Realtor}
 				{if $site_owner_extended.biography || $site_owner_extended.realtor_info.Spoken_Languages != '' || $site_owner_extended.realtor_info.Designations != ''}
 					<li><a href="#about-tab">About Me</a></li>
@@ -23,16 +23,14 @@
 			{/if}
 		</ul>
 		<div class="tab-content">
-			<div class="tab-pane active" id="tab_1">
-				{render_component component="PropertySearch" search_url="Min_Price/300000/" results="8" alternateView="PropertySearchResult"}
-			</div>
+			<div class="tab-pane active" id="tab-1"></div>
 			{if ($SITE_OWNER instanceof Realtor && $site_owner_extended.biography) || ($SITE_OWNER instanceof Realtor && $site_owner_extended.bios) || ($SITE_OWNER instanceof Realtor && $site_owner_extended.realtor_info.Spoken_Languages) || ($SITE_OWNER instanceof Realtor && $site_owner_extended.realtor_info.Designations) || ($SITE_OWNER instanceof EntityTeam && $site_owner_extended.biography) || ($SITE_OWNER instanceof EntityTeam && $site_owner_extended.bios) || ($SITE_OWNER instanceof EntityTeam && $site_owner_extended.team_info.Spoken_Languages) || ($SITE_OWNER instanceof EntityTeam && $site_owner_extended.team_info.Designations)}
 				<div class="tab-pane" id="about-tab">
-					<div class="row-fluid">
+					<div class="row">
 						{if $site_owner_extended.biography}
-							<div class="span9">{$site_owner_extended.biography}</div> {* NP-300 Removed Truncation, if they want it back, use this: |truncate:2075 *}
+							<div class="col-lg-9">{$site_owner_extended.biography}</div> {* NP-300 Removed Truncation, if they want it back, use this: |truncate:2075 *}
 						{/if}
-						<div class="span3">
+						<div class="col-lg-3">
 							{if $site_owner_extended.realtor_info.Designations}
 								<h3>Designations</h3>
 								<ul>
@@ -61,7 +59,12 @@
 			{/if}
 			{if $site_owner_extended.testimonials}
 				<div class="tab-pane" id="testimonials-tab">
-					{render_component order="descending" view="white" component="EntityTestimonial"}
+					{foreach from=$site_owner_extended.testimonials item=testimonial key=index}
+						<blockquote>
+							<p>{$testimonial.comment}</p>
+							<small>{$testimonial.date|date_format} by <cite title="{$testimonial.name}">{$testimonial.name}</cite></small>
+						</blockquote>
+					{/foreach}
 				</div>
 			{/if}
 			{if ($SITE_OWNER instanceof Realtor && $site_owner_extended.realtor_info.Blog_Feed_Url && $site_owner_extended.realtor_info.Blog_Feed_Url != '') || ($site_owner_extended.team_info.Blog_Feed_Url && $site_owner_extended.team_info.Blog_Feed_Url != '')}
@@ -75,40 +78,38 @@
 			{/if}
 		</div>
 	</div>
-	<div class="span3">
-		<div class="well">
+	<div class="col-lg-3">
+		<div class="homepage-well">
 			{render_component component="Account"}
 		</div>
 	</div>
 </div>
-<hr>
-<div class="row-fluid">
-	<div class="span3">
-		<div class="well">
+<div class="row margin-top-30">
+	<div class="col-sm-6 col-lg-3 margin-bottom-30">
+		<div class="homepage-well">
+			<h3>Featured Communities</h3>
+			{render_component component="FeaturedCommunity" count=4}
+		</div>
+	</div>
+	<div class="col-sm-6 col-lg-3 margin-bottom-30">
+		<div class="homepage-well">
 			<h3>Section</h3>
 			<p>You Can put something in the block</p>
 		</div>
 	</div>
-	<div class="span3">
-		<div class="well">
+	<div class="col-sm-6 col-lg-3 margin-bottom-30">
+		<div class="homepage-well">
 			<h3>Section</h3>
 			<p>You Can put something in the block</p>
 		</div>
 	</div>
-	<div class="span3">
-		<div class="well">
-			<h3>Section</h3>
-			<p>You Can put something in the block</p>
-		</div>
-	</div>
-	<div class="span3">
-		<div class="well">
+	<div class="col-sm-6 col-lg-3">
+		<div class="homepage-well">
 			<h3>Section</h3>
 			<p>You Can put something in the block</p>
 		</div>
 	</div>
 </div>
-
 <footerargs>
 {* load the scripts that you need that are not already on the page *}
 <script src="/js/buildlist.js?scripts=/js/galleries/jquery.cycle2.min.js,/js/carousels/jquery.jcarousel.min.js"></script>
@@ -120,14 +121,13 @@ jQuery(document).ready(function($) {
 		bootstrapMode:true,
 		openCallback: function(obj, num, trigger, tab) {
 			var ref = $(trigger).find('a').attr('href');
-			switch(ref)
-			{
-				case '#tab_1':
-				case '#tab_2':
-				case '#tab_3':
-				case '#tab_4':
-				break;
+			//<![CDATA[
+			switch(ref) {
+				case '#tab-1':
+					_lazyLoadComponent('tab-1','PropertySearch/?search_url={/literal}Listing_Agent/{if $site_owner_extended.rebrand}{$site_owner_extended.rebrand}{/if}{literal}&results=8&alternateView=PropertySearchResult');
+					break;
 			}
+			//]]>
 		}
 	});
 });

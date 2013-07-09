@@ -1,44 +1,31 @@
-/* Account Header */
+// Account Header
+// --------------------------------------------------
 #web-user-account-header {
+    h1 {
+
+    }
     p {
-        font-size: 18px;
-        line-height: 24px;
+
     }
 }
 
 
-/* Account Menu */
+// Account Menu
+// --------------------------------------------------
 #web-user-account-menu {
-    ul {
+    .nav {
 
-        li {
-
-        }
-        li a {
-
-        }
-        li.active a,
-        li a:hover {
-
-        }
     }
 }
 
-
-/* Account Area Forms */
-form.webUserAccountFormXXLARGE{
-    label.error{
-        width:530px;
-        margin:.5em 0;
-    }
-}
-
-
-/* Popup Forms */
+// Popup Forms
+// --------------------------------------------------
 .popupBody {
     padding: 0;
+    overflow-x: hidden;
     form {
         margin: 0;
+        
         input, select, textarea {
             margin-bottom: 0;
         }
@@ -49,7 +36,7 @@ form.webUserAccountFormXXLARGE{
     h1 {
         line-height: normal;
         margin: 0 0 20px 0;
-        font-style: 20px;
+        font-size: 20px;
     }
     .popup-related-property {
         h4 {
@@ -71,25 +58,23 @@ form.webUserAccountFormXXLARGE{
             margin: 0;
         }
     }
-    // fix for grid in lighboxes
-    .row-fluid {
-        div.span6 {
-            display: block;
-            float: left;
-            width: 48.717948717948715%;
-            margin-left: 2.564102564102564%;
-        }
-        div.span6:first-child {
-            margin-left: 0;
-        }
+    .row {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .col-lg-6, .col-6, .col-sm-6 {
+        width: 50%;
+        float: left;
+        padding: 0 15px;
     }
 }
 
 
-/* Open ID */
+// Open ID
+// --------------------------------------------------
 .openid-container {
     .openid-top {
-        border: 1px solid @black;
+        border: 1px solid #000;
         .border-radius(3px);
         padding:15px;
     }
@@ -100,15 +85,15 @@ form.webUserAccountFormXXLARGE{
         text-align: center;
     }
     .openid-or-wrapper {
-        border-top: 2px solid @black;
+        border-top: 2px solid #000;
         height: 1px;
         margin: 15px 0 0 0;
         min-height: 10px;
         padding-top: 10px;
         text-align: center;
         span {
-            background-color: @white;
-            color: @black;
+            background-color: #fff;
+            color: #000;
             font-size: 12px;
             font-weight: bold;
             padding: 0 7px;
@@ -122,13 +107,4 @@ form.webUserAccountFormXXLARGE{
 }
 .openid-transfer-screen-loader-icon{
     margin-top:20px;
-}
-
-
-/* account well */
-.account-well {
-    min-height:325px;
-    form {
-        margin:0;
-    }
 }

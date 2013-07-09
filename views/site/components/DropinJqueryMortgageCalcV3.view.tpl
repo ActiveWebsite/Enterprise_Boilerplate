@@ -3,36 +3,26 @@
 </head>
 <div class="mortgageCalculatorWidget">
 	<form class="mc-form" method="post" action="/property/">
-		<fieldset class="row-fluid">
-			<div class="span6">
-				<div class="row-fluid">
-					<div class="span4">
-						<label class="bold">List Price</label>
-					</div>
-					<div class="span8">
-						<div class="input-group margin-bottom-10">
-							<span class="input-group-addon">$</span>
-							<input type="text" class="mc-text-field mc-format-currency" name="list_price" value="{$list_price}">
-						</div>
+		<fieldset class="row">
+			<div class="col-sm-6 col-lg-6">
+				<div class="row">
+					<label class="col-sm-4 col-lg-4 bold">List Price</label>
+					<div class="col-sm-8 col-lg-8 input-group margin-bottom-15">
+						<span class="input-group-addon">$</span>
+						<input type="text" class="mc-text-field mc-format-currency" name="list_price" value="{$list_price}">
 					</div>
 				</div>
-				<div class="row-fluid">
-					<div class="span4">
-						<label class="bold">Interest Rate</label>
-					</div>
-					<div class="span8">
-						<div class="input-group margin-bottom-10">
-							<input type="text" class="mc-text-field mc-format-percent" name="interest_rate" value="{$interest_rate}">
-							<span class="input-group-addon">%</span>
-						</div>
+				<div class="row">
+					<label class="col-sm-4 col-lg-4 bold">Interest Rate</label>
+					<div class="col-sm-8 col-lg-8 input-group margin-bottom-15">
+						<input type="text" class="mc-text-field mc-format-percent" name="interest_rate" value="{$interest_rate}">
+						<span class="input-group-addon">%</span>
 					</div>
 				</div>
-				<div class="row-fluid">
-					<div class="span4">
-						<label class="bold">Term</label>
-					</div>
-					<div class="span8">
-						<select class="mc-select-field span12" name="loan_term">
+				<div class="row">
+					<label class="col-sm-4 col-lg-4 bold">Term</label>
+					<div class="col-sm-8 col-lg-8 margin-bottom-15">
+						<select class="mc-select-field" name="loan_term">
 							<option value="10"{if $loan_length == 10} selected="selected"{/if}>10 years</option>
 							<option value="15"{if $loan_length == 15} selected="selected"{/if}>15 years</option>
 							<option value="20"{if $loan_length == 20} selected="selected"{/if}>20 years</option>
@@ -43,20 +33,16 @@
 						</select>
 					</div>
 				</div>
-				<div class="row-fluid">
-					<div class="span4">
-						<label class="bold">Down Payment</label>
-					</div>
-					<div class="span8">
-						<div class="row-fluid">
-							<div class="span6">
-								<div class="input-group margin-bottom-10">
-									<span class="input-group-addon">$</span>
-									<input type="text" class="mc-text-field mc-format-currency" name="down_payment" value="0">
-								</div>
+				<div class="row">
+					<label class="col-sm-4 col-lg-4 bold">Down Payment</label>
+					<div class="col-sm-8 col-lg-8">
+						<div class="row">
+							<div class="col-sm-6 col-lg-6 input-group margin-bottom-15">
+								<span class="input-group-addon">$</span>
+								<input type="text" class="mc-text-field mc-format-currency" name="down_payment" value="0">
 							</div>
-							<div class="span6">
-								<select class="mc-select-field mc-select-field-tiny span12" name="down_payment_percentage">
+							<div class="col-sm-6 col-lg-6 margin-bottom-15">
+								<select class="mc-select-field mc-select-field-tiny" name="down_payment_percentage">
 									<option value="0"{if $down_payment_percentage == 0} selected="selected"{/if}>-</option>
 									<option value="5"{if $down_payment_percentage == 5} selected="selected"{/if}>5 %</option>
 									<option value="10"{if $down_payment_percentage == 10} selected="selected"{/if}>10 %</option>
@@ -71,77 +57,53 @@
 						</div>
 					</div>
 				</div>
-				<div class="row-fluid">
-					<div class="span4">
-						<label class="bold">Closing Costs</label>
-					</div>
-					<div class="span8">
-						<div class="input-group margin-bottom-0">
-							<span class="input-group-addon">$</span>
-							<input type="text" class="mc-text-field mc-format-currency" name="closing_cost" value="{$closing_cost}">
-						</div>
+				<div class="row">
+					<label class="col-sm-4 col-lg-4 bold">Closing Costs</label>
+					<div class="col-sm-8 col-lg-8 input-group margin-bottom-15">
+						<span class="input-group-addon">$</span>
+						<input type="text" class="mc-text-field mc-format-currency" name="closing_cost" value="{$closing_cost}">
 					</div>
 				</div>
 			</div>
-			<div class="span6">
-				<div class="row-fluid">
-					<div class="span4">
-						<label class="bold">Taxes</label>
-					</div>
-					<div class="span8">
-						<div class="input-group margin-bottom-10">
-							<span class="input-group-addon">$</span>
-							<input type="text" class="mc-text-field mc-format-currency" name="taxes" value="{$taxes}">
-							<span class="input-group-addon">/ yr</span>
-						</div>
+			<div class="col-sm-6 col-lg-6">
+				<div class="row">
+					<label class="col-sm-4 col-lg-4 bold">Taxes</label>
+					<div class="col-sm-8 col-lg-8 input-group margin-bottom-15">
+						<span class="input-group-addon">$</span>
+						<input type="text" class="mc-text-field mc-format-currency" name="taxes" value="{$taxes}">
+						<span class="input-group-addon">/ yr</span>
 					</div>
 				</div>
-				<div class="row-fluid">
-					<div class="span4">
-						<label class="bold">Insurance</label>
-					</div>
-					<div class="span8">
-						<div class="input-group margin-bottom-10">
-							<span class="input-group-addon">$</span>
-							<input type="text" class="mc-text-field mc-format-currency" name="insurance" value="{$insurance}"> 
-							<span class="input-group-addon">/ yr</span>
-						</div>
+				<div class="row">
+					<label class="col-sm-4 col-lg-4 bold">Insurance</label>
+					<div class="col-sm-8 col-lg-8 input-group margin-bottom-15">
+						<span class="input-group-addon">$</span>
+						<input type="text" class="mc-text-field mc-format-currency" name="insurance" value="{$insurance}"> 
+						<span class="input-group-addon">/ yr</span>
 					</div>
 				</div>
-				<div class="row-fluid">
-					<div class="span4">
-						<label class="bold">PMI</label>
-					</div>
-					<div class="span8">
-						<div class="input-group margin-bottom-10">
-							<span class="input-group-addon">$</span>
-							<input type="text" class="mc-text-field mc-format-currency" name="pmi" value="0">
-							<span class="input-group-addon">/ mo<sup>**</sup></span>
-						</div>
+				<div class="row">
+					<label class="col-sm-4 col-lg-4 bold">PMI<sup>**</sup></label>
+					<div class="col-sm-8 col-lg-8 input-group margin-bottom-15">
+						<span class="input-group-addon">$</span>
+						<input type="text" class="mc-text-field mc-format-currency" name="pmi" value="0">
+						<span class="input-group-addon">/ mo</span>
 					</div>
 				</div>
-				<div class="row-fluid">
-					<div class="span4">
-						<label class="bold">Assessments</label>
-					</div>
-					<div class="span8">
-						<div class="input-group margin-bottom-10">
-							<span class="input-group-addon">$</span>
-							<input type="text" class="mc-text-field mc-format-currency" name="additional_fees" value="{$assessments}">
-							<span class="input-group-addon">/ mo<sup>***</sup></span>
-						</div>
+				<div class="row">
+					<label class="col-sm-4 col-lg-4 bold">Assessments<sup>***</sup></label>
+					<div class="col-sm-8 col-lg-8 input-group margin-bottom-15">
+						<span class="input-group-addon">$</span>
+						<input type="text" class="mc-text-field mc-format-currency" name="additional_fees" value="{$assessments}">
+						<span class="input-group-addon">/ mo</span>
 					</div>
 				</div>
-				<div class="row-fluid">
-					<div class="span4">
-						<label class="bold">Extra Payment</label>
-					</div>
-					<div class="span8">
-						<div class="input-group margin-bottom-10">
-							<span class="input-group-addon">$</span>
-							<input type="text" class="mc-text-field mc-format-currency" name="extra_principal" value="0">
-							<span class="input-group-addon">/ mo</span>
-						</div>
+				<div class="row">
+					<label class="col-sm-4 col-lg-4 bold">Extra Payment</label>
+					<div class="col-sm-8 col-lg-8 input-group margin-bottom-15">
+						<span class="input-group-addon">$</span>
+						<input type="text" class="mc-text-field mc-format-currency" name="extra_principal" value="0">
+						<span class="input-group-addon">/ mo</span>
 					</div>
 				</div>
 			</div>
@@ -178,9 +140,9 @@
 	</div>
 	<div class="mc-messages margin-top-15" style="display:none;"></div>
 	<div class="mc-disclaimers margin-top-15">
-		<p class="muted"><sup>**</sup>Private mortgage insurance is an insurance policy that a residential mortgage lender requires of the borrower if the loan-to-value (LTV) ratio of the home is greater than 80%. Mortgage insurance protects the lender from the risk that the borrower may default on the loan. Federal law requires lenders to notify borrowers when the loan-to-value ratio drops below 80%. Mortgage insurance premiums vary, but generally range from $1,000 to $5,000 a year for an average priced home.</p>
-		<p class="muted"><sup>***</sup>Assessments are monthly fees such as Home Owners Association(HOA) Fees etc...</p>
-		<p class="muted">Results received from this calculator are designed for comparative purposes only, and accuracy is not guaranteed.</p>
+		<p class="text-muted"><sup>**</sup>Private mortgage insurance is an insurance policy that a residential mortgage lender requires of the borrower if the loan-to-value (LTV) ratio of the home is greater than 80%. Mortgage insurance protects the lender from the risk that the borrower may default on the loan. Federal law requires lenders to notify borrowers when the loan-to-value ratio drops below 80%. Mortgage insurance premiums vary, but generally range from $1,000 to $5,000 a year for an average priced home.</p>
+		<p class="text-muted"><sup>***</sup>Assessments are monthly fees such as Home Owners Association(HOA) Fees etc...</p>
+		<p class="text-muted">Results received from this calculator are designed for comparative purposes only, and accuracy is not guaranteed.</p>
 	</div>
 </div>
 <footerargs>

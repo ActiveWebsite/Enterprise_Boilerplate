@@ -1,5 +1,5 @@
 <head>
-    <title>Request More Information</title>
+	<title>Request More Information</title>
 </head>
 {if $user ne false && $user->get_name()}
 	{assign var='contactFullName' value=" "|explode:$user->get_name()}
@@ -8,12 +8,11 @@
 {/if}
 
 {assign var=formSendAccepted value=false}
-
 <div class="popupBody">
-    <h1>Request More Information</h1>
+	<h1>Request More Information</h1>
 	{if $messages->isMsgs() === true}
 		{if $messages->isErrors() === true}
-			 <div class="alert alert-error alert-block">
+			 <div class="alert alert-danger alert-block">
 				<strong>Error:</strong><br>
 				{$messages->getErrors(true)}
 			</div>
@@ -33,7 +32,7 @@
 		{/if}
 	{/if}
 	{if !$formSendAccepted}
-	    <form action="/forms/" class="validate-form" method="post" autocomplete="off">
+		<form action="/forms/" class="validate-form" method="post" autocomplete="off">
 			{if $property}
 				<div class="popup-related-property">
 					<h4>
@@ -48,49 +47,47 @@
 					{if $property.property_id}MLS# {$property.property_id}{/if}
 				</div>
 				<input type="hidden" name="property_id" value="{if $property.company_property_id}{$property.company_property_id}{/if}">
-			{/if}	
+			{/if}   
 			<input type="hidden" value="request_info" name="form_type">
-	        <div class="row-fluid">
-	            <div class="span6 margin-bottom-15">
-	                <label>First Name<span class="red">*</span></label>
-	                <input type="text" name="first_name" class="span12 required" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}">
-	            </div>
-	            <div class="span6 margin-bottom-15">
-	                <label>Last Name<span class="red">*</span></label>
-	                <input type="text" name="last_name" class="span12 required" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}">
-	            </div>
-	        </div>
-	        <div class="row-fluid">
-	            <div class="span6 margin-bottom-15">
-	                <label>Email<span class="red">*</span></label>
-	                <input type="email" name="email_confirm" class="span12 required email" placeholder="Enter Email Address" value="{if $user ne false}{$user->email}{/if}">
-	                <input type="text" name="email" style="display: none;" value="">
-	            </div>
-	            <div class="span6 margin-bottom-15">
-	                <label>Phone</label>
-	                <input type="text" name="phone" class="span12" placeholder="Enter Phone Number" value="">
-	            </div>
-	        </div>
-	        <div class="row-fluid">
-	           <div class="span12 margin-bottom-15">
-	                <label>Message<span class="red">*</span></label>
-	                <textarea rows="5" cols="25" name="message" class="span12" placeholder="Enter Message"></textarea>
-	            </div>
-	        </div>
-	        <input type="submit" class="btn" value="Send">
-    	</form>
-    {/if}
-    <hr>
+			<div class="row">
+				<div class="col-sm-6 col-lg-6 margin-bottom-10">
+					<label>First Name<span class="red">*</span></label>
+					<input type="text" name="first_name" class="required" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}">
+				</div>
+				<div class="col-sm-6 col-lg-6 margin-bottom-10">
+					<label>Last Name<span class="red">*</span></label>
+					<input type="text" name="last_name" class="required" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 col-lg-6 margin-bottom-10">
+					<label>Email<span class="red">*</span></label>
+					<input type="email" name="email_confirm" class="required email" placeholder="Enter Email Address" value="{if $user ne false}{$user->email}{/if}">
+					<input type="text" name="email" style="display: none;" value="">
+				</div>
+				<div class="col-sm-6 col-lg-6 margin-bottom-10">
+					<label>Phone</label>
+					<input type="text" name="phone" placeholder="Enter Phone Number" value="">
+				</div>
+			</div>
+			<div class="margin-bottom-10">
+				<label>Message<span class="red">*</span></label>
+				<textarea rows="5" cols="25" name="message" placeholder="Enter Message"></textarea>
+			</div>
+			<input type="submit" class="btn btn-primary" value="Send">
+		</form>
+	{/if}
+	<hr>
 	<div class="popupFooter clearfix">
 		{if $realtor && $realtor.id && $realtor.pic_url}
 			{if $realtor.pic_url}
-				<img src="{$realtor.pic_url}/maxwidth/70" class="pull-left margin-right-10" alt="">
+				<img src="{$realtor.pic_url}/maxwidth/70" class="pull-left margin-right-10 img-responsive" alt="">
 			{else}
-				<img src="/images/person_avatar.gif" class="pull-left margin-right-10" alt="">
+				<img src="/images/person_avatar.gif" class="pull-left margin-right-10 img-responsive" alt="">
 			{/if}
 			<div class="pull-left">
 				<h2>{$realtor.name}</h2>
-				<ul class="unstyled">
+				<ul class="list-unstyled">
 					{if $realtor.parent->name}
 						<li><em>{$realtor.parent->name}</em></li>
 					{/if}
@@ -107,11 +104,11 @@
 		{else}
 			<div class="pull-left">
 				<h2>Company Name</h2>
-				<ul class="unstyled">
+				<ul class="list-unstyled">
 					<li><strong>Phone:</strong> 555-555-5555</li>
 				</ul>
 			</div>
 		{/if}
-		<img src="/images/popup-logo.jpg" class="pull-right" alt="">
+		<img src="/images/popup-logo.jpg" class="pull-right img-responsive" alt="">
 	</div>
 </div>

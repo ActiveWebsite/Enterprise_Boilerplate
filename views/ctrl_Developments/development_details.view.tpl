@@ -1,15 +1,15 @@
 {render_layout_arguments var="render_page_breadcrumbs"}
 	<ul class="breadcrumb">
-		<li><a href="/" title="Home">Home</a> <span class="divider">&gt;</span></li>  
-		<li><a href="/{$controller_alias}/" title="{$CURRENT_CMS_PAGE_LABEL}">{if $CURRENT_CMS_PAGE_LABEL}{$CURRENT_CMS_PAGE_LABEL}{else}{$controller_obj->cms_page->name}{/if}</a> <span class="divider">&gt;</span></li>
+		<li><a href="/" title="Home">Home</a></li>  
+		<li><a href="/{$controller_alias}/" title="{$CURRENT_CMS_PAGE_LABEL}">{if $CURRENT_CMS_PAGE_LABEL}{$CURRENT_CMS_PAGE_LABEL}{else}{$controller_obj->cms_page->name}{/if}</a></li>
 		<li>{$development.name}</li>
 	</ul>
 {/render_layout_arguments}
 
 <div id="developments-details-page">
 	<h1 class="page-heading">{$development.name}</h1>
-	<div class="row-fluid">
-		<div class="span9 margin-bottom-30">
+	<div class="row">
+		<div class="col-lg-9 margin-bottom-30">
 			{if $development.pics}
 				<div class="gallery-widget" id="development-gallery">
 					<div class="gallery-widget-main-photo-wrapper">
@@ -33,12 +33,12 @@
 				</div>
 			{/if}
 		</div>
-		<div class="span3">
+		<div class="col-lg-3 margin-bottom-30">
 			<address>
 				{$development.address.Street_Address.value}<br>
 				{$development.address.City.value}, {$development.address.State.value} {$development.address.Zip.value}
 			</address>
-			<ul class="unstyled">
+			<ul class="list-unstyled">
 				{if $development.min_price && $development.max_price}
 					<li>${$development.min_price|number_format} - ${$development.max_price|number_format}</li>
 				{elseif $development.min_price}

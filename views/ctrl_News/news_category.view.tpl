@@ -8,7 +8,7 @@
 		</article>
 		<hr>
 	{/foreach}
-	<ul class="unstyled inline">
+	<ul class="list-unstyled inline">
 		<li><a href="/{$controller_alias}/" title="Back to all news">&laquo; Back To All News</a></li>
 	</ul>
 </div>

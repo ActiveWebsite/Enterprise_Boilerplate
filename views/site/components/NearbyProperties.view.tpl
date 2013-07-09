@@ -9,10 +9,10 @@
 		<div id="active-listings" class="tab-pane active">
 			{if $properties}
 				<h3>{$property_count} Listings ({$furthest_distance} Mile Radius)</h3>
-				<ul class="row-fluid thumbnails">
+				<ul class="row">
 					{foreach from=$properties item=property key=index}
 						{if $index < $property_limit}
-							<li class="span4 standard-property{if $index%3==0} first-in-row{/if}">
+							<li class="col-sm-4 col-lg-4 standard-property{if $index%3==0} first-in-row{/if} margin-bottom-30">
 								{assign var='prop_photo' value=$property->get_first_pic()}
 								{if $prop_photo instanceof PropertyPicture}
 									<div class="prop-photo">
@@ -32,7 +32,7 @@
 									{if $property->information.bathrooms_total->value > 0} | {$property->information.bathrooms_total->value|clean_bed_bath} Bath{if $property->information.bathrooms_total->value > 1}s{/if}{/if}
 								</p>
 								<div class="prop-cta clearfix">
-									<a href="/property/property_details_quick_view/{$property->company_property_id}" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-mini">
+									<a href="/property/property_details_quick_view/{$property->company_property_id}" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-quickview">
 										Quick View
 									</a>
 									<a href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property->company_property_id}" data-property-id="{$property->company_property_id}" class="addFavorite addFavoriteButton" target="_blank" rel="nofollow" title="Add to Favorites">

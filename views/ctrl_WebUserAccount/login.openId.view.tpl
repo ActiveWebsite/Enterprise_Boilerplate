@@ -1,6 +1,6 @@
 {render_layout_arguments var="render_page_breadcrumbs"}
     <ul class="breadcrumb">
-        <li><a href="/" title="{$account_area_brand_name}">Home</a> <span class="divider">&gt;</span></li>
+        <li><a href="/" title="{$account_area_brand_name}">Home</a></li>
         <li>{$account_area_brand_name}</li>
     </ul>
 {/render_layout_arguments}
@@ -9,7 +9,7 @@
 </div>
 {if $messages->isMsgs() === true}
 	{if $messages->isErrors() === true}
-		<div class="alert alert-error alert-block">
+		<div class="alert alert-danger alert-block">
 			<strong>Error:</strong><br>
 			{$messages->getErrors(true)}
 		</div>
@@ -27,36 +27,28 @@
 		</div>
 	{/if}
 {/if}
-<div class="row-fluid">
-	<div class="span6">
+<div class="row">
+	<div class="col-sm-6 col-lg-6">
 		<div class="well account-well">
 			{render_dropin dropin="OpenId"}
 			<h2 class="margin-bottom-10">I want to login using my {$account_area_brand_name} account</h2>
 			<form method="post" class="validate-form" action="/{$controller_alias}/login/">
-				<fieldset>
-					<div class="row-fluid">
-						<div class="span12">
-							<label class="block bold">Email</label>
-							<input name="username" class="span12 required" type="email">
-						</div>
+				<fieldset class="clearfix">
+					<div class="margin-bottom-15">
+						<label class="block bold">Email</label>
+						<input name="username" class="required" type="email">
 					</div>
-					<div class="row-fluid">
-						<div class="span12">
-							<label class="block bold">Password</label>
-							<input name="password" class="span12 required" type="password">
-						</div>
+					<div class="margin-bottom-15">
+						<label class="block bold">Password</label>
+						<input name="password" class="required" type="password">
 					</div>
-					<div class="row-fluid">
-						<div class="span12">
-							<a class="pull-right" href="/{$controller_alias}/forgot_password/">I've forgotten my password</a>
-							<input type="submit" name="btn" value="Log In" class="loginButton btn btn-primary">
-						</div>
-					</div>
+					<a class="pull-right" href="/{$controller_alias}/forgot_password/">I've forgotten my password</a>
+					<input type="submit" name="btn" value="Log In" class="loginButton btn btn-primary">
 				</fieldset>		
 			</form>
 		</div>
 	</div>
-	<div class="span6">
+	<div class="col-sm-6 col-lg-6">
 		<div class="well account-well">
 			<h2 class="margin-bottom-10">I want to create a {$account_area_brand_name}</h2>
 			<p><strong>Whether you're a buyer or seller, you can save time and simplify the process.</strong></p>

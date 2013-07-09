@@ -8,30 +8,15 @@
 	.poi_search {
 		form {
 			margin: 0;
-			input {
-				margin-bottom: 0;
-			}
 		}
 		margin-top: 10px;
-		p {
-			margin: 0 2.5% 0 0;
-			padding: 0;
-			float: left;
-			width: 31.6666%;
-			input {
-				width: 80%;
-			}
-		}
-		p.last-child {
-			margin-right: 0;
-			button {
-				margin-top: 20px;
-			}
-		}
 		label {
 			font-weight: bold;
 			display: block;
 		}
+	}
+	.btn {
+		.btn-default();
 	}
 	.poi-results-wrapper {
 		h2 {
@@ -40,7 +25,7 @@
 		.poi-results {
 			margin-top: 10px;
 			p {
-				.muted();
+				.text-muted();
 			}
 		}
 		ul {
@@ -51,14 +36,14 @@
 			overflow-y: auto;
 		}
 		li.poi-item {
-			border-bottom: 1px solid @grayLighter;
+			border-bottom: 1px solid @gray-lighter;
 			padding: 5px;
 			span {
 				display: inline-block;
 				width: 30px;
 			}
 			&:hover {
-				background-color: @grayLighter;
+				background-color: @gray-lighter;
 			}
 		}
 	}

@@ -6,10 +6,11 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	{if $browser_info && $browser_info.browser == 'IE'}<meta http-equiv="X-UA-Compatible" content="IE=edge">{/if}
 	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" href="/css/company_styles.min.css">
+	<link rel="stylesheet" href="/css/company_styles.min.css">
+	<script src="/js/modernizer/modernizr.2.6.2.custom.js"></script>
+	<!--[if lt IE 9]>
+		<script src="/js/libs/twitter_bootstrap/respond/respond.min.js"></script>
+	<![endif]-->
 	{$PAGE_HEADER}
 	{literal}
 	<style>

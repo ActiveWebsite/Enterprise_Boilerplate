@@ -1,6 +1,6 @@
 {if $realtors}
 	<div class="roster-last-name-list">
-		<ul class="unstyled inline">
+		<ul class="list-inline">
 			<li>Last Name:</li>
 			<li><a href="?last_letter=a">A</a></li>
 			<li><a href="?last_letter=b">B</a></li>         
@@ -36,16 +36,16 @@
 		<h2 class="pull-left">{$realtors|@count} Agents Found</h2>
 		<div class="pull-right btn-toolbar no-margin">
 			<div class="btn-group">
-				<a href="#agent-roster-list-view" data-action="toggleRoster" data-target="#agent-roster-list-view" class="btn active"><i class="icon-align-justify"></i> List</a>
-				<a href="#agent-roster-thumb-view" data-action="toggleRoster" data-target="#agent-roster-thumb-view" data-gallery="true" class="btn"><i class="icon-th-large"></i> Gallery</a>
+				<a href="#agent-roster-list-view" data-action="toggleRoster" data-target="#agent-roster-list-view" class="btn btn-default active"><i class="icon icon-align-justify"></i> List</a>
+				<a href="#agent-roster-thumb-view" data-action="toggleRoster" data-target="#agent-roster-thumb-view" data-gallery="true" class="btn btn-default"><i class="icon icon-th-large"></i> Gallery</a>
 			</div>
 		</div>
 	</div>
 	<div id="agent-roster-results">
 		<div class="roster-result-set active" id="agent-roster-list-view">
-			<ul class="row-fluid thumbnails margin-bottom-0">
+			<ul class="row">
 				{foreach from=$realtors item=realtor key=index}
-					<li class="span4{if $index%3==0} first-in-row{/if}">
+					<li class="col-sm-4 col-lg-4{if $index%3==0} first-in-row{/if} margin-bottom-30">
 						{if $realtor.entity_type == 'Realtor'}
 							<a href="/{$controller_alias}/info/{$realtor.rebrand_code}" data-action="agent-tooltip" data-realtor="{$realtor.id}">{$realtor.name}</a>
 						{elseif $realtor.entity_type == 'EntityTeam'}
@@ -56,16 +56,16 @@
 			</ul>
 		</div>
 		<div class="roster-result-set" id="agent-roster-thumb-view">
-			<ul class="row-fluid thumbnails margin-bottom-0 agent-thumb-list">
+			<ul class="row agent-thumb-list">
 				{foreach from=$realtors item=realtor key=index}
-					<li class="span4{if $index%3==0} first-in-row{/if}">
+					<li class="col-sm-4 col-lg-4{if $index%3==0} first-in-row{/if} margin-bottom-30">
 						{if $realtor.entity_type == 'EntityTeam'}
 							<a href="/{$controller_alias}/team/{$realtor.rebrand_code}" title="About {$realtor.name|clean_for_attribute}">
-								<img class="replace-image" src="/images/agent-placeholder.jpg" data-src="{if $realtor.pic_url}{$realtor.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
+								<img class="replace-image img-responsive" src="/images/agent-placeholder.jpg" data-src="{if $realtor.pic_url}{$realtor.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
 							</a>
 						{else}
 							<a href="/{$controller_alias}/info/{$realtor.rebrand_code}" title="About {$realtor.first_name|clean_for_attribute} {$realtor.last_name|clean_for_attribute}">
-								<img class="replace-image" src="/images/agent-placeholder.jpg" data-src="{if $realtor.pic_url}{$realtor.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.first_name|clean_for_attribute} {$realtor.last_name|clean_for_attribute}">
+								<img class="replace-image img-responsive" src="/images/agent-placeholder.jpg" data-src="{if $realtor.pic_url}{$realtor.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.first_name|clean_for_attribute} {$realtor.last_name|clean_for_attribute}">
 							</a>
 						{/if}
 						{if $realtor.entity_type == 'EntityTeam'}
@@ -73,7 +73,7 @@
 						{else}
 							<h4><a href="/{$controller_alias}/info/{$realtor.rebrand_code}" title="About {$realtor.first_name|clean_for_attribute} {$realtor.last_name|clean_for_attribute}">{$realtor.first_name} {$realtor.last_name}</a></h4>
 						{/if}
-						<ul class="unstyled">
+						<ul class="list-unstyled">
 							{if $realtor.title}<li><em>{$realtor.title}</em></li>{/if}
 							{if $realtor.parent->name}<li>{$realtor.parent->name}</li>{/if}
 							{if $realtor.address.Direct_Phone.value}
@@ -92,7 +92,7 @@
 		</div>
 	</div>
 {elseif $smarty.request.Search}
-	<div class="alert alert-error alert-block">
+	<div class="alert alert-danger alert-block">
 		<span class="bold block">No Agents Were Found</span>
 		We could not find any results based on your search criteria. Please broaden your search.
 	</div>

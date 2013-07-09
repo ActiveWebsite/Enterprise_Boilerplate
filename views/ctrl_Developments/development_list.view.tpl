@@ -2,17 +2,17 @@
 	<h1 class="page-heading">Developments</h1>
 	<div id="developments-list-page-results-map"></div>
 	<hr>
-	<ul class="row-fluid thumbnails">
+	<ul class="row">
 		{foreach from=$developments item=development name=devList key=index}
-			<li class="span12">
-				<div class="row-fluid">
-					<div class="span9">
+			<li class="col-lg-12">
+				<div class="row">
+					<div class="col-sm-9 col-lg-9">
 						<h2><span data-action="open-result-map-bubble" data-id="{$development.id}">{$smarty.foreach.devList.iteration}</span> <a href="/{$controller_alias}/{$development.rebrand}/" title="View more about {$development.name|clean_for_attribute}">{$development.name}</a></h2>
 						<p>{$development.biography|strip_tags|truncate}</p>
 					</div>
-					<div class="span3">
+					<div class="col-sm-3 col-lg-3">
 						{if $development.first_pic}
-							<img src="{$development.first_pic.url}/crop/200,150" alt="Photo of {$development.name|clean_for_attribute}">
+							<img src="{$development.first_pic.url}/crop/200,150" alt="Photo of {$development.name|clean_for_attribute}" class="img-responsive">
 						{/if}
 					</div>
 				</div>
@@ -30,7 +30,7 @@
 	<div class="development-list-bubble">
 		<h3><a href="{{url}}">{{title}}</a></h3>
 		<p><a href="{{url}}">View More Info</a></p>
-		<p>{{#photo}}<img src="{{photo}}/crop/60,60" alt="">{{/photo}}</p>
+		<p>{{#photo}}<img src="{{photo}}/crop/60,60" alt="" class="img-responsive">{{/photo}}</p>
 	</div>
 </script>
 {/literal}

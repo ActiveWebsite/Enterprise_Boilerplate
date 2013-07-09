@@ -1,15 +1,15 @@
 {render_layout_arguments var="render_page_breadcrumbs"}
 	<ul class="breadcrumb">
-		<li><a href="/" title="Home">Home</a> <span class="divider">&gt;</span></li>  
-		<li><a href="/{$controller_alias}/" title="{$CURRENT_CMS_PAGE_LABEL}">{if $CURRENT_CMS_PAGE_LABEL}{$CURRENT_CMS_PAGE_LABEL}{else}{$controller_obj->cms_page->name}{/if}</a> <span class="divider">&gt;</span></li>
+		<li><a href="/" title="Home">Home</a></li>  
+		<li><a href="/{$controller_alias}/" title="{$CURRENT_CMS_PAGE_LABEL}">{if $CURRENT_CMS_PAGE_LABEL}{$CURRENT_CMS_PAGE_LABEL}{else}{$controller_obj->cms_page->name}{/if}</a></li>
 		<li>{$community.name}</li>
 	</ul>
 {/render_layout_arguments}
 
 <div id="community-bio">
 	<h1 class="page-heading">{$community.name}</h1>
-	<div class="row-fluid">
-		<div class="span9 margin-bottom-30">
+	<div class="row">
+		<div class="col-lg-9 margin-bottom-30">
 			{if $community.photos}
 				<div class="gallery-widget" id="community-gallery">
 					<div class="gallery-widget-main-photo-wrapper">
@@ -35,7 +35,7 @@
 				</div>
 			{/if}
 		</div>
-		<div class="span3">
+		<div class="col-lg-3">
 			{if $community_office}
 				<h3>Closest Office</h3>
 				{foreach from=$community_office item=community_office key=index}
@@ -63,7 +63,7 @@
 			{/if}
 			{if $related_communities}
 				<h3>Nearby Communities</h3>
-				<ul class="unstyled">
+				<ul class="list-unstyled">
 					{foreach item=related from=$related_communities key=index}
 						<li>
 							<a href="{$related.rebrand}" title="Go to {$related.name|clean_for_attribute}">{$related.name}</a>
@@ -111,7 +111,10 @@
 <footerargs>
 {* load the scripts that you need that are not already on the page *}
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"></script>
-<script src="/js/buildlist.js?scripts=/js/jqueryui/components/button.min.js,/js/jqueryui/components/autocomplete.min.js,/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js,/js/map_search/jquery.poi-map.js"></script>
+<script src="/js/buildlist.js?scripts=/js/libs/jquery_ui/components/core.1.10.3.min.js,/js/libs/jquery_ui/components/menu.1.10.3.min.js,/js/libs/jquery_ui/components/autocomplete.1.10.3.min.js,/js/libs/jquery_ui/components/button.1.10.3.min.js"></script>
+<script src="/js/buildlist.js?scripts=/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js,/js/map_search/jquery.poi-map.js"></script>
+
+
 <script>
 {literal}
 	jQuery(document).ready(function($) {

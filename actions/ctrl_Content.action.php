@@ -5,18 +5,19 @@ abstract class ctrl_Content extends BASE_ctrl_Content {
     
     protected function hasAdditionalHeaderArgs()
     {
+		// kill mobile site...
+		self::$isMobile = false;
+		$_SESSION['mobile_device']=false;
 		return true;
 	}
 	
 	protected function getAdditionalHeaderArgs($tpl_args)
     {
 		$jquery_output = "\t<!-- BEGIN JAVASCRIPT HEADER -->\n";
-		$jquery_output .= "\t<script src=\"/libs/booj-strap/lib/jquery.min.js\"></script>\n";
+		$jquery_output .= "\t<script src=\"/js/libs/jquery/jquery.js\"></script>\n";
 		$jquery_output .= "\t<script>jQuery.noConflict();</script>\n";
-		
+
 		$jquery_libs = array();
-			$jquery_libs[] = "/js/jqueryui/components/core.min.js";
-			$jquery_libs[] = "/js/jqueryui/components/position.min.js";
 			$jquery_libs[] = "/js/validation/jquery.validate.min.js";
 			$jquery_libs[] = "/js/fancy_box/jquery.fancybox-2.1.4.pack.js";
 			$jquery_libs[] = "/js/lib/jquery.hoverIntent.minified.js";

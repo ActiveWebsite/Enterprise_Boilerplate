@@ -1,6 +1,6 @@
 <h3>General</h3>
-<div class="row-fluid">
-	<div class="span6">
+<div class="row">
+	<div class="col-sm-6 col-lg-6">
 		<table class="property-data-table">
 			<tbody>
 				{if $list_price}
@@ -22,7 +22,7 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="span6">
+	<div class="col-sm-6 col-lg-6">
 		<table class="property-data-table">
 			<tbody>
 				{if $bedrooms_total && $bedrooms_total > 0}
@@ -43,8 +43,8 @@
 </div>
 <hr>
 <h3>Exterior</h3>
-<div class="row-fluid">
-	<div class="span6">
+<div class="row">
+	<div class="col-sm-6 col-lg-6">
 		<table class="property-data-table">
 			<tbody>
 				<tr>
@@ -62,7 +62,7 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="span6">
+	<div class="col-sm-6 col-lg-6">
 		<table class="property-data-table">
 			<tbody>
 				<tr>
@@ -79,7 +79,7 @@
 </div>
 <hr>
 <h3>Amenities</h3>
-<ul class="inline">
+<ul class="list-inline">
 	<li>Club House</li>
 	<li>Golf Course</li>
 	<li>Rec Center</li>
