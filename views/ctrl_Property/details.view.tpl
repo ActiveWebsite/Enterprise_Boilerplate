@@ -75,7 +75,7 @@
 				<ul class="nav nav-tabs">
 					<li class="active"><a href="#details-tab">Details</a></li>
 					<li><a href="#photos-tab">Photos</a></li>
-					{if $latitude && $latitude != '' && $latitude != 0 && $longitude && $longitude != '' && $longitude != 0 && $zip_code && $zip_code != '' && $zip_code != 0}
+					{if $latitude && $latitude != '' && $latitude != 0 && $longitude && $longitude != '' && $longitude != 0}
 						<li><a href="#map-tab">Map</a></li>
 					{/if}
 					<li><a href="#community-tab">Community</a></li>
@@ -116,9 +116,38 @@
 							</ul>
 						</div>
 					</div>
-					{if $latitude && $latitude != '' && $latitude != 0 && $longitude && $longitude != '' && $longitude != 0 && $zip_code && $zip_code != '' && $zip_code != 0}
+					{if $latitude && $latitude != '' && $latitude != 0 && $longitude && $longitude != '' && $longitude != 0}
 						<div class="tab-pane clearfix" id="map-tab">
-							<div id="poi-map-element"></div>
+							<div id="poi-map-element">
+								<div class="poi-map-div"></div>
+								<div class="poi-map-form margin-top-15">
+									<form method="post" action="/" class="row ui-front">
+										<div class="col-sm-5 col-lg-5 margin-bottom-15">
+											<label>Show Me</label>
+											<div class="input-group">
+												<input type="text" name="poi" value="">
+												<span class="input-group-btn"><button data-for="poi" class="poi-map-autocomplete-toggle btn btn-default"><i class="icon icon-chevron-down"></i></button></span>
+											</div>
+										</div>
+										<div class="col-sm-5 col-lg-5 margin-bottom-15">
+											<label>Within</label>
+											<div class="input-group">
+												<input type="text" name="radius" value="">
+												<span class="input-group-btn"><button data-for="radius" class="poi-map-autocomplete-toggle btn btn-default"><i class="icon icon-chevron-down"></i></button></span>
+											</div>
+										</div>
+										<div class="col-sm-2 col-lg-2 margin-bottom-15">
+											<label>&nbsp;</label>
+											<button type="submit" class="btn btn-default btn-block">Search</button>
+										</div>
+									</form>
+								</div>			
+								<div class="poi-map-results-wrapper">
+									<div class="poi-map-results">
+										<div class="alert alert-info">Select a Point of Interest and Radius from the form above.</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					{/if}
 					<div class="tab-pane clearfix" id="community-tab">
@@ -257,13 +286,13 @@
 		</div>
 	</div>
 	<footerargs>
-		<script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"></script>
-		<script src="/js/map_search/jquery.poi-map.js?v={$smarty.now}"></script>
-		<script src="/js/buildlist.js?scripts=/js/jqueryui/components/button.min.js,/js/jqueryui/components/autocomplete.min.js,/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js"></script>
+		<script src="//maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"></script>
+		<script src="/js/buildlist.js?scripts=/js/libs/jquery_ui/components/core.1.10.3.min.js,/js/libs/jquery_ui/components/menu.1.10.3.min.js,/js/libs/jquery_ui/components/autocomplete.1.10.3.min.js,/js/map_search/jquery.poi-map-2.min.js"></script>
+		<script src="/js/buildlist.js?scripts=/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js"></script>
 		<script>
 		{literal}
 		var simpleCarouselGalleryObj = null;
-		var map_poi_object = null;
+		var poiMapObject = null;
 		var poiMapLoaded = false;
 		jQuery(document).ready(function($) {
 			// tabs
@@ -284,19 +313,15 @@
 							//poi map
 							if (!poiMapLoaded) {
 								poiMapLoaded = true;
-								map_poi_object = $('#poi-map-element').poiMap({
+								poiMapObject = $('#poi-map-element').poiMap({
 									latitude: {/literal}{if $latitude}{$latitude}{else}0{/if}{literal},
 									longitude: {/literal}{if $longitude}{$longitude}{else}0{/if}{literal},
-									zip: {/literal}{if $zip_code}{$zip_code}{else}0{/if}{literal},
-									property_title: '{/literal}{$streetAddress|escape:javascript}{literal}',
-									bootstrapMode: true,
-									bootstrapVersion: 3,
-									grid: [5,5,2],
+									markerTitle: '{/literal}{$streetAddress|escape:javascript}{literal}',
 									markerShadow: true
 								}).data('poiMap');
 							} else {
-								if (map_poi_object && map_poi_object.hasOwnProperty("resize")) {
-									setTimeout(map_poi_object.resize, 200);
+								if (poiMapObject && poiMapObject.hasOwnProperty("resize")) {
+									setTimeout(poiMapObject.resize, 200);
 								}
 							}   
 							break;

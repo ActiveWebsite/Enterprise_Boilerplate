@@ -78,7 +78,7 @@
 		<ul class="nav nav-tabs tab_triggers">
 			<li class="active"><a href="#about-tab">About</a></li>
 			<li><a href="#for-sale-tab">Homes for Sale</a></li>
-			{if $community.address.Zip.value && $community.address.Lat_Long.value.Longitude && $community.address.Lat_Long.value.Longitude != '' && $community.address.Lat_Long.value.Longitude != 0 && $community.address.Lat_Long.value.Latitude && $community.address.Lat_Long.value.Latitude != '' && $community.address.Lat_Long.value.Latitude != 0}
+			{if $community.address.Lat_Long.value.Longitude && $community.address.Lat_Long.value.Longitude != '' && $community.address.Lat_Long.value.Longitude != 0 && $community.address.Lat_Long.value.Latitude && $community.address.Lat_Long.value.Latitude != '' && $community.address.Lat_Long.value.Latitude != 0}
 				<li><a href="#map-tab">Map</a></li>
 			{/if}
 		</ul>
@@ -100,9 +100,38 @@
 				{/if}
 			</div>
 			<div class="tab-pane active" id="for-sale-tab"></div>
-			{if $community.address.Zip.value && $community.address.Lat_Long.value.Longitude && $community.address.Lat_Long.value.Longitude != '' && $community.address.Lat_Long.value.Longitude != 0 && $community.address.Lat_Long.value.Latitude && $community.address.Lat_Long.value.Latitude != '' && $community.address.Lat_Long.value.Latitude != 0}
+			{if $community.address.Lat_Long.value.Longitude && $community.address.Lat_Long.value.Longitude != '' && $community.address.Lat_Long.value.Longitude != 0 && $community.address.Lat_Long.value.Latitude && $community.address.Lat_Long.value.Latitude != '' && $community.address.Lat_Long.value.Latitude != 0}
 				<div class="tab-pane active" id="map-tab">
-					<div id="poi-map-element"></div>
+					<div id="poi-map-element">
+						<div class="poi-map-div"></div>
+						<div class="poi-map-form margin-top-15">
+							<form method="post" action="/" class="row ui-front">
+								<div class="col-sm-5 col-lg-5 margin-bottom-15">
+									<label>Show Me</label>
+									<div class="input-group">
+										<input type="text" name="poi" value="">
+										<span class="input-group-btn"><button data-for="poi" class="poi-map-autocomplete-toggle btn btn-default"><i class="icon icon-chevron-down"></i></button></span>
+									</div>
+								</div>
+								<div class="col-sm-5 col-lg-5 margin-bottom-15">
+									<label>Within</label>
+									<div class="input-group">
+										<input type="text" name="radius" value="">
+										<span class="input-group-btn"><button data-for="radius" class="poi-map-autocomplete-toggle btn btn-default"><i class="icon icon-chevron-down"></i></button></span>
+									</div>
+								</div>
+								<div class="col-sm-2 col-lg-2 margin-bottom-15">
+									<label>&nbsp;</label>
+									<button type="submit" class="btn btn-default btn-block">Search</button>
+								</div>
+							</form>
+						</div>			
+						<div class="poi-map-results-wrapper">
+							<div class="poi-map-results">
+								<div class="alert alert-info">Select a Point of Interest and Radius from the form above.</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			{/if}
 		</div>
@@ -110,15 +139,17 @@
 </div>
 <footerargs>
 {* load the scripts that you need that are not already on the page *}
-<script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"></script>
-<script src="/js/buildlist.js?scripts=/js/libs/jquery_ui/components/core.1.10.3.min.js,/js/libs/jquery_ui/components/menu.1.10.3.min.js,/js/libs/jquery_ui/components/autocomplete.1.10.3.min.js,/js/libs/jquery_ui/components/button.1.10.3.min.js"></script>
-<script src="/js/buildlist.js?scripts=/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js,/js/map_search/jquery.poi-map.js"></script>
+<script src="//maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"></script>
+<script src="/js/buildlist.js?scripts=/js/libs/jquery_ui/components/core.1.10.3.min.js,/js/libs/jquery_ui/components/menu.1.10.3.min.js,/js/libs/jquery_ui/components/autocomplete.1.10.3.min.js,/js/map_search/jquery.poi-map-2.min.js"></script>
+<script src="/js/buildlist.js?scripts=/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js"></script>
 
+{* GET THE POLYGON FOR THE COMMUNITY *}
+{assign var=polygon value=$community_obj->getBoundries()}
 
 <script>
 {literal}
 	jQuery(document).ready(function($) {
-		var map_poi_object = false, PoiMapLoaded = false;
+		var poiMapObject = false, poiMapLoaded = false;
 		
 		// tabs
 		$('#community-bio-tabs').jtabs({
@@ -127,18 +158,19 @@
 				var href = $(trigger).find('a').attr('href');
 				switch(href) {
 					case '#map-tab':
-						if (!PoiMapLoaded) {
-							PoiMapLoaded = true;
-							map_poi_object = $('#poi-map-element').poiMap({
+						if (!poiMapLoaded) {
+							poiMapLoaded = true;
+							poiMapObject = $('#poi-map-element').poiMap({
 								latitude: {/literal}{if $community.address.Lat_Long.value.Latitude}{$community.address.Lat_Long.value.Latitude}{else}0{/if}{literal},
 								longitude: {/literal}{if $community.address.Lat_Long.value.Longitude}{$community.address.Lat_Long.value.Longitude}{else}0{/if}{literal},
-								zip: {/literal}{if $community.address.Zip.value}{$community.address.Zip.value}{else}0{/if}{literal},
-								property_title: '{/literal}{$community.name|escape:javascript}{literal}',
-								bootstrapMode: true,
-								markerShadow: true
+								markerTitle: '{/literal}{$community.name|escape:javascript}{literal}',
+								markerShadow: true,
+								polygon: '{/literal}{if $polygon.0}{$polygon.0->boundary}{/if}{literal}'
 							}).data('poiMap');
 						} else {
-							setTimeout(map_poi_object.resize, 500); 
+							if (poiMapObject && poiMapObject.hasOwnProperty("resize")) {
+								setTimeout(poiMapObject.resize, 200);
+							}
 						}
 						break;						
 					case '#for-sale-tab':
