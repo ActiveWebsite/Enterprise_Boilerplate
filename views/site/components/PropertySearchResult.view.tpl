@@ -6,7 +6,7 @@
                 {if $property.first_pic instanceof PropertyPicture}
                     <div class="prop-photo">
                         <a href="/property/{$property.company_property_id}/{$property.fullStreetAddress|clean_for_url}" title="View property at {$property.fullStreetAddress|clean_for_attribute}">
-                            <img src="{$property.first_pic->getUrl()}/crop/270,180/" title="Photo of {$property.fullStreetAddress|clean_for_attribute}">
+                            <img src="{$property.first_pic->getUrl()}/crop/270,180" class="img-hd" data-hd-src="{$property.first_pic->getUrl()}/crop/540,360/" title="Photo of {$property.fullStreetAddress|clean_for_attribute}">
                         </a>
                     </div>
                 {/if}
@@ -49,7 +49,11 @@
             // persiste any favorite links
             if (typeof _checkForFavorites === 'function') {
                 _checkForFavorites($('#my-property-carousel-{/literal}{$view_id}{literal} a.addFavorite'));
-            }            
+            }  
+            // build retina images
+            if (typeof _buildRetinaImages === 'function') {
+                _buildRetinaImages($('#my-property-carousel-{/literal}{$view_id}{literal}'));
+            }
         });
     </script>
     {/literal}

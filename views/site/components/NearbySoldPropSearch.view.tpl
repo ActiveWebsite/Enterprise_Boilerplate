@@ -1,10 +1,11 @@
+{assign var=view_id value=$smarty.now}
 {if $properties}
-    <ul class="row multi-columns-row">
+    <ul class="row multi-columns-row" id="my-sold-property-{$view_id}">
         {foreach from=$properties item=property key=index}
             <li class="col-sm-4 col-lg-4 standard-property margin-bottom-30">
                 {if $property.first_pic instanceof PropertyPicture}
                     <div class="prop-photo">
-                        <img src="{$property.first_pic->getUrl()}/crop/270,180/" title="Photo of {$property.fullStreetAddress|clean_for_attribute}">
+                        <img src="{$property.first_pic->getUrl()}/crop/270,180" class="img-hd" data-hd-src="{$property.first_pic->getUrl()}/crop/540,360" title="Photo of {$property.fullStreetAddress|clean_for_attribute}">
                     </div>
                 {/if}
                 <h3>{$property.fullStreetAddress} </h3>
@@ -26,6 +27,16 @@
             <a href="{$search_url}" title="View All">View All</a>
         </div>
     {/if}
+    {literal}
+    <script>
+        jQuery(document).ready(function($) {
+            // build retina images
+            if (typeof _buildRetinaImages === 'function') {
+                _buildRetinaImages($('#my-sold-property-{/literal}{$view_id}{literal}'));
+            }
+        });
+    </script>
+    {/literal}
 {else}
     <p>No results found.</p>
 {/if}

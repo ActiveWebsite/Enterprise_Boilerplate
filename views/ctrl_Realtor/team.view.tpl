@@ -10,7 +10,7 @@
 	<h1 class="page-heading">{$realtor.name}</h1>
 	<div class="row">
 		<div class="col-sm-4 col-lg-4 margin-bottom-20">
-			<img src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
+			<img src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/550{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
 		</div>
 		<div class="col-sm-4 col-lg-4 margin-bottom-20">
 			<ul class="list-unstyled">
@@ -118,17 +118,17 @@
 						<h2>Team Leaders</h2>
 						<ul class="row multi-columns-row agent-thumb-list">
 							{foreach from=$leaders item=member key=index name=leaderLoop}
-								<li class="col-sm-4 col-lg-4 margin-bottom-30">
+								<li class="col-6 col-sm-4 col-lg-4 margin-bottom-30">
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">
-											<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.name|clean_for_attribute}">
+											<img src="{if $member.pic_url}{$member.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $member.pic_url}{$member.pic_url}/maxwidth/550{/if}" alt="Photo of {$member.name|clean_for_attribute}">
 										</a>
 									{elseif $member.rebrand_code}
 										<a href="/{$controller_alias}/info/{$member.rebrand_code}" title="About {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
-											<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
+											<img src="{if $member.pic_url}{$member.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $member.pic_url}{$member.pic_url}/maxwidth/550{/if}" alt="Photo of {$member.name|clean_for_attribute}">
 										</a>
 									{else}
-										<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
+										<img src="{if $member.pic_url}{$member.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $member.pic_url}{$member.pic_url}/maxwidth/550{/if}" alt="Photo of {$member.name|clean_for_attribute}">
 									{/if}
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<h4><a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">{$member.name}</a></h4>
@@ -162,14 +162,14 @@
 								<li class="col-sm-4 col-lg-4 margin-bottom-30">
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">
-											<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.name|clean_for_attribute}">
+											<img src="{if $member.pic_url}{$member.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $member.pic_url}{$member.pic_url}/maxwidth/550{/if}" alt="Photo of {$member.name|clean_for_attribute}">
 										</a>
 									{elseif $member.rebrand_code}
 										<a href="/{$controller_alias}/info/{$member.rebrand_code}" title="About {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
-											<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
+											<img src="{if $member.pic_url}{$member.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $member.pic_url}{$member.pic_url}/maxwidth/550{/if}" alt="Photo of {$member.name|clean_for_attribute}">
 										</a>
 									{else}
-										<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
+										<img src="{if $member.pic_url}{$member.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $member.pic_url}{$member.pic_url}/maxwidth/550{/if}" alt="Photo of {$member.name|clean_for_attribute}">
 									{/if}
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<h4><a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">{$member.name}</a></h4>
@@ -203,14 +203,14 @@
 								<li class="col-sm-4 col-lg-4 margin-bottom-30">
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">
-											<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.name|clean_for_attribute}">
+											<img src="{if $member.pic_url}{$member.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $member.pic_url}{$member.pic_url}/maxwidth/550{/if}" alt="Photo of {$member.name|clean_for_attribute}">
 										</a>
 									{elseif $member.rebrand_code}
 										<a href="/{$controller_alias}/info/{$member.rebrand_code}" title="About {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
-											<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
+											<img src="{if $member.pic_url}{$member.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $member.pic_url}{$member.pic_url}/maxwidth/550{/if}" alt="Photo of {$member.name|clean_for_attribute}">
 										</a>
 									{else}
-										<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
+										<img src="{if $member.pic_url}{$member.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $member.pic_url}{$member.pic_url}/maxwidth/550{/if}" alt="Photo of {$member.name|clean_for_attribute}">
 									{/if}
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<h4><a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">{$member.name}</a></h4>
@@ -247,7 +247,7 @@
 									{if $property->information.photo->value}
 										<div class="prop-photo">
 											<a href="/property/{$property->company_property_id}/{$property->getFullStreetAddress()|clean_for_url}" title="View property at $property->getFullStreetAddress()|clean_for_attribute}">
-												<img src="{$property->information.photo->value}/crop/275,180" title="Photo of {$property->getFullStreetAddress()|clean_for_attribute}">
+												<img src="{$property->information.photo->value}/crop/270,177" class="img-hd" data-hd-src="{$property->information.photo->value}/crop/540,355" title="Photo of {$property->getFullStreetAddress()|clean_for_attribute}">
 											</a>
 										</div>
 									{/if}
@@ -291,7 +291,7 @@
 								<li class="standard-property col-sm-4 col-lg-4 margin-bottom-30">
 									{if $property->information.photo->value}
 										<div class="prop-photo">
-											<img src="{$property->information.photo->value}/crop/275,180" title="Photo of {$property->getFullStreetAddress()|clean_for_attribute}">
+											<img src="{$property->information.photo->value}/crop/270,177" class="img-hd" data-hd-src="{$property->information.photo->value}/crop/540,355" title="Photo of {$property->getFullStreetAddress()|clean_for_attribute}">
 										</div>
 									{/if}
 									<h3>

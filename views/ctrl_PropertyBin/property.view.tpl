@@ -3,7 +3,7 @@
 		<div class="standard-property property-bin-item-inner">
 			{if $property_dict.first_pic && $property_dict.first_pic instanceof PropertyPicture}
 				<div class="prop-photo">
-					<img class="property-bin-item-photo" src="{$property_dict.first_pic->getUrl()}/crop/220,120" alt="Property Photo">
+					<img class="property-bin-item-photo img-hd" src="{$property_dict.first_pic->getUrl()}/crop/220,120" data-hd-src="{$property_dict.first_pic->getUrl()}/crop/440,240" alt="Property Photo">
 				</div>
 			{/if}
 			<h3>

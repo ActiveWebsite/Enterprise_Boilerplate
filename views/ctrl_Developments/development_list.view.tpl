@@ -12,7 +12,7 @@
 					</div>
 					<div class="col-sm-3 col-lg-3">
 						{if $development.first_pic}
-							<img src="{$development.first_pic.url}/crop/200,150" alt="Photo of {$development.name|clean_for_attribute}">
+							<img src="{$development.first_pic.url}/crop/200,150" class="img-hd" data-hd-src="{$development.first_pic.url}/crop/400,300" alt="Photo of {$development.name|clean_for_attribute}">
 						{/if}
 					</div>
 				</div>
@@ -23,8 +23,7 @@
 </div>
 <footerargs>
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-<script src="/js/map_search/jquery.search_results_map.min.js"></script>
-<script src="/js/mustache/mustache.min.js"></script>
+<script src="/js/buildlist.js?scripts=/js/mustache/mustache.min.js,/js/map_search/jquery.search_results_map.min.js"></script>
 {literal}
 <script type="text/html" id="developments-list-page-results-template">
 	<div class="development-list-bubble">

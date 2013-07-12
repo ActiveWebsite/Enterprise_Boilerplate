@@ -42,6 +42,26 @@ function _checkForFavorites(elements) {
 	}
 }
 
+
+/**
+ * makes all image that have class of "hd-img" use the hd (retina) img instead. The data-hd-src is twice the size of the normal image.
+ * Calculate ratio by dividing the smallest dimension by the largest dimension. Say you have an image that is 300 X 175. the ratio is 0.583 (175/300).
+ * The retina image would be 600 by ~350 (600 * 0.583).
+ * <img src="img/crop/300,175" data-hd-src="img/crop/600,350" class="hd-img">
+ * <img src="img/maxwidth/300" data-hd-src="img/maxwidth/600" class="hd-img">
+ */
+function _buildRetinaImages(scope) {
+	var sc = scope || 'body';
+	if (1==1 || (typeof Modernizr === 'object' && Modernizr.highres)) {
+		jQuery('img.img-hd', sc).each(function() {
+			var el = jQuery(this), hdSrc = el.data('hd-src');
+			if (hdSrc) {
+				el.attr('src', hdSrc);
+			}
+		});
+	}
+}
+
 var App = jQuery(document);
 
 // document ready
@@ -242,4 +262,9 @@ jQuery(document).ready(function ($) {
 			placement: 'right'
 		});
 	}
+
+	/**
+	 * get our retina images
+	 */
+	_buildRetinaImages();
 });

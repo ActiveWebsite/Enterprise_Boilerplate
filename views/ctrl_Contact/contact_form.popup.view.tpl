@@ -91,7 +91,7 @@
 		<div class="popupFooter clearfix">
 			{if $realtor && $realtor.id && $realtor.pic_url}
 				{if $realtor.pic_url}
-					<img src="{$realtor.pic_url}/maxwidth/70" class="pull-left margin-right-10" alt="">
+					<img src="{$realtor.pic_url}/maxwidth/70" data-hd-src="{$realtor.pic_url}/maxwidth/140" class="pull-left margin-right-10 img-hd" alt="">
 				{else}
 					<img src="/images/person_avatar.gif" class="pull-left margin-right-10" alt="">
 				{/if}

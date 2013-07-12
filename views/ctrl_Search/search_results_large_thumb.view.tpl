@@ -52,10 +52,10 @@
 		<ul class="row multi-columns-row">
 			{if count($properties) > 0}
 			    {foreach item=property from=$properties key=index}
-			    	<li class="col-sm-4 col-lg-4 standard-property margin-bottom-30">
+			    	<li class="col-sm-6 col-lg-4 standard-property margin-bottom-30">
 						<div class="prop-photo">
 							<a href="/property/{$property->company_property_id}{if $property->address_display_bit}/{$property->getfullStreetAddress()|clean_for_url}{/if}" title="View property{if $property->address_display_bit} at {$property->getfullStreetAddress()|clean_for_attribute}{/if}">
-								<img src="{$properties_pics[$index]->getUrl()}/crop/275,180/" title="Photo of {if $property->address_display_bit}{$property->getfullStreetAddress()|clean_for_attribute}{/if}">
+								<img class="img-hd" src="{$properties_pics[$index]->getUrl()}/crop/270,177/" data-hd-src="{$properties_pics[$index]->getUrl()}/crop/540,355/" title="Photo of {if $property->address_display_bit}{$property->getfullStreetAddress()|clean_for_attribute}{/if}">
 							</a>
 							{if $property->open_houses}
 								<div class="open-house-banner">
@@ -120,7 +120,7 @@
 					height: 400,
 					type: 'iframe',
 					wrapCSS: 'fancybox-quickview-nav-wrap'
-				});		
+				});
 			});
 		</script>
 	{/literal}

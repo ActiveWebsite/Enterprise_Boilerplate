@@ -4,7 +4,7 @@
             <li class="standard-property">
                 <div class="prop-photo">
                     <a href="/property/{$property.company_property_id}/{$property.fullStreetAddress|clean_for_url}" title="View property at {$property.fullStreetAddress|clean_for_attribute}">
-                        <img src="{$property.first_pic->getUrl()}/crop/178,119/" title="Photo of {if $property.address_display_bit}{$property.fullStreetAddress|clean_for_attribute}{/if}">
+                        <img src="{$property.first_pic->getUrl()}/crop/178,119/" data-hd-src="{$property.first_pic->getUrl()}/crop/356,238/" class="img-hd" title="Photo of {if $property.address_display_bit}{$property.fullStreetAddress|clean_for_attribute}{/if}">
                     </a>
                 </div>
                 <h3>
@@ -24,6 +24,10 @@
 		<script>
 			jQuery(document).ready(function($) {
 				$('#expandedSearchResults').jcarousel();
+                // build retina images
+                if (typeof _buildRetinaImages === 'function') {
+                    _buildRetinaImages($('#expandedSearchResults'));
+                }                
 			});
 		</script>
 	{/literal}	

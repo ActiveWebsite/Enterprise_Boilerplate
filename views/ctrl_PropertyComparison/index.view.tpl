@@ -50,7 +50,7 @@
 										</div>
 										{if $property.first_pic &&  $property.first_pic instanceof PropertyPicture}
 											<a href="{$ACTION_URLS.property_details}{$property.company_property_id}" target="_blank" title="Property Details for {$property.address|clean_for_attribute}">
-												<img src="{$property.first_pic->getUrl()}/crop/217,160" alt="photo of {$property.address|clean_for_attribute}">
+												<img src="{$property.first_pic->getUrl()}/crop/217,160" class="img-hd" data-hd-src="{$property.first_pic->getUrl()}/crop/434,320" alt="photo of {$property.address|clean_for_attribute}">
 											</a>
 										{/if}
 										<h3>

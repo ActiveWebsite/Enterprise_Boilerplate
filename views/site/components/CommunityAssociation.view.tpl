@@ -11,7 +11,7 @@
         </div>
         {if $community_association.photos.0}
             <div class="col-sm-7 col-lg-7">
-                <img src="{$community_association.photos.0->getUrl()}/crop/460,304/quality/100" alt="Photo of {$community_association.community_dict.name|clean_for_attribute}">
+                <img class="img-hd" src="{$community_association.photos.0->getUrl()}/maxwidth/460" data-hd-src="{$community_association.photos.0->getUrl()}/maxwidth/920" alt="Photo of {$community_association.community_dict.name|clean_for_attribute}">
             </div>
         {/if}
     </div>

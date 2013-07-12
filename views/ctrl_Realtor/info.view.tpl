@@ -10,7 +10,7 @@
 	<h1 class="page-heading">{$realtor.name}</h1>
 	<div class="row">
 		<div class="col-sm-4 col-lg-4 margin-bottom-20">
-			<img src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
+			<img src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/550{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
 		</div>
 		<div class="col-sm-4 col-lg-4 margin-bottom-20">
 			<ul class="list-unstyled">
@@ -118,7 +118,7 @@
 									{if $property->information.photo->value}
 										<div class="prop-photo">
 											<a href="/property/{$property->company_property_id}/{$property->getFullStreetAddress()|clean_for_url}" title="View property at $property->getFullStreetAddress()|clean_for_attribute}">
-												<img src="{$property->information.photo->value}/crop/275,180" title="Photo of {$property->getFullStreetAddress()|clean_for_attribute}">
+												<img src="{$property->information.photo->value}/crop/270,177" class="img-hd" data-hd-src="{$property->information.photo->value}/crop/540,355" title="Photo of {$property->getFullStreetAddress()|clean_for_attribute}">
 											</a>
 										</div>
 									{/if}
@@ -162,7 +162,7 @@
 								<li class="standard-property col-sm-4 col-lg-4 margin-bottom-30">
 									{if $property->information.photo->value}
 										<div class="prop-photo">
-											<img src="{$property->information.photo->value}/crop/275,180" title="Photo of {$property->getFullStreetAddress()|clean_for_attribute}">
+											<img src="{$property->information.photo->value}/crop/270,177" class="img-hd" data-hd-src="{$property->information.photo->value}/crop/540,355" title="Photo of {$property->getFullStreetAddress()|clean_for_attribute}">
 										</div>
 									{/if}
 									<h3>

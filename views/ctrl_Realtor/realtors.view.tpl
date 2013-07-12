@@ -45,7 +45,7 @@
 		<div class="roster-result-set active" id="agent-roster-list-view">
 			<ul class="row multi-columns-row">
 				{foreach from=$realtors item=realtor key=index}
-					<li class="col-sm-4 col-lg-4 margin-bottom-30">
+					<li class="col-6 col-sm-4 col-lg-4 margin-bottom-30">
 						{if $realtor.entity_type == 'Realtor'}
 							<a href="/{$controller_alias}/info/{$realtor.rebrand_code}" data-action="agent-tooltip" data-realtor="{$realtor.id}">{$realtor.name}</a>
 						{elseif $realtor.entity_type == 'EntityTeam'}
@@ -58,14 +58,14 @@
 		<div class="roster-result-set" id="agent-roster-thumb-view">
 			<ul class="row multi-columns-row agent-thumb-list">
 				{foreach from=$realtors item=realtor key=index}
-					<li class="col-4 col-sm-6 col-lg-4 margin-bottom-30">
+					<li class="col-6 col-sm-6 col-lg-4 margin-bottom-30">
 						{if $realtor.entity_type == 'EntityTeam'}
 							<a href="/{$controller_alias}/team/{$realtor.rebrand_code}" title="About {$realtor.name|clean_for_attribute}">
-								<img class="replace-image" src="/images/agent-placeholder.jpg" data-src="{if $realtor.pic_url}{$realtor.pic_url}/maxwidth/690{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
+								<img class="replace-image" src="/images/agent-placeholder.jpg" data-hd-src="{if $realtor.pic_url}{$realtor.pic_url}/maxwidth/540{/if}" data-src="{if $realtor.pic_url}{$realtor.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
 							</a>
 						{else}
 							<a href="/{$controller_alias}/info/{$realtor.rebrand_code}" title="About {$realtor.first_name|clean_for_attribute} {$realtor.last_name|clean_for_attribute}">
-								<img class="replace-image" src="/images/agent-placeholder.jpg" data-src="{if $realtor.pic_url}{$realtor.pic_url}/maxwidth/690{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.first_name|clean_for_attribute} {$realtor.last_name|clean_for_attribute}">
+								<img class="replace-image" src="/images/agent-placeholder.jpg" data-hd-src="{if $realtor.pic_url}{$realtor.pic_url}/maxwidth/540{/if}" data-src="{if $realtor.pic_url}{$realtor.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.first_name|clean_for_attribute} {$realtor.last_name|clean_for_attribute}">
 							</a>
 						{/if}
 						{if $realtor.entity_type == 'EntityTeam'}

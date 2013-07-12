@@ -17,7 +17,7 @@
 								{if $prop_photo instanceof PropertyPicture}
 									<div class="prop-photo">
 										<a href="/property/{$property->company_property_id}/{$property->getFullStreetAddress()|clean_for_url}" title="View property at $property->getFullStreetAddress()|clean_for_attribute}">
-											<img src="{$prop_photo->getUrl()}/crop/275,180" title="Photo of {$property->getFullStreetAddress()|clean_for_attribute}">
+											<img src="{$prop_photo->getUrl()}/crop/270,180" class="img-hd" data-hd-src="{$prop_photo->getUrl()}/crop/540,360" title="Photo of {$property->getFullStreetAddress()|clean_for_attribute}">
 										</a>
 									</div>
 								{/if}
@@ -87,6 +87,10 @@
 		}
 		if (typeof _checkForFavorites === 'function') {
 			_checkForFavorites($('#activeListings a.addFavorite'));
+		}
+		// build retina images
+		if (typeof _buildRetinaImages === 'function') {
+			_buildRetinaImages($('#active-listings'));
 		}
 		$('#property-bin-container').propertyBin('resampleBin');
 	});

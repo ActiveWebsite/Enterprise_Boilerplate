@@ -4,6 +4,8 @@
 jQuery(document).ready(function ($) {
 	// toggles the roster views 
 	var renderGalleryViewPhotos = false;
+	var isRetina = (typeof Modernizr === 'object' && Modernizr.highres) || false;
+
 	$('#agent-roster-view-toggles a[data-action="toggleRoster"]').on('click', function (e) {
 		e.preventDefault();
 		var el = $(this);
@@ -18,8 +20,11 @@ jQuery(document).ready(function ($) {
 			if (is_gallery && !renderGalleryViewPhotos) {
 				renderGalleryViewPhotos = true;
 				r.find('img.replace-image').each(function() {
-					var img = $(this);
-					img.attr('src', img.data('src'));
+					var img = $(this), hdSrc = img.data('hd-src'), rSrc = img.data('src');
+					if (isRetina && hdSrc) {
+						rSrc = hdSrc;
+					} 
+					img.attr('src', rSrc);
 				});
 			}			
 		}
