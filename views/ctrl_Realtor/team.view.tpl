@@ -10,7 +10,7 @@
 	<h1 class="page-heading">{$realtor.name}</h1>
 	<div class="row">
 		<div class="col-sm-4 col-lg-4 margin-bottom-20">
-			<img class="img-responsive" src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
+			<img src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
 		</div>
 		<div class="col-sm-4 col-lg-4 margin-bottom-20">
 			<ul class="list-unstyled">
@@ -116,19 +116,19 @@
 				<div class="tab-pane" id="members">
 					{if $leaders}
 						<h2>Team Leaders</h2>
-						<ul class="row agent-thumb-list">
+						<ul class="row multi-columns-row agent-thumb-list">
 							{foreach from=$leaders item=member key=index name=leaderLoop}
-								<li class="col-sm-4 col-lg-4{if $smarty.foreach.leaderLoop.index % 3 == 0} first-in-row{/if} margin-bottom-30">
+								<li class="col-sm-4 col-lg-4 margin-bottom-30">
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">
-											<img class="img-responsive" src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.name|clean_for_attribute}">
+											<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.name|clean_for_attribute}">
 										</a>
 									{elseif $member.rebrand_code}
 										<a href="/{$controller_alias}/info/{$member.rebrand_code}" title="About {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
-											<img class="img-responsive" src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
+											<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
 										</a>
 									{else}
-										<img class="img-responsive" src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
+										<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
 									{/if}
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<h4><a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">{$member.name}</a></h4>
@@ -157,19 +157,19 @@
 					{if $members}
 						<hr class="margin-top-0">
 						<h2>Associates</h2>
-						<ul class="row agent-thumb-list">
+						<ul class="row multi-columns-row agent-thumb-list">
 							{foreach from=$members item=member key=index name=memberLoop}
-								<li class="col-sm-4 col-lg-4{if $smarty.foreach.memberLoop.index %3 == 0} first-in-row{/if} margin-bottom-30">
+								<li class="col-sm-4 col-lg-4 margin-bottom-30">
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">
-											<img class="img-responsive" src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.name|clean_for_attribute}">
+											<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.name|clean_for_attribute}">
 										</a>
 									{elseif $member.rebrand_code}
 										<a href="/{$controller_alias}/info/{$member.rebrand_code}" title="About {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
-											<img class="img-responsive" src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
+											<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
 										</a>
 									{else}
-										<img class="img-responsive" src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
+										<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
 									{/if}
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<h4><a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">{$member.name}</a></h4>
@@ -198,19 +198,19 @@
 					{if $assistants}
 						<hr class="margin-top-0">
 						<h2>Staff</h2>
-						<ul class="row agent-thumb-list">
+						<ul class="row multi-columns-row agent-thumb-list">
 							{foreach from=$assistants item=member key=index name=assistantLoop}
-								<li class="col-sm-4 col-lg-4{if $smarty.foreach.assistantLoop.index %3 == 0} first-in-row{/if} margin-bottom-30">
+								<li class="col-sm-4 col-lg-4 margin-bottom-30">
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">
-											<img class="img-responsive" src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.name|clean_for_attribute}">
+											<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.name|clean_for_attribute}">
 										</a>
 									{elseif $member.rebrand_code}
 										<a href="/{$controller_alias}/info/{$member.rebrand_code}" title="About {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
-											<img class="img-responsive" src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
+											<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
 										</a>
 									{else}
-										<img class="img-responsive" src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
+										<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.first_name|clean_for_attribute} {$member.last_name|clean_for_attribute}">
 									{/if}
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<h4><a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">{$member.name}</a></h4>
@@ -240,10 +240,10 @@
 			{/if}
 			{if $properties}
 				<div class="tab-pane" id="listings">
-					<ul class="row">
+					<ul class="row multi-columns-row">
 						{foreach from=$properties item=property key=index name=listingsLoop}
 							{if $index < 6}
-								<li class="standard-property col-sm-4 col-lg-4{if $index%3==0} first-in-row{/if}  margin-bottom-30">
+								<li class="standard-property col-sm-4 col-lg-4 margin-bottom-30">
 									{if $property->information.photo->value}
 										<div class="prop-photo">
 											<a href="/property/{$property->company_property_id}/{$property->getFullStreetAddress()|clean_for_url}" title="View property at $property->getFullStreetAddress()|clean_for_attribute}">
@@ -285,10 +285,10 @@
 			{/if}
 			{if $sold_properties}
 				<div class="tab-pane" id="soldListings">
-					<ul class="row">
+					<ul class="row multi-columns-row">
 						{foreach from=$sold_properties item=property key=index name=soldListingsLoop}
 							{if $index < 6}
-								<li class="standard-property col-sm-4 col-lg-4{if $index%3==0} first-in-row{/if}  margin-bottom-30">
+								<li class="standard-property col-sm-4 col-lg-4 margin-bottom-30">
 									{if $property->information.photo->value}
 										<div class="prop-photo">
 											<img src="{$property->information.photo->value}/crop/275,180" title="Photo of {$property->getFullStreetAddress()|clean_for_attribute}">
@@ -337,7 +337,7 @@
 			<div class="tab-pane" id="multimedia">
 				{if $realtor.links || $realtor.social_networks || $realtor.website_url || $realtor.team_info.Blog_URL}
 					<h3>Links</h3>
-					<ul class="row">
+					<ul class="row multi-columns-row">
 						{foreach from=$realtor.links item=link key=index name=linksLoop}
 							<li class="col-sm-4 col-lg-4 margin-bottom-30"><a href="{$link->website_url}" target="_blank">{$link->label}</a></li>
 						{/foreach}
@@ -354,7 +354,7 @@
 					<hr class="margin-top-0">
 				{/if}
 					<h3>Documents</h3>
-					<ul class="row">
+					<ul class="row multi-columns-row">
 						<li class="col-sm-4 col-lg-4 margin-bottom-30">
 							<a href="{$ACTION_URLS.realtor}info/{$realtor.rebrand_code}?view=print" title="Agent Bio Printer Friendly Information Sheet" target="_blank" rel="nofollow">Printer Friendly Information Sheet</a>
 						</li>
@@ -365,7 +365,7 @@
 				{if $realtor.videos}
 					<hr class="margin-top-0">
 					<h3>Videos</h3>
-					<ul class="row">
+					<ul class="row multi-columns-row">
 						{foreach from=$realtor.videos item=videos}
 							{if $videos.branded == 1}
 								<li class="col-sm-4 col-lg-4 margin-bottom-30">

@@ -12,7 +12,7 @@
 					</div>
 					<div class="col-sm-3 col-lg-3">
 						{if $development.first_pic}
-							<img src="{$development.first_pic.url}/crop/200,150" alt="Photo of {$development.name|clean_for_attribute}" class="img-responsive">
+							<img src="{$development.first_pic.url}/crop/200,150" alt="Photo of {$development.name|clean_for_attribute}">
 						{/if}
 					</div>
 				</div>
@@ -30,7 +30,7 @@
 	<div class="development-list-bubble">
 		<h3><a href="{{url}}">{{title}}</a></h3>
 		<p><a href="{{url}}">View More Info</a></p>
-		<p>{{#photo}}<img src="{{photo}}/crop/60,60" alt="" class="img-responsive">{{/photo}}</p>
+		<p>{{#photo}}<img src="{{photo}}/crop/60,60" alt="">{{/photo}}</p>
 	</div>
 </script>
 {/literal}

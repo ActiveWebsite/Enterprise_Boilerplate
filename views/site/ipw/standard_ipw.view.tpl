@@ -69,5 +69,9 @@
 
 		{$GA_CODE->getCode($SITE_OWNER)}
 		{$GA_CODE->getjQueryGoalJS()}
+
+		<!--[if lt IE 9]>
+			<script src="/js/libs/twitter_bootstrap/respond/ie-row-fix.js"></script>
+		<![endif]-->
 	</body>
 </html>

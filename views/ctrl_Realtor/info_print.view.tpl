@@ -1,7 +1,7 @@
 <div id="realtor-bio-page">
 	<h1 class="page-heading">{$realtor.name}</h1>
 	
-	<img class="img-responsive" src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
+	<img src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
 
 	<hr>
 	<ul class="list-unstyled">

@@ -9,10 +9,10 @@
 		<div id="active-listings" class="tab-pane active">
 			{if $properties}
 				<h3>{$property_count} Listings ({$furthest_distance} Mile Radius)</h3>
-				<ul class="row">
+				<ul class="row multi-columns-row">
 					{foreach from=$properties item=property key=index}
 						{if $index < $property_limit}
-							<li class="col-sm-4 col-lg-4 standard-property{if $index%3==0} first-in-row{/if} margin-bottom-30">
+							<li class="col-sm-4 col-lg-4 standard-property margin-bottom-30">
 								{assign var='prop_photo' value=$property->get_first_pic()}
 								{if $prop_photo instanceof PropertyPicture}
 									<div class="prop-photo">

@@ -92,7 +92,7 @@
 							</div>
 							<div class="col-lg-5">
 								{if $photos.0}
-									<img class="img-responsive" src="{$photos.0}crop/349,349" alt="Photo of {$fullStreetAddress|clean_for_attribute}">
+									<img src="{$photos.0}crop/349,349" alt="Photo of {$fullStreetAddress|clean_for_attribute}">
 								{/if}
 							</div>
 						</div>
@@ -230,9 +230,9 @@
 					<div class="row">
 						<div class="col-sm-5 col-lg-5">
 							{if $realtor.entity_type == 'company'}
-								<img class="img-responsive" src="{if $realtor.first_pic.url}{$realtor.first_pic.url}/crop/108,108{else}/images/agent-placeholder.jpg{/if}" alt="{$realtor.name}'s Photo">
+								<img src="{if $realtor.first_pic.url}{$realtor.first_pic.url}/crop/108,108{else}/images/agent-placeholder.jpg{/if}" alt="{$realtor.name}'s Photo">
 							{else}
-								<a href="{$ACTION_URLS.realtor}{if $realtor.entity_type == 'realtor'}info{else}team{/if}/{$realtor.rebrand_code}" title="View {$realtor.name|clean_for_attribute}'s Bio"><img class="img-responsive" src="{if $realtor.first_pic.url}{$realtor.first_pic.url}/crop/108,108{else}/images/agent-placeholder.jpg{/if}" alt="{$realtor.name}'s Photo"></a>
+								<a href="{$ACTION_URLS.realtor}{if $realtor.entity_type == 'realtor'}info{else}team{/if}/{$realtor.rebrand_code}" title="View {$realtor.name|clean_for_attribute}'s Bio"><img src="{if $realtor.first_pic.url}{$realtor.first_pic.url}/crop/108,108{else}/images/agent-placeholder.jpg{/if}" alt="{$realtor.name}'s Photo"></a>
 							{/if}
 						</div>
 						<div class="col-sm-7 col-lg-7">
@@ -264,7 +264,7 @@
 						{foreach from=$recent_properties item=recent_property key=index name=recentLoop}
 							<li class="margin-top-10">
 								<a href="{$recent_property.details_link}/" title="{$recent_property.streetAddress|clean_for_attribute}">
-									<img class="img-responsive" src="{$recent_property.first_pic->getUrl()}/crop/270,130/" alt="Photo of {$recent_property.streetAddress|clean_for_attribute}">
+									<img src="{$recent_property.first_pic->getUrl()}/crop/270,130/" alt="Photo of {$recent_property.streetAddress|clean_for_attribute}">
 								</a>
 								<p>
 									<strong>{$recent_property.streetAddress}</strong>

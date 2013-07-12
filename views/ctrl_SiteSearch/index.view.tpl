@@ -98,7 +98,7 @@
 				{if $result.type == "Content"}
 					<div class="row site-search-item">						
 						<div class="col-sm-2 col-lg-2">
-							<a href="{$result.url}">{if $result.picUrl}<img class="img-responsive" src="{$result.picUrl}/maxwidth/126" alt="">{/if}</a>
+							<a href="{$result.url}">{if $result.picUrl}<img src="{$result.picUrl}/maxwidth/126" alt="">{/if}</a>
 						</div>
 						<div class="col-sm-10 col-lg-10">
 							<div class="site-search-item-top clearfix">
@@ -111,7 +111,7 @@
 				{elseif $result.type == "Property"}
 					<div class="row site-search-item">						
 						<div class="col-sm-2 col-lg-2">
-							<a href="{$result.url}">{if $result.picUrl}<img class="img-responsive" src="{$result.picUrl}/maxwidth/126" alt="">{/if}</a>
+							<a href="{$result.url}">{if $result.picUrl}<img src="{$result.picUrl}/maxwidth/126" alt="">{/if}</a>
 						</div>
 						<div class="col-sm-10 col-lg-10">
 							<div class="site-search-item-top clearfix">
@@ -130,7 +130,7 @@
 				{elseif $result.type == "Realtors And Teams"}
 					<div class="row site-search-item">						
 						<div class="col-sm-2 col-lg-2">
-							<a href="{$result.url}">{if $result.picUrl}<img class="img-responsive" src="{$result.picUrl}/maxwidth/126" alt="">{/if}</a>
+							<a href="{$result.url}">{if $result.picUrl}<img src="{$result.picUrl}/maxwidth/126" alt="">{/if}</a>
 						</div>
 						<div class="col-sm-10 col-lg-10">
 							<div class="site-search-item-top clearfix">
@@ -150,7 +150,7 @@
 				{elseif $result.type == "Blog"}
 					<div class="row site-search-item">						
 						<div class="col-sm-2 col-lg-2">
-							<a href="{$result.url}">{if $result.picUrl}<img class="img-responsive" src="{$result.picUrl}/maxwidth/126" alt="">{/if}</a>
+							<a href="{$result.url}">{if $result.picUrl}<img src="{$result.picUrl}/maxwidth/126" alt="">{/if}</a>
 						</div>
 						<div class="col-sm-10 col-lg-10">
 							<div class="site-search-item-top clearfix">
@@ -164,7 +164,7 @@
 				{elseif $result.type == "Office"}
 					<div class="row site-search-item">						
 						<div class="col-sm-2 col-lg-2">
-							<a href="{$result.url}">{if $result.picUrl}<img class="img-responsive" src="{$result.picUrl}/maxwidth/126" alt="">{/if}</a>
+							<a href="{$result.url}">{if $result.picUrl}<img src="{$result.picUrl}/maxwidth/126" alt="">{/if}</a>
 						</div>
 						<div class="col-sm-10 col-lg-10">
 							<div class="site-search-item-top clearfix">
@@ -184,7 +184,7 @@
 				{elseif $result.type == "Community"  || $result.type == "Communities"  || $result.type == "Neighborhoods"}
 					<div class="row site-search-item">						
 						<div class="col-sm-2 col-lg-2">
-							<a href="{$result.url}">{if $result.picUrl}<img class="img-responsive" src="{$result.picUrl}/maxwidth/126" alt="">{/if}</a>
+							<a href="{$result.url}">{if $result.picUrl}<img src="{$result.picUrl}/maxwidth/126" alt="">{/if}</a>
 						</div>
 						<div class="col-sm-10 col-lg-10">
 							<div class="site-search-item-top clearfix">

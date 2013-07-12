@@ -46,6 +46,8 @@ var App = jQuery(document);
 
 // document ready
 jQuery(document).ready(function ($) {
+	var $body = $(document.body);
+
 	/** 
 	 * account login
 	 */

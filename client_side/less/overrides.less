@@ -41,29 +41,29 @@
 	color: black;
 	background: white;
 	.opacity(60);
-	font-size:8px;
+	font-size:10px;
 	.border-radius(5px 0 0 0);
 }
 
-// tablets and up
-// --------------------------------------------------
+@media (min-width: @screen-phone) {
+	.dev-environment #media-query-holder:before {
+		content: "Phone @media (min-width: @screen-phone) {}";
+	}
+}
+
 @media (min-width: @screen-tablet) {
 	.dev-environment #media-query-holder:before {
 		content: "Tablet @media (min-width: @screen-tablet) {}";
 	}
 }
 
-// small desktops and up
-// --------------------------------------------------
 @media (min-width: @screen-desktop) {
 	.dev-environment #media-query-holder:before {
 		content: "Desktop @media (min-width: @screen-desktop) {}";
 	}
 }
 
-// large desktops and up
-// --------------------------------------------------
-@media (min-width: @container-large-desktop) {
+@media (min-width: @screen-large-desktop) {
 	.dev-environment #media-query-holder:before {
 		content: "Large Desktop @media (min-width: @container-large-desktop) {}";
 	}

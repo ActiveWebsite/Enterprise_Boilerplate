@@ -19,9 +19,9 @@
 	{if $newsItem.files}
 		<hr>
 		<h3>Documents</h3>
-		<ul class="row">
+		<ul class="row multi-columns-row">
 			{foreach from=$newsItem.files item=file key=index}
-				<li class="col-sm-4 col-lg-4{if $index%3==0} first-in-row{/if}"><a href="{$file.url}" target="_blank" rel="nofollow" title="Open {$file.name|clean_for_attribute}">{$file.name}</a></li>
+				<li class="col-sm-4 col-lg-4"><a href="{$file.url}" target="_blank" rel="nofollow" title="Open {$file.name|clean_for_attribute}">{$file.name}</a></li>
 			{/foreach}
 		</ul>
 	{/if}

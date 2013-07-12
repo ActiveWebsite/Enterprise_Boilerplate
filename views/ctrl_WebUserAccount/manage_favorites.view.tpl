@@ -53,7 +53,7 @@
                                 <div class="row">
                                     <div class="col-sm-4 col-lg-4 margin-bottom-10">
                                         <a href="{$ACTION_URLS.property_details}{$property->company_property_id}" target="_blank">
-                                            <img class="img-responsive" src="{if $prop_pics[$key] instanceof PropertyPicture}{$prop_pics[$key]->getUrl}{else}{$prop_pics[$key]}{/if}/crop/259,175" alt="property photo">
+                                            <img src="{if $prop_pics[$key] instanceof PropertyPicture}{$prop_pics[$key]->getUrl}{else}{$prop_pics[$key]}{/if}/crop/259,175" alt="property photo">
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-lg-4 margin-bottom-10">

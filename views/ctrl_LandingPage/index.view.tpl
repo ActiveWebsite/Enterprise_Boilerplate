@@ -9,19 +9,19 @@
 		{/if}
 		{if $blurb_img}
 			<div class="col-sm-4 col-lg-4">
-				<img src="{$blurb_img->getUrl()}" alt="" class="img-responsive">
+				<img src="{$blurb_img->getUrl()}" alt="">
 			</div>
 		{/if}
 	</div>
 	<hr>
-	<ul class="row">
+	<ul class="row multi-columns-row">
 		{foreach from=$items item=sub_menu_item key=index name=sub_menu_loop}
-			<li class="col-sm-6 col-lg-6 landing-page-item{if $index%2==0} first-in-row{/if} margin-bottom-30">
+			<li class="col-sm-6 col-lg-6 margin-bottom-30">
 				{assign var=blurb_img value=$sub_menu_item->get_blurb_thumb()}
 				<div class="row">
 					<div class="col-sm-4 col-lg-4">
 						<a href="{$sub_menu_item->uri}" title="{$sub_menu_item->name|clean_for_attribute}">
-							<img src="{if $blurb_img}{$blurb_img->getUrl()}/quality/100/crop/130,130{else}/images/pic-landing-page-default.jpg{/if}" alt="{$sub_menu_item->name|clean_for_attribute}" class="img-responsive">
+							<img src="{if $blurb_img}{$blurb_img->getUrl()}/quality/100/crop/130,130{else}/images/pic-landing-page-default.jpg{/if}" alt="{$sub_menu_item->name|clean_for_attribute}">
 						</a>
 					</div>
 					<div class="cols-sm-8 col-lg-8">

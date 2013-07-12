@@ -1,7 +1,7 @@
 {if $properties}
-    <ul class="row">
+    <ul class="row multi-columns-row">
         {foreach from=$properties item=property key=index}
-            <li class="col-sm-4 col-lg-4 standard-property{if $index%3==0} first-in-row{/if} margin-bottom-30">
+            <li class="col-sm-4 col-lg-4 standard-property margin-bottom-30">
                 {if $property.first_pic instanceof PropertyPicture}
                     <div class="prop-photo">
                         <img src="{$property.first_pic->getUrl()}/crop/270,180/" title="Photo of {$property.fullStreetAddress|clean_for_attribute}">

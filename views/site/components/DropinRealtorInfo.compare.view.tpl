@@ -15,13 +15,13 @@
 	<div class="row">
 		<div class="col-sm-4 col-lg-4">
 			{if $current_account_user.realtor.pic instanceof EntityPicture}
-				<img src="{$current_account_user.realtor.pic->getURL()}/crop/81,97/" alt="{$realtor.name}" class="img-responsive">
+				<img src="{$current_account_user.realtor.pic->getURL()}/crop/81,97/" alt="{$realtor.name}">
 			{elseif $realtor.pic instanceof EntityPicture}
-				<img src="{$realtor.pic->getURL()}/crop/81,97/" alt="{$realtor.name}" class="img-responsive">
+				<img src="{$realtor.pic->getURL()}/crop/81,97/" alt="{$realtor.name}">
 			{elseif $current_company.thumb_pic.url}
-				<img src="{$current_company.thumb_pic.url}" alt="No Photo" class="img-responsive">
+				<img src="{$current_company.thumb_pic.url}" alt="No Photo">
 			{else}
-				<img src="/images/agent-placeholder.jpg" alt="No Photo" class="img-responsive">
+				<img src="/images/agent-placeholder.jpg" alt="No Photo">
 			{/if}
 		</div>
 		<div class="col-sm-8 col-lg-8">

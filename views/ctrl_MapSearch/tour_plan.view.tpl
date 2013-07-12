@@ -7,7 +7,7 @@
 	{foreach from=$tour_properties item=prop name=tableloop}
 		<div class="tourMapInfoBubble" id="marker_label_{$prop.company_property_id}">
 			{if $prop.photos && $prop.photos.0}
-				<img src="{$prop.photos.0}/crop/97,73/" alt="photo of {$prop.streetAddress}" class="img-responsive">
+				<img src="{$prop.photos.0}/crop/97,73/" alt="photo of {$prop.streetAddress}">
 			{/if}
 			<p>
 				<a title="{$prop.company_property_id}" class="bold" href="/property/{$prop.company_property_id}">{if $prop.streetAddress}{$prop.streetAddress}{elseif $prop.city || $prop.state}{if $prop.city}{$prop.city},{/if} {if $prop.state}{$prop.state}{/if}{else}Address Not Available{/if}</a>
@@ -50,7 +50,7 @@
 		{if $prop.latitude && $prop.latitude != 0 && $prop.latitude != '' && $prop.longitude && $prop.longitude != 0 && $prop.longitude != ''}
 			<span id="directions_display_{$prop.company_property_id}">
 				{if $prop.photos && $prop.photos.0}
-					<img src="{$prop.photos.0}/crop/97,73/" width="97" height="73" alt="photo of {$prop.streetAddress}" class="img-responsive">
+					<img src="{$prop.photos.0}/crop/97,73/" width="97" height="73" alt="photo of {$prop.streetAddress}">
 				{/if}
 				<span class="dirAddressMeta">
 					<span class="dirAddress">{if $prop.streetAddress}{$prop.streetAddress}{elseif $prop.city || $prop.state}{if $prop.city}{$prop.city},{/if} {if $prop.state}{$prop.state}{/if}{else}Address Not Available{/if}</span>
@@ -113,7 +113,7 @@
 									</div>
 									<div class="col-sm-8 col-lg-8">
 										{if $prop.photos && $prop.photos.0}
-											<a href="#{$prop.company_property_id}" class="open-property-bubble"><img src="{$prop.photos.0}/crop/170,80/" alt="photo of {$prop.streetAddress}" class="img-responsive"></a>
+											<a href="#{$prop.company_property_id}" class="open-property-bubble"><img src="{$prop.photos.0}/crop/170,80/" alt="photo of {$prop.streetAddress}"></a>
 										{/if}
 										<p>
 											<a title="{$prop.company_property_id}" class="bold" href="/property/{$prop.company_property_id}">{if $prop.streetAddress}{$prop.streetAddress}{elseif $prop.city || $prop.state}{if $prop.city}{$prop.city},{/if} {if $prop.state}{$prop.state}{/if}{else}Address Not Available{/if}</a>

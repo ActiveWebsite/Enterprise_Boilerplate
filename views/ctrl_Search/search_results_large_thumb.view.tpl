@@ -49,10 +49,10 @@
 		
 		<hr>
 		
-		<ul class="row">
+		<ul class="row multi-columns-row">
 			{if count($properties) > 0}
 			    {foreach item=property from=$properties key=index}
-			    	<li class="col-sm-4 col-lg-4 standard-property{if $index%3==0} first-in-row{/if} margin-bottom-30">
+			    	<li class="col-sm-4 col-lg-4 standard-property margin-bottom-30">
 						<div class="prop-photo">
 							<a href="/property/{$property->company_property_id}{if $property->address_display_bit}/{$property->getfullStreetAddress()|clean_for_url}{/if}" title="View property{if $property->address_display_bit} at {$property->getfullStreetAddress()|clean_for_attribute}{/if}">
 								<img src="{$properties_pics[$index]->getUrl()}/crop/275,180/" title="Photo of {if $property->address_display_bit}{$property->getfullStreetAddress()|clean_for_attribute}{/if}">
@@ -93,7 +93,7 @@
 			    	</li>
 				{/foreach}
 			{else}
-				<li class="col-sm-12 col-lg-12 first-in-row">No Properties Found</li>
+				<li class="col-sm-12 col-lg-12">No Properties Found</li>
 			{/if}
 		</ul>
 
@@ -104,8 +104,8 @@
 	</div>
 </div>
 <footerargs>
-	<iframe name="action_iframe" style="display:none;" width="0" height="0"></iframe>
-	<script src="/js/buildlist.js?scripts=/js/search/jquery.Search.js,/js/search/jquery.fancySelect2.min.js,/js/min/search_app.min.js,/js/jqueryui/components/autocomplete.min.js"></script>
+	<iframe name="action_iframe" style="display:none;" width="0" height="0"></iframe>	
+	<script src="/js/buildlist.js?scripts=/js/libs/jquery_ui/components/core.1.10.3.min.js,/js/libs/jquery_ui/components/menu.1.10.3.min.js,/js/libs/jquery_ui/components/autocomplete.1.10.3.min.js,/js/search/jquery.Search.js,/js/search/jquery.fancySelect2.min.js,/js/min/search_app.min.js"></script>
 	{literal}
 		<script>
 			jQuery(document).ready(function($) {
