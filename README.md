@@ -120,8 +120,8 @@ You will also need to add the less file imports to your styles.less file.
 
 #FURTHER DOCUMENTATION
 
-*[Bootstrap 3 Docs](http://boojlabs.activewebsite.com/documentation/view/92)
-*[Bootstrap 3 Icons](http://boojlabs.activewebsite.com/documentation/view/94)
-*[Bootstrap 3 Variables](http://boojlabs.activewebsite.com/documentation/view/91)
-*[Bootstrap Global Classes](http://boojlabs.activewebsite.com/documentation/view/87)
-*[Bootstrap Mixins](http://boojlabs.activewebsite.com/documentation/view/86)
+* [Bootstrap 3 Docs](http://boojlabs.activewebsite.com/documentation/view/92)
+* [Bootstrap 3 Icons](http://boojlabs.activewebsite.com/documentation/view/94)
+* [Bootstrap 3 Variables](http://boojlabs.activewebsite.com/documentation/view/91)
+* [Bootstrap Global Classes](http://boojlabs.activewebsite.com/documentation/view/87)
+* [Bootstrap Mixins](http://boojlabs.activewebsite.com/documentation/view/86)
