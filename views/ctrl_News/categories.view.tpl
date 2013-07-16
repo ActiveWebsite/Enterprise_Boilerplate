@@ -1,5 +1,7 @@
 <div id="news-categories-page">
-	<h1 class="page-heading">News</h1>
+	<div class="page-header">
+		<h1>News</h1>
+	</div>
 	{foreach from=$news item=news_array key=category_name name=category_loop}
 		<div class="news-category margin-bottom-30">
 			<h2><a href="/{$controller_alias}/category/{$category_name}">{$category_name}</a></h2>

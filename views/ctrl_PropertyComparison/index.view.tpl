@@ -10,7 +10,7 @@
 		</div>
 	</div>
 	<div id="mainTableArea" class="row">
-		<div class="cols-sm-2 col-lg-2 compare-labels">
+		<div class="col-sm-2 col-lg-2 compare-labels">
 			<table class="compareTable">
 				<tbody>
 					<tr>

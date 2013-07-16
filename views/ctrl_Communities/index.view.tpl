@@ -1,5 +1,7 @@
 <div id="community-index">
-	<h1 class="page-heading">Communities</h1>
+	<div class="page-header">
+		<h1>Communities</h1>
+	</div>
 </div>
 <div class="alert">This page can be built many many ways so please come see r&amp;d about how to set this up.</div>
 

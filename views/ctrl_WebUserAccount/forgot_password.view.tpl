@@ -6,7 +6,7 @@
     </ul>
 {/render_layout_arguments}
 
-<div id="web-user-account-header">
+<div class="page-header web-user-account-header">
 	<h1>Forgot Password</h1>
 	<p class="lead">
 		If you have forgotten your account password, you can reset it by filling in your email address below. A new password will be generated and emailed to you.

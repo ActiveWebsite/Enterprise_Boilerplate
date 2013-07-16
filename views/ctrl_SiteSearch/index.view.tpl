@@ -31,7 +31,9 @@
 			<li><a href="/" title="Home">Home</a></li>
 			<li class="active">Site Search Results</li>
 		</ul>
-		<h1 class="page-heading">Site Search</h1>
+		<div class="page-header">
+			<h1>Site Search</h1>
+		</div>
 		<form method="get" action="/{$controller_alias}/" class="row">
 			<div class="col-sm-10 col-lg-10">
 				<input type="search" name="q" value="" placeholder="Enter Search Term(s)">

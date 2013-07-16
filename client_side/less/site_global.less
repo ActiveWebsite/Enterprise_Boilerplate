@@ -2,10 +2,15 @@
 // --------------------------------------------------
 
 
-// HEADER STYLES
+// Page HEADER STYLES
 // --------------------------------------------------
-h1.page-heading {
-	margin: 0 0 30px 0;
+.page-header {
+	h1 {
+
+	}
+	p {
+		
+	}
 }
 
 
@@ -23,8 +28,6 @@ h1.page-heading {
 		margin: 0;
 	}
 }
-
-
 
 
 // LAYOUT FOOTER STYLE
@@ -228,6 +231,23 @@ h1.page-heading {
 		padding: 10px;
 		margin-top: -20px;
 	}
+}
+
+
+// OVERRIDE FOR PROPERTY BIN COMPONENT GOES HERE
+// --------------------------------------------------
+#property-bin-top-toolbar,
+#property-bin-bottom-toolbar {
+	.btn {
+		.btn-default();
+	}
+}
+
+
+// OVERRIDE FOR PROPERTY BIN GOES HERE
+// --------------------------------------------------
+#property-bin-default-open-button {
+	display: none;
 }
 
 

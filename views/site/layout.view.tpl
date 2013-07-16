@@ -14,7 +14,7 @@
 		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss/">
 		<link rel="shortcut icon" href="/images/favicon.ico">
 		<link rel="stylesheet" href="/css/company_styles.min.css">
-		<script src="/js/modernizer/modernizr.2.6.2.custom.js?v={$smarty.now}"></script>
+		<script src="/js/modernizer/modernizr.2.6.2.custom.js"></script>
 		<!--[if lt IE 9]>
 			<script src="/js/libs/twitter_bootstrap/respond/respond.min.js"></script>
 		<![endif]-->
@@ -202,7 +202,7 @@
 		
 		<img src="/images/ajax-loader.gif" alt="Loading..." class="hidden">
 		
-		{render_dropin dropin="PropertyBin" bootstrap=true propsInRow=3 addBootstrapDropdown=true}
+		{render_dropin dropin="PropertyBin" bootstrap=true bootstrapVersion=3 propsInRow=3 addBootstrapDropdown=true}
 		
 		<script src="/js/min/actions.min.js"></script>
 		<script src="/js/libs/twitter_bootstrap/collapse.js"></script>	

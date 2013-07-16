@@ -1,5 +1,7 @@
 <div id="proximitySearchWrapper">
-	<h1 class="page-heading">Proximity Search</h1>
+	<div class="page-header">
+		<h1>Proximity Search</h1>
+	</div>
 	<p>
 		Enter an address or choose from our list of pre-defined starting points. Next, choose your search radius and click "Search". 
 		You can then further narrow your results using the available filters. When you are ready to see the results, click the "Results" button.

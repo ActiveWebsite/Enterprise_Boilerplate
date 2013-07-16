@@ -1,5 +1,7 @@
 <div id="agent-roster-page">
-	<h1 class="page-heading">Realtors</h1>
+	<div class="page-header">
+		<h1>Realtors</h1>
+	</div>
 	<form action="{$form}" method="post">	
 		<fieldset class="row">
 			<div class="col-sm-4 col-lg-4">

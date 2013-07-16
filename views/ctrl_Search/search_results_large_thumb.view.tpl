@@ -31,7 +31,9 @@
 	<div class="col-sm-9 col-lg-9">
 		<div class="row">
 			<div class="col-sm-6 col-lg-6">
-				<h1 class="page-heading">{$page_manager_obj->get_total_count()|number_format} Search Results</h1>
+				<div class="page-header">
+					<h1>{$page_manager_obj->get_total_count()|number_format} Search Results</h1>
+				</div>
 			</div>
 			<div class="col-sm-3 col-lg-3">
 				<a href="#" class="property-bin-toggle pull-right">Property Bin <span class="property-bin-count"></span></a>

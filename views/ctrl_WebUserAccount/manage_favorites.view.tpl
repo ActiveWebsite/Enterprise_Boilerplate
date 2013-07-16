@@ -8,7 +8,7 @@
 
 {$PAGE_MENU}
 
-<div id="web-user-account-header">
+<div class="page-header web-user-account-header">
     <h1>Favorites</h1>
     <p class="lead">The following is a list of your current Favorites.  You can add or delete properties in each Favorites category at any time.  You can also send each Favorites collection or individual Favorite properties via email.</p>
     <p class="lead">Click on the Favorites Category name to view its properties.  Click on Email to send the category to an email address.</p>

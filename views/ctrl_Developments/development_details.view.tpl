@@ -7,7 +7,9 @@
 {/render_layout_arguments}
 
 <div id="developments-details-page">
-	<h1 class="page-heading">{$development.name}</h1>
+	<div class="page-header">
+		<h1>{$development.name}</h1>
+	</div>
 	<div class="row">
 		<div class="col-lg-9 margin-bottom-30">
 			{if $development.pics}

@@ -7,9 +7,9 @@
 {/render_layout_arguments}
 
 {$PAGE_MENU}
-<div id="web-user-account-header">
+<div class="page-header web-user-account-header">
     <h1>Account Details</h1>
-    <p>After editing the fields below, click Save to update your information.</p>
+    <p class="lead">After editing the fields below, click Save to update your information.</p>
 </div>
 <form class="form-horizontal validate-form" action="{$ACTION_URLS.local_root}/update/" method="post">
     <fieldset>

@@ -2,8 +2,8 @@
 	{render_dropin dropin="SlideShowNav"}
 	{render_component component="QuickSearch"}
 </div>
-<div class="row margin-top-30 tabClass">
-	<div class="col-lg-9" id="home-page-tabs">
+<div class="row margin-top-30">
+	<div class="col-lg-9 tabClass" id="home-page-tabs">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#tab-1">Tab 1</a></li>
 			<li><a href="#tab-2">Tab 2</a></li>

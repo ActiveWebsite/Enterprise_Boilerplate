@@ -221,7 +221,7 @@
 	<div class="col-sm-6 col-lg-6 margin-bottom-15">
 		<label for="as_city">Autocomplete</label>
 		<div class="controls">
-			<input type="text" class="autoCompleteField" id="as_city" data-src="city" placeholder"Enter Value" name="Bedroom" placeholder="Enter Value To See Suggestions" value="">
+			<input type="text" class="autoCompleteField" id="as_city" data-src="city" placeholder"Enter Value" name="Bedroom" value="">
 		</div>
 	</div>
 </div>
@@ -229,7 +229,7 @@
 	<div class="col-sm-6 col-lg-6 margin-bottom-15">
 		<label for="as_city2">Autocomplete With Error</label>
 		<div class="controls">
-			<input type="text" class="autoCompleteField validate-entry" id="as_city2" data-src="city2" placeholder"Enter Value" name="Bedroom" placeholder="Enter Value To See Suggestions" value="">
+			<input type="text" class="autoCompleteField validate-entry" id="as_city2" data-src="city2" placeholder"Enter Value" name="Bedroom" value="">
 		</div>
 	</div>
 </div>

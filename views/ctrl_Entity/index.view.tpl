@@ -1,5 +1,7 @@
 <div id="office-index-page">
-	<h1 class="page-heading">Offices</h1>
+	<div class="page-header">
+		<h1>Offices</h1>
+	</div>
 	<div id="office-results-map"></div>
 	<hr>
 	{if $entities}

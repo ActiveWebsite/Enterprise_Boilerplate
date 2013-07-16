@@ -7,10 +7,10 @@
 {/render_layout_arguments}
 
 {$PAGE_MENU}
-<div id="web-user-account-header">
+<div class="page-header web-user-account-header">
     <h1>Saved Searches</h1>
     <p class="lead">This page lists the searches you have saved.  You can edit/run your saved search through the "I want to..." options as well as start an email alert by clicking "Start Email Alert".</p>
-    <div class="margin-bottom-20"><a href="{$ACTION_URLS.local_root}/edit_search/add/-1" class="btn btn-success"><i class="icon icon-plus"></i> Add Saved Search</a></div>
+    <div><a href="{$ACTION_URLS.local_root}/edit_search/add/-1" class="btn btn-success"><i class="icon icon-plus"></i> Add Saved Search</a></div>
 </div>
 {if $searches}
     <table class="table table-striped" id="account-saved-searches">

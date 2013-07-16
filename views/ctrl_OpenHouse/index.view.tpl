@@ -1,5 +1,7 @@
 <div id="open-house-search">
-	<h1 class="page-heading">Open House Search</h1>
+	<div class="page-header">
+		<h1>Open House Search</h1>
+	</div>
 	<form method="post" action="/search/url_search">
 		<input type="hidden" name="open_house" value="on">
 		<ul class="row">

@@ -4,8 +4,8 @@
         <li>{$account_area_brand_name}</li>
     </ul>
 {/render_layout_arguments}
-<div id="web-user-account-header">
-	<h1 class="margin-bottom-20">Login to {$account_area_brand_name}</h1>
+<div class="page-header web-user-account-header">
+	<h1>Login to {$account_area_brand_name}</h1>
 </div>
 {if $messages->isMsgs() === true}
 	{if $messages->isErrors() === true}

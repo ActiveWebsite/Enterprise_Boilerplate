@@ -38,7 +38,9 @@
 
 	<div class="row" id="property-details-page">
 		<div class="col-sm-9 col-lg-9 details-content-column margin-bottom-30">
-			<h1 class="page-heading">{$fullStreetAddress}</h1>
+			<div class="page-header">
+				<h1>{$fullStreetAddress}</h1>
+			</div>
 			
 			{if $open_houses}
 				<div class="alert open-house-alert">

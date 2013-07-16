@@ -1,10 +1,8 @@
-This is the boiler plate for setting up an enterprise site.
-===========================================================
+#This is the boiler plate for setting up an enterprise site.
 
 *See R&D for questions and help.*
 
-
-#Step 1: Setup Access To The New Client
+##Setup Access To The New Client
 
 When dev adds the new client's app folder to the repo we need to update our server configuration to allow
 us to access the new site in our browser. 
@@ -38,7 +36,7 @@ replace `<APP NAME>` with the name of the new client. No spaces _ - ` " or anyth
 
 If you need more branches than just `dev.lan` copy this again and swap out the `dev.lan` for `dev1.lan` or `dev2.lan`
 
-#Step 2: Configuring the Clients app.conf.php files
+##Configuring the Clients app.conf.php files
 You need to setup several configs to get the new client off and running. These configs need to be added to the app-dist_dev.conf.php, app-dist_live.conf.php, and app-dist_stage.conf.php
 
 * define('DEFAULT_SEARCH_COUNT', 12); (this will be the number of properties on the default search result)
@@ -49,7 +47,7 @@ You need to setup several configs to get the new client off and running. These c
 * define('REST_API_KEY', 'STRING WILL GO HERE'); (R&D will need to set this up)
 * define('ONBOARD_ID', 'ID GOES HERE'); (get from pm)
 
-#Step 3: Company Configuration
+##Company Configuration
 
 You need to set several configs for the company. Below is the query to get the company's current configs:
 
@@ -65,7 +63,9 @@ You need to set several configs for the company address info. Below is the query
 * user_id = <commpany id>, address_info_type_id = 6, subtype = Lat_Long, value = POINT(long lat), hidden = 0
 * user_id = <commpany id>, address_info_type_id = 6, subtype = Zoom, value = 11, hidden = 0
 
-#Step 4: Menu SQL
+##Main Menu Setup
+
+When you start up a new site it's helpeful to have a basic menu. Below is some SQL to get you started
 
 You can get the current menu for your client with this query
 
@@ -84,13 +84,32 @@ If you do not have a menu, You can build out a new one using the basic menu belo
 	insert into `menu_item` (`name`, `uri`, `img_src`, `order_id`, `parent_id`, `action`, `owner_id`, `default_child_id`, `blurb`, `blurb_img_src`, `cms_page_id`, `rich_content_id`, `rich_content_owner`, `rich_content_owner_type`, `cms_owner_flag`, `hide_flag`, `inherited_from`, `inherited_source`, `receive_updates`, `has_children`, `height`, `can_be_inherited`, `can_be_altered`, `title_tag`, `meta_keywords`, `meta_description`, `seo_prepend`, `version_number`) values('Proximity Search','/proximity_search/',NULL,'2','9571','/ctrl_OpenHouse/proximity_search/','<commpany id>',NULL,'',NULL,NULL,NULL,'0',NULL,'0','0','0',NULL,'0','0','2','1','0','Proximity Search','','','0','0');
 	insert into `menu_item` (`name`, `uri`, `img_src`, `order_id`, `parent_id`, `action`, `owner_id`, `default_child_id`, `blurb`, `blurb_img_src`, `cms_page_id`, `rich_content_id`, `rich_content_owner`, `rich_content_owner_type`, `cms_owner_flag`, `hide_flag`, `inherited_from`, `inherited_source`, `receive_updates`, `has_children`, `height`, `can_be_inherited`, `can_be_altered`, `title_tag`, `meta_keywords`, `meta_description`, `seo_prepend`, `version_number`) values('News','/news/',NULL,'1','9572','/ctrl_News/','<commpany id>',NULL,'',NULL,NULL,NULL,'0',NULL,'0','0','0',NULL,'0','0','2','1','0','News','','','0','0');
 
-#Step 5: Copying Over Files/Folders
+##Copying Over Files/Folders
 
-At a minimum you need to copy the `views/ctrl_Forms`, `views/ctrl_WebUserAccount`, and `views/site` directories and all their contents over to your new app.
+###Copy over the following directories and their contents (you don't need the readme.md files):
 
-You also need copy over the `client_side/js` directory and contents, the `client_side/less/web_user_account` directory and contents
+* views/ctrl_Forms
+* views/ctrl_WebUserAccount
+* views/site
+* client_side/js
+* client_side/less/web_user_account
+* client_side/css/search
+* public_html/images
 
-You need `client_side/less/application.less`, `client_side/less/application_variables.less`, `client_side/less/bootstrap_includes.less`, `client_side/less/helpers.less`,
-`client_side/less/overrides.less`, `client_side/less/site_global.less`, `client_side/less/styles.less`, `client_side/less/variables.less`
+###Copy over the following files:
 
-You need `client_side/css/searcg` directory and content
+* client_side/less/styles.less 
+* client_side/less/bootstrap_includes.less 
+* client_side/less/helpers.less
+* client_side/less/overrides.less 
+* client_side/less/site_global.less 
+* client_side/less/variables.less
+* client_side/less/application.less 
+* client_side/less/application_variables.less
+* views/ctrl_Home/index.view.tpl
+
+###Copy over the following controller overrides:
+
+* actions/ctrl_Content.action.php
+* actions/ctrl_Home.action.php
+* actions/ctrl_Search.action.php

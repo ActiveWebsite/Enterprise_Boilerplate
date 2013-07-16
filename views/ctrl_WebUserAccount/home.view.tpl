@@ -6,7 +6,7 @@
     </ul>
 {/render_layout_arguments}
 {$PAGE_MENU}
-<div id="web-user-account-header">
+<div class="page-header web-user-account-header">
     <h1>We're Glad You're Here</h1>
     <p class="lead">
         Whether you're a buyer or seller, you can save time and simplify the process. Customize searches for properties, know when new properties that

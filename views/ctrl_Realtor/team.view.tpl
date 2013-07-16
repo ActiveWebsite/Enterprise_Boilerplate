@@ -7,7 +7,9 @@
 {/render_layout_arguments}
 
 <div id="realtor-bio-page">
-	<h1 class="page-heading">{$realtor.name}</h1>
+	<div class="page-header">
+		<h1>{$realtor.name}</h1>
+	</div>
 	<div class="row">
 		<div class="col-sm-4 col-lg-4 margin-bottom-20">
 			<img src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/550{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">

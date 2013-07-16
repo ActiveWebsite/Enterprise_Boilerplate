@@ -7,7 +7,9 @@
 {/render_layout_arguments}
 
 <div id="community-bio">
-	<h1 class="page-heading">{$community.name}</h1>
+	<div class="page-header">
+		<h1>{$community.name}</h1>
+	</div>
 	<div class="row">
 		<div class="col-lg-9 margin-bottom-30">
 			{if $community.photos}

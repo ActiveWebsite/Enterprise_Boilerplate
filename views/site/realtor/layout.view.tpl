@@ -215,7 +215,7 @@
 		
 		<img src="/images/ajax-loader.gif" alt="Loading..." class="hidden">
 		
-		{render_dropin dropin="PropertyBin" bootstrap=true propsInRow=3 addBootstrapDropdown=true}
+		{render_dropin dropin="PropertyBin" bootstrap=true propsInRow=3 bootstrapVersion=3 addBootstrapDropdown=true}
 		
 		<script src="/js/min/actions.min.js"></script>
 		<script src="/js/libs/twitter_bootstrap/collapse.js"></script>	

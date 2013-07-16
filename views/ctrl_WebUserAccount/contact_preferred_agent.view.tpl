@@ -7,7 +7,7 @@
 {/render_layout_arguments}
 
 {$PAGE_MENU}
-<div id="web-user-account-header">
+<div class="page-header web-user-account-header">
     <h1>Contact Your Preferred Agent</h1>
 </div>
 {if $pref_realtor == ''}

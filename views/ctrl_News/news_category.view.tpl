@@ -1,5 +1,7 @@
 <div id="news-category-page">
-	<h1 class="page-heading">News: {$category_name}</h1>
+	<div class="page-header">
+		<h1>News: {$category_name}</h1>
+	</div>
 	{foreach from=$news item=newsItem name=newsLoop}
 		<article>
 			<span class="pull-right bold"><em>{$newsItem.release|date_format:"%D"}</em> by {$newsItem.user.name}</span>

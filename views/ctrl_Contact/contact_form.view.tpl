@@ -1,5 +1,7 @@
 <div id="contact-page">
-	<h1 class="page-heading">Contact {if $contactee_type == 'realtor'}Me{else}Us{/if}</h1>
+	<div class="page-header">
+		<h1>Contact {if $contactee_type == 'realtor'}Me{else}Us{/if}</h1>
+	</div>
 	<p>Fill out the form below and {if $contactee_type == 'realtor'}I{else}we{/if} will get back to you quickly.</p>
 	<form action="/forms/" class="validate-form">
 		<div class="row">

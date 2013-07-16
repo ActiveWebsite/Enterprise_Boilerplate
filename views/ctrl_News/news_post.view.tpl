@@ -1,5 +1,7 @@
 <div id="news-post-page">
-	<h1 class="page-heading">{$newsItem.title}</h1>
+	<div class="page-header">
+		<h1>{$newsItem.title}</h1>
+	</div>
 	<p class="bold">
 		Publised on {$newsItem.release|date_format:"%D"} by
 		{$newsItem.user.name}

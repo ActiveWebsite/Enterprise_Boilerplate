@@ -1,5 +1,7 @@
 <div id="developments-list-page">
-	<h1 class="page-heading">Developments</h1>
+	<div class="page-header">
+		<h1>Developments</h1>
+	</div>
 	<div id="developments-list-page-results-map"></div>
 	<hr>
 	<ul class="row">
