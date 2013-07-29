@@ -35,7 +35,7 @@
 				<div id="radius-polygon-widget-polygon-tab" class="tab-pane active">
 					<h3>Create A New Polygon Search</h3>
 					<h4>Directions</h4>
-					<ol>
+					<ol class="margin-bottom-15">
 						<li>Click on the "Start New Polygon" button.</li>
 						<li>Zoom in to your desired location using the plus and minus buttons on the left of the map (optional).</li>										
 						<li>Click on the map to indicate the starting point of your polygon.</li>							
@@ -45,16 +45,14 @@
 						<li>You may only use a maximum of 5 points for your polygon.</li>
 						<li>Click the "Delete Polygon" button to start over or remove the polygon.</li>
 					</ol>
-					<div class="field">
-						<input type="hidden" name="wkt" id="wkt" value="{$wkt_str}">
-						<input type="button" id="new_polygon_button" value="Start New Polygon">	
-						<input type="button" id="delete_polygon_button" value="Delete Polygon">
-					</div>
+					<input type="hidden" name="wkt" id="wkt" value="{$wkt_str}">
+					<input type="button" id="new_polygon_button" value="Start New Polygon">	
+					<input type="button" id="delete_polygon_button" value="Delete Polygon">
 				</div>
 				<div id="radius-polygon-widget-radius-tab" class="tab-pane">
 					<h3>Create A New Radius Search</h3>
 					<h4>Directions</h4>
-					<ol>
+					<ol class="margin-bottom-15">
 						<li>Type in an address.</li>
 						<li>Select a radius from the select box.</li>
 						<li>Click the "Find Address" button.</li>
@@ -62,15 +60,15 @@
 						<li>Dragging the marker will also move the cricle.</li>
 						<li>You may also right click any point on the map to create a circle instead of typing in an address.</li>
 					</ol>
-					<div class="field">
+					<div class="margin-bottom-15">
 						<label class="bold block">Street Address City, State Zip</label>
-						<input id="address_search" name="address_search" value="" type="text" title="Street Address City, State Zip" placeholder="Enter Street Address City, State Zip">
+						<input class="form-control" id="address_search" name="address_search" value="" type="text" title="Street Address City, State Zip" placeholder="Enter Street Address City, State Zip">
 					</div>
-					<div class="field">
+					<div class="margin-bottom-15">
 						<label class="bold block">Radius</label>
 						<input type="hidden" name="Distance[]" id="radius_lat" value="{if $distance_form.latitude}{$distance_form.latitude}{elseif $search_dict.terms.Distance.csv}{$search_dict.terms.Distance.csv.0}{/if}">
 						<input type="hidden" name="Distance[]" id="radius_long" value="{if $distance_form.longitude}{$distance_form.longitude}{elseif $search_dict.terms.Distance.csv}{$search_dict.terms.Distance.csv.1}{/if}">
-						<select id="radius" name="Distance[]">
+						<select class="form-control" id="radius" name="Distance[]">
 							<option value="">Select Distance</option>
 							{if $search_config.radius_values instanceof CompanySearchConfig}
 								{foreach from=$search_config.radius_values->getValues() item=name key=value}
@@ -79,10 +77,8 @@
 							{/if}
 						</select>
 					</div>
-					<div class="field">
-						<input id="geocode" type="button" class="btn" value="Find Address">
-						<input id="remove_circle" disabled="disabled" class="btn" type="button" value="Delete Circle">
-					</div>
+					<input id="geocode" type="button" class="btn btn-default" value="Find Address">
+					<input id="remove_circle" disabled="disabled" class="btn btn-default" type="button" value="Delete Circle">
 				</div>
 			</div>
 		</div>

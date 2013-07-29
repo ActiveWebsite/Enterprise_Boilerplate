@@ -74,7 +74,7 @@
 		<form action="{$ACTION_URLS.search}url_search" method="post">
 			<fieldset class="row">
 				<div class="col-sm-10 col-lg-10">
-					<input type="text" placeholder="Enter Address">
+					<input class="form-control" type="text" placeholder="Enter Address">
 				</div>
 				<div class="col-sm-2 col-lg-2">
 					{if $save_button}
@@ -119,7 +119,7 @@
 				<li class="col-sm-2 col-lg-2">
 					<div class="radio bold">
 						<label>
-							<input type="radio" data-action="change-property-type" value="1" data-template="sample" checked="checked" name="Property_Type"{if $PT == 145} checked="checked"{/if}>
+							<input type="radio" data-action="change-property-type" value="1" data-template="sample" name="Property_Type"{if !$PT || $PT == 145} checked="checked"{/if}>
 							Sample
 						</label>
 					</div>
@@ -127,7 +127,7 @@
 				<li class="col-sm-2 col-lg-2">
 					<div class="radio bold">
 						<label>
-							<input type="radio" data-action="change-property-type" value="145" data-template="residential" checked="checked" name="Property_Type"{if $PT == 145} checked="checked"{/if}>
+							<input type="radio" data-action="change-property-type" value="145" data-template="residential" name="Property_Type"{if $PT == 145} checked="checked"{/if}>
 							Residential
 						</label>
 					</div>
@@ -206,7 +206,7 @@
 					<div class="row">
 						<div class="col-sm-6 col-lg-6 margin-bottom-15">
 							<label for="as_lcd">LCD Screen Views</label>
-							<select id="as_lcd" title="Select LCD Template" name="LcdViews">
+							<select class="form-control" id="as_lcd" title="Select LCD Template" name="LcdViews">
 								{foreach from=$lcd_views item=lcd name=lcdLoop}
 									<option value="{$lcd.id}"{if $smarty.foreach.lcdLoop.first} selected="selected"{/if}>{$lcd.name}</option>
 								{/foreach}

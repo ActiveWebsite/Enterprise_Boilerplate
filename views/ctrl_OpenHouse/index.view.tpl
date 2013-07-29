@@ -95,7 +95,7 @@
 				<label class="block" for="radius_min_price">Price Range</label>
 				<div class="row">
 					<div class="col-sm-6 col-lg-6 margin-bottom-15">				
-						<select name="Min_Price" id="radius_min_price">
+						<select class="form-control" name="Min_Price" id="radius_min_price">
 							{if $search_config.min_price instanceof CompanySearchConfig}
 								{foreach from=$search_config.min_price->getValues() item=name key=value}
 									<option value="{$value}">{$name}</option>
@@ -105,7 +105,7 @@
 					</div>
 					<div class="to-spacer-gutter margin-bottom-15">to</div>
 					<div class="col-sm-6 col-lg-6 margin-bottom-15">
-						<select name="Max_Price" id="radius_max_price">
+						<select class="form-control" name="Max_Price" id="radius_max_price">
 							{if $search_config.max_price instanceof CompanySearchConfig}
 								{foreach from=$search_config.max_price->getValues() item=name key=value}
 									<option value="{$value}">{$name}</option>
@@ -117,7 +117,7 @@
 			</div>
 			<div class="col-sm-3 col-lg-3 margin-bottom-15">
 				<label class="block" for="Bedrooms">Beds</label>
-				<select name="MinBeds" id="radius_bedrooms">
+				<select class="form-control" name="MinBeds" id="radius_bedrooms">
 					{if $search_config.bedrooms instanceof CompanySearchConfig}
 						{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 							<option value="{$value}">{$name}</option>
@@ -127,7 +127,7 @@
 			</div>
 			<div class="col-sm-3 col-lg-3 margin-bottom-15">
 				<label class="block" for="Bathrooms">Baths</label>
-				<select name="Bathrooms" id="radius_bathrooms">
+				<select class="form-control" name="Bathrooms" id="radius_bathrooms">
 					{if $search_config.bathrooms instanceof CompanySearchConfig}
 						{foreach from=$search_config.bathrooms->getValues() item=name key=value}
 							<option value="{$value}">{$name}</option>

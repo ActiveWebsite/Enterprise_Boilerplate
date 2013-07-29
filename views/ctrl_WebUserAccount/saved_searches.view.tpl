@@ -30,7 +30,7 @@
                             <a href="#" data-target="#searchNameForm_{$search.id}" data-description="#searchName_{$search.id}" data-account-action="open_search_name" id="searchNameButton_{$search.id}">{if $search.name}Edit{else}Add{/if} Search Name</a>
                             <p id="searchName_{$search.id}">{$search.name}</p>
                             <form id="searchNameForm_{$search.id}" class="margin-top-10" data-description="#searchName_{$search.id}" data-toggle="#searchNameButton_{$search.id}" data-account-action="update_search_name" action="/{$controller_alias}/save_search_name/{$search.id}" method="post" style="display:none;">
-                                <input type="text" class="margin-bottom-5" name="search_name" placeholder="Enter Search Name" value="{$search.name}">
+                                <input type="text" class="form-control margin-bottom-5" name="search_name" placeholder="Enter Search Name" value="{$search.name}">
                                 <input type="submit" class="btn btn-primary" value="Save">
                             </form>
                         </div>
@@ -97,7 +97,7 @@
                             <a href="#" data-target="#searchNotesForm_{$search.id}" data-description="#searchNotes_{$search.id}" data-account-action="open_search_notes" id="searchNotesButton_{$search.id}">{if $search.notes}Edit{else}Add{/if} Notes</a>
                             <p id="searchNotes_{$search.id}">{$search.notes}</p>
                             <form style="display: none;" class="margin-top-10" data-account-action="update_search_notes" data-description="#searchNotes_{$search.id}" data-toggle="#searchNotesButton_{$search.id}" action="/{$controller_alias}/save_search_notes/{$search.id}" id="searchNotesForm_{$search.id}" method="post">
-                                <textarea class="margin-bottom-5" name="notes" cols="20" rows="4">{$search.notes}</textarea>
+                                <textarea class="form-control margin-bottom-5" name="notes" cols="20" rows="4">{$search.notes}</textarea>
                                 <input type="submit" class="btn btn-primary" value="Save">
                             </form>
                     </td>
@@ -113,13 +113,13 @@
                             </div>
                             <div class="margin-bottom-10">
                                 {if $search.isEmailAlert}
-                                    <a href="{$ACTION_URLS.local_root}/setSearchFlag?returnToRef={$ACTION_URLS.local_root}/searches&amp;id={$search.id}" class="btn"  data-account-action="confirm_delete" data-confirm-text="Are you sure you want to stop this email alert?">Stop Email Alert</a>
+                                    <a href="{$ACTION_URLS.local_root}/setSearchFlag?returnToRef={$ACTION_URLS.local_root}/searches&amp;id={$search.id}" class="btn btn-warning"  data-account-action="confirm_delete" data-confirm-text="Are you sure you want to stop this email alert?">Stop Email Alert</a>
                                 {else}
-                                    <a href="{$ACTION_URLS.local_root}/setSearchFlag?returnToRef={$ACTION_URLS.local_root}/searches&amp;id={$search.id}" class="btn">Start Email Alert</a>
+                                    <a href="{$ACTION_URLS.local_root}/setSearchFlag?returnToRef={$ACTION_URLS.local_root}/searches&amp;id={$search.id}" class="btn btn-success">Start Email Alert</a>
                                 {/if}
                             </div>
                             <form method="post" action="/{$controller_alias}/searches/" class="no-margin">
-                                <select name="save_search_cta" data-local-root="{$ACTION_URLS.local_root}" data-search-url-base="{$ACTION_URLS.search}" data-search-id="{$search.id}" data-search-url="{$search.url|escape:'javascript'}" data-status="{if $search.isEmailAlert}active{else}inactive{/if}">
+                                <select class="form-control" name="save_search_cta" data-local-root="{$ACTION_URLS.local_root}" data-search-url-base="{$ACTION_URLS.search}" data-search-id="{$search.id}" data-search-url="{$search.url|escape:'javascript'}" data-status="{if $search.isEmailAlert}active{else}inactive{/if}">
                                     <option value="">I want to...</option>
                                     <option value="run">Run The Saved Search</option>
                                     <option value="edit">Edit The Search Criteria</option>
@@ -137,10 +137,10 @@
     <form class="form-horizontal" action="{$ACTION_URLS.local_root}/update_email_config/" method="post" id="accountdetails">
         <fieldset>
             <legend>Saved Search Preferences</legend>
-            <div class="row">
+            <div class="form-group">
                 <label class="col-sm-2 col-lg-2 control-label" for="max_property_count">Property Count</label>
                 <div class="col-sm-10 col-lg-10">
-                    <select id="max_property_count" name="max_property_count">
+                    <select class="form-control" id="max_property_count" name="max_property_count">
                         <option value="0" {if $email_config.max_property_count eq 0}selected{/if}>Unlimited</option>
                         <option value="10" {if $email_config.max_property_count eq 10}selected{/if}>10</option>
                         <option value="20" {if $email_config.max_property_count eq 20}selected{/if}>20</option>
@@ -156,7 +156,7 @@
                     <span class="help-block">The maximum number of properties per email.</span>
                 </div>
             </div>
-            <div class="row">
+            <div class="form-group">
                 <label class="col-sm-2 col-lg-2 control-label" for="max_property_count">Emails Per Search</label>
                 <div class="col-sm-10 col-lg-10">
                     <div class="radio">
@@ -173,13 +173,15 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-10 col-lg-10 col-offset-2">
+            <div class="form-group">
+                <label class="col-sm-2 col-lg-2 control-label">&nbsp;</label>
+                <div class="col-sm-10 col-lg-10">
                     <button type="submit" class="btn btn-success">Change Preferences</button>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-10 col-lg-10 col-offset-2">
+                <label class="col-sm-2 col-lg-2">&nbsp;</label>
+                <div class="col-sm-10 col-lg-10">
                     <small>* One Email Per Search - You will receive 1 email for each of the Email Alerts you have.</small><br>
                     <small>** One Email For All Searches - All of your email alerts will be combined into 1 email.</small>
                 </div>

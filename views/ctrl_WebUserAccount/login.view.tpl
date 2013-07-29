@@ -28,35 +28,27 @@
 	{/if}
 {/if}
 <div class="row">
-	<div class="col-lg-6">
-		<div class="well account-well">
+	<div class="col-sm-6 col-lg-6">
+		<div class="account-well">
 			<h2 class="margin-bottom-10">I want to login using my {$account_area_brand_name} account</h2>
 			<form method="post" class="validate-form" action="/{$controller_alias}/login/">
 				<fieldset>
-					<div class="row">
-						<div class="col-lg-12">
-							<label class="block bold">Email</label>
-							<input name="username" class="col-lg-12 required" type="email">
-						</div>
+					<div class="margin-bottom-15">
+						<label class="block bold">Email</label>
+						<input name="username" class="form-control required" type="email">
 					</div>
-					<div class="row">
-						<div class="col-lg-12">
-							<label class="block bold">Password</label>
-							<input name="password" class="col-lg-12 required" type="password">
-						</div>
+					<div class="margin-bottom-15">
+						<label class="block bold">Password</label>
+						<input name="password" class="form-control required" type="password">
 					</div>
-					<div class="row">
-						<div class="col-lg-12">
-							<a class="pull-right" href="/{$controller_alias}/forgot_password/">I've forgotten my password</a>
-							<input type="submit" name="btn" value="Log In" class="loginButton btn btn-primary">
-						</div>
-					</div>
+					<a class="pull-right" href="/{$controller_alias}/forgot_password/">I've forgotten my password</a>
+					<input type="submit" name="btn" value="Log In" class="loginButton btn btn-primary">
 				</fieldset>		
 			</form>
 		</div>
 	</div>
-	<div class="col-lg-6">
-		<div class="well account-well">
+	<div class="col-sm-6 col-lg-6">
+		<div class="account-well">
 			<h2 class="margin-bottom-10">I want to create a {$account_area_brand_name}</h2>
 			<p><strong>Whether you're a buyer or seller, you can save time and simplify the process.</strong></p>
 			<ul>

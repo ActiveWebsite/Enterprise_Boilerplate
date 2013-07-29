@@ -21,13 +21,13 @@
       {/if}
     {/if}
     <form method="post" id="account_login_ajax" class="validate-form" action="/popup/{$controller_alias}/login/">
-      <div class="margin-bottom-10">
+      <div class="margin-bottom-15">
         <label>Email <span class="red">*</span></label>
-        <input class="required" name="email_address" value="" type="email" placeholder="Enter Email Address">
+        <input class="form-control required" name="email_address" value="" type="email" placeholder="Enter Email Address">
       </div>
-      <div class="margin-bottom-10">
+      <div class="margin-bottom-15">
         <label>Password <span class="red">*</span></label>
-        <input class="required" type="password" value="" name="password" placeholder="Enter Password">
+        <input class="form-control required" type="password" value="" name="password" placeholder="Enter Password">
       </div>
       <button class="btn btn-primary" type="submit">Sign In</button>
     </form>

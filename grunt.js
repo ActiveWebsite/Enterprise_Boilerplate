@@ -20,7 +20,8 @@ module.exports = function(grunt) {
     min: {
       a: {
         src: [
-          'system/client_side/libs/booj-strap/js/bootstrap-tooltip.js', 
+          'system/client_side/js/libs/twitter_bootstrap/tooltip.js',
+          'system/client_side/js/libs/twitter_bootstrap/collapse.js',
           'client_side/js/actions.js'
         ],
         dest: 'client_side/js/min/actions.min.js'

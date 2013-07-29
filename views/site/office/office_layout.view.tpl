@@ -15,9 +15,6 @@
 		<link rel="shortcut icon" href="/images/favicon.ico">
 		<link rel="stylesheet" href="/css/office_rebrand_styles.min.css">
 		<script src="/js/modernizer/modernizr.2.6.2.custom.js"></script>
-		<!--[if lt IE 9]>
-			<script src="/js/libs/twitter_bootstrap/respond/respond.min.js"></script>
-		<![endif]-->
 		{$JQUERY_HEADER}
 		{$PAGE_HEADER}
 	</head>  
@@ -104,10 +101,23 @@
 				</div>
 			{else}
 				<div class="row">
-					<div class="col-sm-3 col-lg-3 site-sidebar hidden-print">
-						{$PAGE_COMPONENTS.CMSMenu_Component}
-						{render_component component="QuickSearch"}
-						{render_component component="Account"}
+					<div class="col-sm-12 col-lg-3 site-sidebar hidden-print">
+						<button type="button" class="btn btn-default btn-block hidden-lg margin-bottom-15" data-toggle="collapse" data-target="#sidebarcollapse">
+							Additional Navigation Items
+						</button>
+						<div class="collapse" id="sidebarcollapse">
+							<div class="row">
+								<div class="col-sm-4 col-lg-12">
+									{$PAGE_COMPONENTS.CMSMenu_Component}
+								</div>
+								<div class="col-sm-4 col-lg-12">
+									{render_component component="QuickSearch"}
+								</div>
+								<div class="col-sm-4 col-lg-12">
+									{render_component component="Account"}
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="col-sm-9 col-lg-9 site-main-content">
 						{if $render_page_breadcrumbs}
@@ -158,9 +168,9 @@
 					<form method="post" id="account_login_ajax" action="{$ACTION_URLS.account}ajax_login">
 						<fieldset>
 							<label for="wua-email">Email:</label>
-							<input id="wua-email" name="email_address" type="email" placeholder="Enter Email Address" class="margin-bottom-10">
+							<input id="wua-email" name="email_address" type="email" placeholder="Enter Email Address" class="form-control margin-bottom-10">
 							<label for="wua-pass">Password:</label>
-							<input id="wua-pass" type="password" name="password" placeholder="Enter Password" class="margin-bottom-10">
+							<input id="wua-pass" type="password" name="password" placeholder="Enter Password" class="form-control margin-bottom-10">
 							<div class="pull-left">
 								<a href="{$ACTION_URLS.account}forgot_password" title="Forgot Password?">Forgot Password?</a>
 								<br>
@@ -205,7 +215,6 @@
 		{render_dropin dropin="PropertyBin" bootstrap=true propsInRow=3 bootstrapVersion=3 addBootstrapDropdown=true}
 		
 		<script src="/js/min/actions.min.js"></script>
-		<script src="/js/libs/twitter_bootstrap/collapse.js"></script>	
 
 		{$PAGE_FOOTER}
 
@@ -215,6 +224,7 @@
 		{$GA_CODE->getjQueryGoalJS()}
 		
 		<!--[if lt IE 9]>
+			<script src="/js/libs/twitter_bootstrap/respond/respond.min.js"></script>
 			<script src="/js/libs/twitter_bootstrap/respond/ie-row-fix.js"></script>
 		<![endif]-->
 	</body>

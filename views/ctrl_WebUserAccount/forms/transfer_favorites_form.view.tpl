@@ -24,7 +24,7 @@
 		<p>Current Category: <strong>{$current_category.name}</strong></p>
 	{/if}
 	<form class="propCatChange validate-form" method="post" action="{$ACTION_URLS.local_root}/transfer_favorite/{$property_id}/{$current_category.category_id}">
-		<select name="category" class="required margin-bottom-15">
+		<select name="category" class="form-control required margin-bottom-15">
 			<option value="">Choose A Category</option>
 			{foreach from=$cats_dict item=category}
 				<option value="{$category.category_id}">{$category.name}</option>

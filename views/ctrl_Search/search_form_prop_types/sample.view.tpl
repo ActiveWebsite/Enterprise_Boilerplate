@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-sm-6 col-lg-6 margin-bottom-15">
 		<label for="sb_01">Select Box</label>
-		<select id="sb_01" title="Select " name="Bedrooms">
+		<select class="form-control" id="sb_01" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
 				{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 					<option value="{$value}"{if $search_narrowers.SV_Bedrooms == $value || $search_dict.terms.Bedrooms.value == $value} selected="selected"{/if}>{$name}</option>
@@ -11,7 +11,7 @@
 	</div>
 	<div class="col-sm-6 col-lg-6 margin-bottom-15">
 		<label for="sb_02">Select Box</label>
-		<select id="sb_01" title="Select " name="Bedrooms">
+		<select class="form-control" id="sb_01" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
 				{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 					<option value="{$value}"{if $search_narrowers.SV_Bedrooms == $value || $search_dict.terms.Bedrooms.value == $value} selected="selected"{/if}>{$name}</option>
@@ -28,7 +28,7 @@
 <div class="row">
 	<div class="col-sm-3 col-lg-3 margin-bottom-15">
 		<label for="sb_01">Select Box</label>
-		<select id="sb_01" title="Select " name="Bedrooms">
+		<select class="form-control" id="sb_01" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
 				{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 					<option value="{$value}"{if $search_narrowers.SV_Bedrooms == $value || $search_dict.terms.Bedrooms.value == $value} selected="selected"{/if}>{$name}</option>
@@ -38,7 +38,7 @@
 	</div>
 	<div class="col-sm-3 col-lg-3 margin-bottom-15">
 		<label for="sb_02">Select Box</label>
-		<select id="sb_01" title="Select " name="Bedrooms">
+		<select class="form-control" id="sb_01" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
 				{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 					<option value="{$value}"{if $search_narrowers.SV_Bedrooms == $value || $search_dict.terms.Bedrooms.value == $value} selected="selected"{/if}>{$name}</option>
@@ -48,7 +48,7 @@
 	</div>	
 	<div class="col-sm-6 col-lg-6 margin-bottom-15">
 		<label for="sb_02">Select Box</label>
-		<select id="sb_01" title="Select " name="Bedrooms">
+		<select class="form-control" id="sb_01" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
 				{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 					<option value="{$value}"{if $search_narrowers.SV_Bedrooms == $value || $search_dict.terms.Bedrooms.value == $value} selected="selected"{/if}>{$name}</option>
@@ -61,22 +61,22 @@
 <div class="row">
 	<div class="col-sm-3 col-lg-3 margin-bottom-15">
 		<label for="sb_01">Input Box</label>
-		<input type="text" id="sb_01" title="Select " name="Bedrooms">
+		<input class="form-control" type="text" id="sb_01" title="Select " name="Bedrooms">
 	</div>
 	<div class="col-sm-3 col-lg-3 margin-bottom-15">
 		<label for="sb_02">Input Box</label>
-		<input type="text" id="sb_01" title="Select " name="Bedrooms">
+		<input class="form-control" type="text" id="sb_01" title="Select " name="Bedrooms">
 	</div>	
 	<div class="col-sm-6 col-lg-6 margin-bottom-15">
 		<label for="sb_02">Input Box</label>
-		<input type="text" id="sb_01" title="Select " name="Bedrooms">
+		<input class="form-control" type="text" id="sb_01" title="Select " name="Bedrooms">
 	</div>	
 </div>
 
 <div class="row">
     <div class="col-sm-6 col-lg-6 margin-bottom-15">
         <label for="asf-bedrooms">Multi Select</label>
-        <select id="asf-bedrooms" title="Select Multiple Options" name="Bedrooms[]" class="msw2-select">
+        <select id="asf-bedrooms" title="Select Multiple Options" name="Bedrooms[]" class="form-control msw2-select">
             <option value="">Choose More Options</option>
             {if $search_config.bedrooms instanceof CompanySearchConfig}
                 {foreach from=$search_config.bedrooms->getValues() item=name key=value name=config_loop}
@@ -150,11 +150,11 @@
 		<label for="min">Min</label>
 		<div class="row">
 			<div class="col-sm-6 col-lg-6 margin-bottom-15">
-				<input type="text" id="min" name="Bedrooms" title="Enter " value="{if $search_narrowers.SV_Bedrooms}{$search_narrowers.SV_Bedrooms}{elseif $search_dict.terms.Bedrooms.value}{$search_dict.terms.Bedrooms.value}{/if}">
+				<input class="form-control" type="text" id="min" name="Bedrooms" title="Enter " value="{if $search_narrowers.SV_Bedrooms}{$search_narrowers.SV_Bedrooms}{elseif $search_dict.terms.Bedrooms.value}{$search_dict.terms.Bedrooms.value}{/if}">
 			</div>
 			<div class="to-spacer-gutter margin-bottom-15">to</div>
 			<div class="col-sm-6 col-lg-6 margin-bottom-15">
-				<input type="text" name="Bedrooms" title="Enter " value="{if $search_narrowers.SV_Bedrooms}{$search_narrowers.SV_Bedrooms}{elseif $search_dict.terms.Bedrooms.value}{$search_dict.terms.Bedrooms.value}{/if}">
+				<input class="form-control" type="text" name="Bedrooms" title="Enter " value="{if $search_narrowers.SV_Bedrooms}{$search_narrowers.SV_Bedrooms}{elseif $search_dict.terms.Bedrooms.value}{$search_dict.terms.Bedrooms.value}{/if}">
 			</div>
 		</div>
 	</div>	
@@ -163,7 +163,7 @@
 <div class="row">
 	<div class="col-sm-3 col-lg-3 margin-bottom-15">
 		<label for="sb_011">Select Box</label>
-		<select id="sb_011" title="Select " name="Bedrooms">
+		<select class="form-control" id="sb_011" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
 				{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 					<option value="{$value}"{if $search_narrowers.SV_Bedrooms == $value || $search_dict.terms.Bedrooms.value == $value} selected="selected"{/if}>{$name}</option>
@@ -173,7 +173,7 @@
 	</div>
 	<div class="col-sm-3 col-lg-3 margin-bottom-15">
 		<label for="sb_021">Select Box</label>
-		<select id="sb_021" title="Select " name="Bedrooms">
+		<select class="form-control" id="sb_021" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
 				{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 					<option value="{$value}"{if $search_narrowers.SV_Bedrooms == $value || $search_dict.terms.Bedrooms.value == $value} selected="selected"{/if}>{$name}</option>
@@ -183,7 +183,7 @@
 	</div>	
 	<div class="col-sm-6 col-lg-6 margin-bottom-15">
 		<label for="sb_023">Select Box</label>
-		<select id="sb_023" title="Select " name="Bedrooms">
+		<select class="form-control" id="sb_023" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
 				{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 					<option value="{$value}"{if $search_narrowers.SV_Bedrooms == $value || $search_dict.terms.Bedrooms.value == $value} selected="selected"{/if}>{$name}</option>
@@ -198,7 +198,7 @@
 		<label for="min">Min</label>
 		<div class="row">
 			<div class="col-sm-6 col-lg-6 margin-bottom-15">
-				<select id="min" title="Select " name="Bedrooms">
+				<select class="form-control" id="min" title="Select " name="Bedrooms">
 					{if $search_config.bedrooms instanceof CompanySearchConfig}
 						{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 							<option value="{$value}"{if $search_narrowers.SV_Bedrooms == $value || $search_dict.terms.Bedrooms.value == $value} selected="selected"{/if}>{$name}</option>
@@ -208,7 +208,7 @@
 			</div>
 			<div class="to-spacer-gutter margin-bottom-15">to</div>
 			<div class="col-sm-6 col-lg-6 margin-bottom-15">
-				<select title="Select " name="Bedrooms">
+				<select class="form-control" title="Select " name="Bedrooms">
 					{if $search_config.bedrooms instanceof CompanySearchConfig}
 						{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 							<option value="{$value}"{if $search_narrowers.SV_Bedrooms == $value || $search_dict.terms.Bedrooms.value == $value} selected="selected"{/if}>{$name}</option>
@@ -221,7 +221,7 @@
 	<div class="col-sm-6 col-lg-6 margin-bottom-15">
 		<label for="as_city">Autocomplete</label>
 		<div class="controls">
-			<input type="text" class="autoCompleteField" id="as_city" data-src="city" placeholder"Enter Value" name="Bedroom" value="">
+			<input type="text" class="form-control autoCompleteField" id="as_city" data-src="city" placeholder"Enter Value" name="Bedroom" value="">
 		</div>
 	</div>
 </div>
@@ -229,7 +229,7 @@
 	<div class="col-sm-6 col-lg-6 margin-bottom-15">
 		<label for="as_city2">Autocomplete With Error</label>
 		<div class="controls">
-			<input type="text" class="autoCompleteField validate-entry" id="as_city2" data-src="city2" placeholder"Enter Value" name="Bedroom" value="">
+			<input type="text" class="form-control autoCompleteField validate-entry" id="as_city2" data-src="city2" placeholder"Enter Value" name="Bedroom" value="">
 		</div>
 	</div>
 </div>
@@ -396,7 +396,7 @@
 				Select Company Agents
 			</label>
 		</div>
-		<select name="Listing_Agent[]" title="All Agents" class="listing_agent_select_box" style="display:{if !empty($search_narrowers.MV_Listing_Agent) || !empty($search_dict.terms.Listing_Agent.value)}block{else}none{/if};" multiple="multiple">
+		<select name="Listing_Agent[]" title="All Agents" class="form-control listing_agent_select_box" style="display:{if !empty($search_narrowers.MV_Listing_Agent) || !empty($search_dict.terms.Listing_Agent.value)}block{else}none{/if};" multiple="multiple">
 			<option value="">All Agents</option>
 			{if $realtors}
 				<optgroup label="Realtors">

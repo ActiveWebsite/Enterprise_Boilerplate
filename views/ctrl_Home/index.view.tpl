@@ -4,15 +4,34 @@
 </div>
 <div class="row margin-top-30">
 	<div class="col-lg-9 tabClass" id="home-page-tabs">
-		<ul class="nav nav-tabs">
-			<li class="active"><a href="#tab-1">Tab 1</a></li>
-			<li><a href="#tab-2">Tab 2</a></li>
-			<li><a href="#tab-3">Tab 3</a></li>
+		<ul class="nav nav-tabs hidden-sm">
+			<li class="active"><a href="#tab-1">This would be Tab 1</a></li>
+			<li><a href="#tab-2">This would be Tab 2</a></li>
+			<li><a href="#tab-3">This would be Tab 3</a></li>
+			<li><a href="#tab-4">This would be Tab 4</a></li>
+			<li><a href="#tab-5">This would be Tab 5</a></li>
 		</ul>
 		<div class="tab-content">
+			<div class="inner-tab-trigger visible-sm"><a href="#tab-1" data-action="openTab">This would be Tab 1</a></div>
 			<div class="tab-pane active" id="tab-1"></div>
+			
+			<div class="inner-tab-trigger visible-sm"><a href="#tab-2" data-action="openTab">This would be Tab 2</a></div>
 			<div class="tab-pane" id="tab-2"></div>
-			<div class="tab-pane" id="tab-3"></div>
+			
+			<div class="inner-tab-trigger visible-sm"><a href="#tab-3" data-action="openTab">This would be Tab 3</a></div>
+			<div class="tab-pane" id="tab-3">
+				tab 3
+			</div>
+			
+			<div class="inner-tab-trigger visible-sm"><a href="#tab-4" data-action="openTab">This would be Tab 4</a></div>
+			<div class="tab-pane" id="tab-4">
+				tab 4
+			</div>
+			
+			<div class="inner-tab-trigger visible-sm"><a href="#tab-5" data-action="openTab">This would be Tab 5</a></div>
+			<div class="tab-pane" id="tab-5">
+				tab 5
+			</div>
 		</div>
 	</div>
 	<div class="col-lg-3">
@@ -54,10 +73,14 @@
 <script>
 jQuery(document).ready(function($) {
 	// build tabs
-	$('#home-page-tabs').jtabs({
+	var extraTriggers = $('a[data-action="openTab"]');
+	var tabobj = $('#home-page-tabs').jtabs({
 		bootstrapMode:true,
 		openCallback: function(obj, num, trigger, tab) {
 			var ref = $(trigger).find('a').attr('href');
+			extraTriggers.removeClass('active');
+			extraTriggers.filter('[href="' + ref + '"]').addClass('active');
+			
 			//<![CDATA[
 			switch(ref) {
 				case '#tab-1':
@@ -72,6 +95,14 @@ jQuery(document).ready(function($) {
 			}
 			//]]>
 		}
+	}).data('jtabs');
+
+	
+
+	extraTriggers.on('click', function(e) {
+		e.preventDefault();
+		var el = $(this);
+		tabobj.OpenByHref(el.attr('href'));
 	});
 });
 </script>

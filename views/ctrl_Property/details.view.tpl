@@ -127,14 +127,14 @@
 										<div class="col-sm-5 col-lg-5 margin-bottom-15">
 											<label>Show Me</label>
 											<div class="input-group">
-												<input type="text" name="poi" value="">
+												<input class="form-control" type="text" name="poi" value="">
 												<span class="input-group-btn"><button data-for="poi" class="poi-map-autocomplete-toggle btn btn-default"><i class="icon icon-chevron-down"></i></button></span>
 											</div>
 										</div>
 										<div class="col-sm-5 col-lg-5 margin-bottom-15">
 											<label>Within</label>
 											<div class="input-group">
-												<input type="text" name="radius" value="">
+												<input class="form-control" type="text" name="radius" value="">
 												<span class="input-group-btn"><button data-for="radius" class="poi-map-autocomplete-toggle btn btn-default"><i class="icon icon-chevron-down"></i></button></span>
 											</div>
 										</div>
@@ -177,46 +177,45 @@
 			{/if}
 
 			<div class="clearfix margin-bottom-30">
+				{* make sure you hide items if a property is sold *}
 				<ul class="list-unstyled">
-					{if !$date_sold}
-	                    <li>
-	                    	<a href="/popup/forms/display/request_info/?prop={$company_property_id}&amp;realtor_id={$realtor.id}" target="_blank" rel="nofollow" title="Request More Info" class="fancybox" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="560">Request More Info</a>
-	                    </li>
-	                    <li class="margin-top-10">
-	                    	<a href="/popup/forms/display/schedule_showing/?prop={$company_property_id}&amp;realtor_id={$realtor.id}" target="_blank" rel="nofollow" title="Request a Showing" class="fancybox" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="570">Request a Showing</a>
-	                    </li>
-						<li class="margin-top-10">
-							<a href="/popup/account/addRemoveFavoritePropertyManager/{$company_property_id}" target="_blank" rel="nofollow" title="{if $is_favorite}Remove from{else}Add to{/if} Favorites" class="addFavorite addFavoriteLinkText{if $is_favorite} removeFavorite{/if}" data-property-id="{$company_property_id}">{if $is_favorite}Remove From{else}Add to{/if} Favorites</a>
-						</li>
-						<li class="margin-top-10">
-							<a href="#{$company_property_id}" class="property-bin-add"> Add to Property Cart</a>
-						</li>
-						<li class="margin-top-10">
-							<a href="/property/print_view/{$company_property_id}" target="_blank" rel="nofollow">Print Brochure</a>
-						</li>
-						<li class="margin-top-10" id="my-notes-item-wrapper">
-							{* if not using the property notes section be sure to remove the code from the ctrl_property addAdditionalArgs method as well as the javascript at the bottom of the page *}
-							<h4 class="no-margin">Property Notes</h4>
-							{if $logged_in_user}
-								<div class="margin-top-5">
-									<span class="propertyNoteValueContainer"{if !$enterprise_account_note} style="display:none;"{/if}>
-										<span class="propertyNoteValue">{$enterprise_account_note}</span> <a href="#" class="editPropertyNoteLink">(edit)</a>
-									</span>
-									{if !$enterprise_account_note}
-										<a href="#" class="addPropertyNoteLink" title="Add a private note for this property">Add a private note for this property</a>
-									{/if}
-									<form style="display:none;" class="propertyAddNoteForm" action="{$ACTION_URLS.account}savePropertyNote/{$company_property_id}">
-										<fieldset>
-											<textarea class="margin-bottom-10" name="note" rows="5" cols="40" placeholder="Enter your private note about this property">{if $enterprise_account_note}{$enterprise_account_note}{/if}</textarea>
-											<button type="submit" class="btn btn-primary btn-block">Save</button>
-										</fieldset>
-									</form>
-								</div>
-							{else}
-								<a href="{$ACTION_URLS.account}signup/" title="Signup" data-action="account-register">Signup</a> or <a href="{$ACTION_URLS.account}login/" title="Login" data-action="account-login">Login</a> to add notes to this property.
-							{/if}
-						</li>
-					{/if}
+                    <li>
+                    	<a href="/popup/forms/display/request_info/?prop={$company_property_id}&amp;realtor_id={$realtor.id}" target="_blank" rel="nofollow" title="Request More Info" class="fancybox" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="560">Request More Info</a>
+                    </li>
+                    <li class="margin-top-10">
+                    	<a href="/popup/forms/display/schedule_showing/?prop={$company_property_id}&amp;realtor_id={$realtor.id}" target="_blank" rel="nofollow" title="Request a Showing" class="fancybox" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="570">Request a Showing</a>
+                    </li>
+					<li class="margin-top-10">
+						<a href="/popup/account/addRemoveFavoritePropertyManager/{$company_property_id}" target="_blank" rel="nofollow" title="{if $is_favorite}Remove from{else}Add to{/if} Favorites" class="addFavorite addFavoriteLinkText{if $is_favorite} removeFavorite{/if}" data-property-id="{$company_property_id}">{if $is_favorite}Remove From{else}Add to{/if} Favorites</a>
+					</li>
+					<li class="margin-top-10">
+						<a href="#{$company_property_id}" class="property-bin-add"> Add to Property Cart</a>
+					</li>
+					<li class="margin-top-10">
+						<a href="/property/print_view/{$company_property_id}" target="_blank" rel="nofollow">Print Brochure</a>
+					</li>
+					<li class="margin-top-10" id="my-notes-item-wrapper">
+						{* if not using the property notes section be sure to remove the code from the ctrl_property addAdditionalArgs method as well as the javascript at the bottom of the page *}
+						<h4 class="no-margin">Property Notes</h4>
+						{if $logged_in_user}
+							<div class="margin-top-5">
+								<span class="propertyNoteValueContainer"{if !$enterprise_account_note} style="display:none;"{/if}>
+									<span class="propertyNoteValue">{$enterprise_account_note}</span> <a href="#" class="editPropertyNoteLink">(edit)</a>
+								</span>
+								{if !$enterprise_account_note}
+									<a href="#" class="addPropertyNoteLink" title="Add a private note for this property">Add a private note for this property</a>
+								{/if}
+								<form style="display:none;" class="propertyAddNoteForm" action="{$ACTION_URLS.account}savePropertyNote/{$company_property_id}">
+									<fieldset>
+										<textarea class="form-control margin-bottom-10" name="note" rows="5" cols="40" placeholder="Enter your private note about this property">{if $enterprise_account_note}{$enterprise_account_note}{/if}</textarea>
+										<button type="submit" class="btn btn-primary btn-block">Save</button>
+									</fieldset>
+								</form>
+							</div>
+						{else}
+							<a href="{$ACTION_URLS.account}signup/" title="Signup" data-action="account-register">Signup</a> or <a href="{$ACTION_URLS.account}login/" title="Login" data-action="account-login">Login</a> to add notes to this property.
+						{/if}
+					</li>
 				</ul>
 			</div>
 

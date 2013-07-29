@@ -13,9 +13,9 @@
 					</div>
 					<form action="{$ACTION_URLS.search}url_search/" class="margin-bottom-0">
 						<fieldset class="clearfix">
-							<input type="text" value="" placeholder="Address, Zip Code or MLS#" name="AddressAndLoc" class="margin-bottom-10">
+							<input type="text" value="" placeholder="Address, Zip Code or MLS#" name="AddressAndLoc" class="form-control margin-bottom-10">
 							<label for="qss-field-02">Property Type</label>
-							<select id="qss-field-02" title="Select Property Type" name="Property_Type" class="margin-bottom-10">
+							<select id="qss-field-02" title="Select Property Type" name="Property_Type" class="form-control margin-bottom-10">
 								{if $search_config.property_type instanceof CompanySearchConfig}
 									{foreach from=$search_config.property_type->getValues() item=name key=value}
 										<option value="{$value}">{$name}</option>
@@ -25,7 +25,7 @@
 							<label for="qss-field-03">Price Range</label>
 							<div class="row">
 								<div class="col-sm-6 col-lg-6 margin-bottom-10">
-									<select id="qss-field-03" name="Min_Price">
+									<select class="form-control" id="qss-field-03" name="Min_Price">
 										{if $search_config.min_price instanceof CompanySearchConfig}
 											{foreach from=$search_config.min_price->getValues() item=name key=value}
 												<option value="{$value}">{$name}</option>
@@ -35,7 +35,7 @@
 								</div>
 								<div class="to-spacer-gutter margin-bottom-10">to</div>
 								<div class="col-sm-6 col-lg-6 margin-bottom-10">
-									<select name="Max_Price">
+									<select class="form-control" name="Max_Price">
 										{if $search_config.max_price instanceof CompanySearchConfig}
 											{foreach from=$search_config.max_price->getValues() item=name key=value}
 												<option value="{$value}">{$name}</option>
@@ -47,7 +47,7 @@
 							<div class="row">
 								<div class="col-sm-6 col-lg-6 margin-bottom-10">
 									<label for="qss-field-04">Beds</label>
-									<select id="qss-field-04" title="Select Bedrooms" name="Bedrooms">
+									<select class="form-control" id="qss-field-04" title="Select Bedrooms" name="Bedrooms">
 										{if $search_config.bedrooms instanceof CompanySearchConfig}
 											{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 												<option value="{$value}">{$name}</option>
@@ -57,7 +57,7 @@
 								</div>
 								<div class="col-sm-6 col-lg-6 margin-bottom-10">									
 									<label for="qss-field-05">Baths</label>
-									<select id="qss-field-05" title="Select Bathrooms" name="Bathrooms">
+									<select class="form-control" id="qss-field-05" title="Select Bathrooms" name="Bathrooms">
 										{if $search_config.bathrooms instanceof CompanySearchConfig}
 											{foreach from=$search_config.bathrooms->getValues() item=name key=value}
 												<option value="{$value}">{$name}</option>
@@ -76,7 +76,7 @@
 							<li>
 								<form action="/site_search/" method="get" class="form-inline margin-bottom-10">
 									<label class="block">Site Search</label>
-									<input name="q" value="" type="text" placeholder="Enter Term(s)">
+									<input class="form-control" name="q" value="" type="text" placeholder="Enter Term(s)">
 									<button class="btn btn-primary" type="submit">Search</button>
 								</form>
 							</li>
@@ -89,9 +89,9 @@
 					<form action="{$ACTION_URLS.search}url_search/" class="margin-bottom-0">
 						<input type="hidden" value="on" name="open_house">
 						<fieldset class="clearfix">
-							<input type="text" value="" placeholder="Address, Zip Code or MLS#" name="AddressAndLoc" class="margin-bottom-10">
+							<input type="text" value="" placeholder="Address, Zip Code or MLS#" name="AddressAndLoc" class="form-control margin-bottom-10">
 							<label for="qsos-field-02">Property Type</label>
-							<select id="qsos-field-02" title="Select Property Type" name="Property_Type" class="margin-bottom-10">
+							<select id="qsos-field-02" title="Select Property Type" name="Property_Type" class="form-control margin-bottom-10">
 								{if $search_config.property_type instanceof CompanySearchConfig}
 									{foreach from=$search_config.property_type->getValues() item=name key=value}
 										<option value="{$value}">{$name}</option>
@@ -101,7 +101,7 @@
 							<label for="qsos-field-03">Price Range</label>
 							<div class="row">
 								<div class="col-sm-6 col-lg-6 margin-bottom-10">
-									<select id="qss-field-03" name="Min_Price">
+									<select class="form-control" id="qss-field-03" name="Min_Price">
 										{if $search_config.min_price instanceof CompanySearchConfig}
 											{foreach from=$search_config.min_price->getValues() item=name key=value}
 												<option value="{$value}">{$name}</option>
@@ -111,7 +111,7 @@
 								</div>
 								<div class="to-spacer-gutter margin-bottom-10">to</div>
 								<div class="col-sm-6 col-lg-6 margin-bottom-10">
-									<select name="Max_Price">
+									<select class="form-control" name="Max_Price">
 										{if $search_config.max_price instanceof CompanySearchConfig}
 											{foreach from=$search_config.max_price->getValues() item=name key=value}
 												<option value="{$value}">{$name}</option>
@@ -123,7 +123,7 @@
 							<div class="row">
 								<div class="col-sm-6 col-lg-6 margin-bottom-10">
 									<label for="qsos-field-04">Beds</label>
-									<select id="qsos-field-04" title="Select Bedrooms" name="Bedrooms">
+									<select class="form-control" id="qsos-field-04" title="Select Bedrooms" name="Bedrooms">
 										{if $search_config.bedrooms instanceof CompanySearchConfig}
 											{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 												<option value="{$value}">{$name}</option>
@@ -133,7 +133,7 @@
 								</div>
 								<div class="col-sm-6 col-lg-6 margin-bottom-10">
 									<label for="qsos-field-05">Baths</label>
-									<select id="qsos-field-05" title="Select Bathrooms" name="Bathrooms">
+									<select class="form-control" id="qsos-field-05" title="Select Bathrooms" name="Bathrooms">
 										{if $search_config.bathrooms instanceof CompanySearchConfig}
 											{foreach from=$search_config.bathrooms->getValues() item=name key=value}
 												<option value="{$value}">{$name}</option>

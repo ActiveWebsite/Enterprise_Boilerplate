@@ -17,11 +17,11 @@
 					<div class="row">
 						<div class="col-sm-4 col-lg-4 margin-bottom-15">
 							<label class="block" for="radius_address_field">Address, Landmark or Point of Interest</label>
-							<input type="text" name="address_search[]" id="radius_address_field" placeholder="Address, Landmark, or Point of Interest" value="" class="proximity-search-starting-point-input">
+							<input type="text" name="address_search[]" id="radius_address_field" placeholder="Address, Landmark, or Point of Interest" value="" class="form-control proximity-search-starting-point-input">
 						</div>
 						<div class="col-sm-4 col-lg-4 margin-bottom-15">
 							<label class="block" for="radius_starting_point_field">Or Choose a Pre-Defined Starting Point</label>
-							<select name="address_search[]" id="radius_starting_point_field" class="proximity-search-starting-point-select">
+							<select name="address_search[]" id="radius_starting_point_field" class="form-control proximity-search-starting-point-select">
 								<option value="">Choose Location</option>
 								{if $geo_array}
 									{foreach from=$geo_array item=name key=value}
@@ -32,7 +32,7 @@
 						</div>
 						<div class="col-sm-2 col-lg-2 margin-bottom-15">
 							<label class="block" for="radius_field">Radius</label>
-							<select name="Distance[]" id="radius_field" class="proximity-search-radius">
+							<select name="Distance[]" id="radius_field" class="form-control proximity-search-radius">
 								{if $search_config.radius_values instanceof CompanySearchConfig}
 									{foreach from=$search_config.radius_values->getValues() item=name key=value}
 										<option value="{$value}">{$name|replace:"Within":""}</option>
@@ -53,7 +53,7 @@
 							<label class="block" for="radius_min_price">Price Range</label>
 							<div class="row">
 								<div class="col-sm-6 col-lg-6 margin-bottom-15">
-									<select name="Min_Price" id="radius_min_price">
+									<select class="form-control" name="Min_Price" id="radius_min_price">
 										{if $search_config.min_price instanceof CompanySearchConfig}
 											{foreach from=$search_config.min_price->getValues() item=name key=value}
 												<option value="{$value}">{$name}</option>
@@ -63,7 +63,7 @@
 								</div>
 								<div class="to-spacer-gutter margin-bottom-15">to</div>
 								<div class="col-sm-6 col-lg-6 margin-bottom-15">
-									<select name="Max_Price" id="radius_max_price">
+									<select class="form-control" name="Max_Price" id="radius_max_price">
 										{if $search_config.max_price instanceof CompanySearchConfig}
 											{foreach from=$search_config.max_price->getValues() item=name key=value}
 												<option value="{$value}">{$name}</option>
@@ -75,7 +75,7 @@
 						</div>
 						<div class="col-sm-3 col-lg-3 margin-bottom-15">
 							<label class="block" for="Bedrooms">Beds</label>
-							<select name="MinBeds" id="radius_bedrooms">
+							<select class="form-control" name="MinBeds" id="radius_bedrooms">
 								{if $search_config.bedrooms instanceof CompanySearchConfig}
 									{foreach from=$search_config.bedrooms->getValues() item=name key=value}
 										<option value="{$value}">{$name}</option>
@@ -85,7 +85,7 @@
 						</div>
 						<div class="col-sm-3 col-lg-3 margin-bottom-15">
 							<label class="block" for="Bathrooms">Baths</label>
-							<select name="Bathrooms" id="radius_bathrooms">
+							<select class="form-control" name="Bathrooms" id="radius_bathrooms">
 								{if $search_config.bathrooms instanceof CompanySearchConfig}
 									{foreach from=$search_config.bathrooms->getValues() item=name key=value}
 										<option value="{$value}">{$name}</option>

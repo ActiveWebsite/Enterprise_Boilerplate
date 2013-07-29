@@ -36,7 +36,7 @@
 		</div>
 		<form method="get" action="/{$controller_alias}/" class="row">
 			<div class="col-sm-10 col-lg-10">
-				<input type="search" name="q" value="" placeholder="Enter Search Term(s)">
+				<input class="form-control" type="search" name="q" value="" placeholder="Enter Search Term(s)">
 			</div>
 			<div class="col-sm-2 col-lg-2">
 				<button type="submit" class="btn btn-primary btn-block">Search</button>

@@ -36,14 +36,14 @@
 				<fieldset class="clearfix">
 					<div class="margin-bottom-15">
 						<label class="block bold">Email</label>
-						<input name="username" class="required" type="email">
+						<input name="username" class="form-control required" type="email">
 					</div>
 					<div class="margin-bottom-15">
 						<label class="block bold">Password</label>
-						<input name="password" class="required" type="password">
+						<input name="password" class="form-control required" type="password">
 					</div>
 					<a class="pull-right" href="/{$controller_alias}/forgot_password/">I've forgotten my password</a>
-					<input type="submit" name="btn" value="Log In" class="loginButton btn btn-primary">
+					<input type="submit" name="btn btn-primary" value="Log In" class="loginButton btn btn-primary">
 				</fieldset>		
 			</form>
 		</div>

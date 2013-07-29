@@ -32,23 +32,15 @@
 		</div>
 	{/if}
 {/if}
-<form class="form-horizontal validate-form" action="/{$controller_alias}/send_forgotten_password/" method="post">
+<form class="validate-form" action="/{$controller_alias}/send_forgotten_password/" method="post">
     <fieldset>
-        <div class="row">
-            <label class="col-sm-2 col-lg-2 control-label" for="email_address">Email Address</label>
-            <div class="col-sm-10 col-lg-10">
-            	<input class="required" placeholder="Enter email address" name="email_address" value="" type="email">
-            </div>
+        <div class="margin-bottom-15">
+            <label for="email_address">Email Address</label>
+           	<input class="form-control required" placeholder="Enter email address" name="email_address" value="" type="email">
         </div>
-        <div class="row">
-            <div class="col-sm-10 col-lg-10 col-offset-2">
-                <button type="submit" class="btn btn-success">Send</button>
-            </div>
+        <div class="margin-bottom-15">
+            <button type="submit" class="btn btn-success">Send</button>
         </div>
-        <div class="row">
-            <div class="col-sm-10 col-lg-10 col-offset-2">
-            	<p class="bold">* A New Password Will Be Sent To Your Email Address</p>
-            </div>
-        </div>
+        <p class="bold">* A New Password Will Be Sent To Your Email Address</p>
 	</fieldset>	
 </form>

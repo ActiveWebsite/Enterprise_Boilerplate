@@ -35,7 +35,7 @@
                 <p id="FavCatDesc_{$category->category_id}Content">{if $category->description}{$category->description}{/if}</p> 
                 <form method="post" class="margin-top-10 margin-bottom-0" style="display:none;" id="FavCatForm_{$category->category_id}" data-toggle="#FavCatEditDescToggle_{$category->category_id}Toggle" data-description="#FavCatDesc_{$category->category_id}Content" data-account-action="update_category_description" action="{$ACTION_URLS.local_root}/edit_description/{$category->category_id}">
                     <div class="margin-bottom-5">
-                        <textarea class="input-xxlarge" placeholder="Enter a description" name="description" rows="4">{$category->description}</textarea>
+                        <textarea class="form-control" placeholder="Enter a description" name="description" rows="4">{$category->description}</textarea>
                     </div>
                     <input type="submit" class="btn btn-default" value="Save">
                 </form>
@@ -81,7 +81,7 @@
                                             <a id="ChangeCategory_{$property->company_property_id}" data-fancybox-type="iframe" data-fancybox-height="250" data-fancybox-width="500" href="/popup/{$ACTION_URLS.local_root}/transfer_favorite_form/{$property->company_property_id}/{$category->category_id}">Change Property Category</a>
                                         </div>
                                         <form method="post" action="/{$controller_alias}/manage_favorites/" class="margin-bottom-0">
-                                            <select data-account-action="openCTA" data-name="{$property->getStreetAddress()|clean_for_attribute}" data-property="{$property->company_property_id}">
+                                            <select class="form-control" data-account-action="openCTA" data-name="{$property->getStreetAddress()|clean_for_attribute}" data-property="{$property->company_property_id}">
                                                 <option>I want to...</option>
                                                 <option value="RequestInfo">Request Additional Information</option>
                                                 <option value="Showing">Request a Showing</option>
@@ -96,7 +96,7 @@
                                             <p id="notesDesc_{$property->company_property_id}">{if $property->notes}{$property->notes}{/if}</p>
                                             <form method="post" class="margin-bottom-0" style="display:none;" id="notesForm_{$property->company_property_id}" data-description="#notesDesc_{$property->company_property_id}" data-toggle="#notesToggleButton_{$property->company_property_id}" data-account-action="update_property_note" action="{$ACTION_URLS.local_root}/updateFavoriteNotes/{$user.id}/{$property->company_property_id}">
                                                 <div class="margin-bottom-5">
-                                                    <textarea name="notes" rows="6">{if $property->notes}{$property->notes}{/if}</textarea>
+                                                    <textarea name="notes" cols="20" class="form-control" rows="6">{if $property->notes}{$property->notes}{/if}</textarea>
                                                 </div>
                                                 <input type="submit" value="Update" class="btn btn-primary">
                                             </form>
@@ -119,8 +119,8 @@
 
 <h2 class="margin-bottom-10">Add Category</h2>
 <form class="validate-form row" action="{$ACTION_URLS.local_root}/add_category">
-    <div class="col-sm-4 col-lg-4 margin-bottom-10">
-        <input class="required" name="category_name" placeholder="Category Name" id="category_name" type="text">
+    <div class="col-sm-4 col-lg-4 margin-bottom-15">
+        <input class="form-control required" name="category_name" placeholder="Category Name" id="category_name" type="text">
     </div>
     <div class="col-sm-3 col-lg-3">
         <input type="submit" value="Add" class="btn btn-success">

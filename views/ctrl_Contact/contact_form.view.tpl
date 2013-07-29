@@ -7,37 +7,37 @@
 		<div class="row">
 			<div class="col-sm-6 col-lg-6 margin-bottom-15">
 				<label class="bold" for="input01">First Name <span class="red">*</span></label>
-				<input class="required" id="input01" type="text" name="first_name" placeholder="Enter First Name">
+				<input class="form-control required" id="input01" type="text" name="first_name" placeholder="Enter First Name">
 			</div>
 			<div class="col-sm-6 col-lg-6 margin-bottom-15">
 				<label class="bold" for="input02">Last Name <span class="red">*</span></label>
-				<input class="required" id="input02" type="text" name="last_name" placeholder="Enter Last Name">
+				<input class="form-control required" id="input02" type="text" name="last_name" placeholder="Enter Last Name">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-6 col-lg-6 margin-bottom-15">
 				<label class="bold" for="input03">Phone</label>
-				<input type="text" id="input03" name="phone" placeholder="Enter Phone">
+				<input type="text" class="form-control" id="input03" name="phone" placeholder="Enter Phone">
 			</div>
 			<div class="col-sm-6 col-lg-6 margin-bottom-15">
 				<label class="bold" for="input04">Cell Phone</label>
-				<input type="text" id="input04" name="cell_phone" placeholder="Enter Cell Phone">
+				<input type="text" class="form-control" id="input04" name="cell_phone" placeholder="Enter Cell Phone">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-6 col-lg-6 margin-bottom-15">
 				<label class="bold" for="input05">Email Address <span class="red">*</span></label>
-				<input class="required email" id="input05" type="text" name="email_confirm" placeholder="Enter Email Address">
+				<input class="form-control required email" id="input05" type="text" name="email_confirm" placeholder="Enter Email Address">
 				<input type="text" value="" name="email" style="display: none;">
 			</div>
 			<div class="col-sm-6 col-lg-6 margin-bottom-15">
 				<label class="bold" for="input06">Confirm Email Address <span class="red">*</span></label>
-				<input class="required email" id="input06" data-rule-equalTo="#input05" data-msg-equalTo="Email addresses do not match." type="text" name="email_verify" placeholder="Confirm Email Address">
+				<input class="form-control required email" id="input06" data-rule-equalTo="#input05" data-msg-equalTo="Email addresses do not match." type="text" name="email_verify" placeholder="Confirm Email Address">
 			</div>
 		</div>
 		<div class="margin-bottom-15">
 			<label class="bold" for="input07">Message<span class="red">*</span></label>
-			<textarea name="message" rows="8" cols="25" class="required" id="input07" placeholder="Enter Enter Message"></textarea>
+			<textarea class="form-control" name="message" rows="8" cols="25" class="required" id="input07" placeholder="Enter Enter Message"></textarea>
 		</div>
 		<button type="submit" class="btn btn-primary">Send</button>
 	</form>

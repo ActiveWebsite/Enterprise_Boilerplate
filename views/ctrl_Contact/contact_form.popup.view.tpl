@@ -54,27 +54,27 @@
 		        <div class="row">
 		            <div class="col-sm-6 col-lg-6 margin-bottom-15">
 						<label for="contact_form_firstname">First Name <span class="red">*</span></label>
-						<input type="text" id="contact_form_firstname" name="first_name" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}" class="required">
+						<input type="text" id="contact_form_firstname" name="first_name" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}" class="form-control required">
 					</div>
 		            <div class="col-sm-6 col-lg-6 margin-bottom-15">
 						<label for="contact_form_lastname">Last Name <span class="red">*</span></label>
-						<input type="text" id="contact_form_lastname" name="last_name" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}" class="required">
+						<input type="text" id="contact_form_lastname" name="last_name" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}" class="form-control required">
 					</div>
 				</div>
 		        <div class="row">
 		            <div class="col-sm-6 col-lg-6 margin-bottom-15">
 						<label for="contact_form_email">Email<span class="red">*</span></label>
-						<input type="email" name="email_confirm" id="contact_form_email" placeholder="Enter Email Address" class="required email" value="{if $contactor ne false}{$contactor->email}{/if}">
+						<input type="email" name="email_confirm" id="contact_form_email" placeholder="Enter Email Address" class="form-control required email" value="{if $contactor ne false}{$contactor->email}{/if}">
 						<input type="text" style="display:none;" value="" name="email">
 					</div>
 		            <div class="col-sm-6 col-lg-6 margin-bottom-15">
 						<label for="contact_form_phone">Phone</label>
-						<input name="phone" value="" type="text" placeholder="Enter Phone" id="contact_form_phone">
+						<input name="phone" value="" class="form-control" type="text" placeholder="Enter Phone" id="contact_form_phone">
 					</div>
 				</div>
 		        <div class="margin-bottom-15">
 					<label for="contact_form_message">Message<span class="red">*</span></label>
-					<textarea name="message" rows="3" cols="25" placeholder="Message" class="required" id="contact_form_message"></textarea>
+					<textarea name="message" rows="3" cols="25" placeholder="Message" class="form-control required" id="contact_form_message"></textarea>
 				</div>
 				{if $smarty.request.return}
 					<input name="returnToRef" value="{$smarty.request.return}" type="hidden">

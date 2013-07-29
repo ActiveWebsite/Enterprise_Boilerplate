@@ -105,7 +105,7 @@
 							<li class="clearfix tourPropertyWrapper" id="tour_prop_{$prop.company_property_id}">
 								<div class="row">
 									<div class="col-sm-4 col-lg-4">
-										<select name="TourOrder">
+										<select name="TourOrder" class="form-control">
 											{foreach from=$tour_properties item=propfoo name=selectloop }
 												<option value="{$smarty.foreach.selectloop.index}" {if $smarty.foreach.tableloop.index==$smarty.foreach.selectloop.index}selected="selected"{/if} >{$smarty.foreach.selectloop.iteration}</option>
 											{/foreach}
@@ -183,11 +183,11 @@
 				<fieldset class="row">
 					<div class="col-sm-4 col-lg-4">
 						<label class="bold block">Starting Address</label>
-						<input type="text" placeholder="Enter Start Address" value="{$smarty.request.StartingAddress}" name="StartingAddress" id="tour_start_form_address"> {* SAMPLE ADDRESS 2173 NE Broadway Portland, OR 97232 *}
+						<input type="text" class="form-control" placeholder="Enter Start Address" value="{$smarty.request.StartingAddress}" name="StartingAddress" id="tour_start_form_address"> {* SAMPLE ADDRESS 2173 NE Broadway Portland, OR 97232 *}
 					</div>
 					<div class="col-sm-4 col-lg-4">
 						<label class="bold block">Transportation</label>
-						<select name="TransportationMode" title="Choose your transportation mode" id="dir_travel_mode">
+						<select class="form-control" name="TransportationMode" title="Choose your transportation mode" id="dir_travel_mode">
 							<option value="DRIVING" selected>Driving</option>
 							<option value="WALKING">Walking</option>
 							<option value="BICYCLING">Bicycling</option>

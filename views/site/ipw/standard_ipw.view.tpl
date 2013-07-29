@@ -14,9 +14,6 @@
 		<link rel="shortcut icon" href="/images/favicon.ico">
 		<link rel="stylesheet" href="/css/ipw_styles.min.css">
 		<script src="/js/modernizer/modernizr.2.6.2.custom.js"></script>
-		<!--[if lt IE 9]>
-			<script src="/js/libs/twitter_bootstrap/respond/respond.min.js"></script>
-		<![endif]-->
 		{$JQUERY_HEADER}
 		{$PAGE_HEADER}
 	</head>
@@ -61,7 +58,6 @@
 		<img src="/images/ajax-loader.gif" alt="Loading..." class="hidden">
 
 		<script src="/js/min/actions.min.js"></script>
-		<script src="/js/libs/twitter_bootstrap/collapse.js"></script>	
 
 		{$PAGE_FOOTER}
 
@@ -71,6 +67,7 @@
 		{$GA_CODE->getjQueryGoalJS()}
 
 		<!--[if lt IE 9]>
+			<script src="/js/libs/twitter_bootstrap/respond/respond.min.js"></script>
 			<script src="/js/libs/twitter_bootstrap/respond/ie-row-fix.js"></script>
 		<![endif]-->
 	</body>

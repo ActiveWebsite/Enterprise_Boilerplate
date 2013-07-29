@@ -1,7 +1,7 @@
 <div class="row">
 	<form method="post" action="{$ACTION_URLS.search}" class="col-sm-3 col-lg-3 margin-bottom-0">
 		<label class="bold margin-bottom-0">Sort By:</label>
-		<select class="SearchSortFields margin-0">
+		<select class="form-control SearchSortFields margin-0">
 			<option value="list_price"{if $last_order_by eq "list_price"} selected="selected"{/if}>Price (Low to High)</option>
 			<option value="list_price/descending"{if $last_order_by eq "list_price/descending"} selected="selected"{/if}>Price (High to Low)</option>
 			<option value="date_entered/descending"{if $last_order_by eq "date_entered/descending"} selected="selected"{/if}>Listing Date (Newest)</option>
@@ -16,7 +16,7 @@
     </form>
     <form method="post" action="{$ACTION_URLS.search}" class="col-sm-2 col-lg-2 margin-bottom-0">
 		<label class="bold margin-bottom-0">Per Page:</label>
-		<select class="PageCountNumber margin-0">
+		<select class="form-control PageCountNumber margin-0">
 			 <option value="12"{if $page_manager_obj->get_count() eq 12} selected="selected"{/if}>12</option>
 			 <option value="24"{if $page_manager_obj->get_count() eq 24} selected="selected"{/if}>24</option>
 			 <option value="36"{if $page_manager_obj->get_count() eq 36} selected="selected"{/if}>36</option>
