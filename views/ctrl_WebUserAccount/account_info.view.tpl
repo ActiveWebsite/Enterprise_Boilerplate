@@ -118,7 +118,7 @@
                         None
                     {/if}
                 </span>
-                <a href="{$ACTION_URLS.local_root}/change_pref_realtor_form" class="btn btn-default btn-small fancybox" data-fancybox-type="iframe" data-fancybox-width="400" data-fancybox-height="300">Change Preferred Agent</a>
+                <a href="{$ACTION_URLS.local_root}/change_pref_realtor_form" class="btn btn-default fancybox" data-fancybox-type="iframe" data-fancybox-width="400" data-fancybox-height="300">Change Preferred Agent</a>
             </div>
         </div>
     </fieldset>

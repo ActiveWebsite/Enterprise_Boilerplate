@@ -52,7 +52,7 @@ function _checkForFavorites(elements) {
  */
 function _buildRetinaImages(scope) {
 	var sc = scope || 'body';
-	if (1==1 || (typeof Modernizr === 'object' && Modernizr.highres)) {
+	if (typeof Modernizr === 'object' && Modernizr.highres) {
 		jQuery('img.img-hd', sc).each(function() {
 			var el = jQuery(this), hdSrc = el.data('hd-src');
 			if (hdSrc) {

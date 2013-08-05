@@ -29,62 +29,54 @@
 					{/if}
 				</div>
 				<div class="navbar hidden-print">
-					<div class="row">
-						<div class="col-sm-4 col-lg-3">
-							<div id="agent-header-block">
-								<a href="/"><img src="{$site_owner_extended.first_pic.url}/maxwidth/166/maxheight/100" alt="{$site_owner_extended.name|clean_for_attribute}"></a>
-								<div class="agent-header-info">
-									<h3>{$site_owner_extended.name}</h3>
-									<ul class="list-unstyled">
-										{if $site_owner_extended.address.Direct_Phone.value}
-											<li><strong>Direct</strong> {$site_owner_extended.address.Direct_Phone.value}</li>
-										{/if}
-										{if $site_owner_extended.parent_dict.address.Direct_Phone.value}
-											<li><strong>Office</strong> {$site_owner_extended.parent_dict.address.Direct_Phone.value}</li>
-										{/if}
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-8 col-lg-9">
-							<div class="nav-collapse collapse">
-								<ul class="nav navbar-nav" id="boojstrap-menu">
-									{foreach from=$ROOT_SITE_MENU item=label key=url name=mainNavLoop}
-										<li class="{if $FULL_SITE_MENU[$url] || $url == $ACTION_URLS.communities}dropdown {/if}{if $controller_obj->cms_page->uri == $url || $url == $TOP_LEVEL_PERSISTENCE_URI || $controller_obj->called_controller->cms_page->uri == $url || ($url == '/' && $isHomePage)}active {/if}">
-											<a title="{$label|clean_for_attribute}" href="{$url}" {if strpos($url, 'http://') !== false}target="_blank"{/if}>{$label|replace:'& ':'&amp; '}{if $FULL_SITE_MENU[$url]}{/if}</a>
-											{if $FULL_SITE_MENU[$url]}
-												<ul class="dropdown-menu">
-													{foreach item=navLabel key=navUrl from=$FULL_SITE_MENU[$url] name=nextmenu}
-														{if $navLabel != '' && strpos($navUrl, '#spacer') === false}
-															<li>
-																<a title="{$navLabel|clean_for_attribute}" href="{$navUrl|replace:' ':'%20'|replace:'& ':'&amp; '}"{if strpos($navUrl, 'http://') !== false} target="_blank"{/if}><i class="nav-arrow"></i>{$navLabel|replace:'& ':'&amp; '}</a>
-															</li>
-														{/if}
-													{/foreach}
-												</ul>
-											{/if}
-											{if $url == $ACTION_URLS.communities}
-												<ul class="dropdown-menu">
-													{foreach item=navLabel key=navUrl from=$FULL_SITE_MENU.community_list name=nextmenu}
-														{if $navLabel != '' && strpos($navUrl, '#spacer') === false}
-															<li>
-																<a title="{$navLabel|clean_for_attribute}" href="{$navUrl|replace:' ':'%20'|replace:'& ':'&amp; '}"{if strpos($navUrl, 'http://') !== false} target="_blank"{/if}><i class="nav-arrow"></i>{$navLabel|replace:'& ':'&amp; '}</a>
-															</li>
-														{/if}
-													{/foreach}
-												</ul>
-											{/if}
-										</li>
-									{/foreach}
-								</ul>
-							</div>
-						</div>
-					</div>
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
+					<div class="navbar-brand">
+						<h3>{$site_owner_extended.name}</h3>
+						<ul class="list-unstyled">
+							{if $site_owner_extended.address.Direct_Phone.value}
+								<li><strong>Direct</strong> {$site_owner_extended.address.Direct_Phone.value}</li>
+							{/if}
+							{if $site_owner_extended.parent_dict.address.Direct_Phone.value}
+								<li><strong>Office</strong> {$site_owner_extended.parent_dict.address.Direct_Phone.value}</li>
+							{/if}
+						</ul>
+						<a href="/"><img src="{$site_owner_extended.first_pic.url}/maxwidth/166/maxheight/100" alt="{$site_owner_extended.name|clean_for_attribute}"></a>
+					</div>
+					<div class="nav-collapse collapse">
+						<ul class="nav navbar-nav" id="boojstrap-menu">
+							{foreach from=$ROOT_SITE_MENU item=label key=url name=mainNavLoop}
+								<li class="{if $FULL_SITE_MENU[$url] || $url == $ACTION_URLS.communities}dropdown {/if}{if $controller_obj->cms_page->uri == $url || $url == $TOP_LEVEL_PERSISTENCE_URI || $controller_obj->called_controller->cms_page->uri == $url || ($url == '/' && $isHomePage)}active {/if}">
+									<a title="{$label|clean_for_attribute}" href="{$url}" {if strpos($url, 'http://') !== false}target="_blank"{/if}>{$label|replace:'& ':'&amp; '}{if $FULL_SITE_MENU[$url]}{/if}</a>
+									{if $FULL_SITE_MENU[$url]}
+										<ul class="dropdown-menu">
+											{foreach item=navLabel key=navUrl from=$FULL_SITE_MENU[$url] name=nextmenu}
+												{if $navLabel != '' && strpos($navUrl, '#spacer') === false}
+													<li>
+														<a title="{$navLabel|clean_for_attribute}" href="{$navUrl|replace:' ':'%20'|replace:'& ':'&amp; '}"{if strpos($navUrl, 'http://') !== false} target="_blank"{/if}><i class="nav-arrow"></i>{$navLabel|replace:'& ':'&amp; '}</a>
+													</li>
+												{/if}
+											{/foreach}
+										</ul>
+									{/if}
+									{if $url == $ACTION_URLS.communities}
+										<ul class="dropdown-menu">
+											{foreach item=navLabel key=navUrl from=$FULL_SITE_MENU.community_list name=nextmenu}
+												{if $navLabel != '' && strpos($navUrl, '#spacer') === false}
+													<li>
+														<a title="{$navLabel|clean_for_attribute}" href="{$navUrl|replace:' ':'%20'|replace:'& ':'&amp; '}"{if strpos($navUrl, 'http://') !== false} target="_blank"{/if}><i class="nav-arrow"></i>{$navLabel|replace:'& ':'&amp; '}</a>
+													</li>
+												{/if}
+											{/foreach}
+										</ul>
+									{/if}
+								</li>
+							{/foreach}
+						</ul>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -107,11 +99,7 @@
 						</div>
 					{/if}
 				{/if}
-				<div class="row">
-					<div class="col-12">
-						{$PAGE_YIELD}
-					</div>
-				</div>
+				{$PAGE_YIELD}
 			{else}
 				<div class="row">
 					<div class="col-sm-12 col-lg-3 site-sidebar hidden-print">

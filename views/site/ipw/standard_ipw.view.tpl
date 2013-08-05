@@ -21,29 +21,27 @@
 		
 		<div class="navbar">
 			<div class="container">
-				<div class="nav-collapse collapse">
-					<ul class="nav navbar-nav" id="boojstrap-menu">
-						{foreach from=$ROOT_SITE_MENU item=label key=url name=mainNavLoop}
-							<li>
-								<a {if $controller_obj->cms_page->uri == $url || $url == $TOP_LEVEL_PERSISTENCE_URI || $controller_obj->called_controller->cms_page->uri == $url || ($url == '/' && $isHomePage)}class="active"{/if} title="{$label|clean_for_attribute}" href="{$url}" {if strpos($url, 'http://') !== false}target="_blank"{/if}>{$label|replace:'& ':'&amp; '}</a>
-							</li>
-						{/foreach}
-					</ul>
+				<div class="navbar hidden-print">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div class="nav-collapse collapse">
+						<ul class="nav navbar-nav">
+							{foreach from=$ROOT_SITE_MENU item=label key=url name=mainNavLoop}
+								<li{if $controller_obj->cms_page->uri == $url || $url == $TOP_LEVEL_PERSISTENCE_URI || $controller_obj->called_controller->cms_page->uri == $url || ($url == '/' && $isHomePage)} class="active"{/if}>
+									<a title="{$label|clean_for_attribute}" href="{$url}" {if strpos($url, 'http://') !== false}target="_blank"{/if}>{$label|replace:'& ':'&amp; '}</a>
+								</li>
+							{/foreach}
+						</ul>
+					</div>
 				</div>
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
 			</div>
 		</div>
 
 		{if $isHomePage}
-			<div class="row">
-				<div class="col-12">
-					{$PAGE_YIELD}
-				</div>
-			</div>
+			{$PAGE_YIELD}
 		{else}
 			<div class="row">
 				<div class="col-sm-9 col-lg-9">

@@ -18,15 +18,16 @@ module.exports = function(grunt) {
     },
 
     min: {
-      a: {
+      main: {
         src: [
+          'system/client_side/js/libs/twitter_bootstrap/transition.js',
           'system/client_side/js/libs/twitter_bootstrap/tooltip.js',
           'system/client_side/js/libs/twitter_bootstrap/collapse.js',
           'client_side/js/actions.js'
         ],
         dest: 'client_side/js/min/actions.min.js'
       },
-      b: {
+      search: {
         src: ['client_side/js/search_app.js'],
         dest: 'client_side/js/min/search_app.min.js'
       }
