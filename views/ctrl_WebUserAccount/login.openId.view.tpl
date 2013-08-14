@@ -29,9 +29,9 @@
 {/if}
 <div class="row">
 	<div class="col-sm-6 col-lg-6">
-		<div class="well account-well">
+		<div class="account-well">
 			{render_dropin dropin="OpenId"}
-			<h2 class="margin-bottom-10">I want to login using my {$account_area_brand_name} account</h2>
+			<h2>I want to login using my {$account_area_brand_name} account</h2>
 			<form method="post" class="validate-form" action="/{$controller_alias}/login/">
 				<fieldset class="clearfix">
 					<div class="margin-bottom-15">
@@ -42,15 +42,15 @@
 						<label class="block bold">Password</label>
 						<input name="password" class="form-control required" type="password">
 					</div>
-					<a class="pull-right" href="/{$controller_alias}/forgot_password/">I've forgotten my password</a>
-					<input type="submit" name="btn btn-primary" value="Log In" class="loginButton btn btn-primary">
+					<a class="pull-left" href="/{$controller_alias}/forgot_password/">I've forgotten my password</a>
+					<button type="submit" class="btn btn-success pull-right">Log In</button>
 				</fieldset>		
 			</form>
 		</div>
 	</div>
 	<div class="col-sm-6 col-lg-6">
-		<div class="well account-well">
-			<h2 class="margin-bottom-10">I want to create a {$account_area_brand_name}</h2>
+		<div class="account-well">
+			<h2>I want to create a {$account_area_brand_name}</h2>
 			<p><strong>Whether you're a buyer or seller, you can save time and simplify the process.</strong></p>
 			<ul>
 				<li class="margin-bottom-10">Customize searches for residential properties to know when new properties that fit your search criteria come on the market or when prices change</li>
@@ -58,7 +58,7 @@
 				<li class="margin-bottom-10">Our search capability includes MLS listings throughout your area so you have access to thousands of properties</li>
 				<li class="margin-bottom-10">New listings appear in our search engine within 24 hours of being entered into the MLS system</li>
 			</ul>
-			<p><a href="{$ACTION_URLS.account}signup/" title="Register" class="btn btn-primary">Register</a></p>
+			<p><a href="{$ACTION_URLS.account}signup/" title="Register" class="btn btn-default">Register</a></p>
 		</div>
 	</div>
 </div>

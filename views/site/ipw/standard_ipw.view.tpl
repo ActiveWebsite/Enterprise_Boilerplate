@@ -21,13 +21,17 @@
 		
 		<div class="navbar">
 			<div class="container">
-				<div class="navbar hidden-print">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<div class="nav-collapse collapse">
+				<nav class="navbar hidden-print">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="/" class="navbar-brand"><img src="http://placehold.it/166x50" alt=""></a>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
 						<ul class="nav navbar-nav">
 							{foreach from=$ROOT_SITE_MENU item=label key=url name=mainNavLoop}
 								<li{if $controller_obj->cms_page->uri == $url || $url == $TOP_LEVEL_PERSISTENCE_URI || $controller_obj->called_controller->cms_page->uri == $url || ($url == '/' && $isHomePage)} class="active"{/if}>
@@ -36,7 +40,7 @@
 							{/foreach}
 						</ul>
 					</div>
-				</div>
+				</nav>
 			</div>
 		</div>
 

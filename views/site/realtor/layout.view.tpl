@@ -28,25 +28,28 @@
 						<a href="{$ACTION_URLS.account}signup" data-action="account-register">Register</a> or <a href="{$ACTION_URLS.account}" data-action="account-login">Login</a> to Property Alerts
 					{/if}
 				</div>
-				<div class="navbar hidden-print">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<div class="navbar-brand">
-						<h3>{$site_owner_extended.name}</h3>
-						<ul class="list-unstyled">
-							{if $site_owner_extended.address.Direct_Phone.value}
-								<li><strong>Direct</strong> {$site_owner_extended.address.Direct_Phone.value}</li>
-							{/if}
-							{if $site_owner_extended.parent_dict.address.Direct_Phone.value}
-								<li><strong>Office</strong> {$site_owner_extended.parent_dict.address.Direct_Phone.value}</li>
-							{/if}
-						</ul>
-						<a href="/"><img src="{$site_owner_extended.first_pic.url}/maxwidth/166/maxheight/100" alt="{$site_owner_extended.name|clean_for_attribute}"></a>
+				<nav class="navbar hidden-print" role="navigation">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<div class="navbar-brand">
+							<h3>{$site_owner_extended.name}</h3>
+							<ul class="list-unstyled">
+								{if $site_owner_extended.address.Direct_Phone.value}
+									<li><strong>Direct</strong> {$site_owner_extended.address.Direct_Phone.value}</li>
+								{/if}
+								{if $site_owner_extended.parent_dict.address.Direct_Phone.value}
+									<li><strong>Office</strong> {$site_owner_extended.parent_dict.address.Direct_Phone.value}</li>
+								{/if}
+							</ul>
+							<a href="/"><img src="{$site_owner_extended.first_pic.url}/maxwidth/166/maxheight/100" alt="{$site_owner_extended.name|clean_for_attribute}"></a>
+						</div>
 					</div>
-					<div class="nav-collapse collapse">
+					<div class="collapse navbar-collapse navbar-main-collapse">
 						<ul class="nav navbar-nav" id="boojstrap-menu">
 							{foreach from=$ROOT_SITE_MENU item=label key=url name=mainNavLoop}
 								<li class="{if $FULL_SITE_MENU[$url] || $url == $ACTION_URLS.communities}dropdown {/if}{if $controller_obj->cms_page->uri == $url || $url == $TOP_LEVEL_PERSISTENCE_URI || $controller_obj->called_controller->cms_page->uri == $url || ($url == '/' && $isHomePage)}active {/if}">
@@ -77,7 +80,7 @@
 							{/foreach}
 						</ul>
 					</div>
-				</div>
+				</nav>
 			</div>
 		</header>
 		<div class="container">
@@ -104,6 +107,7 @@
 				<div class="row">
 					<div class="col-sm-12 col-lg-3 site-sidebar hidden-print">
 						<button type="button" class="btn btn-default btn-block hidden-lg margin-bottom-15" data-toggle="collapse" data-target="#sidebarcollapse">
+							<span class="sr-only">Additional Navigation Items</span>
 							Additional Navigation Items
 						</button>
 						<div class="collapse" id="sidebarcollapse">

@@ -83,9 +83,8 @@
             </div>
         </fieldset>
         <div class="form-group">
-            <label class="col-sm-2 col-lg-2 control-label">&nbsp;</label>
-            <div class="col-sm-10 col-lg-10">
-                <button type="submit" class="btn btn-success">Save</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="red">*</span> is required
+            <div class="col-sm-10 col-lg-10 col-sm-offset-2 col-lg-offset-2">
+                <button type="submit" class="btn btn-success">Send</button>
             </div>
         </div>        
     </form>

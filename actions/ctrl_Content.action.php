@@ -14,16 +14,15 @@ abstract class ctrl_Content extends BASE_ctrl_Content {
 	protected function getAdditionalHeaderArgs($tpl_args)
     {
 		$jquery_output = "\t<!-- BEGIN JAVASCRIPT HEADER -->\n";
-		$jquery_output .= "\t<script src=\"/js/libs/jquery/jquery.js\"></script>\n";
-		$jquery_output .= "\t<script>jQuery.noConflict();</script>\n";
 
 		$jquery_libs = array();
+			$jquery_libs[] = "/js/libs/jquery/jquery.js";
 			$jquery_libs[] = "/js/validation/jquery.validate.min.js";
 			$jquery_libs[] = "/js/fancy_box/jquery.fancybox-2.1.4.pack.js";
 			$jquery_libs[] = "/js/lib/jquery.hoverIntent.minified.js";
-			$jquery_libs[] = "/js/tabs/jquery.jtabs.min.js";
 			$jquery_libs[] = "/js/menus/jquery.boojstrapDropdownNavigation.min.js";
 			$jquery_libs[] = "/js/lib/jquery.openid.js";
+			// $jquery_libs[] = "/js/tabs/jquery.jtabs.min.js";
 		
 		if (!empty($jquery_libs)) {
 			$jquery_output .= "\t<script src=\"/js/buildlist.js?scripts=" . implode(',', $jquery_libs) . "\"></script>\n";

@@ -31,7 +31,7 @@
                             <p id="searchName_{$search.id}">{$search.name}</p>
                             <form id="searchNameForm_{$search.id}" class="margin-top-10" data-description="#searchName_{$search.id}" data-toggle="#searchNameButton_{$search.id}" data-account-action="update_search_name" action="/{$controller_alias}/save_search_name/{$search.id}" method="post" style="display:none;">
                                 <input type="text" class="form-control margin-bottom-5" name="search_name" placeholder="Enter Search Name" value="{$search.name}">
-                                <input type="submit" class="btn btn-primary" value="Save">
+                                <button type="submit" class="btn btn-success">Add</button>
                             </form>
                         </div>
                     </td>
@@ -98,7 +98,7 @@
                             <p id="searchNotes_{$search.id}">{$search.notes}</p>
                             <form style="display: none;" class="margin-top-10" data-account-action="update_search_notes" data-description="#searchNotes_{$search.id}" data-toggle="#searchNotesButton_{$search.id}" action="/{$controller_alias}/save_search_notes/{$search.id}" id="searchNotesForm_{$search.id}" method="post">
                                 <textarea class="form-control margin-bottom-5" name="notes" cols="20" rows="4">{$search.notes}</textarea>
-                                <input type="submit" class="btn btn-primary" value="Save">
+                                <button type="submit" class="btn btn-success">{if $search.notes}Save{else}Add{/if}</button>
                             </form>
                     </td>
 
@@ -180,8 +180,7 @@
                 </div>
             </div>
             <div class="row">
-                <label class="col-sm-2 col-lg-2">&nbsp;</label>
-                <div class="col-sm-10 col-lg-10">
+                <div class="col-sm-10 col-lg-10 col-sm-offset-2 col-lg-offset-2">
                     <small>* One Email Per Search - You will receive 1 email for each of the Email Alerts you have.</small><br>
                     <small>** One Email For All Searches - All of your email alerts will be combined into 1 email.</small>
                 </div>

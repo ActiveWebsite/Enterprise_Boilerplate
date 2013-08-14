@@ -24,7 +24,7 @@
                 <label for="notes" class="block bold">Notes</label>
                 <textarea class="form-control" id="notes" rows="3" name="notes" placeholder="Add Notes"></textarea>
             </div>
-            <input type="submit" name="submit" value="Add Property" title="Add Property" class="btn btn-primary">
+            <input type="submit" name="submit" value="Add Property" title="Add Property" class="btn btn-success">
         </form>
     {/if}
 </div>

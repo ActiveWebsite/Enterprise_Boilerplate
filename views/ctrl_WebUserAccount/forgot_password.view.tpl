@@ -34,13 +34,13 @@
 {/if}
 <form class="validate-form" action="/{$controller_alias}/send_forgotten_password/" method="post">
     <fieldset>
-        <div class="margin-bottom-15">
+        <div class="form-group">
             <label for="email_address">Email Address</label>
            	<input class="form-control required" placeholder="Enter email address" name="email_address" value="" type="email">
         </div>
-        <div class="margin-bottom-15">
+        <div class="form-group">
             <button type="submit" class="btn btn-success">Send</button>
         </div>
-        <p class="bold">* A New Password Will Be Sent To Your Email Address</p>
+        <p><strong>* A New Password Will Be Sent To Your Email Address</strong></p>
 	</fieldset>	
 </form>

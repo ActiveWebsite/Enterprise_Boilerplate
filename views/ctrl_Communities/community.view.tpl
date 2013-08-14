@@ -111,15 +111,15 @@
 								<div class="col-sm-5 col-lg-5 margin-bottom-15">
 									<label>Show Me</label>
 									<div class="input-group">
-										<input type="text" name="poi" value="">
-										<span class="input-group-btn"><button data-for="poi" class="poi-map-autocomplete-toggle btn btn-default"><i class="icon icon-chevron-down"></i></button></span>
+										<input type="text" name="poi" class="form-control" value="">
+										<span class="input-group-btn"><button data-for="poi" type="button" class="poi-map-autocomplete-toggle btn btn-default"><i class="icon icon-chevron-down"></i></button></span>
 									</div>
 								</div>
 								<div class="col-sm-5 col-lg-5 margin-bottom-15">
 									<label>Within</label>
 									<div class="input-group">
-										<input type="text" name="radius" value="">
-										<span class="input-group-btn"><button data-for="radius" class="poi-map-autocomplete-toggle btn btn-default"><i class="icon icon-chevron-down"></i></button></span>
+										<input type="text" name="radius" class="form-control" value="">
+										<span class="input-group-btn"><button data-for="radius" type="button" class="poi-map-autocomplete-toggle btn btn-default"><i class="icon icon-chevron-down"></i></button></span>
 									</div>
 								</div>
 								<div class="col-sm-2 col-lg-2 margin-bottom-15">

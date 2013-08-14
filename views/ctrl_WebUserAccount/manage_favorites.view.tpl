@@ -34,10 +34,10 @@
                 <span class="bold block">Description:</span>
                 <p id="FavCatDesc_{$category->category_id}Content">{if $category->description}{$category->description}{/if}</p> 
                 <form method="post" class="margin-top-10 margin-bottom-0" style="display:none;" id="FavCatForm_{$category->category_id}" data-toggle="#FavCatEditDescToggle_{$category->category_id}Toggle" data-description="#FavCatDesc_{$category->category_id}Content" data-account-action="update_category_description" action="{$ACTION_URLS.local_root}/edit_description/{$category->category_id}">
-                    <div class="margin-bottom-5">
+                    <div class="form-group">
                         <textarea class="form-control" placeholder="Enter a description" name="description" rows="4">{$category->description}</textarea>
                     </div>
-                    <input type="submit" class="btn btn-default" value="Save">
+                    <button type="submit" class="btn btn-success">Save</button>
                 </form>
                 <div id="favorite_property_wrapper_{$index}" style="display: none;margin-bottom:30px">
                     {if $property_list.$category_name}
@@ -95,10 +95,10 @@
                                             <span class="bold block">Notes:</span>
                                             <p id="notesDesc_{$property->company_property_id}">{if $property->notes}{$property->notes}{/if}</p>
                                             <form method="post" class="margin-bottom-0" style="display:none;" id="notesForm_{$property->company_property_id}" data-description="#notesDesc_{$property->company_property_id}" data-toggle="#notesToggleButton_{$property->company_property_id}" data-account-action="update_property_note" action="{$ACTION_URLS.local_root}/updateFavoriteNotes/{$user.id}/{$property->company_property_id}">
-                                                <div class="margin-bottom-5">
+                                                <div class="form-group">
                                                     <textarea name="notes" cols="20" class="form-control" rows="6">{if $property->notes}{$property->notes}{/if}</textarea>
                                                 </div>
-                                                <input type="submit" value="Update" class="btn btn-primary">
+                                                <button type="submit" class="btn btn-success">Update</button>
                                             </form>
                                         </div>
                                     </div>
@@ -108,7 +108,7 @@
                     {else}
                         <hr>
                         <p>You do not have any properties in this favorites collection.<p>
-                        <p><a href="{$ACTION_URLS.search}?no_favs=1" class="btn">Search properties to begin adding favorites</a></p>
+                        <p><a href="{$ACTION_URLS.search}?no_favs=1" class="btn btn-default">Search properties to begin adding favorites</a></p>
                     {/if}
                 </div>
             </td>
@@ -123,7 +123,7 @@
         <input class="form-control required" name="category_name" placeholder="Category Name" id="category_name" type="text">
     </div>
     <div class="col-sm-3 col-lg-3">
-        <input type="submit" value="Add" class="btn btn-success">
+        <button type="submit" class="btn btn-success">Add</button>
     </div>
 </form>
 

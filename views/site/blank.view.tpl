@@ -7,9 +7,6 @@
 		<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="/css/company_styles.min.css">
 		<script src="/js/modernizer/modernizr.2.6.2.custom.js"></script>
-		<!--[if lt IE 9]>
-			<script src="/js/libs/twitter_bootstrap/respond/respond.min.js"></script>
-		<![endif]-->
 		{$JQUERY_HEADER}
 		{$PAGE_HEADER}
 		{literal}
@@ -37,6 +34,7 @@
 		</script>
 		{/literal}
 		<!--[if lt IE 9]>
+			<script src="/js/libs/twitter_bootstrap/respond/respond.min.js"></script>
 			<script src="/js/libs/twitter_bootstrap/respond/ie-row-fix.js"></script>
 		<![endif]-->
 		<!-- override: BLANK VIEW -->

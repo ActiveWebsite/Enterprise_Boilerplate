@@ -5,38 +5,38 @@
         <li>Create Account</li>
     </ul>
 {/render_layout_arguments}
-
+{if $messages->isMsgs() === true}
+    {if $messages->isErrors() === true}
+        <div class="alert alert-danger alert-block">
+            <strong>Error:</strong><br>{$messages->getErrors(true)}
+        </div>
+    {/if}
+    {if $messages->isAlerts() === true}
+        <div class="alert alert-info alert-block">
+            <strong>Alert:</strong><br>{$messages->getAlerts(true)}
+        </div>
+    {/if}
+    {if $messages->isNormals() === true}
+        <div class="alert alert-success alert-block">
+            <strong>Message:</strong><br>{$messages->getNormal(true)}
+        </div>
+    {/if}
+{/if}
 {if $current_account_user}
     <div class="alert alert-danger alert-block">
         You are already logged in.
     </div>
     <p>Not your account? <a href="{$ACTION_URLS.account}logout/">Click here</a> to log out!</p>
 {else}
-    <h1>Create a New {$account_area_brand_name} Account</h1>
-    
-    {if $messages->isMsgs() === true}
-        {if $messages->isErrors() === true}
-            <div class="alert alert-danger alert-block">
-                <strong>Error:</strong><br>{$messages->getErrors(true)}
-            </div>
-        {/if}
-        {if $messages->isAlerts() === true}
-            <div class="alert alert-info alert-block">
-                <strong>Alert:</strong><br>{$messages->getAlerts(true)}
-            </div>
-        {/if}
-        {if $messages->isNormals() === true}
-            <div class="alert alert-success alert-block">
-                <strong>Message:</strong><br>{$messages->getNormal(true)}
-            </div>
-        {/if}
-    {/if}
 
-    <p class="margin-top-10">
-        You must be registered to use our account features. Register once, using
-        the form below. Then log in at your convenience to search for homes, save
-        favorites, set up email alerts and change your account information.
-    </p>
+    <div class="page-header web-user-account-header">
+        <h1>Create a New {$account_area_brand_name} Account</h1>
+        <p>
+            You must be registered to use our account features. Register once, using
+            the form below. Then log in at your convenience to search for homes, save
+            favorites, set up email alerts and change your account information.
+        </p>
+    </div>
 
     <div class="openIDWrap">
         {render_dropin dropin="OpenId"}
@@ -121,7 +121,7 @@
                     </div>
                 </div>
             {/if}
-            <button class="btn btn-primary" type="submit">Create Account</button>
+            <button class="btn btn-success" type="submit">Create Account</button>
         </fieldset>
     </form>
 {/if}
