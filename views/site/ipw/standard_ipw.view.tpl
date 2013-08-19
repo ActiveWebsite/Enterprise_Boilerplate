@@ -21,7 +21,7 @@
 		
 		<div class="navbar">
 			<div class="container">
-				<nav class="navbar hidden-print">
+				<nav class="navbar navbar-default hidden-print">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
 							<span class="sr-only">Toggle navigation</span>

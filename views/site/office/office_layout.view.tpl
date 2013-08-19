@@ -28,7 +28,7 @@
 						<a href="{$ACTION_URLS.account}signup" data-action="account-register">Register</a> or <a href="{$ACTION_URLS.account}" data-action="account-login">Login</a> to Property Alerts
 					{/if}
 				</div>
-				<nav class="navbar hidden-print" role="navigation">
+				<nav class="navbar navbar-default hidden-print" role="navigation">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
 							<span class="sr-only">Toggle navigation</span>
