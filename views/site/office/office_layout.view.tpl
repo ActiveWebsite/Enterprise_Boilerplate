@@ -19,58 +19,56 @@
 		{$PAGE_HEADER}
 	</head>  
 	<body class="{$browser_info.browser_css_class}">
-		<header id="site-header">
-			<div class="container">
-				<div class="acccount-user-block hidden-print">
-					{if $current_account_user && $current_account_user.name}
-						Welcome, {render_component component="Dropin_CurrentUserName"} <a href="{$ACTION_URLS.account}" data-action="account-nav">My Account</a>
-					{else}
-						<a href="{$ACTION_URLS.account}signup" data-action="account-register">Register</a> or <a href="{$ACTION_URLS.account}" data-action="account-login">Login</a> to Property Alerts
-					{/if}
-				</div>
-				<nav class="navbar navbar-default hidden-print" role="navigation">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a href="/" class="navbar-brand"><img src="http://placehold.it/166x50" alt=""></a>
-					</div>
-					<div class="collapse navbar-collapse navbar-main-collapse">
-						<ul class="nav navbar-nav" id="boojstrap-menu">
-							{foreach from=$ROOT_SITE_MENU item=label key=url name=mainNavLoop}
-								<li class="{if $FULL_SITE_MENU[$url] || $url == $ACTION_URLS.communities}dropdown {/if}{if $controller_obj->cms_page->uri == $url || $url == $TOP_LEVEL_PERSISTENCE_URI || $controller_obj->called_controller->cms_page->uri == $url || ($url == '/' && $isHomePage)}active {/if}">
-									<a title="{$label|clean_for_attribute}" href="{$url}" {if strpos($url, 'http://') !== false}target="_blank"{/if}>{$label|replace:'& ':'&amp; '}{if $FULL_SITE_MENU[$url]}{/if}</a>
-									{if $FULL_SITE_MENU[$url]}
-										<ul class="dropdown-menu">
-											{foreach item=navLabel key=navUrl from=$FULL_SITE_MENU[$url] name=nextmenu}
-												{if $navLabel != '' && strpos($navUrl, '#spacer') === false}
-													<li>
-														<a title="{$navLabel|clean_for_attribute}" href="{$navUrl|replace:' ':'%20'|replace:'& ':'&amp; '}"{if strpos($navUrl, 'http://') !== false} target="_blank"{/if}><i class="nav-arrow"></i>{$navLabel|replace:'& ':'&amp; '}</a>
-													</li>
-												{/if}
-											{/foreach}
-										</ul>
-									{/if}
-									{if $url == $ACTION_URLS.communities}
-										<ul class="dropdown-menu">
-											{foreach item=navLabel key=navUrl from=$FULL_SITE_MENU.community_list name=nextmenu}
-												{if $navLabel != '' && strpos($navUrl, '#spacer') === false}
-													<li>
-														<a title="{$navLabel|clean_for_attribute}" href="{$navUrl|replace:' ':'%20'|replace:'& ':'&amp; '}"{if strpos($navUrl, 'http://') !== false} target="_blank"{/if}><i class="nav-arrow"></i>{$navLabel|replace:'& ':'&amp; '}</a>
-													</li>
-												{/if}
-											{/foreach}
-										</ul>
-									{/if}
-								</li>
-							{/foreach}
-						</ul>
-					</div>
-				</nav>
+		<header id="site-header" class="container">
+			<div class="acccount-user-block hidden-print">
+				{if $current_account_user && $current_account_user.name}
+					Welcome, {render_component component="Dropin_CurrentUserName"} <a href="{$ACTION_URLS.account}" data-action="account-nav">My Account</a>
+				{else}
+					<a href="{$ACTION_URLS.account}signup" data-action="account-register">Register</a> or <a href="{$ACTION_URLS.account}" data-action="account-login">Login</a> to Property Alerts
+				{/if}
 			</div>
+			<nav class="navbar navbar-default hidden-print" role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand"><img src="http://placehold.it/166x50" alt=""></a>
+				</div>
+				<div class="collapse navbar-collapse navbar-main-collapse">
+					<ul class="nav navbar-nav" id="boojstrap-menu">
+						{foreach from=$ROOT_SITE_MENU item=label key=url name=mainNavLoop}
+							<li class="{if $FULL_SITE_MENU[$url] || $url == $ACTION_URLS.communities}dropdown {/if}{if $controller_obj->cms_page->uri == $url || $url == $TOP_LEVEL_PERSISTENCE_URI || $controller_obj->called_controller->cms_page->uri == $url || ($url == '/' && $isHomePage)}active {/if}">
+								<a title="{$label|clean_for_attribute}" href="{$url}" {if strpos($url, 'http://') !== false}target="_blank"{/if}>{$label|replace:'& ':'&amp; '}{if $FULL_SITE_MENU[$url]}{/if}</a>
+								{if $FULL_SITE_MENU[$url]}
+									<ul class="dropdown-menu">
+										{foreach item=navLabel key=navUrl from=$FULL_SITE_MENU[$url] name=nextmenu}
+											{if $navLabel != '' && strpos($navUrl, '#spacer') === false}
+												<li>
+													<a title="{$navLabel|clean_for_attribute}" href="{$navUrl|replace:' ':'%20'|replace:'& ':'&amp; '}"{if strpos($navUrl, 'http://') !== false} target="_blank"{/if}><i class="nav-arrow"></i>{$navLabel|replace:'& ':'&amp; '}</a>
+												</li>
+											{/if}
+										{/foreach}
+									</ul>
+								{/if}
+								{if $url == $ACTION_URLS.communities}
+									<ul class="dropdown-menu">
+										{foreach item=navLabel key=navUrl from=$FULL_SITE_MENU.community_list name=nextmenu}
+											{if $navLabel != '' && strpos($navUrl, '#spacer') === false}
+												<li>
+													<a title="{$navLabel|clean_for_attribute}" href="{$navUrl|replace:' ':'%20'|replace:'& ':'&amp; '}"{if strpos($navUrl, 'http://') !== false} target="_blank"{/if}><i class="nav-arrow"></i>{$navLabel|replace:'& ':'&amp; '}</a>
+												</li>
+											{/if}
+										{/foreach}
+									</ul>
+								{/if}
+							</li>
+						{/foreach}
+					</ul>
+				</div>
+			</nav>
 		</header>
 		<div class="container">
 			{if $USE_FULL_LAYOUT_FLAG || $isHomePage || ($controller_obj instanceof ctrl_Property) || ($controller_obj && $controller_obj instanceof ctrl_Search && !$search_form_flag && $smarty.request.view != search_form)}
