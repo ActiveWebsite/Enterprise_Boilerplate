@@ -69,7 +69,7 @@
 <div class="advancedSearchForm">
 	<div class="page-header">
 		<h1>Advanced Search</h1>
-	</dvi>
+	</div>
 	{if !$save_button}
 		<form action="{$ACTION_URLS.search}url_search" method="post">
 			<fieldset class="row">
