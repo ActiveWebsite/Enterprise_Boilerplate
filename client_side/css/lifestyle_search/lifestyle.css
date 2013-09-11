@@ -1,0 +1,482 @@
+.filter .filterMaxLabel{
+    float: right;
+    font-weight: bold;
+    margin-top: 3px;
+    color: #000;
+}
+.filter .filterMinLabel {
+    float: left;
+    font-weight: bold;
+    margin-top: 3px;
+    color: #000;
+}
+
+#sliderInfoBubble{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:158px;
+    height:43px;
+    z-index:8000;
+    background:url(/images/system/lifestyle_search/bubble.png) no-repeat top left transparent;
+}
+#sliderInfoInner{
+    text-align:center;
+    color:#333;
+    line-height:30px;
+    font-size:12px;
+}
+
+/* slider styles */
+.sliderWrapper{
+    height:25px;
+    margin-top:10px;
+}
+.slider_track_wrapper{
+	float: none;
+    width:306px;
+    margin:0 auto;
+    padding:0;
+    position:relative;
+}
+.slider_track{
+    height:14px;
+    background: url(/images/system/lifestyle_search/bar.png) no-repeat;
+    display:block;
+    border:none;
+}
+.slider_track_2{
+    background: url(/images/system/lifestyle_search/bar_2.png) no-repeat !important;
+}
+.slider_track .ui-slider-handle{
+    display:block;
+    width:23px;
+    position:absolute;
+    top:-2px;
+    height:24px;
+    cursor:pointer;
+    background: url(/images/lifestyle/slider.png) no-repeat;
+    border:none;
+}
+.slider_track .ui-slider-range{
+    height:6px;
+    float:left;
+    position:absolute;
+    top:1px;
+    margin-left:1px;
+    background:#00529b;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -webkit-border-radius-topleft: 3px;
+    -webkit-border-radius-bottomleft: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    -moz-opacity:0.80;
+    opacity:0.80;
+    filter:alpha(opacity=80);
+}
+.slider_track .ui-slider-handle:hover{
+    border-color:#ccc;
+}
+
+
+/* filter icons */
+.filterIcon{
+    width:55px;
+    height:45px;
+    float:left;
+    margin:0 10px 5px 0;
+}
+.filterIcon_ATTR_017{
+	background: url(/images/system/lifestyle_search/piano.png) no-repeat left center;
+}
+.filterIcon_ATTR_044{
+	background: url(/images/system/lifestyle_search/metropolis.png) no-repeat left center;
+}
+.filterIcon_ATTR_045{
+	background: url(/images/system/lifestyle_search/urban.png) no-repeat left center;
+}
+.filterIcon_ATTR_046{
+	background: url(/images/system/lifestyle_search/suburb.png) no-repeat left center;
+}
+.filterIcon_ATTR_047{
+	background: url(/images/system/lifestyle_search/small_town.png) no-repeat left center;
+}
+.filterIcon_ATTR_048{
+	background: url(/images/system/lifestyle_search/rural.png) no-repeat left center;
+}
+.filterIcon_ATTR_019{
+	background: url(/images/system/lifestyle_search/family_friendly.png) no-repeat left center;
+}
+.filterIcon_ATTR_018{
+    background: url(/images/system/lifestyle_search/disco.png) no-repeat left center;
+}
+.filterIcon_ATTR_022{
+    background: url(/images/system/lifestyle_search/shopping_cart.png) no-repeat left top;
+    height:70px;
+}
+.filterIcon_ATTR_024{
+    background: url(/images/system/lifestyle_search/golf_club_grass.png) no-repeat left top;
+}
+.filterIcon_ATTR_016{
+    background: url(/images/system/lifestyle_search/chalk_board.png) no-repeat left center;
+}
+.filterIcon_ATTR_043{
+    background: url(/images/system/lifestyle_search/median_home_price.png) no-repeat left center;
+}
+.filterIcon_ATTR_020{
+    background: url(/images/system/lifestyle_search/paw_print.png) no-repeat left center;
+}
+.filterIcon_ATTR_037{
+    background: url(/images/system/lifestyle_search/public_transport.png) no-repeat left center;
+}
+.filterIcon_ATTR_036{
+    background: url(/images/system/lifestyle_search/gas_pump.png) no-repeat left center;
+}
+.filterIcon_ATTR_021{
+    background: url(/images/system/lifestyle_search/shopping.png) no-repeat left center;
+}
+.filterIcon_ATTR_023{
+	background: url(/images/system/lifestyle_search/public_servants.png) no-repeat left top;
+	height:70px;
+}
+
+/* end filters */
+
+#lifestyle_tabs .tab-pane {
+    padding: 0 20px;
+}
+
+
+/* attribute scales */
+.attributeWrapper {
+    margin-bottom: 15px;
+}
+.attribute{
+    width: 70%;
+    min-width:180px;
+    height:8px;
+    position:relative;
+    overflow:hidden;
+    float:left;
+    border:1px solid #cccccc;
+    background:url(/images/system/lifestyle_search/relevance_bg.gif) repeat-x;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px;
+}
+.attribute .attributeValue{
+    height:8px;
+    background:#00529b;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -webkit-border-radius-topleft: 3px;
+    -webkit-border-radius-bottomleft: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    -moz-opacity:0.90;
+    opacity:0.90;
+    filter:alpha(opacity=90);
+}
+.nationalCompare .attributeValue{
+    background-color:#00529b;
+}
+.myCommunityCompare .attributeValue{
+    background-color:#00529b;
+}
+.attribute .attributeFullValue{
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.attributeTitle{
+    float:left;
+    width:30%;
+    color:#000;
+    font-size:11px;
+}
+.attributeLabel{
+    display:block;
+    font-size:9px;
+}
+#attributeBubble{
+    background:url(/images/system/lifestyle_search/bubble_small.png) transparent no-repeat;
+    width:50px;
+    height:43px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:1000;
+}
+#attributeBubbleInner{
+    text-align:center;
+    color:#000;
+    line-height:30px;
+    font-size:12px;
+}
+p.filterExtra label {
+    width: 40%;
+    float: left;
+}
+
+/* end attribute scales */
+
+
+/* list view */
+.initialSearchPage h1 span{
+    font-weight:normal;
+}
+ul#compareDataBlock{
+    float:right;
+    margin:0;
+    padding:0;
+    font-size: 14px;
+    list-style:none;
+}
+ul#compareDataBlock li{
+    float: left;
+    line-height: 11px;
+    margin: 0;
+    padding: 0 5px;
+}
+ul#compareDataBlock li.listborder{
+    border-left:1px solid #ccc;
+}
+ul#compareDataBlock a{
+    text-decoration: underline;
+}
+ul#compareDataBlock a.active_view{
+    color:black;   
+    text-decoration: none;
+}
+ul.listViewResults{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+ul.listViewResults li.onboardCommunity{
+    border-bottom:1px solid #cbcbcb;
+    margin:0 0 12px 0;
+    padding:0 0 12px 0;
+}
+ul.listViewResults li.lastChild, #resultList li:last-child{
+    border-bottom:none;
+    padding-bottom:0;
+    margin-bottom:0;
+}
+.onboardCommunity h2{
+    margin-bottom:15px;
+}
+.onboardCommunity .rankNumber{
+    background:url(/images/lifestyle/circle_large.png) no-repeat transparent;
+    display:inline-block;
+    width:29px;
+    height:29px;
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    text-align:center;
+    line-height:26px;
+    margin-right:8px;
+}
+/* end list view */
+
+
+#modifySearch{
+    position:absolute;
+    top:6px;
+    right:0px;
+}
+#modifySearch h2, #modifySearchForm h2{
+    cursor:pointer;
+    text-align:right;
+    padding-left:18px;
+    line-height: normal;
+    margin: 0;
+    font-size: 18px;
+    background:url(/images/lifestyle/close.png) left 5px no-repeat transparent;
+}
+#modifySearch h2.modifyClosed{
+    background:url(/images/lifestyle/open.png) left 5px no-repeat transparent;
+}
+#modifySearchForm{
+    position:absolute;
+    z-index:6000;
+    left:-1000px;
+    margin-top:-10px;
+    margin-left: 10px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+#modifySearchForm h5 {
+    font-weight: bold;
+    line-height: normal;
+    margin: 0 0 5px 0;
+}
+#modifySearchForm form {
+    margin: 0;
+    clear: both;
+}
+#modifySearchForm .filter{
+    width:218px;
+    float:none;
+    margin: 0 auto 12px auto;
+}
+#modifySearchForm .filterExtra label{
+    float:none;
+}
+#modifySearchForm .sliderWrapper{
+    margin-top:5px;
+}
+#modifySearchForm .slider_track{
+    background-image: url(/images/system/lifestyle_search/refine_track.gif);
+}
+#modifySearchForm #narrowSearch label{
+    float:none;
+    display:block;
+}
+#modifySearchForm #narrowSearch{
+    margin-top:0;
+}
+#modifySearchForm #narrowSearch #county_cbsa_spacer{
+    float:none;
+    background: url(/images/system/lifestyle_search/or_refine.gif) center center no-repeat;
+    width:218px;
+    height:28px;
+}
+
+
+/* compare */
+#lifestyle_compare{
+}
+#compareElements{
+    padding: 15px;
+    border-top:5px solid #ebebeb;   
+
+}
+#lifestyle_compare_top{
+    padding: 15px 15px 10px 15px;
+}
+#lifestyle_compare h2{
+    font-size:22px;
+    font-weight:normal;
+    cursor:pointer;
+    float:left;
+    margin:0;
+    padding-left:18px;
+    background:url(/images/lifestyle/close.png) left 5px no-repeat transparent;
+}
+#lifestyle_compare h2.compareClosed{
+    background:url(/images/lifestyle/open.png) left 5px no-repeat transparent;
+}
+#lifestyle_compare h3{
+    font-size:12px;
+    font-weight:bold;
+    padding:0 0 10px 0;
+    margin:0;
+}
+#compareFormWrapper label{
+    font-weight:bold;
+    padding-bottom:3px;
+}
+#compareFormWrapper input.textField{
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin: 0 20px 0 0;
+    padding: 0;
+    width: 155px;
+}
+#communityCompareResultWrapper{
+    padding:10px;
+    margin-top:15px;
+    border-top:1px solid #ccc;
+}
+#lifestyle_compare {
+    background: #efefef;
+    border: 1px solid #ddd;
+    margin: 30px 0;
+    padding: 20px;
+}
+
+#lifestyle_compare p.compare_error{
+    color:red;
+    font-weight:bold;
+}
+
+/* cta links */
+a.printLifestyle{
+    background: url(/images/system/lifestyle_search/lifestyle_cta_sprite.gif) 0px -146px no-repeat transparent;
+    float:right;
+    display: block;
+    font-size: 12px;
+    height: 17px;
+    line-height: 14px;
+    text-decoration: none;
+    padding-left:22px;
+}
+/* map view */
+#lifestyle_map_wrapper{
+    position:relative;
+    width:590px;
+    height:430px;
+    margin:0 auto;
+    border:1px solid #cbcbcb;
+}
+#lifestyle_map_overlay{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:590px;
+    height:430px;
+    background:url(/images/system/white-70.png) transparent repeat;
+    text-align:center;
+}
+#lifestyle_map_overlay div{
+    background-color:#fff;
+    width:100px;
+    height:50px;
+    margin:190px auto 0 auto;
+    border:1px solid #cbcbcb;
+    -moz-border-radius: 10px;
+    border-radius: 10px;    
+}
+#lifestyle_map_overlay img{
+    display: block;
+    float: left;
+    height: 24px;
+    margin-left: 40px;
+    margin-top: 12px;
+    width: 24px;
+}
+#lifestyle_map{
+    width:590px;
+    height:430px;
+}
+.lss-view-all-props{
+    font-weight:bold;
+    font-size:12px;
+    border-top:1px solid #ccc;
+    margin-top:4px;
+    padding-top:4px;
+}
+.lss-property-bubble{
+    width:250px;
+    height:80px;
+    overflow:hidden;
+}
+.lss-property-bubble img{
+    float:left;
+    margin-top:3px;
+    border:1px solid #ccc;
+    margin-right:10px;
+}
+.lss-property-bubble p{
+    font-size:12px;
+    float:left;
+    width:160px;
+    line-height:16px;
+    color:#333;
+}
+/* end map view */
