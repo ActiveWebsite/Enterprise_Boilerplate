@@ -25,20 +25,20 @@
     {assign var=PT value=145}
 {/if}
 <div class="row">
-	<div class="col-sm-3 col-lg-3">
+	<div class="col-sm-3">
 		{include file="$view_path/search_results_narrower.inc.tpl"}
 	</div>
-	<div class="col-sm-9 col-lg-9">
+	<div class="col-sm-9">
 		<div class="row">
-			<div class="col-sm-6 col-lg-6">
+			<div class="col-sm-6">
 				<div class="page-header">
 					<h1>{$page_manager_obj->get_total_count()|number_format} Search Results</h1>
 				</div>
 			</div>
-			<div class="col-sm-3 col-lg-3">
+			<div class="col-sm-3">
 				<a href="#" class="property-bin-toggle pull-right">Property Bin <span class="property-bin-count"></span></a>
 			</div>
-			<div class="col-sm-3 col-lg-3">
+			<div class="col-sm-3">
 				{if $is_account_user}
 					<a href="{$ACTION_URLS.search}save_last_search/2" rel="nofollow" target="action_iframe" title="Save Search">Save Search</a>
 				{else}
@@ -51,17 +51,17 @@
 		
 		<hr>
 		
-		<ul class="row multi-columns-row">
-			{if count($properties) > 0}
+		{if count($properties) > 0}
+			<ul class="row multi-columns-row">
 			    {foreach item=property from=$properties key=index}
-			    	<li class="col-sm-6 col-lg-4 standard-property margin-bottom-30">
+			    	<li class="col-sm-6 col-md-4 col-lg-4 standard-property margin-bottom-30">
 						<div class="prop-photo">
 							<a href="/property/{$property->company_property_id}{if $property->address_display_bit}/{$property->getfullStreetAddress()|clean_for_url}{/if}" title="View property{if $property->address_display_bit} at {$property->getfullStreetAddress()|clean_for_attribute}{/if}">
 								<img class="img-hd" src="{$properties_pics[$index]->getUrl()}/crop/270,177/" data-hd-src="{$properties_pics[$index]->getUrl()}/crop/540,355/" title="Photo of {if $property->address_display_bit}{$property->getfullStreetAddress()|clean_for_attribute}{/if}">
 							</a>
-							{if $property->open_houses}
+							{if $property_open_houses[$index].0}
 								<div class="open-house-banner">
-									<p><strong>OPEN</strong> {$open_house[0]->start_datetime|date_format:'%a %m/%e %I'}-{$open_house[0]->end_datetime|date_format:'%I'}</p>
+									OPEN: {$property_open_houses.$index.0.start_datetime|date_format:"%a. %B %e, %Y - %l:%M%p"}
 								</div>
 							{/if}
 						</div>
@@ -94,10 +94,10 @@
 						</div>
 			    	</li>
 				{/foreach}
-			{else}
-				<li class="col-sm-12 col-lg-12">No Properties Found</li>
-			{/if}
-		</ul>
+			</ul>
+		{else}
+			<div class="alert alert-danger">No Properties Found</div>
+		{/if}
 
 		<hr class="margin-top-0">
 
