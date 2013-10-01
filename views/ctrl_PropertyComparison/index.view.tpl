@@ -59,7 +59,7 @@
 										<a href="/property/property_details_quick_view/{$property.company_property_id}" data-fancybox-type="iframe" data-fancybox-width="800" data-fancybox-height="400" class="fancybox btn btn-quickview">
 											Quick View
 										</a>
-										<a target="_blank" href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property.company_property_id}" class="addFavorite addFavoriteButton{if $property.is_favorite} removeFavorite{/if}" title="{if $property.is_favorite}Remove From {else}Add to{/if} Favorites">{if $property.is_favorite}Remove From{else}Add to{/if} Favorites</a>
+										<a target="_blank" href="/popup{$ACTION_URLS.account}addRemoveFavoritePropertyManager/{$property.company_property_id}" class="addFavorite addFavoriteButton{if $property.is_favorite} removeFavorite{/if}" data-property-id="{$property.company_property_id}" title="{if $property.is_favorite}Remove From {else}Add to{/if} Favorites">{if $property.is_favorite}Remove From{else}Add to{/if} Favorites</a>
 									</div>
 								</td>
 							{/foreach}
