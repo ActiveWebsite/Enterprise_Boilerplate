@@ -12,8 +12,24 @@
 @import "/system/client_side/less/boojstrap/boojstrap_3.less";
 
 
+// GLOBAL VARIABLES
+// --------------------------------------------------
+@import "../variables.less";
+
+
+// IPW VARIABLES
+// --------------------------------------------------
+@import "ipw_variables.less";
+
+
 // COMPONENT LESS FILES
 // --------------------------------------------------
+@import "/system/client_side/less/boojstrap/lib/fancy_box/fancybox-2.1.4.less";
+
+
+// CLIENT SPECIFIC OVERRIDE LESS FILES
+// --------------------------------------------------
+@import "../overrides.less";
 
 
 // CLIENT SPECIFIC HELPER LESS FILES
@@ -21,9 +37,9 @@
 @import "../helpers.less";
 
 
-// IPW VARIABLES
+// CLIENT SPECIFIC GLOBALS LESS FILES
 // --------------------------------------------------
-@import "ipw_variables.less";
+@import "../site_global.less";
 
 
 // IPW LAYOUT LESS FILE

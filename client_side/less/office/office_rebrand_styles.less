@@ -2,14 +2,44 @@
 // --------------------------------------------------
 
 
-// Because an office rebrand has all the parts of a company, we just load in the company styles.less file
+// Bootstrap Includes (determines what parts of the twitter bootstrap you want to use in the project)
 // --------------------------------------------------
-@import "../styles.less";
+@import "../bootstrap_includes.less";
 
 
-// OFFICE VARIABLES (overrides company)
+// Boojstrap Includes (Enterprise level additions to the twitter bootstrap)
+// --------------------------------------------------
+@import "/system/client_side/less/boojstrap/boojstrap_3.less";
+
+
+// GLOBAL VARIABLES
+// --------------------------------------------------
+@import "../variables.less";
+
+
+// OFFICE VARIABLES
 // --------------------------------------------------
 @import "office_rebrand_variables.less";
+
+
+// COMPONENT LESS FILES
+// --------------------------------------------------
+@import "/system/client_side/less/boojstrap/lib/fancy_box/fancybox-2.1.4.less";
+
+
+// CLIENT SPECIFIC OVERRIDE LESS FILES
+// --------------------------------------------------
+@import "../overrides.less";
+
+
+// CLIENT SPECIFIC HELPER LESS FILES
+// --------------------------------------------------
+@import "../helpers.less";
+
+
+// CLIENT SPECIFIC GLOBALS LESS FILES
+// --------------------------------------------------
+@import "../site_global.less";
 
 
 // OFFICE LAYOUT LESS FILE
@@ -17,6 +47,6 @@
 @import "office_rebrand_layout.less";
 
 
-// DO OTHER OFFICE IMPORTS HERE
+// DO OTHER IPW IMPORTS HERE
 // --------------------------------------------------
 @import "../home/office_rebrand_home.less";

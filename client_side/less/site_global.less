@@ -2,81 +2,6 @@
 // --------------------------------------------------
 
 
-// Page HEADER STYLES
-// --------------------------------------------------
-.page-header {
-	h1 {
-
-	}
-	p {
-		
-	}
-}
-
-
-// COLLAPSE SIDEBAR
-// --------------------------------------------------
-#sidebarcollapse {
-	background: #efefef;
-	padding: 20px;
-}
-#sidebarcollapse.in {
-	margin-bottom: 30px;
-}
-@media (min-width: @screen-md) {
-	#sidebarcollapse {
-		background: none;
-		padding: 0;
-	}
-	#sidebarcollapse.collapse {
-		display: block;
-	}
-	#sidebarcollapse.in {
-		margin-bottom: 0;
-	}
-}
-
-
-// LAYOUT HEADER STYLE
-// --------------------------------------------------
-#site-header {
-	margin-bottom: 20px;
-	.acccount-user-block {
-		float: right;
-		text-align: right;
-	}
-	.navbar {
-		clear: both;
-		padding: 0;
-		margin: 0;
-	}
-}
-
-
-// LAYOUT FOOTER STYLE
-// --------------------------------------------------
-#site-footer {
-	margin-top: 30px;
-	padding-bottom: 70px;
-}
-
-
-// LAYOUT STICKY FOOTER STYLE
-// --------------------------------------------------
-#sticky-footer {
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	.sticky-footer-inner {
-		.border-radius(5px 5px 0 0);
-		background: @gray-lighter;
-		padding: 10px;
-		.box-shadow(0 0 7px 2px rgba(0,0,0,0.5));
-	}
-}
-
-
 // GLOBAL TO SPACER (FOR RANGE INPUTS MIN to MAX) 
 // --------------------------------------------------
 .to-spacer-gutter {
@@ -101,112 +26,6 @@
 // CMS PAGE STYLES
 // --------------------------------------------------
 .cms-page {
-
-}
-
-
-// ACCOUNT COMPONENT STYLES
-// --------------------------------------------------
-.web-user-account-component {
-
-}
-.web-user-account-component-content {
-	margin-bottom: 30px;
-}
-
-
-// SIDEBAR NAVIGATION STYLE
-// --------------------------------------------------
-#sidebar-main-nav-list {
-	margin-bottom: 30px;
-	h2 {
-		margin: 0;
-	}
-	ul {
-		padding: 0;
-		margin: 0;
-		list-style: none;
-	}
-	ul li {
-		margin: 0;
-	}
-	ul li a {
-		padding: 3px 10px;
-		margin: 0;
-		text-shadow: none;
-		display: block;
-	}
-	ul li a:hover {
-		background: @gray-lighter;
-		color: #000;
-		text-decoration: none;
-	}
-	ul li a.sub_active_link {
-		background: @gray-lighter;
-	}
-	ul li ul li a {
-		padding: 3px 10px 3px 20px;
-	}
-	ul li ul li ul li a {
-		padding: 3px 10px 3px 30px;
-	}
-}
-
-
-// QUICK SEARCH STYLES
-// --------------------------------------------------
-.quick-search-component {
-	.box-sizing(border-box);
-	position: relative;
-	label {
-		margin-bottom: 0;
-	}
-}
-.quick-search-component-content {
-	margin-bottom: 30px;
-}
-.quick-search-extra-close {
-	margin-top: -17px;
-	margin-right: -14px;
-}
-.quick-search-extra-section {
-	position: absolute;
-	.box-sizing(border-box);
-	z-index: 200;
-	h4 {
-		margin: 0;
-	}
-	input {
-		margin-bottom: 0;
-	}
-}
-.quick-search-extra-section input[type="text"] {
-	margin-bottom: 10px;
-}
-.quick-search-extra-content-section {
-	padding: 20px;
-	border: 1px solid @gray-lighter;
-	.box-shadow(0 0 10px rgba(0, 0, 0, 0.8));
-	background: #fff;
-	width: 100%;
-	top: 20%;
-	right: 0;
-	left: 0;
-}
-@media (min-width: @screen-sm) {
-	.quick-search-extra-content-section {
-		top: 38px;
-		right: -280px;
-		width: 265px;
-		left: auto;
-	}
-	.quick-search-extra-content-section input[type="text"] {
-		width: 65%;
-		margin-bottom: 0;
-	}
-	.quick-search-extra-content-section .btn {
-		width: 33%;
-	}
 
 }
 
@@ -237,22 +56,6 @@
 	}
 	.prop-cta {
 		margin-top: 10px;
-	}
-}
-
-
-// view all block for search components
-// --------------------------------------------------
-.search-component-view-all {
-	text-align: center;
-	border-top: 1px solid @gray-lighter;
-	a {
-		display: inline-block;
-		font-weight: bold;
-		vertical-align: top;
-		background: #fff;
-		padding: 10px;
-		margin-top: -20px;
 	}
 }
 
@@ -391,28 +194,4 @@
 		width: 193px;
 		height: 265px;
 	}
-}
-
-
-// SITE TABS
-// ---------------------------------------------
-.nav-tabs {
-	margin-bottom: 10px;
-}
-.tabClass {
-	.nav-tabs {
-		margin-bottom: 15px;
-	}
-}
-// RESPONSIVE TABS.
-.tab-content .inner-tab-trigger {
-	margin: 0 0 5px 0;
-	a {
-		display: block;
-		padding: 10px;
-		border: 1px solid #ccc;
-	}
-}
-.tab-content .inner-tab-trigger .active {
-	background: #efefef;
 }
