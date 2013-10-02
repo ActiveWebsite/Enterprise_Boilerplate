@@ -91,6 +91,7 @@ If you do not have a menu, You can build out a new one using the basic menu belo
 * views/ctrl_Forms
 * views/ctrl_WebUserAccount
 * views/site
+* views/company
 * client_side/js
 * client_side/less/web_user_account
 * client_side/css/search
@@ -98,7 +99,6 @@ If you do not have a menu, You can build out a new one using the basic menu belo
 
 ###Copy over the following files:
 
-* client_side/less/styles.less 
 * client_side/less/bootstrap_includes.less 
 * client_side/less/helpers.less
 * client_side/less/overrides.less 
