@@ -37,6 +37,9 @@
 			<script src="/js/libs/twitter_bootstrap/respond/respond.min.js"></script>
 			<script src="/js/libs/twitter_bootstrap/respond/ie-row-fix.js"></script>
 		<![endif]-->
+		<!--[if lt IE 10]>
+			<script src="/js/search/jquery.placeholder-polyfill.min.js"></script>
+		<![endif]-->
 		<!-- override: BLANK VIEW -->
 	</body>
 </html>
