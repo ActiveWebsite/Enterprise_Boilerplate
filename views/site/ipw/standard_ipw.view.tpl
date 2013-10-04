@@ -11,15 +11,17 @@
 		{if $SITE_OWNER instanceof Company && $SITE_OWNER->get_config('Google Webmaster Tools Verify') != '0'}<meta name="google-site-verification" content="{$SITE_OWNER->get_config('Google Webmaster Tools Verify')}">{/if}
 		{if $SITE_OWNER instanceof Company && $SITE_OWNER->get_config('Yahoo Site Explorer Verify') != '0'}<meta name="y_key" content="{$SITE_OWNER->get_config('Yahoo Site Explorer Verify')}">{/if}
 		
-		{if $site_owner_extended.address_display_bit > 0 && $site_owner_extended.fullStreetAddress}
+		{if $fullStreetAddress}
 			<meta property="og:title" content="{$site_owner_extended.fullStreetAddress|clean_for_attribute}">
 		{/if}
 		{if $site_owner_extended.photos && $site_owner_extended.photos[0]}
-			<meta property="og:image" content="{$site_owner_extended.photos[0]}maxwidth/300" alt="{if $site_owner_extended.address_display_bit > 0 && $site_owner_extended.fullStreetAddress}Photo of {$site_owner_extended.fullStreetAddress|clean_for_attribute}{else}Property Photo{/if}">
+			<meta property="og:image" content="{$site_owner_extended.photos[0]}maxwidth/300">
 		{/if}
 		{if $site_owner_extended.remarks}
 			<meta property="og:description" content="{$site_owner_extended.remarks|strip_tags|clean_for_attribute|truncate:300}">
 		{/if}
+
+		<link rel="canonical" href="{$HTTP_HOST}/property/{$company_property_id}/{$fullStreetAddress|clean_for_url}">
 
 		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss/">
 		<link rel="shortcut icon" href="/images/favicon.ico">

@@ -1,11 +1,11 @@
 {if stripos($controller_obj->URL.url_raw,'print_view') === false}
 	<head>
 		<link rel="canonical" href="http://PUT CLIENT DOMAIN NAME HERE/property/{$company_property_id}/{$fullStreetAddress|clean_for_url}">
-		{if $address_display_bit > 0 && $fullStreetAddress}
+		{if $fullStreetAddress}
 			<meta property="og:title" content="{$fullStreetAddress|clean_for_attribute}">
 		{/if}
 		{if $first_pic && $first_pic instanceof PropertyPicture}
-			<meta property="og:image" content="{$first_pic->getUrl()}maxwidth/300" alt="{if $address_display_bit > 0 && $fullStreetAddress}Photo of {$fullStreetAddress|clean_for_attribute}{else}Property Photo{/if}">
+			<meta property="og:image" content="{$first_pic->getUrl()}maxwidth/300">
 		{/if}
 		{if $remarks}
 			<meta property="og:description" content="{$remarks|strip_tags|clean_for_attribute|truncate:300}">
