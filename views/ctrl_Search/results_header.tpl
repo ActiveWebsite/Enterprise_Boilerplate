@@ -1,5 +1,5 @@
 <div class="row">
-	<form method="post" action="{$ACTION_URLS.search}" class="col-sm-3 col-md-3 margin-bottom-0">
+	<form method="post" action="{$ACTION_URLS.search}" class="col-sm-3 margin-bottom-0">
 		<label class="bold margin-bottom-0">Sort By:</label>
 		<select class="form-control SearchSortFields margin-0">
 			<option value="list_price"{if $last_order_by eq "list_price"} selected="selected"{/if}>Price (Low to High)</option>
@@ -14,7 +14,7 @@
 			{/if}
 		</select>
     </form>
-    <form method="post" action="{$ACTION_URLS.search}" class="col-sm-2 col-md-2 margin-bottom-0">
+    <form method="post" action="{$ACTION_URLS.search}" class="col-sm-2 margin-bottom-0">
 		<label class="bold margin-bottom-0">Per Page:</label>
 		<select class="form-control PageCountNumber margin-0">
 			 <option value="12"{if $page_manager_obj->get_count() eq 12} selected="selected"{/if}>12</option>
@@ -23,7 +23,7 @@
 			 <option value="48"{if $page_manager_obj->get_count() eq 48} selected="selected"{/if}>48</option>
 		</select>        
 	</form>
-	<div class="col-sm-7 col-md-7">
+	<div class="col-sm-7">
 		<label class="block">&nbsp;</label>
 		<ul class="pagination no-margin pull-right">
 			{if $page_manager_obj->get_page_url($page_manager_obj->get_current_page_num(-1)) ne false}

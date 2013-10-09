@@ -25,26 +25,26 @@
         <input type="hidden" name="lc_custom_form_name" value="Contact Preferred Agent">
         <fieldset>
             <div class="form-group">
-                <label class="col-sm-2 col-lg-2 control-label">To</label>
-                <div class="col-sm-10 col-lg-10">
+                <label class="col-sm-2 control-label">To</label>
+                <div class="col-sm-10">
                     <strong>{$pref_realtor.name}  </strong> [{$pref_realtor.email}]
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 col-lg-2 control-label">From</label>
-                <div class="col-sm-10 col-lg-10">
+                <label class="col-sm-2 control-label">From</label>
+                <div class="col-sm-10">
                     <strong>{$user.name} </strong> [{$user.email}]
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 col-lg-2 control-label" for="phone">Phone <span class="red">*</span></label>
-                <div class="col-sm-10 col-lg-10">
+                <label class="col-sm-2 control-label" for="phone">Phone <span class="red">*</span></label>
+                <div class="col-sm-10">
                     <input class="form-control required" name="phone" id="phone" type="text" value="{$user.address.Home_Phone.value}">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 col-lg-2 control-label" for="subject">Subject</label>
-                <div class="col-sm-10 col-lg-10">
+                <label class="col-sm-2 control-label" for="subject">Subject</label>
+                <div class="col-sm-10">
                     {if $subject}
                         <input class="form-control" id="subject" name="subject" type="text" readonly="readonly" value="{$subject}">
                     {else}
@@ -53,14 +53,14 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 col-lg-2 control-label" for="message">Message <span class="red">*</span></label>
-                <div class="col-sm-10 col-lg-10">
+                <label class="col-sm-2 control-label" for="message">Message <span class="red">*</span></label>
+                <div class="col-sm-10">
                      <textarea rows="8" name="message" id="message" class="form-control required"></textarea>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 col-lg-2 control-label" for="phone">Respond to me via</label>
-                <div class="col-sm-10 col-lg-10">
+                <label class="col-sm-2 control-label" for="phone">Respond to me via</label>
+                <div class="col-sm-10">
                     <div class="radio">
                         <label>
                             <input type="radio" name="preferred_contact_method" value="email">
@@ -83,7 +83,7 @@
             </div>
         </fieldset>
         <div class="form-group">
-            <div class="col-sm-10 col-lg-10 col-sm-offset-2 col-lg-offset-2">
+            <div class="col-sm-10 col-sm-offset-2">
                 <button type="submit" class="btn btn-success">Send</button>
             </div>
         </div>        

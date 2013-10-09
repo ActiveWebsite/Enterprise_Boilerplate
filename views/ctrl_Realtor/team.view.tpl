@@ -11,10 +11,10 @@
 		<h1>{$realtor.name}</h1>
 	</div>
 	<div class="row">
-		<div class="col-sm-4 col-lg-4 margin-bottom-20">
+		<div class="col-sm-4 margin-bottom-20">
 			<img src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/275{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $realtor.pic_url}{$realtor.pic_url}maxwidth/550{/if}" alt="Photo of {$realtor.name|clean_for_attribute}">
 		</div>
-		<div class="col-sm-4 col-lg-4 margin-bottom-20">
+		<div class="col-sm-4 margin-bottom-20">
 			<ul class="list-unstyled">
 				{if $realtor.address.Direct_Phone.value}
 					<li class="margin-bottom-5"><strong>Direct</strong> {$realtor.address.Direct_Phone.value}</li>
@@ -33,7 +33,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="col-sm-4 col-lg-4 margin-bottom-20">
+		<div class="col-sm-4 margin-bottom-20">
 			{if $realtor.parent_dict}
 				<h4 class="no-margin"><a href="{$ACTION_URLS.office}{$realtor.parent_dict.rebrand}">{$realtor.parent_dict.name}</a></h4>
 				<address>
@@ -89,13 +89,13 @@
 		<div class="tab-content">
 			<div class="tab-pane active" id="about">
 				<div class="row">
-					<div class="col-lg-8">
+					<div class="col-sm-8">
 						<h2>About {$realtor.name}</h2>
 						<div class="cms-page">
 							{$realtor.biography}
 						</div>
 					</div>
-					<div class="col-lg-4">
+					<div class="col-sm-4">
 						{if $realtor.team_info.Designations}
 							<h3>Designations</h3>
 							<ul class="list-unstyled">
@@ -120,7 +120,7 @@
 						<h2>Team Leaders</h2>
 						<ul class="row multi-columns-row agent-thumb-list">
 							{foreach from=$leaders item=member key=index name=leaderLoop}
-								<li class="col-6 col-sm-4 col-lg-4 margin-bottom-30">
+								<li class="col-sm-4 col-md-4 col-lg-4 margin-bottom-30">
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">
 											<img src="{if $member.pic_url}{$member.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $member.pic_url}{$member.pic_url}/maxwidth/550{/if}" alt="Photo of {$member.name|clean_for_attribute}">
@@ -161,7 +161,7 @@
 						<h2>Associates</h2>
 						<ul class="row multi-columns-row agent-thumb-list">
 							{foreach from=$members item=member key=index name=memberLoop}
-								<li class="col-sm-4 col-lg-4 margin-bottom-30">
+								<li class="col-sm-4 col-md-4 col-lg-4 margin-bottom-30">
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">
 											<img src="{if $member.pic_url}{$member.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $member.pic_url}{$member.pic_url}/maxwidth/550{/if}" alt="Photo of {$member.name|clean_for_attribute}">
@@ -202,7 +202,7 @@
 						<h2>Staff</h2>
 						<ul class="row multi-columns-row agent-thumb-list">
 							{foreach from=$assistants item=member key=index name=assistantLoop}
-								<li class="col-sm-4 col-lg-4 margin-bottom-30">
+								<li class="col-sm-4 col-md-4 col-lg-4 margin-bottom-30">
 									{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 										<a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">
 											<img src="{if $member.pic_url}{$member.pic_url}/maxwidth/270{else}/images/agent-placeholder.jpg{/if}" class="img-hd" data-hd-src="{if $member.pic_url}{$member.pic_url}/maxwidth/550{/if}" alt="Photo of {$member.name|clean_for_attribute}">
@@ -245,7 +245,7 @@
 					<ul class="row multi-columns-row">
 						{foreach from=$properties item=property key=index name=listingsLoop}
 							{if $index < 6}
-								<li class="standard-property col-sm-4 col-lg-4 margin-bottom-30">
+								<li class="standard-property col-sm-4 col-md-4 col-lg-4 margin-bottom-30">
 									{if $property->information.photo->value}
 										<div class="prop-photo">
 											<a href="/property/{$property->company_property_id}/{$property->getFullStreetAddress()|clean_for_url}" title="View property at $property->getFullStreetAddress()|clean_for_attribute}">
@@ -290,7 +290,7 @@
 					<ul class="row multi-columns-row">
 						{foreach from=$sold_properties item=property key=index name=soldListingsLoop}
 							{if $index < 6}
-								<li class="standard-property col-sm-4 col-lg-4 margin-bottom-30">
+								<li class="standard-property col-sm-4 col-md-4 col-lg-4 margin-bottom-30">
 									{if $property->information.photo->value}
 										<div class="prop-photo">
 											<img src="{$property->information.photo->value}/crop/270,177" class="img-hd" data-hd-src="{$property->information.photo->value}/crop/540,355" title="Photo of {$property->getFullStreetAddress()|clean_for_attribute}">
@@ -341,27 +341,27 @@
 					<h3>Links</h3>
 					<ul class="row multi-columns-row">
 						{foreach from=$realtor.links item=link key=index name=linksLoop}
-							<li class="col-sm-4 col-lg-4 margin-bottom-30"><a href="{$link->website_url}" target="_blank">{$link->label}</a></li>
+							<li class="col-sm-4 col-md-4 col-lg-4 margin-bottom-30"><a href="{$link->website_url}" target="_blank">{$link->label}</a></li>
 						{/foreach}
 						{if ($realtor.website_url || $realtor.rebrand_domain) && !$SITE_OWNER instanceof Realtor}
-							<li class="col-sm-4 col-lg-4 margin-bottom-30"><a href="{if $realtor.website_url}{$realtor.website_url}{else}{$realtor.rebrand_domain}{/if}" target="_blank" title="Visit Our Website">Our Website</a></li>
+							<li class="col-sm-4 col-md-4 col-lg-4 margin-bottom-30"><a href="{if $realtor.website_url}{$realtor.website_url}{else}{$realtor.rebrand_domain}{/if}" target="_blank" title="Visit Our Website">Our Website</a></li>
 						{/if}
 						{if $realtor.team_info.Blog_URL}
-							<li class="col-sm-4 col-lg-4 margin-bottom-30"><a href="{$realtor.team_info.Blog_URL}" target="_blank" title="Read Our Blog">Our Blog</a></li>
+							<li class="col-sm-4 col-md-4 col-lg-4 margin-bottom-30"><a href="{$realtor.team_info.Blog_URL}" target="_blank" title="Read Our Blog">Our Blog</a></li>
 						{/if}
 						{foreach from=$realtor.social_networks key=index item=social name="socialLoop"}
-							<li class="col-sm-4 col-lg-4 margin-bottom-30"><a href="{$social->get_url()}" title="Visit our {$social->get_name()} page" target="_blank">{$social->get_name()}</a></li>
+							<li class="col-sm-4 col-md-4 col-lg-4 margin-bottom-30"><a href="{$social->get_url()}" title="Visit our {$social->get_name()} page" target="_blank">{$social->get_name()}</a></li>
 						{/foreach}
 					</ul>
 					<hr class="margin-top-0">
 				{/if}
 					<h3>Documents</h3>
 					<ul class="row multi-columns-row">
-						<li class="col-sm-4 col-lg-4 margin-bottom-30">
+						<li class="col-sm-4 col-md-4 col-lg-4 margin-bottom-30">
 							<a href="{$ACTION_URLS.realtor}info/{$realtor.rebrand_code}?view=print" title="Agent Bio Printer Friendly Information Sheet" target="_blank" rel="nofollow">Printer Friendly Information Sheet</a>
 						</li>
 						{foreach from=$realtor.files item=file key=index name=documentsLoop}
-							<li class="col-sm-4 col-lg-4 margin-bottom-30"><a href="{$file.url}" target="_blank">{$file.name}</a></li>
+							<li class="col-sm-4 col-md-4 col-lg-4 margin-bottom-30"><a href="{$file.url}" target="_blank">{$file.name}</a></li>
 						{/foreach}
 					</ul>
 				{if $realtor.videos}
@@ -370,11 +370,11 @@
 					<ul class="row multi-columns-row">
 						{foreach from=$realtor.videos item=videos}
 							{if $videos.branded == 1}
-								<li class="col-sm-4 col-lg-4 margin-bottom-30">
+								<li class="col-sm-4 col-md-4 col-lg-4 margin-bottom-30">
 									<a href="{$videos.video_url|htmlentities}" data-fancybox-type="iframe" data-fancybox-width="550" data-fancybox-height="415" class="fancybox" rel="nofollow" title="Play Video" target="_blank">{$videos.name}</a>
 								</li>
 							{else}
-								<li class="col-sm-4 col-lg-4 margin-bottom-30">
+								<li class="col-sm-4 col-md-4 col-lg-4 margin-bottom-30">
 									<a target="_blank" rel="nofollow" href="{$videos.video_url|htmlentities}" title="Play Video">{$videos.name}</a>
 								</li>
 							{/if}

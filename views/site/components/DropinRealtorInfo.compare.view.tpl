@@ -13,7 +13,7 @@
 		{/if}
 	</h4>
 	<div class="row">
-		<div class="col-sm-4 col-lg-4">
+		<div class="col-sm-4">
 			{if $current_account_user.realtor.pic instanceof EntityPicture}
 				<img src="{$current_account_user.realtor.pic->getURL()}/crop/81,97/" alt="{$realtor.name}">
 			{elseif $realtor.pic instanceof EntityPicture}
@@ -24,7 +24,7 @@
 				<img src="/images/agent-placeholder.jpg" alt="No Photo">
 			{/if}
 		</div>
-		<div class="col-sm-8 col-lg-8">
+		<div class="col-sm-8">
 			<ul class="list-unstyled">
 				{if $current_account_user.realtor}
 					{if $current_account_user.realtor.address.Direct_Phone.value}

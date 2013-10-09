@@ -64,7 +64,7 @@
 			<h2>Team Leaders</h2>
 			<ul class="row multi-columns-row no-margin agent-thumb-list">
 				{foreach from=$leaders item=member key=index name=leaderLoop}
-					<li class="col-sm-4 col-lg-4">
+					<li class="col-sm-4 col-md-4 col-lg-4">
 						{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 							<a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">
 								<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.name|clean_for_attribute}">
@@ -105,7 +105,7 @@
 			<h2>Associates</h2>
 			<ul class="row multi-columns-row agent-thumb-list">
 				{foreach from=$members item=member key=index name=memberLoop}
-					<li class="col-sm-4 col-lg-4">
+					<li class="col-sm-4 col-md-4 col-lg-4">
 						{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 							<a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">
 								<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.name|clean_for_attribute}">
@@ -146,7 +146,7 @@
 			<h2>Staff</h2>
 			<ul class="row multi-columns-row agent-thumb-list">
 				{foreach from=$assistants item=member key=index name=assistantLoop}
-					<li class="col-sm-4 col-lg-4">
+					<li class="col-sm-4 col-md-4 col-lg-4">
 						{if $member.entity_type == 'EntityTeam' && $member.rebrand_code}
 							<a href="/{$controller_alias}/team/{$member.rebrand_code}" title="About {$member.name|clean_for_attribute}">
 								<img src="{if $member.pic_url}{$member.pic_url}/crop/275,200{else}/images/agent-placeholder.jpg{/if}" alt="Photo of {$member.name|clean_for_attribute}">

@@ -24,7 +24,7 @@
 							</select>   
 							<label for="qss-field-03">Price Range</label>
 							<div class="row">
-								<div class="col-sm-6 col-lg-6 margin-bottom-10">
+								<div class="col-sm-6 margin-bottom-10">
 									<select class="form-control" id="qss-field-03" name="Min_Price">
 										{if $search_config.min_price instanceof CompanySearchConfig}
 											{foreach from=$search_config.min_price->getValues() item=name key=value}
@@ -34,7 +34,7 @@
 									</select>
 								</div>
 								<div class="to-spacer-gutter margin-bottom-10">to</div>
-								<div class="col-sm-6 col-lg-6 margin-bottom-10">
+								<div class="col-sm-6 margin-bottom-10">
 									<select class="form-control" name="Max_Price">
 										{if $search_config.max_price instanceof CompanySearchConfig}
 											{foreach from=$search_config.max_price->getValues() item=name key=value}
@@ -45,7 +45,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-6 col-sm-6 col-lg-6 margin-bottom-10">
+								<div class="col-sm-6 margin-bottom-10">
 									<label for="qss-field-04">Beds</label>
 									<select class="form-control" id="qss-field-04" title="Select Bedrooms" name="Bedrooms">
 										{if $search_config.bedrooms instanceof CompanySearchConfig}
@@ -55,7 +55,7 @@
 										{/if}    
 									</select>
 								</div>
-								<div class="col-6 col-sm-6 col-lg-6 margin-bottom-10">									
+								<div class="col-sm-6 margin-bottom-10">									
 									<label for="qss-field-05">Baths</label>
 									<select class="form-control" id="qss-field-05" title="Select Bathrooms" name="Bathrooms">
 										{if $search_config.bathrooms instanceof CompanySearchConfig}
@@ -100,7 +100,7 @@
 							</select>   
 							<label for="qsos-field-03">Price Range</label>
 							<div class="row">
-								<div class="col-sm-6 col-lg-6 margin-bottom-10">
+								<div class="col-sm-6 margin-bottom-10">
 									<select class="form-control" id="qsos-field-03" name="Min_Price">
 										{if $search_config.min_price instanceof CompanySearchConfig}
 											{foreach from=$search_config.min_price->getValues() item=name key=value}
@@ -110,7 +110,7 @@
 									</select>
 								</div>
 								<div class="to-spacer-gutter margin-bottom-10">to</div>
-								<div class="col-sm-6 col-lg-6 margin-bottom-10">
+								<div class="col-sm-6 margin-bottom-10">
 									<select class="form-control" name="Max_Price">
 										{if $search_config.max_price instanceof CompanySearchConfig}
 											{foreach from=$search_config.max_price->getValues() item=name key=value}
@@ -121,7 +121,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-6 col-sm-6 col-lg-6 margin-bottom-10">
+								<div class="col-sm-6 margin-bottom-10">
 									<label for="qsos-field-04">Beds</label>
 									<select class="form-control" id="qsos-field-04" title="Select Bedrooms" name="Bedrooms">
 										{if $search_config.bedrooms instanceof CompanySearchConfig}
@@ -131,7 +131,7 @@
 										{/if}    
 									</select>
 								</div>
-								<div class="col-6 col-sm-6 col-lg-6 margin-bottom-10">
+								<div class="col-sm-6 margin-bottom-10">
 									<label for="qsos-field-05">Baths</label>
 									<select class="form-control" id="qsos-field-05" title="Select Bathrooms" name="Bathrooms">
 										{if $search_config.bathrooms instanceof CompanySearchConfig}

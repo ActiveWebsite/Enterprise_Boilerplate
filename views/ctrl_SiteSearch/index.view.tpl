@@ -1,5 +1,5 @@
 <div class="row" id="site-search-page">
-	<div class="col-sm-3 col-lg-3 site-sidebar hidden-print">
+	<div class="col-sm-3 site-sidebar hidden-print">
 		<div class="site-search-sidebar-facets" id="sidebar-main-nav-list">
 			<h2>Site Search Results</h2>
 			{if $facets}
@@ -26,7 +26,7 @@
 			{/if}
 		</div>
 	</div>
-	<div class="col-sm-9 col-lg-9">
+	<div class="col-sm-9">
 		<ul class="breadcrumb">
 			<li><a href="/" title="Home">Home</a></li>
 			<li class="active">Site Search Results</li>
@@ -35,10 +35,10 @@
 			<h1>Site Search</h1>
 		</div>
 		<form method="get" action="/{$controller_alias}/" class="row">
-			<div class="col-sm-10 col-lg-10">
+			<div class="col-sm-10">
 				<input class="form-control" type="search" name="q" value="" placeholder="Enter Search Term(s)">
 			</div>
-			<div class="col-sm-2 col-lg-2">
+			<div class="col-sm-2">
 				<button type="submit" class="btn btn-primary btn-block">Search</button>
 			</div>
 		</form>
@@ -64,10 +64,10 @@
 		{/if}
 		{if $results}
 			<div class="row">
-				<div class="col-sm-5 col-lg-5">
+				<div class="col-sm-5">
 					<p class="site-search-showing">Showing <strong>{$paging.offset} - {$paging.current_page_count}</strong> of <strong>{$paging.total_results|number_format}</strong> results.</p>
 				</div>
-				<div class="col-sm-7 col-lg-7">
+				<div class="col-sm-7">
 					<ul class="pagination pagination-small pull-right no-margin">
 						{if $paging.first}
 							<li><a href="{$paging.first}" title="First Page">First</a></li>
@@ -99,10 +99,10 @@
 			{foreach from=$results key=index item=result name=result_loop}
 				{if $result.type == "Content"}
 					<div class="row site-search-item">						
-						<div class="col-sm-2 col-lg-2">
+						<div class="col-sm-2">
 							<a href="{$result.url}">{if $result.picUrl}<img src="{$result.picUrl}/maxwidth/126" class="img-hd" data-hd-src="{$result.picUrl}/maxwidth/252" alt="">{/if}</a>
 						</div>
-						<div class="col-sm-10 col-lg-10">
+						<div class="col-sm-10">
 							<div class="site-search-item-top clearfix">
 								<span class="site-search-score">Score: {$result.score}</span>
 								<a class="site-search-item-title" href="{$result.url}">{$result.name}</a>
@@ -112,10 +112,10 @@
 					</div>					
 				{elseif $result.type == "Property"}
 					<div class="row site-search-item">						
-						<div class="col-sm-2 col-lg-2">
+						<div class="col-sm-2">
 							<a href="{$result.url}">{if $result.picUrl}<img src="{$result.picUrl}/maxwidth/126" class="img-hd" data-hd-src="{$result.picUrl}/maxwidth/252" alt="">{/if}</a>
 						</div>
-						<div class="col-sm-10 col-lg-10">
+						<div class="col-sm-10">
 							<div class="site-search-item-top clearfix">
 								<span class="site-search-score">Score: {$result.score}</span>
 								<a class="site-search-item-title" href="{$result.url}">{$result.name}</a>
@@ -131,10 +131,10 @@
 					</div>					
 				{elseif $result.type == "Realtors And Teams"}
 					<div class="row site-search-item">						
-						<div class="col-sm-2 col-lg-2">
+						<div class="col-sm-2">
 							<a href="{$result.url}">{if $result.picUrl}<img src="{$result.picUrl}/maxwidth/126" class="img-hd" data-hd-src="{$result.picUrl}/maxwidth/252" alt="">{/if}</a>
 						</div>
-						<div class="col-sm-10 col-lg-10">
+						<div class="col-sm-10">
 							<div class="site-search-item-top clearfix">
 								<span class="site-search-score">Score: {$result.score}</span>
 								<a class="site-search-item-title" href="{$result.url}">{$result.name}</a>
@@ -151,10 +151,10 @@
 					</div>					
 				{elseif $result.type == "Blog"}
 					<div class="row site-search-item">						
-						<div class="col-sm-2 col-lg-2">
+						<div class="col-sm-2">
 							<a href="{$result.url}">{if $result.picUrl}<img src="{$result.picUrl}/maxwidth/126" class="img-hd" data-hd-src="{$result.picUrl}/maxwidth/252" alt="">{/if}</a>
 						</div>
-						<div class="col-sm-10 col-lg-10">
+						<div class="col-sm-10">
 							<div class="site-search-item-top clearfix">
 								<span class="site-search-score">Score: {$result.score}</span>
 								<a class="site-search-item-title" href="{$result.url}">{$result.name}</a>
@@ -165,10 +165,10 @@
 					</div>					
 				{elseif $result.type == "Office"}
 					<div class="row site-search-item">						
-						<div class="col-sm-2 col-lg-2">
+						<div class="col-sm-2">
 							<a href="{$result.url}">{if $result.picUrl}<img src="{$result.picUrl}/maxwidth/126" class="img-hd" data-hd-src="{$result.picUrl}/maxwidth/252" alt="">{/if}</a>
 						</div>
-						<div class="col-sm-10 col-lg-10">
+						<div class="col-sm-10">
 							<div class="site-search-item-top clearfix">
 								<span class="site-search-score">Score: {$result.score}</span>
 								<a class="site-search-item-title" href="{$result.url}">{$result.name}</a>
@@ -185,10 +185,10 @@
 					</div>					
 				{elseif $result.type == "Community"  || $result.type == "Communities"  || $result.type == "Neighborhoods"}
 					<div class="row site-search-item">						
-						<div class="col-sm-2 col-lg-2">
+						<div class="col-sm-2">
 							<a href="{$result.url}">{if $result.picUrl}<img src="{$result.picUrl}/maxwidth/126" class="img-hd" data-hd-src="{$result.picUrl}/maxwidth/252" alt="">{/if}</a>
 						</div>
-						<div class="col-sm-10 col-lg-10">
+						<div class="col-sm-10">
 							<div class="site-search-item-top clearfix">
 								<span class="site-search-score">Score: {$result.score}</span>
 								<a class="site-search-item-title" href="{$result.url}">{$result.name}</a>

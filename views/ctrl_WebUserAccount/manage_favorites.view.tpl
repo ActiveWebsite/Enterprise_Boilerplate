@@ -51,12 +51,12 @@
                                 </div>
                             {else}
                                 <div class="row">
-                                    <div class="col-sm-4 col-lg-4 margin-bottom-10">
+                                    <div class="col-sm-4 margin-bottom-10">
                                         <a href="{$ACTION_URLS.property_details}{$property->company_property_id}" target="_blank">
                                             <img src="{if $prop_pics[$key] instanceof PropertyPicture}{$prop_pics[$key]->getUrl}{else}{$prop_pics[$key]}{/if}/crop/259,175" alt="property photo">
                                         </a>
                                     </div>
-                                    <div class="col-sm-4 col-lg-4 margin-bottom-10">
+                                    <div class="col-sm-4 margin-bottom-10">
                                         <h4>
                                             {$property->information.street_number->value} {$property->street_name} {if $property->information.unit_no->value} #{$property->information.unit_no->value}{/if},<br>
                                             {$property->city}, {$property->state} {$property->information.zip_code->value}
@@ -69,7 +69,7 @@
                                         </ul>
                                         <a href="{$ACTION_URLS.property_details}{$property->company_property_id}" target="_blank" class="btn btn-default">More info</a>
                                     </div>
-                                    <div class="col-sm-4 col-lg-4 margin-bottom-10">
+                                    <div class="col-sm-4 margin-bottom-10">
                                         <div style="display: none;">
                                             <a id="Showing_{$property->company_property_id}" data-fancybox-type="iframe" data-fancybox-height="640" data-fancybox-width="555" target="_blank" href="/popup/forms/display/schedule_showing/?prop={$property->company_property_id}{if $pref_realtor && $pref_realtor.id}&amp;realtor_id={$pref_realtor.id}{/if}">Schedule A Showing</a>
                                             {if $pref_realtor}
@@ -119,10 +119,10 @@
 
 <h2 class="margin-bottom-10">Add Category</h2>
 <form class="validate-form row" action="{$ACTION_URLS.local_root}/add_category">
-    <div class="col-sm-4 col-lg-4 margin-bottom-15">
+    <div class="col-sm-4 margin-bottom-15">
         <input class="form-control required" name="category_name" placeholder="Category Name" id="category_name" type="text">
     </div>
-    <div class="col-sm-3 col-lg-3">
+    <div class="col-sm-3">
         <button type="submit" class="btn btn-success">Add</button>
     </div>
 </form>

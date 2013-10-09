@@ -28,7 +28,7 @@
 	{/if}
 {/if}
 <div class="row">
-	<div class="col-sm-6 col-lg-6">
+	<div class="col-sm-6">
 		<div class="account-well">
 			{render_dropin dropin="OpenId"}
 			<h2>I want to login using my {$account_area_brand_name} account</h2>
@@ -48,7 +48,7 @@
 			</form>
 		</div>
 	</div>
-	<div class="col-sm-6 col-lg-6">
+	<div class="col-sm-6">
 		<div class="account-well">
 			<h2>I want to create a {$account_area_brand_name}</h2>
 			<p><strong>Whether you're a buyer or seller, you can save time and simplify the process.</strong></p>

@@ -50,22 +50,22 @@
 			{/if}   
 			<input type="hidden" value="request_info" name="form_type">
 			<div class="row">
-				<div class="col-sm-6 col-lg-6 margin-bottom-15">
+				<div class="col-sm-6 margin-bottom-15">
 					<label>First Name<span class="red">*</span></label>
 					<input type="text" name="first_name" class="form-control required" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}">
 				</div>
-				<div class="col-sm-6 col-lg-6 margin-bottom-15">
+				<div class="col-sm-6 margin-bottom-15">
 					<label>Last Name<span class="red">*</span></label>
 					<input type="text" name="last_name" class="form-control required" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}">
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-6 col-lg-6 margin-bottom-15">
+				<div class="col-sm-6 margin-bottom-15">
 					<label>Email<span class="red">*</span></label>
 					<input type="email" name="email_confirm" class="form-control required email" placeholder="Enter Email Address" value="{if $user ne false}{$user->email}{/if}">
 					<input type="text" name="email" style="display: none;" value="">
 				</div>
-				<div class="col-sm-6 col-lg-6 margin-bottom-15">
+				<div class="col-sm-6 margin-bottom-15">
 					<label>Phone</label>
 					<input type="text" name="phone" class="form-control" placeholder="Enter Phone Number" value="">
 				</div>

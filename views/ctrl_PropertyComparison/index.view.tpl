@@ -1,16 +1,16 @@
 {if stripos($controller_obj->URL.url_raw,'print_view') === false}
 <div id="property-compare-table-wrapper">
 	<div class="row">
-		<div class="col-sm-6 col-lg-6">
+		<div class="col-sm-6">
 			<h2>Comparing <span class="compareCount">{$properties|@count}</span> Properties</h2>
 		</div>
-		<div class="col-sm-6 col-lg-6 text-right">
+		<div class="col-sm-6 text-right">
 			<a href="{$compare_print_url}" target="_blank" class="printActionURL btn" title="Print">Print</a>
 			<a href="#" class="removeAllCompareProperties btn margin-left-10" title="Remove All Properties">Remove All Properties</a>
 		</div>
 	</div>
 	<div id="mainTableArea" class="row">
-		<div class="col-sm-2 col-lg-2 compare-labels">
+		<div class="col-sm-2 compare-labels">
 			<table class="compareTable">
 				<tbody>
 					<tr>
@@ -37,7 +37,7 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="col-sm-10 col-lg-10 compare-properties" id="compare-table-right-column-wrapper">
+		<div class="col-sm-10 compare-properties" id="compare-table-right-column-wrapper">
 			{if $properties}
 				<table class="compareTable">
 					<tbody>

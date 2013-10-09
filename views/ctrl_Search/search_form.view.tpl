@@ -73,10 +73,10 @@
 	{if !$save_button}
 		<form action="{$ACTION_URLS.search}url_search" method="post">
 			<fieldset class="row">
-				<div class="col-sm-10 col-lg-10">
+				<div class="col-sm-10">
 					<input class="form-control" type="text" placeholder="Enter Address">
 				</div>
-				<div class="col-sm-2 col-lg-2">
+				<div class="col-sm-2">
 					{if $save_button}
 						<input type="submit" title="Search" value="Save" class="btn btn-default btn-block">
 					{else}
@@ -116,7 +116,7 @@
 	{/if}
 		<div class="main-property-type-list clearfix">
 			<ul class="row">
-				<li class="col-sm-2 col-lg-2">
+				<li class="col-sm-2">
 					<div class="radio bold">
 						<label>
 							<input type="radio" data-action="change-property-type" value="1" data-template="sample" name="Property_Type"{if !$PT || $PT == 145} checked="checked"{/if}>
@@ -124,7 +124,7 @@
 						</label>
 					</div>
 				</li>					
-				<li class="col-sm-2 col-lg-2">
+				<li class="col-sm-2">
 					<div class="radio bold">
 						<label>
 							<input type="radio" data-action="change-property-type" value="145" data-template="residential" name="Property_Type"{if $PT == 145} checked="checked"{/if}>
@@ -132,7 +132,7 @@
 						</label>
 					</div>
 				</li>					
-				<li class="col-sm-2 col-lg-2">
+				<li class="col-sm-2">
 					<div class="radio bold">
 						<label>
 							<input type="radio" data-action="change-property-type" value="146" data-template="land_lot" name="Property_Type"{if $PT == 146} checked="checked"{/if}>
@@ -140,7 +140,7 @@
 						</label>
 					</div>
 				</li>					
-				<li class="col-sm-2 col-lg-2">
+				<li class="col-sm-2">
 					<div class="radio bold">
 						<label>
 							<input type="radio" data-action="change-property-type" data-template="farm" value="147" name="Property_Type"{if $PT == 147} checked="checked"{/if}>
@@ -148,7 +148,7 @@
 						</label>
 					</div>
 				</li>					
-				<li class="col-sm-2 col-lg-2">
+				<li class="col-sm-2">
 					<div class="radio bold">
 						<label>
 							<input type="radio" data-action="change-property-type" data-template="multi_family" value="148" name="Property_Type"{if $PT == 148} checked="checked"{/if}>
@@ -156,7 +156,7 @@
 						</label>
 					</div>
 				</li>					
-				<li class="col-sm-2 col-lg-2">
+				<li class="col-sm-2">
 					<div class="radio bold">
 						<label>
 							<input type="radio" data-action="change-property-type" data-template="commercial" value="149" name="Property_Type"{if $PT == 149} checked="checked"{/if}>
@@ -168,7 +168,7 @@
 		</div>
 		<hr>
 		<div id="advanced-search-width-wrapper" class="row">
-			<div class="col-sm-9 col-lg-9">
+			<div class="col-sm-9">
 				<div id="dynamic-wrapper">
 					<div id="dynamic-content">
 						{*
@@ -204,7 +204,7 @@
 				{* for the lcd component *}
 				{if $lcd_views}
 					<div class="row">
-						<div class="col-sm-6 col-lg-6 margin-bottom-15">
+						<div class="col-sm-6 margin-bottom-15">
 							<label for="as_lcd">LCD Screen Views</label>
 							<select class="form-control" id="as_lcd" title="Select LCD Template" name="LcdViews">
 								{foreach from=$lcd_views item=lcd name=lcdLoop}
@@ -216,7 +216,7 @@
 					</div>
 				{/if}
 			</div>
-			<div class="col-sm-3 col-lg-3" id="form-counter-holder"></div>
+			<div class="col-sm-3" id="form-counter-holder"></div>
 		</div>
 	</form>
 </div>

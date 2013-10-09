@@ -16,13 +16,13 @@
 </div>
 <div id="web-user-account-home">
     <div class="row margin-top-30">
-        <div class="col-sm-6 col-lg-6">
+        <div class="col-sm-6">
             <h2><a href="{$ACTION_URLS.account}manage_favorites/">Favorites</a></h2>
             <p>
                 Save, compare, manage and share your favorite properties.
             </p>
         </div>
-        <div class="col-sm-6 col-lg-6">
+        <div class="col-sm-6">
             <h2><a href="{$ACTION_URLS.account}searches/">Saved Searches</a></h2>
             <p>
                 Manage and edit your saved searches to perform them again at a later time. Start or stop email alerts.
@@ -30,13 +30,13 @@
         </div>
     </div>
     <div class="row margin-top-30">
-        <div class="col-sm-6 col-lg-6">
+        <div class="col-sm-6">
             <h2><a href="{$ACTION_URLS.account}edit/">Account Details</a></h2>
             <p>
                 Review or edit your email address, contact information or password. You can also Manage your email setting or change your preferred agent.
             </p>
         </div>
-        <div class="col-sm-6 col-lg-6">
+        <div class="col-sm-6">
             <h2><a href="{$ACTION_URLS.account}contact_agent/">Preferred Agent</a></h2>
             <p>
                 Contact your preferred agent and ask them a question.

@@ -15,11 +15,11 @@
 				<fieldset class="proximity-search-primary-filters">
 					<h2>Choose Your Starting Point</h2>
 					<div class="row">
-						<div class="col-sm-4 col-lg-4 margin-bottom-15">
+						<div class="col-sm-4 margin-bottom-15">
 							<label class="block" for="radius_address_field">Address, Landmark or Point of Interest</label>
 							<input type="text" name="address_search[]" id="radius_address_field" placeholder="Address, Landmark, or Point of Interest" value="" class="form-control proximity-search-starting-point-input">
 						</div>
-						<div class="col-sm-4 col-lg-4 margin-bottom-15">
+						<div class="col-sm-4 margin-bottom-15">
 							<label class="block" for="radius_starting_point_field">Or Choose a Pre-Defined Starting Point</label>
 							<select name="address_search[]" id="radius_starting_point_field" class="form-control proximity-search-starting-point-select">
 								<option value="">Choose Location</option>
@@ -30,7 +30,7 @@
 								{/if}
 							</select>
 						</div>
-						<div class="col-sm-2 col-lg-2 margin-bottom-15">
+						<div class="col-sm-2 margin-bottom-15">
 							<label class="block" for="radius_field">Radius</label>
 							<select name="Distance[]" id="radius_field" class="form-control proximity-search-radius">
 								{if $search_config.radius_values instanceof CompanySearchConfig}
@@ -40,7 +40,7 @@
 								{/if}
 							</select>
 						</div>
-						<div class="col-sm-2 col-lg-2 margin-bottom-15">
+						<div class="col-sm-2 margin-bottom-15">
 							<label class="block">&nbsp;</label>
 							<input type="submit" class="proximity-search-find-address btn btn-primary btn-block" value="Search">
 						</div>
@@ -49,10 +49,10 @@
 				<fieldset class="proximity-search-secondary-filters" style="display:none;">
 					<h2>Refine Search</h2>
 					<div class="row">
-						<div class="col-sm-4 col-sm-4 col-lg-4">
+						<div class="col-sm-4">
 							<label class="block" for="radius_min_price">Price Range</label>
 							<div class="row">
-								<div class="col-sm-6 col-lg-6 margin-bottom-15">
+								<div class="col-sm-6 margin-bottom-15">
 									<select class="form-control" name="Min_Price" id="radius_min_price">
 										{if $search_config.min_price instanceof CompanySearchConfig}
 											{foreach from=$search_config.min_price->getValues() item=name key=value}
@@ -62,7 +62,7 @@
 									</select>
 								</div>
 								<div class="to-spacer-gutter margin-bottom-15">to</div>
-								<div class="col-sm-6 col-lg-6 margin-bottom-15">
+								<div class="col-sm-6 margin-bottom-15">
 									<select class="form-control" name="Max_Price" id="radius_max_price">
 										{if $search_config.max_price instanceof CompanySearchConfig}
 											{foreach from=$search_config.max_price->getValues() item=name key=value}
@@ -73,7 +73,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-3 col-lg-3 margin-bottom-15">
+						<div class="col-sm-3 margin-bottom-15">
 							<label class="block" for="Bedrooms">Beds</label>
 							<select class="form-control" name="MinBeds" id="radius_bedrooms">
 								{if $search_config.bedrooms instanceof CompanySearchConfig}
@@ -83,7 +83,7 @@
 								{/if}
 							</select>
 						</div>
-						<div class="col-sm-3 col-lg-3 margin-bottom-15">
+						<div class="col-sm-3 margin-bottom-15">
 							<label class="block" for="Bathrooms">Baths</label>
 							<select class="form-control" name="Bathrooms" id="radius_bathrooms">
 								{if $search_config.bathrooms instanceof CompanySearchConfig}
@@ -93,7 +93,7 @@
 								{/if}
 							</select>
 						</div>
-						<div class="col-cm-2 col-lg-2 margin-bottom-15">							
+						<div class="col-cm-2 margin-bottom-15">							
 							<label class="block">&nbsp;</label>
 							<input type="submit" class="btn btn-primary btn-block" value="Results">
 						</div>

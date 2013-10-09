@@ -4,12 +4,12 @@
 	</div>
 	<form action="{$form}" method="post">	
 		<fieldset class="row">
-			<div class="col-sm-4 col-lg-4">
+			<div class="col-sm-4">
 				<label for="input01" class="bold">Any Part of Name</label>
 				<input type="text" class="form-control margin-bottom-15" id="input01" name="realtor_name" placeholder="Enter Any Part of Name" value="{$smarty.request.realtor_name}">
 			</div>
 			{if $office_list}
-				<div class="col-sm-2 col-lg-2">
+				<div class="col-sm-2">
 					<label for="input02" class="bold">Office</label>
 					<select class="form-control margin-bottom-15" id="input02" name="office_id">
 						<option value="">Any</option>
@@ -20,7 +20,7 @@
 				</div>
 			{/if}
 			{if $additional_filters.spoken_languages}
-				<div class="col-sm-2 col-lg-2">
+				<div class="col-sm-2">
 					<label for="input03" class="bold">Language</label>
 					<select class="form-control margin-bottom-15" id="input03" name="spoken_language">
 						<option value="">Any</option>
@@ -31,7 +31,7 @@
 				</div>
 			{/if}
 			{if $additional_filters.designations}
-				<div class="col-sm-2 col-lg-2">
+				<div class="col-sm-2">
 					<label for="input04" class="bold">Designations</label>
 					<select class="form-control margin-bottom-15" id="input04" name="designation">
 						<option value="">Any</option>
@@ -41,7 +41,7 @@
 					</select>
 				</div>
 			{/if}
-			<div class="col-sm-2 col-lg-2 margin-bottom-15">
+			<div class="col-sm-2 margin-bottom-15">
 				<label>&nbsp;</label>
 				<input type="submit" class="btn btn-primary btn-block" name="Search" value="Search">
 			</div>

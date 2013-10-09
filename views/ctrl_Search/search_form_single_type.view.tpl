@@ -44,15 +44,15 @@
 	<h1>Advanced Search</h1>
 	{if !$save_button}
 		<form action="{$ACTION_URLS.search}url_search" method="post">
-			<fieldset class="row-fluid">
-				<div class="span10">
-					<input type="text" class="span12" placeholder="Enter Address">
+			<fieldset class="row">
+				<div class="col-sm-10">
+					<input type="text" class="form-control" placeholder="Enter Address">
 				</div>
-				<div class="span2">
+				<div class="col-sm-2">
 					{if $save_button}
-						<input type="submit" title="Search" value="Save">
+						<input type="submit" class="btn btn-default" title="Search" value="Save">
 					{else}
-						<input type="submit" class="btn" value="Search" title="Search">							
+						<input type="submit" class="btn btn-default" value="Search" title="Search">							
 					{/if}
 				</div>
 			</fieldset>
@@ -86,40 +86,32 @@
 	{else}
 		<form id="AdvancedSearchForm" action="{$ACTION_URLS.search}url_search" method="post">
 	{/if}
-		<div id="advanced-search-width-wrapper" class="row-fluid">
-			<div class="span9">
+		<div id="advanced-search-width-wrapper" class="row">
+			<div class="col-sm-9">
 				{* load the form here! *}
 				{include file="$view_path/search_form_prop_types/sample.view.tpl"}
 				
 				{* embed google map *}
 				{if $for_cma || $for_auto_cma || $save_button}
-					<div class="row-fluid">
-						<div class="span12">
-							{render_component component="SearchFormMap" search_dict=$search_dict distance_form=$distance_form search_config=$search_config}
-						</div>
-					</div>
+					{render_component component="SearchFormMap" search_dict=$search_dict distance_form=$distance_form search_config=$search_config}
 				{/if}
 				
 				{* for the lcd component *}
 				{if $lcd_views}
-					<div class="row-fluid">
-						<div class="span6">
-							<div class="control-group">
-								<label class="control-label" for="as_lcd">LCD Screen Views</label>
-								<div class="controls">
-									<select id="as_lcd" class="span12" title="Select LCD Template" name="LcdViews">
-										{foreach from=$lcd_views item=lcd name=lcdLoop}
-											<option value="{$lcd.id}"{if $smarty.foreach.lcdLoop.first} selected="selected"{/if}>{$lcd.name}</option>
-										{/foreach}
-									</select>
-									<input type="hidden" name="view" value="showroomflash">
-								</div>
-							</div>
+					<div class="row">
+						<div class="col-sm-6 margin-bottom-15">
+							<label for="as_lcd">LCD Screen Views</label>
+							<select id="as_lcd" class="form-control" title="Select LCD Template" name="LcdViews">
+								{foreach from=$lcd_views item=lcd name=lcdLoop}
+									<option value="{$lcd.id}"{if $smarty.foreach.lcdLoop.first} selected="selected"{/if}>{$lcd.name}</option>
+								{/foreach}
+							</select>
+							<input type="hidden" name="view" value="showroomflash">
 						</div>
 					</div>
 				{/if}
 			</div>
-			<div class="span3" id="form-counter-holder"></div>
+			<div class="col-sm-3" id="form-counter-holder"></div>
 		</div>
 	</form>
 </div>

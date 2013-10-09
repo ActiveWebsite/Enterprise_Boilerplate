@@ -23,7 +23,7 @@
 		<h3>Documents</h3>
 		<ul class="row multi-columns-row">
 			{foreach from=$newsItem.files item=file key=index}
-				<li class="col-sm-4 col-lg-4"><a href="{$file.url}" target="_blank" rel="nofollow" title="Open {$file.name|clean_for_attribute}">{$file.name}</a></li>
+				<li class="col-sm-4 col-md-4 col-lg-4"><a href="{$file.url}" target="_blank" rel="nofollow" title="Open {$file.name|clean_for_attribute}">{$file.name}</a></li>
 			{/foreach}
 		</ul>
 	{/if}

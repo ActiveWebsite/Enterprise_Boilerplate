@@ -44,23 +44,23 @@
 			{/if}   
 			{if $toName === false}
 				<div class="row">
-					<div class="col-sm-6 col-lg-6 margin-bottom-15">
+					<div class="col-sm-6 margin-bottom-15">
 						<label for="toName">To Name: <span class="red">*</span></label>
 						<input id="toName" class="form-control required" name="toName" type="text" placeholder="Enter To Name">
 					</div>
-					<div class="col-sm-6 col-lg-6 margin-bottom-15">
+					<div class="col-sm-6 margin-bottom-15">
 						<label for="toEmail">To Email: <span class="red">*</span></label>
 						<input id="toEmail" class="form-control required email" name="toEmail" type="email" placeholder="Enter To Email">
 					</div>
 				</div>
 			{else}
 				<div class="row">
-					<div class="col-sm-6 col-lg-6 margin-bottom-15">
+					<div class="col-sm-6 margin-bottom-15">
 						<label for="toName">To Name: <span class="red">*</span></label>
 						<input id="toName" type="hidden" name="toName" value="{$toName}">
 						<input type="text" class="form-control" value="{$toName}" readonly="readonly">
 					</div>
-					<div class="col-sm-6 col-lg-6 margin-bottom-15">
+					<div class="col-sm-6 margin-bottom-15">
 						<label for="toEmail">To Email: <span class="red">*</span></label>
 						<input id="toEmail" type="hidden" name="toEmail" value="{$toEmail}">
 						<input type="text" class="form-control" value="{$toEmail}" readonly="readonly">
@@ -68,11 +68,11 @@
 				</div>
 			{/if}
 			<div class="row">
-				<div class="col-sm-6 col-lg-6 margin-bottom-15">
+				<div class="col-sm-6 margin-bottom-15">
 					<label for="fromName">From Name: <span class="red">*</span></label>
 					<input id="fromName" class="form-control required" name="fromName" value="{$fromName}" type="text" placeholder="Enter From Name">
 				</div>
-				<div class="col-sm-6 col-lg-6 margin-bottom-15">
+				<div class="col-sm-6 margin-bottom-15">
 					<label for="fromEmail">From Email: <span class="red">*</span></label>
 					<input id="fromEmail" class="form-control required email" type="email" name="fromEmail" value="{$fromEmail}" placeholder="Enter From Email">
 				</div>

@@ -86,7 +86,7 @@
 	{/foreach}
 </div>
 <div class="row">
-	<div class="col-sm-3 col-lg-3 hidden-print" id="tourLeftColumn">
+	<div class="col-sm-3 hidden-print" id="tourLeftColumn">
 		{*
 			TO CHANGE VIEW TITLES CREATE AN OVERRIDE OF THE FUNCTION tour_custom_titles() IN BASE_ctrl_MapSearch.action.php
 		*}
@@ -104,14 +104,14 @@
 						{if $prop.latitude && $prop.latitude != 0 && $prop.latitude != '' && $prop.longitude && $prop.longitude != 0 && $prop.longitude != ''}
 							<li class="clearfix tourPropertyWrapper" id="tour_prop_{$prop.company_property_id}">
 								<div class="row">
-									<div class="col-sm-4 col-lg-4">
+									<div class="col-sm-4">
 										<select name="TourOrder" class="form-control">
 											{foreach from=$tour_properties item=propfoo name=selectloop }
 												<option value="{$smarty.foreach.selectloop.index}" {if $smarty.foreach.tableloop.index==$smarty.foreach.selectloop.index}selected="selected"{/if} >{$smarty.foreach.selectloop.iteration}</option>
 											{/foreach}
 										</select>
 									</div>
-									<div class="col-sm-8 col-lg-8">
+									<div class="col-sm-8">
 										{if $prop.photos && $prop.photos.0}
 											<a href="#{$prop.company_property_id}" class="open-property-bubble"><img class="img-hd" src="{$prop.photos.0}/crop/170,80/" data-hd-src="{$prop.photos.0}/crop/340,160/" alt="photo of {$prop.streetAddress}"></a>
 										{/if}
@@ -153,7 +153,7 @@
 			</form>
 		</div>
 	</div>
-	<div class="col-sm-9 col-lg-9" id="tourRightColumn">
+	<div class="col-sm-9" id="tourRightColumn">
 		{* PRINT PAGE HEADER *}
 		{*
 			TO CHANGE VIEW TITLES CREATE AN OVERRIDE OF THE FUNCTION tour_custom_titles() IN BASE_ctrl_MapSearch.action.php
@@ -181,11 +181,11 @@
 			*}
 			<form id="tour_map_start_form" action="/map_search/" method="post" onsubmit="return false;">
 				<fieldset class="row">
-					<div class="col-sm-4 col-lg-4">
+					<div class="col-sm-4">
 						<label class="bold block">Starting Address</label>
 						<input type="text" class="form-control" placeholder="Enter Start Address" value="{$smarty.request.StartingAddress}" name="StartingAddress" id="tour_start_form_address"> {* SAMPLE ADDRESS 2173 NE Broadway Portland, OR 97232 *}
 					</div>
-					<div class="col-sm-4 col-lg-4">
+					<div class="col-sm-4">
 						<label class="bold block">Transportation</label>
 						<select class="form-control" name="TransportationMode" title="Choose your transportation mode" id="dir_travel_mode">
 							<option value="DRIVING" selected>Driving</option>
@@ -193,7 +193,7 @@
 							<option value="BICYCLING">Bicycling</option>
 						</select>
 					</div>
-					<div id="fastRouteWrapper" class="col-sm-2 col-lg-2">
+					<div id="fastRouteWrapper" class="col-sm-2">
 						<label>&nbsp;</label>
 						<div class="checkbox">
 							<label title="give me the best route">
@@ -202,7 +202,7 @@
 							</label>
 						</div>		
 					</div>
-					<div class="col-sm-2 col-lg-2 submitField">
+					<div class="col-sm-2 submitField">
 						<label>&nbsp;</label>
 						<input type="submit" title="Get Directions" class="btn-block getDirectionsButton" value="Get Directions">
 					</div>

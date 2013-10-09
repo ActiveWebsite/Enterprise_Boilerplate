@@ -48,57 +48,57 @@
                 <input type="hidden" name="has_openId">
             {/if}
             <div class="row">
-                <div class="col-sm-6 col-lg-6 margin-bottom-15">
+                <div class="col-sm-6 margin-bottom-15">
                     <label>First Name <span class="red">*</span></label>
                     <input type="text" name="first_name" class="form-control required" placeholder="First Name" value="{$signup.first_name}">
                 </div>
-                <div class="col-sm-6 col-lg-6 margin-bottom-15">
+                <div class="col-sm-6 margin-bottom-15">
                     <label>Last Name <span class="red">*</span></label>
                     <input type="text" name="last_name" class="form-control required" placeholder="Last Name" value="{$signup.last_name}">
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-lg-6 margin-bottom-15">
+                <div class="col-sm-6 margin-bottom-15">
                     <label>Email Address <span class="red">*</span></label>
                     <input type="email" name="email_confirm" class="form-control required email" placeholder="Email Address" value="{$signup.email_confirm}">
                     <input type="email" name="email" style="display:none;" value="">
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-3 col-lg-3 margin-bottom-15">
+                <div class="col-sm-3 margin-bottom-15">
                     <label>Address</label>
                     <input class="form-control" type="text" name="address"  placeholder="Address" value="{$signup.address}">
                 </div>
-                <div class="col-sm-3 col-lg-3 margin-bottom-15">
+                <div class="col-sm-3 margin-bottom-15">
                     <label>City</label>
                     <input class="form-control" type="text" name="city" placeholder="City" value="{$signup.city}">
                 </div>
-                <div class="col-sm-3 col-lg-3 margin-bottom-15">
+                <div class="col-sm-3 margin-bottom-15">
                     <label>State</label>
                     <input class="form-control" type="text" name="state" placeholder="State" value="{$signup.state}">
                 </div>
-                <div class="col-sm-3 col-lg-3 margin-bottom-15">
+                <div class="col-sm-3 margin-bottom-15">
                     <label>Zip Code</label>
                     <input class="form-control" type="text" name="zip_code" placeholder="Zip Code" value="{$signup.zip_code}">
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-lg-6 margin-bottom-15">
+                <div class="col-sm-6 margin-bottom-15">
                     <label>Cell Phone</label>
                     <input class="form-control" type="tel" name="cell_phone" placeholder="Cell Phone" value="{$signup.cell_phone}">
                 </div>
-                <div class="col-sm-6 col-lg-6 margin-bottom-15">
+                <div class="col-sm-6 margin-bottom-15">
                     <label>Home Phone</label>
                     <input class="form-control" type="tel" name="home_phone" placeholder="Home Phone" value="{$signup.home_phone}">
                 </div>
             </div>
             {if !isset( $signup.has_openId )}
                 <div class="row">
-                    <div class="col-sm-6 col-lg-6 margin-bottom-15">
+                    <div class="col-sm-6 margin-bottom-15">
                         <label>Password  <span class="red">*</span></label>
                         <input type="password"  name="password" class="form-control required" placeholder="Password" value="">
                     </div>
-                    <div class="col-sm-6 col-lg-6 margin-bottom-15">
+                    <div class="col-sm-6 margin-bottom-15">
                         <label>Re-Type Password  <span class="red">*</span></label>
                         <input type="password" name="password2" class="form-control required" placeholder="Re-Type Password" value="">
                     </div>
@@ -110,7 +110,7 @@
                 <input type="hidden" value="{$SITE_OWNER->get_id()}" name="preferred_agent">
             {else}
                 <div class="row">
-                    <div class="col-lg-6 col-lg-6 margin-bottom-15">
+                    <div class="col-sm-6 margin-bottom-15">
                         <label>Preferred Agent</label>
                         <select class="form-control" name="preferred_agent">
                             <option value="">No Prefered Agent</option>

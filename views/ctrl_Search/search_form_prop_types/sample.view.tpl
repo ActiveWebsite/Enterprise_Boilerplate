@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-sm-6 col-lg-6 margin-bottom-15">
+	<div class="col-sm-6 margin-bottom-15">
 		<label for="sb_01">Select Box</label>
 		<select class="form-control" id="sb_01" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
@@ -9,7 +9,7 @@
 			{/if}
 		</select>
 	</div>
-	<div class="col-sm-6 col-lg-6 margin-bottom-15">
+	<div class="col-sm-6 margin-bottom-15">
 		<label for="sb_02">Select Box</label>
 		<select class="form-control" id="sb_01" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
@@ -26,7 +26,7 @@
 
 
 <div class="row">
-	<div class="col-sm-3 col-lg-3 margin-bottom-15">
+	<div class="col-sm-3 margin-bottom-15">
 		<label for="sb_01">Select Box</label>
 		<select class="form-control" id="sb_01" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
@@ -36,7 +36,7 @@
 			{/if}
 		</select>
 	</div>
-	<div class="col-sm-3 col-lg-3 margin-bottom-15">
+	<div class="col-sm-3 margin-bottom-15">
 		<label for="sb_02">Select Box</label>
 		<select class="form-control" id="sb_01" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
@@ -46,7 +46,7 @@
 			{/if}
 		</select>
 	</div>	
-	<div class="col-sm-6 col-lg-6 margin-bottom-15">
+	<div class="col-sm-6 margin-bottom-15">
 		<label for="sb_02">Select Box</label>
 		<select class="form-control" id="sb_01" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
@@ -59,22 +59,22 @@
 </div>
 
 <div class="row">
-	<div class="col-sm-3 col-lg-3 margin-bottom-15">
+	<div class="col-sm-3 margin-bottom-15">
 		<label for="sb_01">Input Box</label>
 		<input class="form-control" type="text" id="sb_01" title="Select " name="Bedrooms">
 	</div>
-	<div class="col-sm-3 col-lg-3 margin-bottom-15">
+	<div class="col-sm-3 margin-bottom-15">
 		<label for="sb_02">Input Box</label>
 		<input class="form-control" type="text" id="sb_01" title="Select " name="Bedrooms">
 	</div>	
-	<div class="col-sm-6 col-lg-6 margin-bottom-15">
+	<div class="col-sm-6 margin-bottom-15">
 		<label for="sb_02">Input Box</label>
 		<input class="form-control" type="text" id="sb_01" title="Select " name="Bedrooms">
 	</div>	
 </div>
 
 <div class="row">
-    <div class="col-sm-6 col-lg-6 margin-bottom-15">
+    <div class="col-sm-6 margin-bottom-15">
         <label for="asf-bedrooms">Multi Select</label>
         <select id="asf-bedrooms" title="Select Multiple Options" name="Bedrooms[]" class="form-control msw2-select">
             <option value="">Choose More Options</option>
@@ -95,7 +95,7 @@
             {/if}
         </ul>
     </div>
-	<div class="col-sm-2 col-lg-2 margin-bottom-15">
+	<div class="col-sm-2 margin-bottom-15">
 		<label>&nbsp;</label>
 		<div class="checkbox">
 			<label>
@@ -103,7 +103,7 @@
 			</label>
 		</div>
 	</div>
-	<div class="col-sm-2 col-lg-2 margin-bottom-15">
+	<div class="col-sm-2 margin-bottom-15">
 		<label>&nbsp;</label>
 		<div class="checkbox">
 			<label>
@@ -111,7 +111,7 @@
 			</label>
 		</div>
 	</div>
-	<div class="col-sm-2 col-lg-2 margin-bottom-15">
+	<div class="col-sm-2 margin-bottom-15">
 		<label>&nbsp;</label>
 		<div class="checkbox">
 			<label>
@@ -122,7 +122,7 @@
 </div>
 
 <div class="row">
-	<div class="col-sm-2 col-lg-2 margin-bottom-15">
+	<div class="col-sm-2 margin-bottom-15">
 		<label>&nbsp;</label>
 		<div class="radio">
 			<label>
@@ -130,7 +130,7 @@
 			</label>
 		</div>
 	</div>
-	<div class="col-sm-2 col-lg-2 margin-bottom-15">
+	<div class="col-sm-2 margin-bottom-15">
 		<label>&nbsp;</label>
 		<div class="radio">
 			<label>
@@ -138,7 +138,7 @@
 			</label>
 		</div>
 	</div>
-	<div class="col-sm-2 col-lg-2 margin-bottom-15">
+	<div class="col-sm-2 margin-bottom-15">
 		<label>&nbsp;</label>
 		<div class="radio">
 			<label>
@@ -146,14 +146,14 @@
 			</label>
 		</div>
 	</div>
-	<div class="col-sm-6 col-lg-6">
+	<div class="col-sm-6">
 		<label for="min">Min</label>
 		<div class="row">
-			<div class="col-sm-6 col-lg-6 margin-bottom-15">
+			<div class="col-sm-6 margin-bottom-15">
 				<input class="form-control" type="text" id="min" name="Bedrooms" title="Enter " value="{if $search_narrowers.SV_Bedrooms}{$search_narrowers.SV_Bedrooms}{elseif $search_dict.terms.Bedrooms.value}{$search_dict.terms.Bedrooms.value}{/if}">
 			</div>
 			<div class="to-spacer-gutter margin-bottom-15">to</div>
-			<div class="col-sm-6 col-lg-6 margin-bottom-15">
+			<div class="col-sm-6 margin-bottom-15">
 				<input class="form-control" type="text" name="Bedrooms" title="Enter " value="{if $search_narrowers.SV_Bedrooms}{$search_narrowers.SV_Bedrooms}{elseif $search_dict.terms.Bedrooms.value}{$search_dict.terms.Bedrooms.value}{/if}">
 			</div>
 		</div>
@@ -161,7 +161,7 @@
 </div>
 
 <div class="row">
-	<div class="col-sm-3 col-lg-3 margin-bottom-15">
+	<div class="col-sm-3 margin-bottom-15">
 		<label for="sb_011">Select Box</label>
 		<select class="form-control" id="sb_011" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
@@ -171,7 +171,7 @@
 			{/if}
 		</select>
 	</div>
-	<div class="col-sm-3 col-lg-3 margin-bottom-15">
+	<div class="col-sm-3 margin-bottom-15">
 		<label for="sb_021">Select Box</label>
 		<select class="form-control" id="sb_021" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
@@ -181,7 +181,7 @@
 			{/if}
 		</select>
 	</div>	
-	<div class="col-sm-6 col-lg-6 margin-bottom-15">
+	<div class="col-sm-6 margin-bottom-15">
 		<label for="sb_023">Select Box</label>
 		<select class="form-control" id="sb_023" title="Select " name="Bedrooms">
 			{if $search_config.bedrooms instanceof CompanySearchConfig}
@@ -194,10 +194,10 @@
 </div>
 
 <div class="row">
-	<div class="col-sm-6 col-lg-6">
+	<div class="col-sm-6">
 		<label for="min">Min</label>
 		<div class="row">
-			<div class="col-sm-6 col-lg-6 margin-bottom-15">
+			<div class="col-sm-6 margin-bottom-15">
 				<select class="form-control" id="min" title="Select " name="Bedrooms">
 					{if $search_config.bedrooms instanceof CompanySearchConfig}
 						{foreach from=$search_config.bedrooms->getValues() item=name key=value}
@@ -207,7 +207,7 @@
 				</select>
 			</div>
 			<div class="to-spacer-gutter margin-bottom-15">to</div>
-			<div class="col-sm-6 col-lg-6 margin-bottom-15">
+			<div class="col-sm-6 margin-bottom-15">
 				<select class="form-control" title="Select " name="Bedrooms">
 					{if $search_config.bedrooms instanceof CompanySearchConfig}
 						{foreach from=$search_config.bedrooms->getValues() item=name key=value}
@@ -218,7 +218,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-6 col-lg-6 margin-bottom-15">
+	<div class="col-sm-6 margin-bottom-15">
 		<label for="as_city">Autocomplete</label>
 		<div class="controls">
 			<input type="text" class="form-control autoCompleteField" id="as_city" data-src="city" placeholder"Enter Value" name="Bedroom" value="">
@@ -226,7 +226,7 @@
 	</div>
 </div>
 <div class="row">
-	<div class="col-sm-6 col-lg-6 margin-bottom-15">
+	<div class="col-sm-6 margin-bottom-15">
 		<label for="as_city2">Autocomplete With Error</label>
 		<div class="controls">
 			<input type="text" class="form-control autoCompleteField validate-entry" id="as_city2" data-src="city2" placeholder"Enter Value" name="Bedroom" value="">
@@ -244,7 +244,7 @@
 			{assign var=dict_from value=false}
 		{/if}
 		{if $open_house_dates.today == "Sunday"}
-			<li class="col-sm-3 col-lg-3">
+			<li class="col-sm-3">
 				<div class="radio">
 					<label>
 						<input{if (isset($search_narrowers.open_house) &&
@@ -260,7 +260,7 @@
 					</label>
 				</div>
 			</li>
-			<li class="col-sm-3 col-lg-3">
+			<li class="col-sm-3">
 				<div class="radio">
 					<label title="Show Open Houses on {$open_house_dates.sun_time|date_format:'%a, %b %e'}">
 						<input{if ($search_narrowers.from == $open_house_dates.sunday_check) || ($dict_from == $open_house_dates.sunday_check)} checked="checked"{/if} title="Show Open Houses on {$open_house_dates.sun_time|date_format:'%a, %b %e'}" name="from" type="radio" value="{$open_house_dates.sun_time|date_format:'%Y-%m-%d'}|{$open_house_dates.sun_time|date_format:'%Y-%m-%d'}">
@@ -268,7 +268,7 @@
 					</label>
 				</div>
 			</li>
-			<li class="col-sm-3 col-lg-3">
+			<li class="col-sm-3">
 				<div class="radio">
 					<label title="Show Open Houses for next week">
 						<input{if ($search_narrowers.from == $open_house_dates.week_check) || ($dict_from == $open_house_dates.week_check)} checked="checked"{/if} title="Show Open Houses for next week" name="from" type="radio" value="{$open_house_dates.week_check}">
@@ -277,7 +277,7 @@
 				</div>
 			</li>
 		{elseif $open_house_dates.today == "Saturday"}
-			<li class="col-sm-3 col-lg-3">
+			<li class="col-sm-3">
 				<div class="radio">
 					<label title="Show All Upcoming Open Houses">
 						<input{if (isset($search_narrowers.open_house) &&
@@ -293,7 +293,7 @@
 					</label>
 				</div>
 			</li>
-			<li class="col-sm-3 col-lg-3">
+			<li class="col-sm-3">
 				<div class="radio">
 					<label title="Show Open Houses on {$open_house_dates.sat_time|date_format:'%a, %b %e'}">
 						<input{if ($search_narrowers.from == $open_house_dates.saturday_check) || ($dict_from == $open_house_dates.saturday_check)} checked="checked"{/if}  name="from" title="Show Open Houses on {$open_house_dates.sat_time|date_format:'%a, %b %e'}" type="radio" value="{$open_house_dates.sat_time|date_format:'%Y-%m-%d'}|{$open_house_dates.sat_time|date_format:'%Y-%m-%d'}">
@@ -301,7 +301,7 @@
 					</label>
 				</div>
 			</li>
-			<li class="col-sm-3 col-lg-3">
+			<li class="col-sm-3">
 				<div class="radio">
 					<label title="Show Open Houses on {$open_house_dates.sun_time|date_format:'%a, %b %e'}">
 						<input{if ($search_narrowers.from == $open_house_dates.sunday_check) || ($dict_from == $open_house_dates.sunday_check)} checked="checked"{/if}  title="Show Open Houses on {$open_house_dates.sun_time|date_format:'%a, %b %e'}" name="from" type="radio" value="{$open_house_dates.sun_time|date_format:'%Y-%m-%d'}|{$open_house_dates.sun_time|date_format:'%Y-%m-%d'}">
@@ -309,7 +309,7 @@
 					</label>
 				</div>
 			</li>
-			<li class="col-sm-3 col-lg-3">
+			<li class="col-sm-3">
 				<div class="radio">
 					<label title="Show Open Houses for this weekend">
 						<input{if ($search_narrowers.from == $open_house_dates.weekend_check) || ($dict_from == $open_house_dates.weekend_check)} checked="checked"{/if} title="Show Open Houses for this weekend" name="from" type="radio" value="{$open_house_dates.sat_time|date_format:'%Y-%m-%d'}|{$open_house_dates.sun_time|date_format:'%Y-%m-%d'}">
@@ -318,7 +318,7 @@
 				</div>
 			</li>
 		{else}
-			<li class="col-sm-3 col-lg-3">
+			<li class="col-sm-3">
 				<div class="radio">
 					<label title="Show All Upcoming Open Houses">
 						<input{if (isset($search_narrowers.open_house) &&
@@ -334,7 +334,7 @@
 					</label>
 				</div>
 			</li>
-			<li class="col-sm-3 col-lg-3">
+			<li class="col-sm-3">
 				<div class="radio">
 					<label title="Show Open Houses on {$open_house_dates.sat_time|date_format:'%a, %b %e'}">
 						<input{if ($search_narrowers.from == $open_house_dates.saturday_check) || ($dict_from == $open_house_dates.saturday_check)} checked="checked"{/if}  name="from" title="Show Open Houses on {$open_house_dates.sat_time|date_format:'%a, %b %e'}" type="radio" value="{$open_house_dates.sat_time|date_format:'%Y-%m-%d'}|{$open_house_dates.sat_time|date_format:'%Y-%m-%d'}">
@@ -342,7 +342,7 @@
 					</label>
 				</div>
 			</li>
-			<li class="col-sm-3 col-lg-3">
+			<li class="col-sm-3">
 				<div class="radio">
 					<label title="Show Open Houses on {$open_house_dates.sun_time|date_format:'%a, %b %e'}">
 						<input{if ($search_narrowers.from == $open_house_dates.sunday_check) || ($dict_from == $open_house_dates.sunday_check)} checked="checked"{/if}  title="Show Open Houses on {$open_house_dates.sun_time|date_format:'%a, %b %e'}" name="from" type="radio" value="{$open_house_dates.sun_time|date_format:'%Y-%m-%d'}|{$open_house_dates.sun_time|date_format:'%Y-%m-%d'}">
@@ -350,7 +350,7 @@
 					</label>
 				</div>
 			</li>
-			<li class="col-sm-3 col-lg-3">
+			<li class="col-sm-3">
 				<div class="radio">
 					<label title="Show Open Houses for this weekend">
 						<input{if ($search_narrowers.from == $open_house_dates.weekend_check) || ($dict_from == $open_house_dates.weekend_check)} checked="checked"{/if} title="Show Open Houses for this weekend" name="from" type="radio" value="{$open_house_dates.sat_time|date_format:'%Y-%m-%d'}|{$open_house_dates.sun_time|date_format:'%Y-%m-%d'}">
@@ -359,7 +359,7 @@
 				</div>
 			</li>
 		{/if}
-		<li class="col-sm-3 col-lg-3">
+		<li class="col-sm-3">
 			<div class="radio">
 				<label title="Do Not Show Open Houses">
 					<input checked="checked" class="noOpenHouses" title="Do Not Show Open Houses" name="from" type="radio" value="">
@@ -373,7 +373,7 @@
 <label>Listed By</label>
 <input type="hidden" name="company" value="{if isset($search_dict.filters.company) || isset($search_narrowers.company)}on{/if}" class="company_only_field">
 <ul class="row">
-	<li class="col-sm-4 col-lg-4">
+	<li class="col-sm-4">
 		<div class="radio">
 			<label title="All Companies">
 				<input title="All Companies"{if !isset($search_dict.filters.company) && !isset($search_narrowers.company) && empty($search_narrowers.Listing_Agent) && empty($search_dict.terms.Listing_Agent.value)} checked="checked"{/if} type="radio" name="company" class="prop_listed_by_field" value="">
@@ -381,7 +381,7 @@
 			</label>
 		</div>
 	</li>
-	<li class="col-lg-4">
+	<li class="col-sm-4">
 		<div class="radio">
 			<label title="All Company Agents">
 				<input title="All Company Agents" type="radio" name="company" class="prop_listed_by_field" value="on"{if isset($search_dict.filters.company) || isset($search_narrowers.company)} checked="checked"{/if}>
@@ -389,7 +389,7 @@
 			</label>
 		</div>
 	</li>
-	<li class="col-lg-4">
+	<li class="col-sm-4">
 		<div class="radio">
 			<label title="Select Company Agents">
 				<input type="radio" title="Select Company Agents" name="company" class="prop_listed_by_field" value="choose_agent"{if !empty($search_narrowers.MV_Listing_Agent) || !empty($search_dict.terms.Listing_Agent.value)} checked="checked"{/if}>

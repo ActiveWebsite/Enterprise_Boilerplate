@@ -1,6 +1,6 @@
 {if $community_association}
     <div class="row">
-        <div class="col-sm-5 col-lg-5 margin-bottom-30">
+        <div class="col-sm-5 margin-bottom-30">
             <h2><a href="{$ACTION_URLS.communities}{$community_association.community_dict.rebrand}/" title="View {$community_association.community_dict.name|clean_for_attribute}">{$community_association.community_dict.name}</a></h2>
             <div class="cms-page margin-bottom-30">
                 {$community_association.community_dict.biography}
@@ -10,7 +10,7 @@
             {/if}
         </div>
         {if $community_association.photos.0}
-            <div class="col-sm-7 col-lg-7">
+            <div class="col-sm-7">
                 <img class="img-hd" src="{$community_association.photos.0->getUrl()}/maxwidth/460" data-hd-src="{$community_association.photos.0->getUrl()}/maxwidth/920" alt="Photo of {$community_association.community_dict.name|clean_for_attribute}">
             </div>
         {/if}

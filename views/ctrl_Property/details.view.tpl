@@ -21,7 +21,7 @@
 	{/if}
 
 	<div class="row">
-		<div class="col-sm-9 col-lg-9">
+		<div class="col-sm-9">
 			<ul class="breadcrumb">
 				<li><a href="/" title="Home">Home</a></li>
 				<li><a href="{$ACTION_URLS.search}" title="Search">Search</a></li>
@@ -31,13 +31,13 @@
 				<li class="active">{$fullStreetAddress}</li>
 			</ul>
 		</div>
-		<div class="col-sm-3 col-lg-3">
+		<div class="col-sm-3">
 			{render_dropin dropin="AddThis" services="print,email,facebook,twitter,google_plusone,pinterest" print_link="/property/print_view/`$company_property_id`"}
 		</div>
 	</div>
 
 	<div class="row" id="property-details-page">
-		<div class="col-sm-9 col-lg-9 details-content-column margin-bottom-30">
+		<div class="col-sm-9 details-content-column margin-bottom-30">
 			<div class="page-header">
 				<h1>{$fullStreetAddress}</h1>
 			</div>
@@ -124,21 +124,21 @@
 								<div class="poi-map-div"></div>
 								<div class="poi-map-form margin-top-15">
 									<form method="post" action="/" class="row ui-front">
-										<div class="col-sm-5 col-lg-5 margin-bottom-15">
+										<div class="col-sm-5 margin-bottom-15">
 											<label>Show Me</label>
 											<div class="input-group">
 												<input class="form-control" type="text" name="poi" value="">
 												<span class="input-group-btn"><button data-for="poi" class="poi-map-autocomplete-toggle btn btn-default"><i class="icon icon-chevron-down"></i></button></span>
 											</div>
 										</div>
-										<div class="col-sm-5 col-lg-5 margin-bottom-15">
+										<div class="col-sm-5 margin-bottom-15">
 											<label>Within</label>
 											<div class="input-group">
 												<input class="form-control" type="text" name="radius" value="">
 												<span class="input-group-btn"><button data-for="radius" class="poi-map-autocomplete-toggle btn btn-default"><i class="icon icon-chevron-down"></i></button></span>
 											</div>
 										</div>
-										<div class="col-sm-2 col-lg-2 margin-bottom-15">
+										<div class="col-sm-2 margin-bottom-15">
 											<label>&nbsp;</label>
 											<button type="submit" class="btn btn-default btn-block">Search</button>
 										</div>
@@ -164,7 +164,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-3 col-lg-3 details-sidebar-column">
+		<div class="col-sm-3 details-sidebar-column">
 			{if $next_property_link || $prev_property_link}
 				<div class="clearfix margin-bottom-30">
 					{if $prev_property_link}
@@ -229,7 +229,7 @@
 						{/if}
 					</h3>
 					<div class="row">
-						<div class="col-sm-5 col-lg-5">
+						<div class="col-sm-5">
 							{if $realtor.entity_type == 'company'}
 								<img src="{if $realtor.first_pic.url}{$realtor.first_pic.url}/maxwidth/108{else}/images/agent-placeholder.jpg{/if}" data-hd-src="{if $realtor.first_pic.url}{$realtor.first_pic.url}/maxwidth/216{/if}" class="img-hd" alt="{$realtor.name}'s Photo">
 							{else}
@@ -238,7 +238,7 @@
 								</a>
 							{/if}
 						</div>
-						<div class="col-sm-7 col-lg-7">
+						<div class="col-sm-7">
 							<h4>Contact {if $realtor.entity_type == "realtor"}Me{else}Us{/if} For More Info</h4>
 							<p>
 								{if $realtor.address.Direct_Phone.value}

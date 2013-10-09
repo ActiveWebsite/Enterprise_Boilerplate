@@ -2,7 +2,7 @@
 {if $properties}
     <ul class="row multi-columns-row" id="my-sold-property-{$view_id}">
         {foreach from=$properties item=property key=index}
-            <li class="col-sm-4 col-lg-4 standard-property margin-bottom-30">
+            <li class="col-sm-4 col-md-4 col-lg-4 standard-property margin-bottom-30">
                 {if $property.first_pic instanceof PropertyPicture}
                     <div class="prop-photo">
                         <img src="{$property.first_pic->getUrl()}/crop/270,180" class="img-hd" data-hd-src="{$property.first_pic->getUrl()}/crop/540,360" title="Photo of {$property.fullStreetAddress|clean_for_attribute}">

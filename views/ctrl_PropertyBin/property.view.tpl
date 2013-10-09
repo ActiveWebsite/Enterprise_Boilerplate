@@ -1,5 +1,5 @@
 {if $property_dict}
-	<li class="col-sm-4 col-lg-4 property-bin-item{if !$property_dict.latitude || $property_dict.latitude == 0 || $property_dict.latitude == '' || !$property_dict.longitude || $property_dict.longitude == 0 || $property_dict.longitude == ''} property-bin-no-tour{/if} margin-bottom-30" id="bin-item-{$property_dict.company_property_id}">
+	<li class="col-sm-4 property-bin-item{if !$property_dict.latitude || $property_dict.latitude == 0 || $property_dict.latitude == '' || !$property_dict.longitude || $property_dict.longitude == 0 || $property_dict.longitude == ''} property-bin-no-tour{/if} margin-bottom-30" id="bin-item-{$property_dict.company_property_id}">
 		<div class="standard-property property-bin-item-inner">
 			{if $property_dict.first_pic && $property_dict.first_pic instanceof PropertyPicture}
 				<div class="prop-photo">

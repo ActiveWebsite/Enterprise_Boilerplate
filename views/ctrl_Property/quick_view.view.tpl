@@ -21,7 +21,7 @@
 <body>
 <div id="quick-view-wrapper">
     <div class="row">
-        <div class="col-sm-7 col-lg-7">
+        <div class="col-sm-7">
             {if $photos}
                 <div class="gallery-widget" id="quick-view-gallery">
                     <div class="gallery-widget-main-photo-wrapper margin-bottom-30">
@@ -39,7 +39,7 @@
                 </div>
             {/if}
         </div>
-        <div class="col-sm-5 col-lg-5">
+        <div class="col-sm-5">
             <h1>{$fullStreetAddress}</h1>
             <table class="quickview-data-table margin-bottom-30">
                 <tbody>

@@ -52,22 +52,22 @@
 			{/if}
 			<fieldset>
 		        <div class="row">
-		            <div class="col-sm-6 col-lg-6 margin-bottom-15">
+		            <div class="col-sm-6 margin-bottom-15">
 						<label for="contact_form_firstname">First Name <span class="red">*</span></label>
 						<input type="text" id="contact_form_firstname" name="first_name" placeholder="Enter First Name" value="{if $contactFullName && $contactFullName.0}{$contactFullName.0}{/if}" class="form-control required">
 					</div>
-		            <div class="col-sm-6 col-lg-6 margin-bottom-15">
+		            <div class="col-sm-6 margin-bottom-15">
 						<label for="contact_form_lastname">Last Name <span class="red">*</span></label>
 						<input type="text" id="contact_form_lastname" name="last_name" placeholder="Enter Last Name" value="{if $contactFullName && $contactFullName.1}{$contactFullName.1}{/if}" class="form-control required">
 					</div>
 				</div>
 		        <div class="row">
-		            <div class="col-sm-6 col-lg-6 margin-bottom-15">
+		            <div class="col-sm-6 margin-bottom-15">
 						<label for="contact_form_email">Email<span class="red">*</span></label>
 						<input type="email" name="email_confirm" id="contact_form_email" placeholder="Enter Email Address" class="form-control required email" value="{if $contactor ne false}{$contactor->email}{/if}">
 						<input type="text" style="display:none;" value="" name="email">
 					</div>
-		            <div class="col-sm-6 col-lg-6 margin-bottom-15">
+		            <div class="col-sm-6 margin-bottom-15">
 						<label for="contact_form_phone">Phone</label>
 						<input name="phone" value="" class="form-control" type="text" placeholder="Enter Phone" id="contact_form_phone">
 					</div>

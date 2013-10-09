@@ -7,7 +7,7 @@
 	{if $entities}
 		<ul class="row multi-columns-row">
 			{foreach from=$entities item=office name=office_loop key=index}
-				<li class="col-sm-6 col-lg-6 margin-bottom-30">
+				<li class="col-sm-6 col-md-6 col-lg-6 margin-bottom-30">
 					<h2><span data-action="open-result-map-bubble" data-id="{$office.id}">{$smarty.foreach.office_loop.iteration}</span> {$office.name}</h2>
 					<address>
 						{$office.address.Street_Address.value}<br>

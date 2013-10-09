@@ -138,8 +138,8 @@
         <fieldset>
             <legend>Saved Search Preferences</legend>
             <div class="form-group">
-                <label class="col-sm-2 col-lg-2 control-label" for="max_property_count">Property Count</label>
-                <div class="col-sm-10 col-lg-10">
+                <label class="col-sm-2 control-label" for="max_property_count">Property Count</label>
+                <div class="col-sm-10">
                     <select class="form-control" id="max_property_count" name="max_property_count">
                         <option value="0" {if $email_config.max_property_count eq 0}selected{/if}>Unlimited</option>
                         <option value="10" {if $email_config.max_property_count eq 10}selected{/if}>10</option>
@@ -157,8 +157,8 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 col-lg-2 control-label" for="max_property_count">Emails Per Search</label>
-                <div class="col-sm-10 col-lg-10">
+                <label class="col-sm-2 control-label" for="max_property_count">Emails Per Search</label>
+                <div class="col-sm-10">
                     <div class="radio">
                         <label>
                             <input type="radio" name="email_per_search" value="1"{if $email_config.email_per_search == "1"} checked="checked"{/if}>
@@ -174,13 +174,13 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 col-lg-2 control-label">&nbsp;</label>
-                <div class="col-sm-10 col-lg-10">
+                <label class="col-sm-2 control-label">&nbsp;</label>
+                <div class="col-sm-10">
                     <button type="submit" class="btn btn-success">Change Preferences</button>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-10 col-lg-10 col-sm-offset-2 col-lg-offset-2">
+                <div class="col-sm-10 col-sm-offset-2">
                     <small>* One Email Per Search - You will receive 1 email for each of the Email Alerts you have.</small><br>
                     <small>** One Email For All Searches - All of your email alerts will be combined into 1 email.</small>
                 </div>
