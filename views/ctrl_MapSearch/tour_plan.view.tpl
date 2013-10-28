@@ -219,7 +219,7 @@
 </div>
 
 <footerargs>
-<script src="//maps.google.com/maps/api/js?sensor=false"></script>
+<script src="//maps.googleapis.com/maps/api/js?v=3.13&amp;libraries=places&amp;sensor=false"></script>
 <script src="/js/buildlist.js?scripts=/js/libs/jquery_ui/components/core.1.10.3.min.js,/js/libs/jquery_ui/components/mouse.1.10.3.min.js,/js/libs/jquery_ui/components/drag_sort.1.10.3.min.js,/js/map_search/jquery.tourPlan.min.js"></script>
 <script>
 	var tourPlanObj;

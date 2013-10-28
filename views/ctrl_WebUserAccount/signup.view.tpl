@@ -121,7 +121,7 @@
                     </div>
                 </div>
             {/if}
-            <button class="btn btn-success" type="submit">Create Account</button>
+            <input type="submit" class="btn btn-success" name="Submit" value="Create Account">
         </fieldset>
     </form>
 {/if}
