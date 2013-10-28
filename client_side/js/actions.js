@@ -68,6 +68,17 @@ var App = jQuery(document);
 jQuery(document).ready(function ($) {
 	var $body = $(document.body);
 
+	/**
+	 * Builds the main navigation menu
+	 * @all pages
+	 */
+	if ($.fn.boojstrapDropdownNavigation) {
+		$('#boojstrap-menu').boojstrapDropdownNavigation({
+			classOnLi: true
+		});
+	}
+
+
 	/** 
 	 * account login
 	 */
@@ -220,16 +231,6 @@ jQuery(document).ready(function ($) {
 		});
 	}
 	
-	/**
-	 * Builds the main navigation menu
-	 * @all pages
-	 */
-	if ($.fn.boojstrapDropdownNavigation) {
-		$('#boojstrap-menu').boojstrapDropdownNavigation({
-			classOnLi: true
-		});
-	}
-
 	/**
 	 * Adds form validation
 	 * All forms with the class name "validate-form" will be validated!
