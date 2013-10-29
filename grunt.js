@@ -40,7 +40,8 @@ module.exports = function(grunt) {
         },
         /* add/remove style sheets in the files section below */
         files: {
-          'client_side/css/company_styles.min.css': ['client_side/less/company/company_styles.less']
+          'client_side/css/map-search-2.min.css': ['client_side/less/map_search_2/map_search_2.less']
+          , 'client_side/css/company_styles.min.css': ['client_side/less/company/company_styles.less']
           // ,'client_side/css/agent_rebrand_styles.min.css': ['client_side/less/realtor/agent_rebrand_styles.less']
           // ,'client_side/css/office_rebrand_styles.min.css': ['client_side/less/office/office_rebrand_styles.less']
           // ,'client_side/css/ipw_styles.min.css': ['client_side/less/ipw/ipw_styles.less']
