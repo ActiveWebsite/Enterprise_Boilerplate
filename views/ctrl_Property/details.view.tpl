@@ -1,6 +1,6 @@
 {if stripos($controller_obj->URL.url_raw,'print_view') === false}
 	<head>
-		<link rel="canonical" href="http://PUT CLIENT DOMAIN NAME HERE/property/{$company_property_id}/{$fullStreetAddress|clean_for_url}">
+		<link rel="canonical" href="http://{$smarty.const.DEFAULT_HTTP_HOST}/property/{$company_property_id}/{$fullStreetAddress|clean_for_url}">
 		{if $fullStreetAddress}
 			<meta property="og:title" content="{$fullStreetAddress|clean_for_attribute}">
 		{/if}
