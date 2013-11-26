@@ -39,7 +39,7 @@
            	<input class="form-control required" placeholder="Enter email address" name="email_address" value="" type="email">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-success">Send</button>
+        	<input type="submit" class="btn btn-success" name="Submit" value="Send">
         </div>
         <p><strong>* A New Password Will Be Sent To Your Email Address</strong></p>
 	</fieldset>	

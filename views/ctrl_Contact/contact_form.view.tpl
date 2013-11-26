@@ -39,6 +39,6 @@
 			<label class="bold" for="input07">Message<span class="red">*</span></label>
 			<textarea class="form-control" name="message" rows="8" cols="25" class="required" id="input07" placeholder="Enter Enter Message"></textarea>
 		</div>
-		<button type="submit" class="btn btn-primary">Send</button>
+		<input type="submit" class="btn btn-primary" name="Submit" value="Send">
 	</form>
 </div>

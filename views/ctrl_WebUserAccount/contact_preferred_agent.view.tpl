@@ -84,7 +84,7 @@
         </fieldset>
         <div class="form-group">
             <div class="col-sm-10 col-sm-offset-2">
-                <button type="submit" class="btn btn-success">Send</button>
+                <input type="submit" class="btn btn-success" name="Submit" value="Send">
             </div>
         </div>        
     </form>

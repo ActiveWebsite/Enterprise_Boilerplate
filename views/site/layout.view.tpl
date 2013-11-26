@@ -24,7 +24,7 @@
 				{if $current_account_user && $current_account_user.name}
 					Welcome, {render_component component="Dropin_CurrentUserName"} <a href="{$ACTION_URLS.account}" data-action="account-nav">My Account</a>
 				{else}
-					<a href="{$ACTION_URLS.account}signup" data-action="account-register">Register</a> or <a href="{$ACTION_URLS.account}" data-action="account-login">Login</a> to Property Alerts
+					<a href="{$ACTION_URLS.account}signup" data-action="account-register" title="Register">Register</a> or <a href="{$ACTION_URLS.account}" data-action="account-login" title="Login">Login</a> to Property Alerts
 				{/if}
 			</div>
 			<nav class="navbar navbar-default hidden-print" role="navigation">
@@ -166,10 +166,10 @@
 							<div class="pull-left">
 								<a href="{$ACTION_URLS.account}forgot_password" title="Forgot Password?">Forgot Password?</a>
 								<br>
-								<a href="{$ACTION_URLS.account}signup" data-action="account-register" title="Resister">Register</a>
+								<a href="{$ACTION_URLS.account}signup" data-action="account-register" title="Register">Register</a>
 							</div>
 							<div class="pull-right text-right">
-								<button class="btn btn-primary" type="submit">Sign In</button>
+								<input class="btn btn-primary" type="submit" value="Sign In" name="Submit">
 							</div>
 						</fieldset>
 					</form>

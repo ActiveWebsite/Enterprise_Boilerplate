@@ -37,7 +37,7 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">&nbsp;</label>
             <div class="col-sm-10">
-                <button type="submit" class="btn btn-success">Save</button>
+                <input type="submit" class="btn btn-success" name="Submit" value="Save">
             </div>
         </div>
     </fieldset>
@@ -101,7 +101,7 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">&nbsp;</label>
             <div class="col-sm-10">
-                <button type="submit" class="btn btn-success">Save</button>
+                <input type="submit" class="btn btn-success" name="Submit" value="Save">
             </div>
         </div>        
     </fieldset>

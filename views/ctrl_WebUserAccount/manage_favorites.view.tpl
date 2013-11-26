@@ -37,7 +37,7 @@
                     <div class="form-group">
                         <textarea class="form-control" placeholder="Enter a description" name="description" rows="4">{$category->description}</textarea>
                     </div>
-                    <button type="submit" class="btn btn-success">Save</button>
+                    <input type="submit" class="btn btn-success" name="Submit" value="Save">
                 </form>
                 <div id="favorite_property_wrapper_{$index}" style="display: none;margin-bottom:30px">
                     {if $property_list.$category_name}
@@ -98,7 +98,7 @@
                                                 <div class="form-group">
                                                     <textarea name="notes" cols="20" class="form-control" rows="6">{if $property->notes}{$property->notes}{/if}</textarea>
                                                 </div>
-                                                <button type="submit" class="btn btn-success">Update</button>
+                                                <input type="submit" class="btn btn-success" name="Submit" value="Update">
                                             </form>
                                         </div>
                                     </div>
@@ -123,7 +123,7 @@
         <input class="form-control required" name="category_name" placeholder="Category Name" id="category_name" type="text">
     </div>
     <div class="col-sm-3">
-        <button type="submit" class="btn btn-success">Add</button>
+        <input type="submit" class="btn btn-success" name="Submit" value="Add">
     </div>
 </form>
 

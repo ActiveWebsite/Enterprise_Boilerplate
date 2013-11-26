@@ -31,7 +31,7 @@
                             <p id="searchName_{$search.id}">{$search.name}</p>
                             <form id="searchNameForm_{$search.id}" class="margin-top-10" data-description="#searchName_{$search.id}" data-toggle="#searchNameButton_{$search.id}" data-account-action="update_search_name" action="/{$controller_alias}/save_search_name/{$search.id}" method="post" style="display:none;">
                                 <input type="text" class="form-control margin-bottom-5" name="search_name" placeholder="Enter Search Name" value="{$search.name}">
-                                <button type="submit" class="btn btn-success">Add</button>
+                                <input type="submit" class="btn btn-success" name="Submit" value="Add">
                             </form>
                         </div>
                     </td>
@@ -176,7 +176,7 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">&nbsp;</label>
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-success">Change Preferences</button>
+                    <input type="submit" class="btn btn-success" name="Submit" value="Change Preferences">
                 </div>
             </div>
             <div class="row">

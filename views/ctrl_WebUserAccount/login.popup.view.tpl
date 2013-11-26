@@ -29,6 +29,6 @@
         <label>Password <span class="red">*</span></label>
         <input class="form-control required" type="password" value="" name="password" placeholder="Enter Password">
       </div>
-      <button class="btn btn-success" type="submit">Sign In</button>
+      <input type="submit" class="btn btn-success" name="Submit" value="Sign In">
     </form>
 </div>

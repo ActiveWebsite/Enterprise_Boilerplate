@@ -43,7 +43,7 @@
 						<input name="password" class="form-control required" type="password">
 					</div>
 					<a class="pull-left" href="/{$controller_alias}/forgot_password/">I've forgotten my password</a>
-					<button type="submit" class="btn btn-success pull-right">Log In</button>
+					<input type="submit" class="btn btn-success pull-right" name="Submit" value="Log In">
 				</fieldset>		
 			</form>
 		</div>
