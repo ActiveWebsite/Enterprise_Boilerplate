@@ -14,22 +14,22 @@
 			<table class="compareTable">
 				<tbody>
 					<tr>
-						<td><div class="compare-cell-width compare-top-row">Address</td>
+						<td><div class="compare-cell-width compare-top-row">Address</div></td>
 					</tr>
 					<tr>
-						<td><div class="compare-cell-width">Price</td>
+						<td><div class="compare-cell-width">Price</div></td>
 					</tr>
 					<tr>
-						<td><div class="compare-cell-width">MLS#</td>
+						<td><div class="compare-cell-width">MLS#</div></td>
 					</tr>
 					<tr>
-						<td><div class="compare-cell-width">Bedrooms</td>
+						<td><div class="compare-cell-width">Bedrooms</div></td>
 					</tr>
 					<tr>
-						<td><div class="compare-cell-width">Bathrooms</td>
+						<td><div class="compare-cell-width">Bathrooms</div></td>
 					</tr>
 					<tr>
-						<td><div class="compare-cell-width">Square Feet</td>
+						<td><div class="compare-cell-width">Square Feet</div></td>
 					</tr>
 					<tr>
 						<td><div class="compare-cell-width compare-request-row">Request Information</div></td>
