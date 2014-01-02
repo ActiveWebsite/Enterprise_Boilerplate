@@ -2,7 +2,7 @@
     <ul class="breadcrumb">
         <li><a href="/" title="{$account_area_brand_name}">Home</a></li>
         <li><a href="{$ACTION_URLS.account}" title="{$account_area_brand_name}">{$account_area_brand_name}</a></li>
-        <li>Account Details</li>
+        <li class="active">Account Details</li>
     </ul>
 {/render_layout_arguments}
 

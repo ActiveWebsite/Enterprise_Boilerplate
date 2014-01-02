@@ -1,32 +1,12 @@
 {render_layout_arguments var="render_page_breadcrumbs"}
     <ul class="breadcrumb">
         <li><a href="/" title="{$account_area_brand_name}">Home</a></li>
-        <li>{$account_area_brand_name}</li>
+        <li class="active">{$account_area_brand_name}</li>
     </ul>
 {/render_layout_arguments}
 <div class="page-header web-user-account-header">
 	<h1>Login to {$account_area_brand_name}</h1>
 </div>
-{if $messages->isMsgs() === true}
-	{if $messages->isErrors() === true}
-		<div class="alert alert-danger alert-block">
-			<strong>Error:</strong><br>
-			{$messages->getErrors(true)}
-		</div>
-	{/if}
-	{if $messages->isAlerts() === true}
-		<div class="alert alert-info alert-block">
-			<strong>Alert:</strong><br>
-			{$messages->getAlerts(true)}
-		</div>
-	{/if}
-	{if $messages->isNormals() === true}
-		<div class="alert alert-success alert-block">
-			<strong>Message:</strong><br>
-			{$messages->getNormal(true)}
-		</div>
-	{/if}
-{/if}
 <div class="row">
 	<div class="col-sm-6">
 		<div class="account-well">

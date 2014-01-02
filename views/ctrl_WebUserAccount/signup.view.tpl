@@ -2,33 +2,15 @@
     <ul class="breadcrumb">
         <li><a href="/" title="{$account_area_brand_name}">Home</a></li>
         <li><a href="{$ACTION_URLS.account}" title="{$account_area_brand_name}">{$account_area_brand_name}</a></li>
-        <li>Create Account</li>
+        <li class="active">Create Account</li>
     </ul>
 {/render_layout_arguments}
-{if $messages->isMsgs() === true}
-    {if $messages->isErrors() === true}
-        <div class="alert alert-danger alert-block">
-            <strong>Error:</strong><br>{$messages->getErrors(true)}
-        </div>
-    {/if}
-    {if $messages->isAlerts() === true}
-        <div class="alert alert-info alert-block">
-            <strong>Alert:</strong><br>{$messages->getAlerts(true)}
-        </div>
-    {/if}
-    {if $messages->isNormals() === true}
-        <div class="alert alert-success alert-block">
-            <strong>Message:</strong><br>{$messages->getNormal(true)}
-        </div>
-    {/if}
-{/if}
 {if $current_account_user}
     <div class="alert alert-danger alert-block">
         You are already logged in.
     </div>
     <p>Not your account? <a href="{$ACTION_URLS.account}logout/">Click here</a> to log out!</p>
 {else}
-
     <div class="page-header web-user-account-header">
         <h1>Create a New {$account_area_brand_name} Account</h1>
         <p>
@@ -37,11 +19,9 @@
             favorites, set up email alerts and change your account information.
         </p>
     </div>
-
     <div class="openIDWrap">
         {render_dropin dropin="OpenId"}
     </div>
-
     <form id="create_account_form" action="{$submit_action}" method="post" class="validate-form">
         <fieldset>
             {if isset( $signup.has_openId ) }

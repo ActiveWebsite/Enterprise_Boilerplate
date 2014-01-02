@@ -1,6 +1,6 @@
 <div class="web-user-account-component">
 	<h3>{$account_brand_name}</h3>
-	<h4>Aloha {$web_user.name}</h4>
+	<h4>Welcome {$web_user.name}</h4>
 	<ul class="list-unstyled">
 		{if $menu}
 			{foreach item=label key=url from=$menu}

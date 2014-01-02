@@ -101,6 +101,10 @@ jQuery(document).ready(function ($) {
 						}
 					}
 				},
+				show: {
+					solo: true
+				},
+				hide: 'unfocus',				
 				style: {
 					classes: 'ui-tooltip-agent-bubble',
 					tip: {

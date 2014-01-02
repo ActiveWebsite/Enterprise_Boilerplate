@@ -5,8 +5,6 @@
     {if $browser_info && $browser_info.browser == 'IE'}<meta http-equiv="X-UA-Compatible" content="IE=edge">{/if}
     <title>QuickView</title>
     <link rel="stylesheet" href="/css/company_styles.min.css">
-    <script src="/js/libs/jquery/jquery.js"></script>
-    <script>jQuery.noConflict();</script>
     {literal}
     <style>
         body{
@@ -76,6 +74,8 @@
         </div>
     </div>
 </div>
+<script src="/js/libs/jquery/jquery.js"></script>
+<script>jQuery.noConflict();</script>
 <script src="/js/buildlist.js?scripts=/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js"></script>
 {literal}
     <script>

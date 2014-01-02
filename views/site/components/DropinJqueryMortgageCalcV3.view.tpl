@@ -6,23 +6,27 @@
 		<fieldset class="row">
 			<div class="col-sm-6">
 				<div class="row">
-					<label class="col-sm-4 bold">List Price</label>
-					<div class="col-sm-8 input-group margin-bottom-15">
-						<span class="input-group-addon">$</span>
-						<input type="text" class="form-control mc-text-field mc-format-currency" name="list_price" value="{$list_price}">
-					</div>
-				</div>
-				<div class="row">
-					<label class="col-sm-4 bold">Interest Rate</label>
-					<div class="col-sm-8 input-group margin-bottom-15">
-						<input type="text" class="form-control mc-text-field mc-format-percent" name="interest_rate" value="{$interest_rate}">
-						<span class="input-group-addon">%</span>
-					</div>
-				</div>
-				<div class="row">
-					<label class="col-sm-4 bold">Term</label>
+					<label class="col-sm-4">List Price</label>
 					<div class="col-sm-8 margin-bottom-15">
-						<select class="form-control mc-select-field" name="loan_term">
+						<div class="input-group">
+							<span class="input-group-addon">$</span>
+							<input type="text" class="form-control input-sm mc-text-field mc-format-currency" name="list_price" value="{$list_price}">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-4">Interest Rate</label>
+					<div class="col-sm-8 margin-bottom-15">
+						<div class="input-group">
+							<input type="text" class="form-control input-sm mc-text-field mc-format-percent" name="interest_rate" value="{$interest_rate}">
+							<span class="input-group-addon">%</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-4">Term</label>
+					<div class="col-sm-8 margin-bottom-15">
+						<select class="form-control input-sm mc-select-field" name="loan_term">
 							<option value="10"{if $loan_length == 10} selected="selected"{/if}>10 years</option>
 							<option value="15"{if $loan_length == 15} selected="selected"{/if}>15 years</option>
 							<option value="20"{if $loan_length == 20} selected="selected"{/if}>20 years</option>
@@ -34,15 +38,17 @@
 					</div>
 				</div>
 				<div class="row">
-					<label class="col-sm-4 bold">Down Payment</label>
+					<label class="col-sm-4">Down Payment</label>
 					<div class="col-sm-8">
 						<div class="row">
-							<div class="col-sm-6 input-group margin-bottom-15">
-								<span class="input-group-addon">$</span>
-								<input type="text" class="form-control mc-text-field mc-format-currency" name="down_payment" value="0">
+							<div class="col-sm-6 margin-bottom-15">
+								<div class="input-group">
+									<span class="input-group-addon">$</span>
+									<input type="text" class="form-control input-sm mc-text-field mc-format-currency" name="down_payment" value="0">
+								</div>
 							</div>
 							<div class="col-sm-6 margin-bottom-15">
-								<select class="form-control mc-select-field mc-select-field-tiny" name="down_payment_percentage">
+								<select class="form-control input-sm mc-select-field mc-select-field-tiny" name="down_payment_percentage">
 									<option value="0"{if $down_payment_percentage == 0} selected="selected"{/if}>-</option>
 									<option value="5"{if $down_payment_percentage == 5} selected="selected"{/if}>5 %</option>
 									<option value="10"{if $down_payment_percentage == 10} selected="selected"{/if}>10 %</option>
@@ -58,58 +64,70 @@
 					</div>
 				</div>
 				<div class="row">
-					<label class="col-sm-4 bold">Closing Costs</label>
-					<div class="col-sm-8 input-group margin-bottom-15">
-						<span class="input-group-addon">$</span>
-						<input type="text" class="form-control mc-text-field mc-format-currency" name="closing_cost" value="{$closing_cost}">
+					<label class="col-sm-4">Closing Costs</label>
+					<div class="col-sm-8 margin-bottom-15">
+						<div class="input-group">
+							<span class="input-group-addon">$</span>
+							<input type="text" class="form-control input-sm mc-text-field mc-format-currency" name="closing_cost" value="{$closing_cost}">
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-6">
 				<div class="row">
-					<label class="col-sm-4 bold">Taxes</label>
-					<div class="col-sm-8 input-group margin-bottom-15">
-						<span class="input-group-addon">$</span>
-						<input type="text" class="form-control mc-text-field mc-format-currency" name="taxes" value="{$taxes}">
-						<span class="input-group-addon">/ yr</span>
+					<label class="col-sm-4">Taxes</label>
+					<div class="col-sm-8 margin-bottom-15">
+						<div class="input-group">
+							<span class="input-group-addon">$</span>
+							<input type="text" class="form-control input-sm mc-text-field mc-format-currency" name="taxes" value="{$taxes}">
+							<span class="input-group-addon">/ yr</span>
+						</div>
 					</div>
 				</div>
 				<div class="row">
-					<label class="col-sm-4 bold">Insurance</label>
-					<div class="col-sm-8 input-group margin-bottom-15">
-						<span class="input-group-addon">$</span>
-						<input type="text" class="form-control mc-text-field mc-format-currency" name="insurance" value="{$insurance}"> 
-						<span class="input-group-addon">/ yr</span>
+					<label class="col-sm-4">Insurance</label>
+					<div class="col-sm-8 margin-bottom-15">
+						<div class="input-group">
+							<span class="input-group-addon">$</span>
+							<input type="text" class="form-control input-sm mc-text-field mc-format-currency" name="insurance" value="{$insurance}"> 
+							<span class="input-group-addon">/ yr</span>
+						</div>
 					</div>
 				</div>
 				<div class="row">
-					<label class="col-sm-4 bold">PMI<sup>**</sup></label>
-					<div class="col-sm-8 input-group margin-bottom-15">
-						<span class="input-group-addon">$</span>
-						<input type="text" class="form-control mc-text-field mc-format-currency" name="pmi" value="0">
-						<span class="input-group-addon">/ mo</span>
+					<label class="col-sm-4">PMI<sup>**</sup></label>
+					<div class="col-sm-8 margin-bottom-15">
+						<div class="input-group">
+							<span class="input-group-addon">$</span>
+							<input type="text" class="form-control input-sm mc-text-field mc-format-currency" name="pmi" value="0">
+							<span class="input-group-addon">/ mo</span>
+						</div>
 					</div>
 				</div>
 				<div class="row">
-					<label class="col-sm-4 bold">Assessments<sup>***</sup></label>
-					<div class="col-sm-8 input-group margin-bottom-15">
-						<span class="input-group-addon">$</span>
-						<input type="text" class="form-control mc-text-field mc-format-currency" name="additional_fees" value="{$assessments}">
-						<span class="input-group-addon">/ mo</span>
+					<label class="col-sm-4">Assessments<sup>***</sup></label>
+					<div class="col-sm-8 margin-bottom-15">
+						<div class="input-group">
+							<span class="input-group-addon">$</span>
+							<input type="text" class="form-control input-sm mc-text-field mc-format-currency" name="additional_fees" value="{$assessments}">
+							<span class="input-group-addon">/ mo</span>
+						</div>
 					</div>
 				</div>
 				<div class="row">
-					<label class="col-sm-4 bold">Extra Payment</label>
-					<div class="col-sm-8 input-group margin-bottom-15">
-						<span class="input-group-addon">$</span>
-						<input type="text" class="form-control mc-text-field mc-format-currency" name="extra_principal" value="0">
-						<span class="input-group-addon">/ mo</span>
+					<label class="col-sm-4">Extra Payment</label>
+					<div class="col-sm-8 margin-bottom-15">
+						<div class="input-group">
+							<span class="input-group-addon">$</span>
+							<input type="text" class="form-control input-sm mc-text-field mc-format-currency" name="extra_principal" value="0">
+							<span class="input-group-addon">/ mo</span>
+						</div>
 					</div>
 				</div>
 			</div>
 		</fieldset>
 		<div class="clearfix margin-top-10">
-			<button class="mc-calculate btn btn-primary pull-right">Calculate</button>
+			<button class="mc-calculate btn btn-sm btn-primary pull-right">Calculate</button>
 		</div>
 	</form>
 	<div class="tabClass mc-tabs clearfix">

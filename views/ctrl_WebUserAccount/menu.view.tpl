@@ -1,23 +1,3 @@
-{if $messages}
-	{if $messages->isErrors() === true}
-		 <div class="alert alert-danger alert-block">
-			<strong>Error:</strong><br>
-			{$messages->getErrors(true)}
-		</div>
-	{/if}
-	{if $messages->isAlerts() === true}
-		<div class="alert alert-info alert-block">
-			<strong>Alert:</strong><br>
-			{$messages->getAlerts(true)}
-		</div>
-	{/if}
-	{if $messages->isNormals() === true}
-		<div class="alert alert-success alert-block">
-			<strong>Message:</strong><br>
-			{$messages->getNormal(true)}
-		</div>
-	{/if}
-{/if}
 <div id="web-user-account-menu">
 	<ul class="nav nav-pills nav-justified">
 		{foreach item=label key=url from=$menu name=accountMenu}
