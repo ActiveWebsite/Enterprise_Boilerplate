@@ -105,21 +105,16 @@
             </div>
         </div>        
     </fieldset>
-
-    <fieldset class="margin-top-30">
-        <legend>Preferred Agent</legend>
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="Work_Phone">Preferred Agent</label>
-            <div class="col-sm-10">
-                <span class="badge margin-right-10">
-                    {if $pref_realtor}
-                        {$pref_realtor->get_name()}
-                    {else}
-                        None
-                    {/if}
-                </span>
-                <a href="{$ACTION_URLS.local_root}/change_pref_realtor_form" class="btn btn-default fancybox" data-fancybox-type="iframe" data-fancybox-width="400" data-fancybox-height="300">Change Preferred Agent</a>
-            </div>
-        </div>
-    </fieldset>
 </form>
+<div class="margin-top-30">
+    <h2>Manage Preferred Agent</h2>
+    <span class="label label-default margin-right-20">
+        Current agent: 
+        {if $pref_realtor}
+            {$pref_realtor->get_name()}
+        {else}
+            None
+        {/if}
+    </span>
+    <a class="btn btn-primary btn-sm fancybox" data-fancybox-type="iframe" data-fancybox-width="500" data-fancybox-height="500" href="/account/change_pref_realtor_form">Change Your Preferred Agent</a>
+</div>

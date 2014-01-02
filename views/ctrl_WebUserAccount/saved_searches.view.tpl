@@ -108,7 +108,7 @@
                                 {if $search.isEmailAlert}
                                     <span class="label label-success">Status: Active</span>
                                 {else}
-                                    <span class="label">Status: Inactive</span>
+                                    <span class="label label-default">Status: Inactive</span>
                                 {/if}
                             </div>
                             <div class="margin-bottom-10">

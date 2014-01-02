@@ -14,11 +14,11 @@
 			<h2>I want to login using my {$account_area_brand_name} account</h2>
 			<form method="post" class="validate-form" action="/{$controller_alias}/login/">
 				<fieldset class="clearfix">
-					<div class="margin-bottom-15">
+					<div class="form-group">
 						<label class="block bold">Email</label>
-						<input name="username" class="form-control required" type="email">
+						<input name="username" class="form-control required email" type="email">
 					</div>
-					<div class="margin-bottom-15">
+					<div class="form-group">
 						<label class="block bold">Password</label>
 						<input name="password" class="form-control required" type="password">
 					</div>

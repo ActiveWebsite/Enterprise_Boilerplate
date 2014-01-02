@@ -40,6 +40,9 @@
 			window.opener.location.reload(true);
 			window.close();
 		}
+		try {
+			parent.location.href=parent.location.href;
+		} catch (e2) {}
 	</script>
 	{/literal}
 {/if}
