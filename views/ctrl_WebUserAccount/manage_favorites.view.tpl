@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="col-sm-4 margin-bottom-10">
                                             <h4>
-                                                {$property->information.street_number->value} {$property->street_name} {if $property->information.unit_no->value} #{$property->information.unit_no->value}{/if},<br>
+                                                {$property->information.street_number->value} {$property->street_name}{if $property->information.unit_no->value} #{$property->information.unit_no->value}{/if},<br>
                                                 {$property->city}, {$property->state} {$property->information.zip_code->value}
                                             </h4>
                                             <ul class="list-unstyled">
