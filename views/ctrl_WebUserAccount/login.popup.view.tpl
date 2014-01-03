@@ -20,7 +20,7 @@
         </div>
       {/if}
     {/if}
-    <form method="post" id="account_login_ajax" class="validate-form" action="/popup/{$controller_alias}/login/">
+    <form method="post" id="account_login_ajax" class="validate-form"  autocomplete="off" action="/popup/{$controller_alias}/login/">
       <div class="form-group">
         <label>Email <span class="red">*</span></label>
         <input class="form-control required" name="email_address" value="" type="email" placeholder="Enter Email Address">

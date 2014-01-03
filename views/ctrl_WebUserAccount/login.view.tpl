@@ -11,7 +11,7 @@
 	<div class="col-sm-6">
 		<div class="account-well">
 			<h2>I want to login using my {$account_area_brand_name} account</h2>
-			<form method="post" class="validate-form" action="/{$controller_alias}/login/">
+			<form method="post" class="validate-form"  autocomplete="off" action="/{$controller_alias}/login/">
 				<fieldset>
 					<div class="form-group">
 						<label class="block bold">Email</label>

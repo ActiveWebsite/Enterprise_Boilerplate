@@ -12,7 +12,7 @@
 		<div class="account-well">
 			{render_dropin dropin="OpenId"}
 			<h2>I want to login using my {$account_area_brand_name} account</h2>
-			<form method="post" class="validate-form" action="/{$controller_alias}/login/">
+			<form method="post" class="validate-form" action="/{$controller_alias}/login/" autocomplete="off">
 				<fieldset class="clearfix">
 					<div class="form-group">
 						<label class="block bold">Email</label>

@@ -22,7 +22,7 @@
     <div class="openIDWrap">
         {render_dropin dropin="OpenId"}
     </div>
-    <form id="create_account_form" action="{$submit_action}" method="post" class="validate-form">
+    <form id="create_account_form" action="{$submit_action}" method="post" autocomplete="off" class="validate-form">
         <fieldset>
             {if isset( $signup.has_openId ) }
                 <input type="hidden" name="has_openId">
