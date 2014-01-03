@@ -15,25 +15,30 @@
         }
     </style>
     {/literal}
+    {if $browser_info && $browser_info.browser == 'IE' && $browser_info.version < 9}
+        <script src="/js/libs/twitter_bootstrap/respond/respond.min.js"></script>
+    {/if}
 </head>
 <body>
 <div id="quick-view-wrapper">
     <div class="row">
         <div class="col-sm-7">
             {if $photos}
-                <div class="gallery-widget" id="quick-view-gallery">
-                    <div class="gallery-widget-main-photo-wrapper margin-bottom-30">
+                <div class="cycle-slideshow" data-cycle-log="false" data-cycle-center-horz="true" data-cycle-center-vert="true" data-cycle-swipe="true" data-cycle-timeout="0" data-cycle-prev="#qv-prev" data-cycle-next="#qv-next" data-cycle-loader="true" data-cycle-progressive="#qv-images">
+                    {foreach from=$photos item=photo key=index}
+                        {if $index < 3}
+                            <img src="{$photo}/maxwidth/425/maxheight/280/" alt="">
+                        {/if}
+                    {/foreach}
+                    <script id="qv-images" type="text/cycle">
                         {foreach from=$photos item=photo key=index}
-                            {if $index == 0}
-                                <img src="{$photo}/maxwidth/375/maxheight/300" alt="Property Photo">
-                            {/if}
+                        {if $index > 3}<img src="{$photo}/maxwidth/425/maxheight/280" alt="">{/if}
                         {/foreach}
-                    </div>
-                    <ul class="gallery-widget-carousel">
-                        {foreach from=$photos item=photo key=index}
-                            <li><img src="{$photo}/crop/130,90" alt="Property Thumbnail"></li>
-                        {/foreach}
-                    </ul>
+                    </script>
+                </div>
+                <div class="clearfix margin-top-5">
+                    <a title="Previous Image" class="pull-left" id="qv-prev"><i class="icon icon-chevron-left"></i></a>
+                    <a title="Next Image" class="pull-right" id="qv-next"><i class="icon icon-chevron-right"></i></a>
                 </div>
             {/if}
         </div>
@@ -74,23 +79,6 @@
         </div>
     </div>
 </div>
-<script src="/js/libs/jquery/jquery.js"></script>
-<script>jQuery.noConflict();</script>
-<script src="/js/buildlist.js?scripts=/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js"></script>
-{literal}
-    <script>
-        jQuery(window).load(function () {	
-            setTimeout(function () {
-                jQuery('#quick-view-gallery').simpleCarouselGallery({
-                    animateHeight: true,
-                    renderFullScreen: false,
-                    expand_thumbs: false,
-                    large_resize_method: '/maxwidth/375/maxheight/300',
-                    thumb_resize_method: '/crop/130,90'
-                });
-            }, 500);
-        });
-    </script>
-{/literal}
+<script src="/js/libs/jquery/jquery.js,/js/buildlist.js?scripts=/js/galleries/jquery.cycle2.swipe.min.js,/js/galleries/jquery.cycle2.min.js,/js/galleries/jquery.cycle2.center.min.js"></script>
 </body>
 </html>
