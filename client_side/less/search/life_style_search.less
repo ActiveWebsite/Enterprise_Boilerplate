@@ -1,0 +1,337 @@
+#lifestyle-search-page {
+    .fbLike {
+        iframe {
+            width:90px; float:right; height:25px;
+        }
+    }
+    .lifestyle-social {
+        float: right;
+        min-width: 340px;
+        margin-top: 5px;
+    }
+    .rankNumber {
+        border-radius: 20px;
+        background: @gray-darker;
+        color: #fff;
+        width: 26px;
+        height: 26px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        display: inline-block;
+        text-align: center;
+        vertical-align: baseline;
+    }
+    .attribute{
+        width:180px;
+        margin-top: 5px;
+        height:8px;
+        position:relative;
+        overflow:hidden;
+        float:left;
+        border:1px solid @gray;
+        background:url(/images/system/lifestyle_search/relevance_bg.gif) repeat-x;
+        border-radius: 3px;
+    }
+    .attributeValue {
+        height: 8px;
+        background: @gray-darker;
+        border-radius: 3px;
+        .opacity(0.9);
+    }
+    .attributeFullValue {
+        border-radius: 3px;
+    }
+    .nationalCompare .attributeValue{
+        background-color: #fe7672;
+    }
+    .myCommunityCompare .attributeValue{
+        background-color: #6598e2;
+    }
+    .attributeTitle{
+        float: left;
+        width: 103px;
+        font-size: 14px;
+    }
+    .attributeLabel{
+        display:block;
+    }
+    .bump-needs {
+        margin-bottom: 28px;
+    }
+    .radio {
+        line-height: 21px;
+        margin: 0;
+    }
+    .compare_error {
+        .alert();
+        .alert-danger();
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+}
+.browser_lt_ie_11 #lifestyle-search-page {
+    .radio {
+        line-height: 11px;
+    }
+}
+.lss-form {
+    .filterMaxLabel{
+        float:right;
+        padding-top:5px;
+        font-size: 14px;
+        .font-bold();
+    }
+    .filterMinLabel{
+        float:left;
+        padding-top:5px;
+        font-size: 14px;
+        .font-bold();
+    }
+    .sliderWrapper{
+        height:25px;
+        margin-top:10px;
+    }
+    .slider_track_wrapper{
+        float:left;
+        width:100%;
+        margin:0;
+        padding:0;
+        position:relative;
+    }
+    .slider_track{
+        height:14px;
+        background: url(/images/system/lifestyle_search/bar.png) no-repeat;
+        display:block;
+        border:none;
+        background-size: 100%;
+    }
+    .ui-slider-handle{
+        display:block;
+        width:23px;
+        position:absolute;
+        top:-2px;
+        margin-left: -12px;
+        height:24px;
+        cursor:pointer;
+        background: url(/images/lifestyle/slider.png) no-repeat;
+        border:none;
+    }
+    .ui-slider-range{
+        height:6px;
+        float:left;
+        position:absolute;
+        top:1px;
+        margin-left:1px;
+        background:@gray-darker;
+        border-radius: 3px;
+        .opacity(0.8);
+    }
+    .ui-slider-handle:hover{
+        border-color:#ccc;
+    }
+    .slider_track_2{
+        background: url(/images/system/lifestyle_search/bar_2.png) no-repeat !important;
+    }
+    .searchButtonBottom {
+        border-top: 1px solid @gray-darker;
+        margin-top: 30px;
+        input {
+           margin-top: -28px;
+        }
+    }
+}
+#attributeBubble{
+    background:url(/images/system/lifestyle_search/bubble_small.png) transparent no-repeat;
+    width:50px;
+    height:43px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:1000;
+}
+#attributeBubbleInner{
+    text-align:center;
+    line-height:30px;
+}
+#modifySearchForm {
+    display: none;
+    &.opened {
+        display: block;
+    }
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #fff;
+    padding: 15px;
+    width: 300px;
+    border: 1px solid @gray-darker;
+}
+#modifySearch {
+    position: absolute;
+    top: 12px;
+    right: 0;
+}
+#modifySearchBtn {
+    margin-bottom: 0;
+}
+#lifestyle_compare {
+    width: 100%;
+    background: @gray-lighter;
+    padding: 9px;
+    ul {
+        float: right;
+    }
+    .active_view {
+        color: @brand-danger;
+    }
+}
+#compareDataBlock {
+    margin-bottom: 0;
+}
+#compareFormWrapper {
+    margin-top: 15px;
+}
+#openCompareButton {
+    i {
+        .icon();
+        &:before { content: @chevron-up; }
+        padding-right: 5px;
+    }
+    &.compareClosed i:before { content: @chevron-down; }
+}
+
+// MAP VIEW
+// --------------------------------------------------------
+#lifestyle_map_wrapper{
+    position:relative;
+    width:590px;
+    height:430px;
+    margin:0 auto;
+    border:1px solid #cbcbcb;
+}
+#lifestyle_map_overlay{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:590px;
+    height:430px;
+    background:url(/images/system/white-70.png) transparent repeat;
+    text-align:center;
+}
+#lifestyle_map_overlay div{
+    background-color:#fff;
+    width:100px;
+    height:50px;
+    margin:190px auto 0 auto;
+    border:1px solid #cbcbcb;
+    -moz-border-radius: 10px;
+    border-radius: 10px;    
+}
+#lifestyle_map_overlay img{
+    display: block;
+    float: left;
+    height: 24px;
+    margin-left: 40px;
+    margin-top: 12px;
+    width: 24px;
+}
+#lifestyle_map{
+    width:590px;
+    height:430px;
+    .uiControl {
+        background: #fff;
+        color: #000;
+        cursor: pointer;
+        border: 1px solid #717b87;
+        padding: 1px 6px;
+        font-size: 13px;
+        font-family: Arial, sans-serif;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px;
+    }
+}
+.lss-view-all-props{
+    padding-top: 5px;
+    text-align: center;
+}
+.lss-property-bubble{
+    width:250px;
+    height:80px;
+    overflow:hidden;
+}
+.lss-property-bubble img{
+    float:left;
+    margin-top:3px;
+    border:1px solid #ccc;
+    margin-right:10px;
+}
+.lss-property-bubble p{
+    font-size:12px;
+    float:left;
+    width:160px;
+    line-height:16px;
+    color:#333;
+}
+
+
+// FILTER ICONS
+// --------------------------------------------------------
+.filterIcon{
+    width:55px;
+    height:45px;
+    float:left;
+    margin:0 10px 5px 0;
+}
+.filterIcon_ATTR_017{
+    background: url(/images/system/lifestyle_search/piano.png) no-repeat left center;
+}
+.filterIcon_ATTR_044{
+    background: url(/images/system/lifestyle_search/metropolis.png) no-repeat left center;
+}
+.filterIcon_ATTR_045{
+    background: url(/images/system/lifestyle_search/urban.png) no-repeat left center;
+}
+.filterIcon_ATTR_046{
+    background: url(/images/system/lifestyle_search/suburb.png) no-repeat left center;
+}
+.filterIcon_ATTR_047{
+    background: url(/images/system/lifestyle_search/small_town.png) no-repeat left center;
+}
+.filterIcon_ATTR_048{
+    background: url(/images/system/lifestyle_search/rural.png) no-repeat left center;
+}
+.filterIcon_ATTR_019{
+    background: url(/images/system/lifestyle_search/family_friendly.png) no-repeat left center;
+}
+.filterIcon_ATTR_018{
+    background: url(/images/system/lifestyle_search/server.png) no-repeat left center;
+}
+.filterIcon_ATTR_022{
+    background: url(/images/system/lifestyle_search/shopping_bag.png) no-repeat left top;
+    height:70px;
+}
+.filterIcon_ATTR_024{
+    background: url(/images/system/lifestyle_search/golfing.png) no-repeat left top;
+}
+.filterIcon_ATTR_016{
+    background: url(/images/system/lifestyle_search/chalk_board.png) no-repeat left center;
+}
+.filterIcon_ATTR_043{
+    background: url(/images/system/lifestyle_search/median_home_price.png) no-repeat left center;
+}
+.filterIcon_ATTR_020{
+    background: url(/images/system/lifestyle_search/paw_print.png) no-repeat left center;
+}
+.filterIcon_ATTR_037{
+    background: url(/images/system/lifestyle_search/public_transport.png) no-repeat left center;
+}
+.filterIcon_ATTR_036{
+    background: url(/images/system/lifestyle_search/gas_pump.png) no-repeat left center;
+}
+.filterIcon_ATTR_021{
+    background: url(/images/system/lifestyle_search/shopping.png) no-repeat left center;
+}
+.filterIcon_ATTR_023{
+    background: url(/images/system/lifestyle_search/public_servants.png) no-repeat left top;
+    height:70px;
+}

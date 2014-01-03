@@ -8,11 +8,11 @@
 		</select>
 		<hr>
 	{else}
-	    <input id="userStateSelect" type="hidden" name="stateId" value="{foreach from=$site_owner_states item=state_name key=state_id}{$state_id}{/foreach}" />
+	    <input id="userStateSelect" type="hidden" name="stateId" value="{foreach from=$site_owner_states item=state_name key=state_id}{$state_id}{/foreach}">
 	{/if}
 
 	{if $default_to_county_cbsa}
-	    <input type="hidden" name="defaultCounties" value="{foreach name=countyDefList from=$static_counties item=county_name key=county_id}{$county_id}{if !$smarty.foreach.countyDefList.last}|{/if}{/foreach}" />
+	    <input type="hidden" name="defaultCounties" value="{foreach name=countyDefList from=$static_counties item=county_name key=county_id}{$county_id}{if !$smarty.foreach.countyDefList.last}|{/if}{/foreach}">
 	{/if}
 
 	<label>Count{if $multiselect_county_cbsa}ies{else}y{/if}</label>

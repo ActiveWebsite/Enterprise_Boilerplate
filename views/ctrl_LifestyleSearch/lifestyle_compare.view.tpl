@@ -1,9 +1,9 @@
 <div id="communityCompareResultWrapper">
     <h3>{if $community_scores && isset($community_scores[0])} {$community_scores[0].area_name}{else}{$zip_code}{/if}</h3>
     {if $community_scores}
-        <div class="row">
+        <div class="row multi-columns-row">
             {foreach from=$community_scores item=attribute key=index}
-                <div class="col-sm-6 attributeWrapper clearfix">
+                <div class="col-sm-6 col-md-6 col-lg-6 attributeWrapper clearfix">
                     <span class="attributeTitle">
                         {$attribute.pretty_name}
                         {if $attribute.label && $attribute.label == 'Urban / Dense Urban'}
@@ -39,6 +39,6 @@
             {/foreach}
         </div>
     {else}
-        <p>We could not find any scores for the zip code "{$zip_code}"</p>
+        <div class="alert alert-danger">We could not find any scores for the zip code "{$zip_code}"</div>
     {/if}
 </div>

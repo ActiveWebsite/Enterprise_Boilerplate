@@ -1,33 +1,31 @@
- <head>
- 	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css">
-	<link rel="stylesheet" href="/css/lifestyle_search/lifestyle.css">
-</head>
-<div id="controllerWrapper" class="initialSearchPage">
-	<div id="fb_link_wrapper">
-	   	<div class="fbLike"><iframe src="http://www.facebook.com/plugins/like.php?href={$HTTP_HOST}{$controller_alias}&amp;width=90&amp;action=like&amp;colorscheme=light&amp;height=20&amp;layout=button_count"{if $browser_info.browser == "IE"} allowTransparency="true"{/if}></iframe></div>
-		<a href="/popup/contact/send_properties_and_searches_form/u/subject/3/?label=Lifestyle%20Search&amp;referring_url={$HTTP_HOST}{$controller_alias}" target="_blank" data-fancybox-type="iframe" data-fancybox-width="{$sendfriend_lb_size.width}" data-fancybox-height="{$sendfriend_lb_size.height}" class="fancybox iframe fancy-width-{$sendfriend_lb_size.width} fancy-height-{$sendfriend_lb_size.height} mailIcon" rel="nofollow" title="Send to Friend">Send to Friend</a>
-		<a href="/popup{$ACTION_URLS.contact}?lifestyleSearch=true" target="_blank" rel="nofollow" data-fancybox-type="iframe" data-fancybox-width="{$feedback_lb_size.width}" data-fancybox-height="$feedback_lb_size.height}" class="fancybox iframe fancy-width-{$feedback_lb_size.width} fancy-height-{$feedback_lb_size.height} feedbackIcon" title="Feedback">Feedback</a>
-     </div>
-	<h1>Lifestyle Search Results</h1>
-	<div class="clearAll">&nbsp;</div>
+<div id="lifestyle-search-page" class="initialSearchPage">
+	<div class="page-header clearfix">
+	    <div class="lifestyle-social clearfix">
+		   	<div class="fbLike">
+		   		<iframe src="http://www.facebook.com/plugins/like.php?href={$HTTP_HOST}{$controller_alias}&amp;width=90&amp;action=like&amp;colorscheme=light&amp;height=20&amp;layout=button_count" scrolling="no" frameborder="0"{if $browser_info.browser == "IE"} allowTransparency="true"{/if}></iframe>
+		   	</div>
+			<a href="/popup/contact/send_properties_and_searches_form/u/subject/3/?label=Lifestyle Search&amp;referring_url={$HTTP_HOST}{$controller_alias}" target="_blank" class="fancybox pull-right margin-right-15" data-fancybox-type="iframe" data-fancybox-width="{$sendfriend_lb_size.width}" data-fancybox-height="{$sendfriend_lb_size.height}" rel="nofollow" title="Send to Friend"><i class="icon icon-envelope"></i> Send to Friend</a>
+			<a href="/popup{$ACTION_URLS.contact}?lifestyleSearch=true" target="_blank" rel="nofollow" class="fancybox pull-right margin-right-15" data-fancybox-type="iframe" data-fancybox-width="{$feedback_lb_size.width}" data-fancybox-height="{$feedback_lb_size.height}" title="Feedback"><i class="icon icon-comment-alt"></i> Feedback</a>
+	     </div>
+		<h1>Lifestyle Search</h1>
+	</div>
 	{if isset($results.communities) && ($results.communities.neighborhood || $results.communities.zip_code || $results.communities.census_place)}
-		<div id="lifestyle_compare">
-			<ul id="compareDataBlock" class="list-inline">
-				<li><strong>Compare to:</strong></li>
-				<li><a href="#" title="Compare my area to the local data" class="compareButtons myCommunityCompareButton">My Area Data</a></li>
-				<li class="listborder"><a href="#" class="compareButtons localCompareButton active_view" title="Compare to {foreach from=$site_owner_states item=state_name key=state_id}{if $results.selected_state == $state_id}{$state_name}{/if}{/foreach} data">{foreach from=$site_owner_states item=state_name key=state_id}{if $results.selected_state == $state_id}{$state_name}{/if}{/foreach} Data</a></li>
-				<li class="listborder"><a href="#" title="Compare locations to national data" class="compareButtons nationalCompareButton">National Data</a></li>
-			</ul>
-			<h2 title="Click to compare where you live now" id="openCompareButton" class="compareClosed" style="display:none;">Hide Your Area</h2>
-			
-			<div class="clearAll">&nbsp;</div>
-			
-			<div id="compareElements" class="clearfix" style="display:none;">
+		<div id="lifestyle_compare" class="clearfix">
+			<div class="clearfix">
+				<ul id="compareDataBlock" class="list-inline list-with-bars">
+					<li><strong>Compare to:</strong></li>
+					<li><a href="#" title="Compare my area to the local data" class="compareButtons myCommunityCompareButton">My Area Data</a></li>
+					<li><a href="#" class="compareButtons localCompareButton active_view" title="Compare to {foreach from=$site_owner_states item=state_name key=state_id}{if $results.selected_state == $state_id}{$state_name}{/if}{/foreach} data">{foreach from=$site_owner_states item=state_name key=state_id}{if $results.selected_state == $state_id}{$state_name}{/if}{/foreach} Data</a></li>
+					<li><a href="#" title="Compare locations to national data" class="compareButtons nationalCompareButton">National Data</a></li>
+				</ul>
+				<h4 title="Click to compare where you live now" id="openCompareButton" class="compareClosed cursor" style="display:none;"><i></i>Hide Your Area</h4>
+			</div>
+			<div id="compareElements" style="display:none;">
 				<div id="compareFormWrapper">
 					<form method="post" class="form-inline" id="compareCommunityForm" action="{$controller_alias}compare">
 						<div class="form-group">
 							<label for="user_zip_field">Zip Code</label>
-							<input id="user_zip_field" title="Enter your current Zip Code" type="text" class="form-control" value="" name="user_zip" style="width: 200px;">
+							<input id="user_zip_field" title="Enter your current Zip Code" type="text" class="form-control input-sm" value="" name="user_zip" style="width: 200px;">
 						</div>
 						<input type="submit" class="btn btn-primary" value="Compare">
 						{if $results.attribute_maxes}
@@ -47,42 +45,38 @@
 				<div id="compareResult" style="display:none;"></div>
 			</div>
 		</div>
-
+		<hr>
 		<div id="lifestyle_tabs" class="tabClass relative">
-			
-			<div id="modifySearch">
-				<h2 id="modifySearchBtn" title="Click to modify your Lifestyle Search" class="modifySearchTriggerClass modifyClosed">Modify Lifestyle Search</h2>
-			</div>
-
-			<ul class="nav nav-tabs">
+			<ul class="nav nav-tabs nav-smaller-font">
 				{if $results.communities.neighborhood}<li class="active"><a href="#Neighborhoods" title="Open list tab">Neighborhoods ({$results.communities.neighborhood|@count})</a></li>{/if}
 				{if $results.communities.zip_code}<li><a href="#Zip_Code" title="Open list tab">Zip Codes ({$results.communities.zip_code|@count})</a></li>{/if}
 				{if $results.communities.census_place}<li><a href="#Census_Place" title="Open list tab">Census Areas ({$results.communities.census_place|@count})</a></li>{/if}
 			</ul>
-
+			<div id="modifySearch">
+				<h4 id="modifySearchBtn" title="Click to modify your Lifestyle Search" class="modifySearchTriggerClass modifyClosed cursor">Modify Lifestyle Search <i class="icon icon-chevron-down"></i></h4>
+			</div>
 			<div class="tab-content">
 				{if $results.communities.neighborhood}
 					<div id="Neighborhoods" class="tab-pane active">
-						<div class="orderDiv">
-							<label>Sort By:</label>
-							<select list="neigborhood_list" class="form-control lifestyleSortSelect" name="sort" style="width:auto;">
-								<option value="Relevance">Relevance</option>
-								{if $results.sort_filters}
-									{foreach from=$results.sort_filters item=filter key=filter_id}
-									    <option value="{$filter_id}">{$filter.name}</option>
-									{/foreach}
-								{/if}
-							</select>
+						<div class="clearfix">
+							<div class="orderDiv">
+								<label>Sort By:</label>
+								<select list="neigborhood_list" class="form-control auto lifestyleSortSelect" name="sort">
+									<option value="Relevance">Relevance</option>
+									{if $results.sort_filters}
+										{foreach from=$results.sort_filters item=filter key=filter_id}
+										    <option value="{$filter_id}">{$filter.name}</option>
+										{/foreach}
+									{/if}
+								</select>
+							</div>
 						</div>
-
 						<hr>
-
 						<div id="resultListWrapper1">
-							<ul class="listViewResults" id="neigborhood_list">
+							<ul class="listViewResults list-unstyled" id="neigborhood_list">
 								{foreach from=$results.communities.neighborhood name=main_community_loop item=community key=index}
 									<li id="community_item_{$index}" class="sortableListElement onboardCommunity clearfix">
 										<input type="hidden" name="Relevance[]" value="{$community.score}">
-
 										<h2>
 											<span class="rankNumber">#{$community.type_rank}</span>
 											{if $community.neighborhood_info && isset($community.neighborhood_info.hood_name) && isset($community.neighborhood_info.market_name)}
@@ -91,9 +85,9 @@
 												{$community.name}
 											{/if}
 										</h2>
-										<div class="row">
+										<div class="row multi-columns-row">
 											{foreach from=$community.attributes name=attribute_loop item=attribute key=attribute_value}
-												<div class="col-sm-6 attributeWrapper clearfix">
+												<div class="col-sm-6 col-md-6 col-lg-6 margin-bottom-15 attributeWrapper clearfix">
 													<span class="attributeTitle">{$attribute.pretty_name}
 														{if $attribute.label == 'Urban / Dense Urban'}
 															<span class="attributeLabel">(Urban)</span>
@@ -129,6 +123,7 @@
 											{/foreach}
 										</div>
 										{include file=$neighborhood_path}
+										{if !$smarty.foreach.main_community_loop.last}<hr>{/if}
 									</li>
 								{/foreach}
 							</ul>
@@ -137,22 +132,22 @@
 				{/if}
 				{if $results.communities.zip_code}
 					<div id="Zip_Code" class="tab-pane">
-						<div class="orderDiv">
-							<label>Sort By:</label>
-							<select list="zip_code_list" class="form-control lifestyleSortSelect" name="sort" style="width:auto;">
-								<option value="Relevance">Relevance</option>
-								{if $results.sort_filters}
-									{foreach from=$results.sort_filters item=filter key=filter_id}
-									    <option value="{$filter_id}">{$filter.name}</option>
-									{/foreach}
-								{/if}
-							</select>
+						<div class="clearfix">
+							<div class="orderDiv">
+								<label>Sort By:</label>
+								<select list="zip_code_list" class="form-control auto lifestyleSortSelect" name="sort">
+									<option value="Relevance">Relevance</option>
+									{if $results.sort_filters}
+										{foreach from=$results.sort_filters item=filter key=filter_id}
+										    <option value="{$filter_id}">{$filter.name}</option>
+										{/foreach}
+									{/if}
+								</select>
+							</div>
 						</div>
-						
 						<hr>
-
 						<div id="resultListWrapper2">
-							<ul class="listViewResults" id="zip_code_list">
+							<ul class="listViewResults list-unstyled" id="zip_code_list">
 								{foreach from=$results.communities.zip_code name=main_community_loop item=community key=index}
 									<li id="zipcode_item_{$index}" class="sortableListElement onboardCommunity clearfix">
 										<input type="hidden" name="Relevance[]" value="{$community.score}">
@@ -195,6 +190,7 @@
 											{/foreach}
 										</div>
 										{include file=$zip_code_path}
+										{if !$smarty.foreach.main_community_loop.last}<hr>{/if}
 									</li>
 								{/foreach}
 							</ul>
@@ -203,22 +199,22 @@
 				{/if}
 				{if $results.communities.census_place}
 					<div id="Census_Place" class="tab-pane">
-						<div class="orderDiv">
-							<label>Sort By:</label>
-							<select list="census_area_list" class="form-control lifestyleSortSelect" name="sort" style="width:auto;">
-								<option value="Relevance">Relevance</option>
-								{if $results.sort_filters}
-									{foreach from=$results.sort_filters item=filter key=filter_id}
-									    <option value="{$filter_id}">{$filter.name}</option>
-									{/foreach}
-								{/if}
-							</select>
+						<div class="clearfix">
+							<div class="orderDiv">
+								<label>Sort By:</label>
+								<select list="census_area_list" class="form-control auto lifestyleSortSelect" name="sort">
+									<option value="Relevance">Relevance</option>
+									{if $results.sort_filters}
+										{foreach from=$results.sort_filters item=filter key=filter_id}
+										    <option value="{$filter_id}">{$filter.name}</option>
+										{/foreach}
+									{/if}
+								</select>
+							</div>
 						</div>
-
 						<hr>
-
 						<div id="resultListWrapper3">
-							<ul class="listViewResults" id="census_area_list">
+							<ul class="listViewResults list-unstyled" id="census_area_list">
 								{foreach from=$results.communities.census_place name=main_community_loop item=community key=index}
 									<li id="census_area_item_{$index}" class="sortableListElement onboardCommunity clearfix">
 										<input type="hidden" name="Relevance[]" value="{$community.score}">
@@ -261,6 +257,7 @@
 											{/foreach}
 										</div>
 										{include file=$census_area_path}
+										{if !$smarty.foreach.main_community_loop.last}<hr>{/if}
 									</li>
 								{/foreach}
 							</ul>
@@ -271,15 +268,16 @@
 		</div>
 	{else}
 		<p>
-			We were unable to locate any areas based on your lifestyle filters. <a href="#" id="modifySearchBtn" class="modifySearchTriggerClass" title="Modify your lifestyle search">Modify your lifestyle search</a> or
-			go back to the <a href="{$controller_alias}" title="Lifestyle Search page">Lifestyle Search Page</a>.
+			We were unable to locate any areas based on your lifestyle filters. <a href="#" id="modifySearchBtn" class="modifySearchTriggerClass underline" title="Modify your lifestyle search">Modify your lifestyle search</a> or
+			go back to the <a href="{$controller_alias}" class="underline" title="Lifestyle Search page">Lifestyle Search Page</a>.
 		</p>
 	{/if}
 </div>
+
 <footer{if $smarty.const.NEW_FOOTER_PARSE_STRING === true}args{/if}>
 	<div id="modifySearchForm" class="clearfix">
-		<h2 class="modifySearchTriggerClass" title="Click to modify your Lifestyle Search">Modify Lifestyle Search</h2>
-		<form method="post" id="filterForm" action="{$controller_alias}search">
+		<h4 class="modifySearchTriggerClass cursor text-right" title="Click to modify your Lifestyle Search">Modify Lifestyle Search <i class="icon icon-chevron-up"></i></h4>
+		<form method="post" class="lss-form" id="filterForm" action="{$controller_alias}search">
 			<fieldset>
 				{include file=$refine_header_path}
 				{if $filters}
@@ -290,8 +288,8 @@
 							<input type="hidden" value="{$filter.range}" name="{$filter.filter_id}_Range">
 							<input class="filterValueField" type="hidden" value="0,15" name="{$filter.filter_id}_Value">
 						{else}
-							<div class="filter{if $filter.type == 1} type-1{elseif $filter.type == 2} type-2{/if}">
-								<div class="filterPadding clearfix">
+							<div class="filter{if $filter.type == 1} type-1{elseif $filter.type == 2} type-2{/if} margin-bottom-15">
+								<div class="clearfix">
 								    <h5>{$filter.title}</h5>
 									{if $filter.filter_id == 'ATTR_044'}
 										<p class="filterExtra">
@@ -325,9 +323,8 @@
 						{/if}
 					{/foreach}
 				{/if}
-				<hr>
 				<div class="searchButtonBottom text-center">
-					<input type="submit" id="lifestyleSubmitSearchBtn" src="/images/lifestyle/search_transparent.png" class="sendBtn btn btn-primary" value="Search" name="Search" value="Search">
+					<input type="submit" id="lifestyleSubmitSearchBtn" class="sendBtn btn btn-primary" value="Search" name="Search" value="Search">
 				</div>
 			</fieldset>
 		</form>
@@ -360,16 +357,16 @@
 				bootstrapMode: true
 			}).data('jtabs');
 
-			lifestyleSlidersObj = $('#controllerWrapper').lifestyleSliders().data('lifestyleSliders');
-			lifestyleResultsObj = $('#controllerWrapper').lifestyleResults({
+			lifestyleSlidersObj = $('#lifestyle-search-page').lifestyleSliders().data('lifestyleSliders');
+			lifestyleResultsObj = $('#lifestyle-search-page').lifestyleResults({
 				defaultLat: '{/literal}{$site_owner_lat}{literal}',
 				defaultLong: '{/literal}{$site_owner_long}{literal}',
 				getPropertiesWithMap: {/literal}{if $getPropertiesWithMap}true{else}true{/if}{literal},
 				search_url: '{/literal}{$ACTION_URLS.search}{literal}',
-				property_icon: '{/literal}{$smarty.const.APP_PIC_URL}{literal}/maps/icon/new/n/m/',
-				host: '{/literal}{if strpos($HTTP_HOST, ".vlmc") !== false}http://www.hasson.com/{else}{$HTTP_HOST}{/if}{literal}'
+				property_icon: '/images/system/map_pins/plain_pin.png',
+				host: '{/literal}{if strpos($HTTP_HOST, ".dev") !== false}http://www.bairdwarner.com/{else}{$HTTP_HOST}{/if}{literal}'
 			}).data('lifestyleResults');
-			lifestyleLocationsObj = $('#controllerWrapper').lifestyleLocations().data('lifestyleLocations');
+			lifestyleLocationsObj = $('#lifestyle-search-page').lifestyleLocations().data('lifestyleLocations');
 			lifestyleLocationsObj.setCounty('{/literal}{$results.selected_county}{literal}');
 			lifestyleLocationsObj.setCBSA('{/literal}{$results.selected_cbsa}{literal}')
 			lifestyleLocationsObj.getCountyCBSA($('#userStateSelect'));
