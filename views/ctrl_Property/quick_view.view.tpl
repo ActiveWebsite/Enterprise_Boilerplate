@@ -79,6 +79,6 @@
         </div>
     </div>
 </div>
-<script src="/js/libs/jquery/jquery.js,/js/buildlist.js?scripts=/js/galleries/jquery.cycle2.swipe.min.js,/js/galleries/jquery.cycle2.min.js,/js/galleries/jquery.cycle2.center.min.js"></script>
+<script src="/js/buildlist.js?scripts=/js/libs/jquery/jquery.js,/js/galleries/jquery.cycle2.swipe.min.js,/js/galleries/jquery.cycle2.min.js,/js/galleries/jquery.cycle2.center.min.js"></script>
 </body>
 </html>

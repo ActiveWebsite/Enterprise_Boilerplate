@@ -17,6 +17,9 @@
 		<script src="/js/modernizer/modernizr.2.6.2.custom.js"></script>
 		{$JQUERY_HEADER}
 		{$PAGE_HEADER}
+		{if $browser_info && $browser_info.browser == 'IE' && $browser_info.version < 9}
+			<script src="/js/libs/twitter_bootstrap/respond/respond.min.js"></script>
+		{/if}
 	</head>  
 	<body class="{$browser_info.browser_css_class}">
 		<header id="site-header" class="container">
@@ -215,12 +218,11 @@
 		{$GA_CODE->getCode($SITE_OWNER)}
 		{$GA_CODE->getjQueryGoalJS()}
 
-		<!--[if lt IE 9]>
-			<script src="/js/libs/twitter_bootstrap/respond/respond.min.js"></script>
+		{if $browser_info && $browser_info.browser == 'IE' && $browser_info.version < 9}
 			<script src="/js/libs/twitter_bootstrap/respond/ie-row-fix.js"></script>
-		<![endif]-->
-		<!--[if lt IE 10]>
+		{/if}
+		{if $browser_info && $browser_info.browser == 'IE' && $browser_info.version < 10}
 			<script src="/js/search/jquery.placeholder-polyfill.min.js"></script>
-		<![endif]-->
+		{/if}
 	</body>
 </html>
