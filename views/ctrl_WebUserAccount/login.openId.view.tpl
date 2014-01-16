@@ -15,12 +15,12 @@
 			<form method="post" class="validate-form" action="/{$controller_alias}/login/" autocomplete="off">
 				<fieldset class="clearfix">
 					<div class="form-group">
-						<label class="block bold">Email</label>
-						<input name="username" class="form-control required email" type="email">
+						<label>Email</label>
+						<input name="username" placeholder="Email Address" class="form-control required email" type="email">
 					</div>
 					<div class="form-group">
-						<label class="block bold">Password</label>
-						<input name="password" class="form-control required" type="password">
+						<label>Password</label>
+						<input name="password" placeholder="Password" class="form-control required" type="password">
 					</div>
 					<a class="pull-left" href="/{$controller_alias}/forgot_password/">I've forgotten my password</a>
 					<input type="submit" class="btn btn-success pull-right" name="Submit" value="Log In">

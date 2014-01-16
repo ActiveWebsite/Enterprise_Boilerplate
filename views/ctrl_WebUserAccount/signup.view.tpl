@@ -19,6 +19,7 @@
             favorites, set up email alerts and change your account information.
         </p>
     </div>
+    <div class="account-signup-errors">{* this is for popups... *}</div>
     <div class="openIDWrap">
         {render_dropin dropin="OpenId"}
     </div>
@@ -30,57 +31,57 @@
             <div class="row">
                 <div class="col-sm-6 margin-bottom-15">
                     <label>First Name <span class="red">*</span></label>
-                    <input type="text" name="first_name" class="form-control required" placeholder="First Name" value="{$signup.first_name}">
+                    <input type="text" name="fname" class="form-control required" placeholder="First Name" value="{$signup.fname}">
                 </div>
                 <div class="col-sm-6 margin-bottom-15">
                     <label>Last Name <span class="red">*</span></label>
-                    <input type="text" name="last_name" class="form-control required" placeholder="Last Name" value="{$signup.last_name}">
+                    <input type="text" name="lname" class="form-control required" placeholder="Last Name" value="{$signup.lname}">
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-6 margin-bottom-15">
                     <label>Email Address <span class="red">*</span></label>
-                    <input type="email" name="email_confirm" class="form-control required email" placeholder="Email Address" value="{$signup.email_confirm}">
+                    <input type="email" name="email_address" class="form-control required email" placeholder="Email Address" value="{$signup.email_address2}">
                     <input type="email" name="email" style="display:none;" value="">
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-3 margin-bottom-15">
                     <label>Address</label>
-                    <input class="form-control" type="text" name="address"  placeholder="Address" value="{$signup.address}">
+                    <input class="form-control" type="text" name="1_Street_Address" placeholder="Address" value="{$signup.address1}">
                 </div>
                 <div class="col-sm-3 margin-bottom-15">
                     <label>City</label>
-                    <input class="form-control" type="text" name="city" placeholder="City" value="{$signup.city}">
+                    <input class="form-control" type="text" name="2_City" placeholder="City" value="{$signup.city}">
                 </div>
                 <div class="col-sm-3 margin-bottom-15">
                     <label>State</label>
-                    <input class="form-control" type="text" name="state" placeholder="State" value="{$signup.state}">
+                    <input class="form-control" type="text" name="3_State" placeholder="State" value="{$signup.state}">
                 </div>
                 <div class="col-sm-3 margin-bottom-15">
                     <label>Zip Code</label>
-                    <input class="form-control" type="text" name="zip_code" placeholder="Zip Code" value="{$signup.zip_code}">
+                    <input class="form-control" type="text" name="4_Zip" placeholder="Zip Code" value="{$signup.zip}">
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-6 margin-bottom-15">
                     <label>Cell Phone</label>
-                    <input class="form-control" type="tel" name="cell_phone" placeholder="Cell Phone" value="{$signup.cell_phone}">
+                    <input class="form-control" type="tel" name="5_Cell_Phone" placeholder="Cell Phone" value="{$signup.cell}">
                 </div>
                 <div class="col-sm-6 margin-bottom-15">
                     <label>Home Phone</label>
-                    <input class="form-control" type="tel" name="home_phone" placeholder="Home Phone" value="{$signup.home_phone}">
+                    <input class="form-control" type="tel" name="5_Home_Phone" placeholder="Home Phone" value="{$signup.home_phone}">
                 </div>
             </div>
             {if !isset( $signup.has_openId )}
                 <div class="row">
                     <div class="col-sm-6 margin-bottom-15">
                         <label>Password  <span class="red">*</span></label>
-                        <input type="password"  name="password" class="form-control required" placeholder="Password" value="">
+                        <input type="password" name="password" id="signup-pass{if $smarty.request.popup}popup{/if}" class="form-control required" placeholder="Password" value="">
                     </div>
                     <div class="col-sm-6 margin-bottom-15">
                         <label>Re-Type Password  <span class="red">*</span></label>
-                        <input type="password" name="password2" class="form-control required" placeholder="Re-Type Password" value="">
+                        <input type="password" name="password2" data-rule-equalTo="#signup-pass{if $smarty.request.popup}popup{/if}" data-msg-equalTo="Passwords do not match." class="form-control required" placeholder="Re-Type Password" value="">
                     </div>
                 </div>
             {/if}

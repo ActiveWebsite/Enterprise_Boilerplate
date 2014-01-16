@@ -196,17 +196,28 @@ jQuery(document).ready(function ($) {
 					$('.fancybox-inner form').validate({
 						submitHandler: function (form) {	
 							var el = $(form);
-							var data = el.serialize();
-							el.find('input[type="image"]').prop('disabled', true);
+							$('[type="submit"]', el).prop('disabled', true);
+							$('.account-signup-errors', el).html('');
 							$.ajax({
-								url: el.attr('action'),
+								url: el.attr('action') + '?getJSON=true',
 								method: 'POST',
-								data: data,
+								data: el.serialize(),
+								dataType: "json",
 								success: function (data) {
-									$('#account-register-wrapper').html(data);					
+									var i, msg = [];
+									if (data && data.success) {
+										location.reload(true);
+									} else {
+										for (i = 0; i < data.messages.length; i+=1) {
+											msg.push(data.messages[i]);
+										}
+										$('[type="submit"]', el).prop('disabled', false);
+										$('.account-signup-errors', el).html('<div class="alert alert-danger">' + msg.join('<br><i class="icon icon-warning-sign"></i> ') + '</div>');
+									}
 								},
-								beforeSend: function () {
-									$('#account-register-wrapper').html('<div style="width:100%;text-align:center;margin-top:45%;"><img src="/images/system/loading.gif" alt="Processing..."></div>');
+								error: function() {
+									$('.account-signup-errors', el).html('<div class="alert alert-danger">An error occured.</div>');
+									$('[type="submit"]', el).prop('disabled', false);
 								}
 							});
 						}
