@@ -5,35 +5,29 @@ abstract class ctrl_Content extends BASE_ctrl_Content {
     
     protected function hasAdditionalHeaderArgs()
     {
-		// kill mobile site...
-		self::$isMobile = false;
-		$_SESSION['mobile_device']=false;
 		return true;
 	}
 	
 	protected function getAdditionalHeaderArgs($tpl_args)
     {
-		$jquery_output = "\t<!-- BEGIN JAVASCRIPT HEADER -->\n";
+		$jquery_output = "";
 
 		$jquery_libs = array();
 			$jquery_libs[] = "/js/libs/jquery/jquery.js";
 			$jquery_libs[] = "/js/validation/jquery.validate.min.js";
 			$jquery_libs[] = "/js/fancy_box/jquery.fancybox.latest.pack.js";
-			$jquery_libs[] = "/js/lib/jquery.hoverIntent.minified.js";
-			$jquery_libs[] = "/js/menus/jquery.boojstrapDropdownNavigation.min.js";
 			$jquery_libs[] = "/js/lib/jquery.openid.js";
-			// $jquery_libs[] = "/js/tabs/jquery.jtabs.min.js";
 		
 		if (!empty($jquery_libs)) {
 			$jquery_output .= "\t<script src=\"/js/buildlist.js?scripts=" . implode(',', $jquery_libs) . "\"></script>\n";
 		}
 
 		// set up the global booj object and add any configs here.
-		if (defined('REST_API_KEY')) {
-			$jquery_output .= "\n\t<script>window.booj={application_key:'" . REST_API_KEY . "'};</script>\n";
-		}
-
-		$jquery_output .= "\t<!-- END JAVASCRIPT HEADER -->";
+		$args = array(
+			'application_key' => defined('REST_API_KEY') ? REST_API_KEY : false,
+			'current_user' => !empty($this->elements['current_account_user']) ? $this->elements['current_account_user']['id'] : false,
+		);
+		$jquery_output .= "\n\t<script>window.booj=" . json_encode($args) . "</script>\n";
 
 		$tpl_args['JQUERY_HEADER'] = $jquery_output;
 

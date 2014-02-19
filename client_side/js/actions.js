@@ -1,7 +1,11 @@
 function _lazyLoadComponent(_elementID, _string) {
 	var _componentContainer = jQuery('#' + _elementID);
-	if (_componentContainer.length > 0 && !_componentContainer.hasClass('renderSuccess') && _string !== '') {
-		_componentContainer.html('<img style="margin:15px;" class="lazyComponentLoadWheel" alt="loading..." src="/images/ajax-loader.gif">');
+	var loaderImg = '<i class="icon icon-spinner icon-spin"></i>';
+	if (!Modernizr.cssanimations) {
+		loaderImg = '<img src="/images/ajax-loader.gif" alt="Loading...">';
+	}
+	if (_componentContainer.length && !_componentContainer.hasClass('renderSuccess') && _string !== '') {
+		_componentContainer.html('<div class="component-loader">' + loaderImg + ' Loading...</div>');
 		jQuery.ajax({
 			type: 'POST',
 			url: '/render_component/' + _string,
@@ -9,7 +13,7 @@ function _lazyLoadComponent(_elementID, _string) {
 				_componentContainer.html(data).addClass('renderSuccess');
 			},
 			error: function () {
-				_componentContainer.html('<p class="lazyComponentErrorMessage">Error retrieving component.</p>');
+				_componentContainer.html('<div class="alert alert-danger">An Error Occured.</div>');
 			}
 		});
 	}

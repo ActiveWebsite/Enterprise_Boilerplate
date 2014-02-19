@@ -172,18 +172,22 @@
 					{render_dropin dropin="OpenId"}
 					<div class="alert alert-danger" style="display:none;">Username or password is incorrect.</div>
 					<form method="post" id="account_login_ajax" action="{$ACTION_URLS.account}ajax_login">
-						<fieldset>
-							<label for="wua-email">Email:</label>
-							<input id="wua-email" name="email_address" type="email" placeholder="Enter Email Address" class="form-control margin-bottom-10">
-							<label for="wua-pass">Password:</label>
-							<input id="wua-pass" type="password" name="password" placeholder="Enter Password" class="form-control margin-bottom-10">
+						<fieldset class="clearfix">
+							<div class="form-group">
+								<label for="wua-email">Email:</label>
+								<input id="wua-email" name="email_address" type="email" placeholder="Enter Email Address" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="wua-pass">Password:</label>
+								<input id="wua-pass" type="password" name="password" placeholder="Enter Password" class="form-control">
+							</div>
 							<div class="pull-left">
 								<a href="{$ACTION_URLS.account}forgot_password" title="Forgot Password?">Forgot Password?</a>
 								<br>
 								<a href="{$ACTION_URLS.account}signup" data-action="account-register" title="Register">Register</a>
 							</div>
 							<div class="pull-right text-right">
-								<input class="btn btn-primary" type="submit" name="Submit" value="Sign In">
+								<input class="btn btn-primary" type="submit" value="Sign In" name="Submit">
 							</div>
 						</fieldset>
 					</form>
