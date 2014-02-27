@@ -30,7 +30,7 @@
 	{/if}
 </div>
 <footerargs>
-<script src="http://maps.googleapis.com/maps/api/js?v=3.13&amp;sensor=false"></script>
+<script src="http://maps.googleapis.com/maps/api/js?v={$smarty.map_version}&amp;sensor=false"></script>
 <script src="/js/buildlist.js?scripts=/js/mustache/mustache.min.js,/js/map_search/jquery.search_results_map.min.js"></script>
 {literal}
 <script type="text/template" id="office-map-bubble-template">

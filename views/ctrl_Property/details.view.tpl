@@ -289,7 +289,7 @@
 		</div>
 	</div>
 	<footerargs>
-		<script src="//maps.googleapis.com/maps/api/js?v=3.13&amp;libraries=places&amp;sensor=false"></script>
+		<script src="//maps.googleapis.com/maps/api/js?v={$smarty.map_version}&amp;libraries=places&amp;sensor=false"></script>
 		<script src="/js/buildlist.js?scripts=/js/libs/jquery_ui/components/core.1.10.3.min.js,/js/libs/jquery_ui/components/menu.1.10.3.min.js,/js/libs/jquery_ui/components/autocomplete.1.10.3.min.js,/js/map_search/jquery.poi-map-2.min.js"></script>
 		<script src="/js/buildlist.js?scripts=/js/carousels/jquery.jcarousel.min.js,/js/galleries/jquery.simpleCarouselGallery.2.0.min.js"></script>
 		<script>

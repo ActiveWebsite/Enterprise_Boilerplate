@@ -106,7 +106,7 @@
     </div>
 </div>
 <footerargs>
-    <script src="https://maps.google.com/maps/api/js?v=3.13&amp;sensor=false"></script>
+    <script src="https://maps.google.com/maps/api/js?v={$smarty.map_version}&amp;sensor=false"></script>
 	<script src="/js/map_search/radius_search/jquery.proximity-search.min.js"></script>
     <script>
 		{literal}
