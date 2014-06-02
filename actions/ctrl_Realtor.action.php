@@ -131,6 +131,7 @@ class ctrl_Realtor extends BASE_ctrl_Realtor{
 				} else {
 					$property->photo = false;
 				}
+				$sold_properties[] = $property;
 			}
 			catch( Exception $e ) {}
 		}
