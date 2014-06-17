@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		{if $browser_info && $browser_info.browser == 'IE'}<meta http-equiv="X-UA-Compatible" content="IE=edge">{/if}
 		<meta charset="utf-8">
 		<title>{$SEO_ENGINE_OPTIMIZER->GetTitle()}</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
-		{if $browser_info && $browser_info.browser == 'IE'}<meta http-equiv="X-UA-Compatible" content="IE=edge">{/if}
 		<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="/css/company_styles.min.css">
 		<script src="/js/modernizer/modernizr.2.6.2.custom.js"></script>

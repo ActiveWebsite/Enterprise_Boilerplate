@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		{if $browser_info && $browser_info.browser == 'IE'}<meta http-equiv="X-UA-Compatible" content="IE=edge">{/if}
 		<meta charset="utf-8">
 		<title>{$SEO_ENGINE_OPTIMIZER->GetTitle()}</title>
 		<meta name="keywords" content="{$SEO_ENGINE_OPTIMIZER->GetKeywords()}">
 		<meta name="description" content="{$SEO_ENGINE_OPTIMIZER->GetDesc()}">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		{if $browser_info && $browser_info.browser == 'IE'}<meta http-equiv="X-UA-Compatible" content="IE=edge">{/if}
 		{$SEO_ENGINE_OPTIMIZER->robots_tag()}
 		{if !$controller_obj instanceof ctrl_Property}{$SEO_ENGINE_OPTIMIZER->canonicalLink()}{/if}
 		{if $SITE_OWNER instanceof Company && $SITE_OWNER->get_config('Google Webmaster Tools Verify') != '0'}<meta name="google-site-verification" content="{$SITE_OWNER->get_config('Google Webmaster Tools Verify')}">{/if}
