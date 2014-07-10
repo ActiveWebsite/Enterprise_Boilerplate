@@ -69,7 +69,7 @@ function _buildRetinaImages(scope) {
 var App = jQuery(document);
 
 // document ready
-jQuery(document).ready(function ($) {
+App.ready(function ($) {
 	var $body = $(document.body);
 
 	/**
@@ -275,7 +275,8 @@ jQuery(document).ready(function ($) {
 	 */
 	if ($.fn.tooltip) {
 		$('a.justTheTip, img.justTheTip').tooltip({
-			placement: 'right'
+			placement: 'right',
+			trigger: 'hover click focus'
 		});
 	}
 
