@@ -116,5 +116,5 @@
             None
         {/if}
     </span>
-    <a class="btn btn-primary btn-sm fancybox" data-fancybox-type="iframe" data-fancybox-width="500" data-fancybox-height="500" href="/account/change_pref_realtor_form">Change Your Preferred Agent</a>
+    <a class="btn btn-primary btn-sm fancybox" data-fancybox-type="iframe" data-fancybox-width="500" data-fancybox-height="auto" href="/account/change_pref_realtor_form">Change Preferred Agent</a>
 </div>

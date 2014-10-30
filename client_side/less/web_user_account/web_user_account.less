@@ -1,25 +1,60 @@
-// Account Header
+// Account Menu hamburger
 // --------------------------------------------------
-.web-user-account-header {
-
-}
-
-// FANCYBOX HEADER
-// --------------------------------------------------
-.fancybox-inner {
-    h1 {
-        line-height: normal;
-        margin: 0 0 20px 0;
-        font-size: 20px;
+.navbar-account {
+    margin-top: 15px;
+    .navbar-nav {
+        margin: 0;
+        float: none;
+        > li {
+            > a, {
+                color: #000;
+                background-color: #fff;
+                &:hover,
+                a:focus {
+                    background-color: #ccc;
+                    color: darken(#000, 15%);
+                }
+            }            
+            &.active {
+                > a,
+                > a:hover,
+                > a:focus {
+                    background-color: #ccc;
+                    color: #fff;
+                }
+            }
+        }
     }
-}
-
-// Account Menu
-// --------------------------------------------------
-#web-user-account-menu {
-    .nav {
-
+    .navbar-toggle {
+        background-color: #efefef;
+        color: #fff;
+        width: 100%;
+        float: none;
+        margin: 0;
+        .menu-text {
+            line-height: 23px;
+        }
+        .icon-bar {
+            background-color: #000;
+            width: 36px;
+            height: 5px;
+        }
     }
+    .md-device({
+        .navbar-nav {
+            width: 100%;
+            > li {
+                display: table-cell;
+                float: none;
+                width: 1%;
+                > a {
+                    display: block;
+                    text-align: center;
+                    white-space: nowrap;
+                }
+            }
+        }
+    });
 }
 
 // Popup Forms
@@ -28,26 +63,7 @@
     padding: 0;
     form {
         margin: 0;
-        label {
-            margin-bottom: 2px;
-        }
         overflow-x: hidden; // removes scrollbars caused by rows.
-    }
-    h1 {
-        line-height: normal;
-        margin: 0 0 20px 0;
-        font-size: 20px;
-    }
-    .popup-related-property {
-        h4 {
-            margin: 0 0 3px 0;
-            font-style: 14px;
-            font-weight: bold;
-            line-height: normal;
-        }
-        font-style: 12px;
-        line-height: normal;
-        margin-bottom: 10px;
     }
     .popupFooter {
         h2 {
@@ -59,13 +75,32 @@
         }
     }
     .row {
-        margin-left: -15px;
-        margin-right: -15px;
+        margin-left: -@grid-gutter-width / 2;
+        margin-right: -@grid-gutter-width / 2;
     }
-    .col-lg-6, .col-6, .col-sm-6 {
-        width: 50%;
-        float: left;
+    .col-lg-6, .col-sm-6 {
+        width: 100%;
+        float: none;
         padding: 0 15px;
+        @media screen and (min-width: 490px) { 
+            width: 50%;
+            float: left;
+        }
+    }
+    .popup-to-spacer-gutter {
+        padding-left: (@grid-gutter-width / 2);
+        padding-right: (@grid-gutter-width / 2);
+        line-height: normal;
+        @media screen and (min-width: 490px) {
+            float: left;
+            padding-left: 0;
+            padding-right: 0;
+            width: @grid-gutter-width;
+            margin-left: -(@grid-gutter-width / 2);
+            margin-right: -(@grid-gutter-width / 2);
+            text-align: center;
+            line-height: @input-height-base;
+        }
     }
 }
 
@@ -107,4 +142,18 @@
 }
 .openid-transfer-screen-loader-icon{
     margin-top:20px;
+}
+
+// favorites section
+// --------------------------------------------------
+.fav-property-category-row {
+    .fav-prop-counter {
+        display: block;
+        margin-top: 5px;
+        @media screen and (min-width: 400px) { 
+            margin: 0;
+            padding-left: 30px;
+            display: inline-block;
+        }
+    }
 }
