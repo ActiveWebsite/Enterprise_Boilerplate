@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     {if $browser_info && $browser_info.browser == 'IE'}<meta http-equiv="X-UA-Compatible" content="IE=edge">{/if}
     <title>QuickView</title>
+    <link rel="stylesheet" href="/css/non_bootstrap_styles.min.css">
     <link rel="stylesheet" href="/css/company_styles.min.css">
     {literal}
     <style>
@@ -80,5 +81,6 @@
     </div>
 </div>
 <script src="/js/buildlist.js?scripts=/js/libs/jquery/jquery.js,/js/galleries/jquery.cycle2.swipe.min.js,/js/galleries/jquery.cycle2.min.js,/js/galleries/jquery.cycle2.center.min.js"></script>
+{$GA_CODE->getAnalyticsJSCode($SITE_OWNER)}
 </body>
 </html>

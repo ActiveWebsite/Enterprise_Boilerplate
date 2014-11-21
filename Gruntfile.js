@@ -22,6 +22,14 @@ module.exports = function (grunt) {
 		},
 
 		less: {
+			nonBootstrap: {
+				options: {
+					cleancss: true
+				},
+				files: {
+					'client_side/css/non_bootstrap_styles.min.css': ['client_side/less/non_bootstrap_styles.less']
+				}
+			},
 			company: {
 				options: {
 					cleancss: true

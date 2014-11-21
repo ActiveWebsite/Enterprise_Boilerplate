@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/css/non_bootstrap_styles.min.css">
 		<link rel="stylesheet" href="/css/company_styles.min.css">
 		<script src="/js/modernizer/modernizr.2.6.2.custom.js"></script>
 		{$JQUERY_HEADER}
@@ -43,8 +44,7 @@
 			<script src="/js/search/jquery.placeholder-polyfill.min.js"></script>
 		{/if}
 
-		{$GA_CODE->getCode($SITE_OWNER)}
-		{$GA_CODE->getjQueryGoalJS()}
+		{$GA_CODE->getAnalyticsJSCode($SITE_OWNER)}
 		<!-- override: BLANK VIEW -->
 	</body>
 </html>

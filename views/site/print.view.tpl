@@ -6,6 +6,7 @@
 		<title>{$SEO_ENGINE_OPTIMIZER->GetTitle()}</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/css/non_bootstrap_styles.min.css">
 		<link rel="stylesheet" href="/css/company_styles.min.css">
 		<script src="/js/modernizer/modernizr.2.6.2.custom.js"></script>
 		{$JQUERY_HEADER}
@@ -36,6 +37,7 @@
 			<p>&copy;{$smarty.now|date_format:"%Y"} &lt;COMPANY NAME&gt;. All rights reserved.</p>
 		</div>
 		{$PAGE_FOOTER}
+		{$GA_CODE->getAnalyticsJSCode($SITE_OWNER)}
 		{if $browser_info && $browser_info.browser == 'IE' && $browser_info.version < 9}
 			<script src="/js/libs/twitter_bootstrap/respond/ie-row-fix.js"></script>
 		{/if}

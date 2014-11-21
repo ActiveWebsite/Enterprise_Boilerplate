@@ -13,6 +13,7 @@
 		{if $SITE_OWNER instanceof Company && $SITE_OWNER->get_config('Yahoo Site Explorer Verify') != '0'}<meta name="y_key" content="{$SITE_OWNER->get_config('Yahoo Site Explorer Verify')}">{/if}
 		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss/">
 		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="stylesheet" href="/css/non_bootstrap_styles.min.css">
 		<link rel="stylesheet" href="/css/agent_rebrand_styles.min.css">
 		<script src="/js/modernizer/modernizr.2.6.2.custom.js"></script>
 		{$JQUERY_HEADER}
@@ -230,8 +231,7 @@
 
 		<span id="media-query-holder"></span>
 
-		{$GA_CODE->getCode($SITE_OWNER)}
-		{$GA_CODE->getjQueryGoalJS()}
+		{$GA_CODE->getAnalyticsJSCode($SITE_OWNER)}
 
 		{if $browser_info && $browser_info.browser == 'IE' && $browser_info.version < 9}
 			<script src="/js/libs/twitter_bootstrap/respond/ie-row-fix.js"></script>
