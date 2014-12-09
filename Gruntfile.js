@@ -1,5 +1,9 @@
 /*global module:false*/
 module.exports = function (grunt) {
+	
+	require('../../node_modules/jit-grunt')(grunt)({
+		pluginsRoot: '../../node_modules'
+	});
 
 	// Project configuration
 	grunt.initConfig({
@@ -142,11 +146,4 @@ module.exports = function (grunt) {
 	grunt.registerTask('officeRebrandLess', ['less:officeRebrand']);
 	grunt.registerTask('mapsearchLess', ['less:mapsearch']);
 	grunt.registerTask('advancedSearchJS', ['uglify:advancedSearch']);
-
-
-	// Load Tasks
-	grunt.loadTasks('../../node_modules/grunt-contrib-less/tasks');
-	grunt.loadTasks('../../node_modules/grunt-contrib-jshint/tasks');
-	grunt.loadTasks('../../node_modules/grunt-contrib-uglify/tasks');
-	grunt.loadTasks('../../node_modules/grunt-contrib-watch/tasks');
 };
