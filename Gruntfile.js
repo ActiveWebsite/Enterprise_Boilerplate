@@ -133,6 +133,20 @@ module.exports = function (grunt) {
 			files: {
 				src: ['Gruntfile.js', 'client_side/js/*.js']
 			}
+		},
+
+		imagemin: {
+			static: {
+				options: {
+					optimizationLevel: 3
+				},
+				files: [{					
+					expand: true, // Enable dynamic expansion
+					cwd: 'public_html/images/', // Src matches are relative to this path
+					src: ['**/*.{png,jpg,gif}', '!**/system/**'], // Actual patterns to match
+					dest: 'public_html/images' // Destination path prefix
+				}]
+			}
 		}
 	});
 
@@ -146,4 +160,5 @@ module.exports = function (grunt) {
 	grunt.registerTask('officeRebrandLess', ['less:officeRebrand']);
 	grunt.registerTask('mapsearchLess', ['less:mapsearch']);
 	grunt.registerTask('advancedSearchJS', ['uglify:advancedSearch']);
+	grunt.registerTask('optimizeImages', ['imagemin']);
 };
