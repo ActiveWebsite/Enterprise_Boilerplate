@@ -33,7 +33,7 @@
     <div class="row advanced-options margin-bottom-30">
         <div class="col-sm-3">
             <label>Property Taxes</label>
-            <input type="tel" class="validate form-control" value="{$property.tax_amount}" name="taxes" data-prefix="$" data-suffix="/yr">
+            <input type="tel" class="validate form-control" value="{$tax_amount}" name="taxes" data-prefix="$" data-suffix="/yr">
         </div>
         <div class="col-sm-3">
             <label>Insurance</label>
