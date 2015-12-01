@@ -33,7 +33,7 @@
                     {/foreach}
                     <script id="qv-images" type="text/cycle">
                         {foreach from=$photos item=photo key=index}
-                        {if $index > 3}<img src="{$photo}/maxwidth/425/maxheight/280" alt="">{/if}
+                        {if $index >= 3}<img src="{$photo}/maxwidth/425/maxheight/280" alt="">{/if}
                         {/foreach}
                     </script>
                 </div>
