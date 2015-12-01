@@ -219,7 +219,7 @@
 </div>
 
 <footerargs>
-<script src="//maps.googleapis.com/maps/api/js?v={$smarty.map_version}&amp;libraries=places&amp;sensor=false"></script>
+<script src="//maps.googleapis.com/maps/api/js?v={$smarty.google_map_version}&amp;client={$smarty.google_client_id}&amp;channel={$smarty.const.APP_ID}&amp;libraries=places&amp;sensor=false"></script>
 <script src="/js/buildlist.js?scripts=/js/libs/jquery_ui/components/core.1.10.3.min.js,/js/libs/jquery_ui/components/mouse.1.10.3.min.js,/js/libs/jquery_ui/components/drag_sort.1.10.3.min.js,/js/map_search/jquery.tourPlan.min.js"></script>
 <script>
 	var tourPlanObj;

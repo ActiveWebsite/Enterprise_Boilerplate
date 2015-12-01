@@ -169,7 +169,6 @@
 	<script>
 		jQuery(document).ready(function($) {
 			$('.mortgageCalculatorWidget').mortgageCalculator({
-				pmi_rate: {/literal}{$pmi_rate}{literal},
 				tax_rate: {/literal}{$tax_rate}{literal},
 				bootstrapMode: true,
 				setAmortizationWidth: true,

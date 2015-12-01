@@ -24,7 +24,7 @@
 	</ul>
 </div>
 <footerargs>
-<script src="https://maps.googleapis.com/maps/api/js?v={$smarty.map_version}&amp;sensor=false"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v={$smarty.google_map_version}&amp;client={$smarty.google_client_id}&amp;channel={$smarty.const.APP_ID}&amp;sensor=false"></script>
 <script src="/js/buildlist.js?scripts=/js/mustache/mustache.min.js,/js/map_search/jquery.search_results_map.min.js"></script>
 {literal}
 <script type="text/html" id="developments-list-page-results-template">
