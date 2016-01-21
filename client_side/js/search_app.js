@@ -322,7 +322,7 @@
 					this.value = terms.join(", ");
 		
 					// lets remove ebby's error message
-					$(this).next('.invalid-auto-complete-entry').remove();
+					$(this).trigger('change').next('.invalid-auto-complete-entry').remove();
 					
 					return false;
 				}
