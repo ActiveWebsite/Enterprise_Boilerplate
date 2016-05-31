@@ -19,8 +19,8 @@
         <input type="hidden" name="toEmail" value="{$pref_realtor.email}">
         <input type="hidden" name="toName" value="{$pref_realtor.name}">
         <input type="hidden" name="email_confirm" value="{$user.email}">
-        <input type="hidden" name="first_name" value="{$user.name}">
-        <input type="hidden" name="last_name" value="{$user.name}">
+        <input type="hidden" name="first_name" value="{$user.fname}">
+        <input type="hidden" name="last_name" value="{$user.lname}">
         <input type="hidden" name="lead_realtor" value="{$pref_realtor.id}">
         <input type="hidden" name="lc_custom_form_name" value="Contact Preferred Agent">
         <fieldset>
